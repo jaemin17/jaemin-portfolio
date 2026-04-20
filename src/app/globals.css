@@ -1,13 +1,10 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --bg: #0b0d12;
+  --fg: #eef1f6;
+  --muted: color-mix(in oklab, var(--fg) 65%, transparent);
+  --card: color-mix(in oklab, var(--bg) 82%, white);
+  --border: color-mix(in oklab, var(--fg) 14%, transparent);
+  --shadow: 0 12px 32px rgba(0, 0, 0, 0.22);
 }
 
 html {
@@ -24,9 +21,20 @@ body {
   min-height: 100%;
   display: flex;
   flex-direction: column;
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--fg);
+  background: radial-gradient(
+      1200px 800px at 10% -10%,
+      rgba(124, 92, 255, 0.25),
+      transparent 55%
+    ),
+    radial-gradient(
+      900px 700px at 90% 0%,
+      rgba(0, 208, 255, 0.22),
+      transparent 58%
+    ),
+    var(--bg);
+  font-family: var(--font-geist-sans), system-ui, -apple-system, Segoe UI, Roboto,
+    Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -42,8 +50,54 @@ a {
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+html {
+  color-scheme: dark;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  height: 26px;
+  padding: 0 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: color-mix(in oklab, var(--card) 84%, transparent);
+  color: var(--muted);
+  font-size: 12px;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+
+.buttonPrimary,
+.buttonGhost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 38px;
+  padding: 0 14px;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  transition: transform 140ms ease, background 140ms ease, border-color 140ms ease;
+}
+
+.buttonPrimary {
+  background: var(--fg);
+  color: #0b0d12;
+}
+
+.buttonPrimary:hover {
+  transform: translateY(-1px);
+}
+
+.buttonGhost {
+  background: transparent;
+  border-color: var(--border);
+  color: var(--fg);
+}
+
+.buttonGhost:hover {
+  background: color-mix(in oklab, var(--card) 72%, transparent);
 }
