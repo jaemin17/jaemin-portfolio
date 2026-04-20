@@ -9,7 +9,7 @@ export function SiteHeader() {
           <span className={styles.brandMark} aria-hidden="true">
             ◆
           </span>
-          <span className={styles.brandText}>作品集</span>
+          <span className={styles.brandText}>jaemin · ux</span>
         </Link>
 
         <nav className={styles.nav} aria-label="主导航">

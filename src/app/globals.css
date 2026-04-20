@@ -5,6 +5,8 @@
   --card: color-mix(in oklab, var(--bg) 82%, white);
   --border: color-mix(in oklab, var(--fg) 14%, transparent);
   --shadow: 0 12px 32px rgba(0, 0, 0, 0.22);
+  --accentA: #ffd740;
+  --accentB: #00d0ff;
 }
 
 html {
@@ -68,6 +70,16 @@ html {
   white-space: nowrap;
 }
 
+.chipStrong {
+  color: var(--fg);
+  border-color: color-mix(in oklab, var(--border) 55%, var(--accentA));
+  background: linear-gradient(
+    90deg,
+    color-mix(in oklab, var(--accentA) 20%, transparent),
+    color-mix(in oklab, var(--accentB) 18%, transparent)
+  );
+}
+
 .buttonPrimary,
 .buttonGhost {
   display: inline-flex;
@@ -84,7 +96,11 @@ html {
 }
 
 .buttonPrimary {
-  background: var(--fg);
+  background: linear-gradient(
+    90deg,
+    color-mix(in oklab, var(--fg) 92%, var(--accentA)),
+    color-mix(in oklab, var(--fg) 92%, var(--accentB))
+  );
   color: #0b0d12;
 }
 
@@ -100,4 +116,8 @@ html {
 
 .buttonGhost:hover {
   background: color-mix(in oklab, var(--card) 72%, transparent);
+}
+
+button.buttonGhost {
+  cursor: pointer;
 }
