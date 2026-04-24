@@ -10,6 +10,12 @@ export default function Home() {
       <SiteHeader />
       <main className={styles.main}>
         <header className={styles.hero}>
+          <div className={styles.heroTag} aria-label="status tag">
+            <span className={styles.heroTagIcon} aria-hidden="true">
+              :)
+            </span>
+            <span className={styles.heroTagPill}>Hangzhou · Open to work</span>
+          </div>
           <StickerTitle className={styles.title} text="Jiamin Li" />
           <div className={styles.stickerSubWrap} aria-label="subtitle sticker">
             <span className={styles.stickerSub}>Product Designer (UI/UX)</span>
