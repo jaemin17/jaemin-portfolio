@@ -5,6 +5,7 @@
 .svg {
   display: block;
   width: 100%;
+  margin: 0 auto;
   height: clamp(76px, 12vw, 128px);
 }
 
