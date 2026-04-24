@@ -13,8 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "作品集｜产品设计师 UIUX",
-  description: "产品设计师（UIUX）作品集：端到端案例、AI 辅助独立交付、从 0 到上架。",
+  title: "jaemin · product design",
+  description:
+    "jaemin is a product designer (UI/UX). This is an exhibition of selected works — from 0 to launch, with AI as a collaborator (not a replacement).",
 };
 
 export default function RootLayout({
@@ -23,7 +24,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="zh-CN" className={`${geistSans.variable} ${geistMono.variable}`}>
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
       <body>{children}</body>
     </html>
   );

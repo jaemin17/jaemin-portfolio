@@ -1,149 +1,155 @@
 .main {
   max-width: 1040px;
   margin: 0 auto;
-  padding: 28px 20px 72px;
+  padding: 34px 20px 90px;
   width: 100%;
 }
 
 .hero {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 18px;
-  align-items: start;
-  padding: 22px 0 10px;
+  padding: 18px 0 24px;
 }
 
-.heroLeft {
-  padding: 8px 0;
+.title {
+  max-width: 820px;
 }
 
-.kicker {
-  color: var(--muted);
-  font-size: 13px;
-  letter-spacing: 0.02em;
-  margin-bottom: 10px;
-}
-
-.kickerDot {
-  opacity: 0.6;
-  padding: 0 6px;
-}
-
-.h1 {
-  font-size: 54px;
-  line-height: 1.08;
-  letter-spacing: -0.05em;
-  margin-bottom: 14px;
-  text-wrap: balance;
-}
-
-.spark {
-  display: inline-block;
-  padding: 0 6px;
-  margin: 0 -6px;
-  border-radius: 12px;
-  background: linear-gradient(
-    90deg,
-    rgba(255, 215, 64, 0.18),
-    rgba(0, 208, 255, 0.14)
-  );
-  border: 1px solid color-mix(in oklab, var(--border) 75%, rgba(255, 215, 64, 0.25));
-}
-
-.lede {
-  color: var(--muted);
-  line-height: 1.75;
-  max-width: 70ch;
-}
-
-.heroCtas {
-  display: flex;
-  gap: 10px;
-  margin-top: 18px;
-  flex-wrap: wrap;
-}
-
-.heroCard {
-  border: 1px solid var(--border);
-  background: var(--card);
-  border-radius: 16px;
-  padding: 16px;
-  box-shadow: var(--shadow);
-}
-
-.heroCardCtas {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-.heroCardTop {
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
-  align-items: flex-start;
-  margin-bottom: 12px;
-}
-
-.cardTitle {
-  font-weight: 650;
+.subtitle {
+  margin-top: 10px;
+  font-size: 18px;
+  color: var(--fg);
   letter-spacing: -0.02em;
 }
 
-.cardSubtitle {
+.tagline {
+  margin-top: 14px;
   color: var(--muted);
-  font-size: 13px;
-  line-height: 1.6;
-  margin-top: 6px;
+  line-height: 1.8;
+  max-width: 78ch;
+  font-size: 15px;
 }
 
-.cardList {
-  padding-left: 18px;
-  color: var(--fg);
+.smallLead {
+  margin-top: 10px;
+  color: var(--muted);
   line-height: 1.8;
-  margin: 0 0 14px 0;
+  max-width: 78ch;
+  font-size: 14px;
+}
+
+.heroLinks {
+  margin-top: 18px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 16px;
+}
+
+.quick {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 0;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+  border-bottom: 1px solid rgba(17, 18, 23, 0.18);
+  transition: border-color 140ms ease, transform 140ms ease;
+}
+
+.quick:hover {
+  transform: translateY(-1px);
+  border-bottom-color: rgba(17, 18, 23, 0.45);
 }
 
 .section {
-  padding: 28px 0;
-  border-top: 1px solid var(--border);
-  margin-top: 20px;
+  padding: 26px 0;
+  border-top: none;
 }
 
-.sectionHeader {
-  margin-bottom: 14px;
-  max-width: 80ch;
+.section + .section {
+  border-top: 1px solid var(--border);
 }
 
 .h2 {
-  font-size: 18px;
+  font-size: 20px;
   letter-spacing: -0.02em;
   margin-bottom: 6px;
 }
 
-.muted {
+.workList {
+  list-style: none;
+  margin-top: 14px;
+  display: grid;
+  gap: 12px;
+  padding-left: 0;
+}
+
+.workItem {
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.65);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.workLink {
+  display: block;
+  padding: 16px 16px 14px;
+}
+
+.workTitle {
+  display: block;
+  font-size: 18px;
+  letter-spacing: -0.03em;
+  font-weight: 750;
+}
+
+.workMeta {
+  display: block;
+  margin-top: 8px;
   color: var(--muted);
-  line-height: 1.7;
+  line-height: 1.75;
   font-size: 14px;
 }
 
-.contactRow {
+.dot {
+  opacity: 0.6;
+  padding: 0 6px;
+}
+
+.aboutGrid {
+  margin-top: 12px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.h3 {
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+
+.p {
+  line-height: 1.85;
+  color: var(--fg);
+}
+
+.whereRow {
+  margin-top: 10px;
   display: flex;
-  gap: 10px;
+  gap: 18px;
   flex-wrap: wrap;
 }
 
 @media (max-width: 920px) {
-  .hero {
+  .aboutGrid {
     grid-template-columns: 1fr;
-  }
-  .h1 {
-    font-size: 44px;
   }
 }
 
 @media (max-width: 560px) {
-  .h1 {
-    font-size: 36px;
+  .workLink {
+    padding: 14px 14px 12px;
   }
 }

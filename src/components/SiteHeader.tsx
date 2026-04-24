@@ -5,22 +5,30 @@ export function SiteHeader() {
   return (
     <header className={styles.header}>
       <div className={styles.inner}>
-        <Link className={styles.brand} href="/">
-          <span className={styles.brandMark} aria-hidden="true">
-            ◆
+        <div className={styles.menuLeft} aria-label="menu bar">
+          <Link className={styles.brand} href="/">
+            <span className={styles.brandText}>design.cc</span>
+          </Link>
+          <span className={styles.menuSep} aria-hidden="true">
+            ·
           </span>
-          <span className={styles.brandText}>jaemin · ux</span>
-        </Link>
+          <Link className={styles.menuItem} href="/#project">
+            file
+          </Link>
+          <Link className={styles.menuItem} href="/#about">
+            edit
+          </Link>
+          <Link className={styles.menuItem} href="/#where">
+            view
+          </Link>
+        </div>
 
         <nav className={styles.nav} aria-label="主导航">
-          <Link className={styles.link} href="/#projects">
-            项目
+          <Link className={styles.link} href="/#project">
+            Stuff I’ve done
           </Link>
-          <Link className={styles.link} href="/about">
-            关于我
-          </Link>
-          <a className={styles.link} href="#contact">
-            联系方式
+          <a className={styles.link} href="/resume.pdf" target="_blank" rel="noreferrer">
+            not designresume
           </a>
         </nav>
       </div>
