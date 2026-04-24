@@ -10,9 +10,9 @@ export default function Home() {
       <SiteHeader />
       <main className={styles.main}>
         <header className={styles.hero}>
-          <StickerTitle className={styles.title} text="Jaemin" />
+          <StickerTitle className={styles.title} text="Jiamin Li" />
           <p className={styles.subtitle}>
-            jaemin is a product designer (UI/UX) based in Seoul — this is an exhibition of my works :DDD
+            Jiamin is a product designer (UI/UX) based in Seoul — this is an exhibition of my works :DDD
           </p>
           <p className={styles.tagline}>
             AI is smart enough. Let’s just point and talk to it ;) I use it to speed up research, writing, and iteration —

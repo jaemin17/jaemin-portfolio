@@ -11,7 +11,7 @@ export function StickerTitle({
     <h1 className={[styles.wrap, className].filter(Boolean).join(" ")} aria-label={text}>
       <svg
         className={styles.svg}
-        viewBox="0 0 900 220"
+        viewBox="-60 0 960 220"
         role="img"
         aria-hidden="true"
         preserveAspectRatio="xMinYMid meet"
@@ -35,10 +35,10 @@ export function StickerTitle({
           dominantBaseline="middle"
           fontSize="170"
           fontWeight="900"
-          fontFamily="var(--font-geist-sans), system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial"
+          fontFamily="var(--font-kalam), var(--font-geist-sans), system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial"
           fill="#0b0b0b"
           stroke="#0b0b0b"
-          strokeWidth="34"
+          strokeWidth="38"
           strokeLinejoin="round"
           paintOrder="stroke fill"
           filter="url(#stickerShadow)"
@@ -53,10 +53,10 @@ export function StickerTitle({
           dominantBaseline="middle"
           fontSize="170"
           fontWeight="900"
-          fontFamily="var(--font-geist-sans), system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial"
+          fontFamily="var(--font-kalam), var(--font-geist-sans), system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial"
           fill="#0b0b0b"
           stroke="#ffffff"
-          strokeWidth="24"
+          strokeWidth="28"
           strokeLinejoin="round"
           paintOrder="stroke fill"
         >
@@ -70,7 +70,7 @@ export function StickerTitle({
           dominantBaseline="middle"
           fontSize="170"
           fontWeight="900"
-          fontFamily="var(--font-geist-sans), system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial"
+          fontFamily="var(--font-kalam), var(--font-geist-sans), system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial"
           fill="#0b0b0b"
         >
           {text}
