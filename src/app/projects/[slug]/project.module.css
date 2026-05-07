@@ -92,7 +92,7 @@
 }
 
 .eyebrow {
-  color: #22724e;
+  color: #3f3d39;
   font-size: 12px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -101,7 +101,7 @@
 }
 
 .featuredHero .title {
-  color: #1f6a4a;
+  color: #171614;
   font-size: 32px;
   letter-spacing: -0.03em;
   margin-left: auto;
@@ -139,7 +139,7 @@
 
 .caseLead blockquote {
   margin-top: 20px;
-  color: #1f6a4a;
+  color: #171614;
   font-size: 22px;
   line-height: 1.55;
   letter-spacing: -0.02em;
@@ -157,11 +157,8 @@
   min-height: 360px;
   border-radius: 8px;
   border: 2px solid #ff8b73;
-  background:
-    radial-gradient(180px 90px at 18% 80%, rgba(255, 173, 139, 0.28), transparent 72%),
-    radial-gradient(220px 120px at 78% 20%, rgba(103, 190, 218, 0.22), transparent 72%),
-    linear-gradient(135deg, rgba(255, 242, 231, 0.95), rgba(255, 252, 243, 0.98));
-  color: #16486c;
+  background: rgba(255, 248, 240, 0.96);
+  color: #2d2b28;
   overflow: hidden;
   position: relative;
   display: grid;
@@ -180,10 +177,7 @@
   inset: auto -8% -32% 18%;
   height: 58%;
   border-radius: 999px 999px 0 0;
-  background:
-    radial-gradient(90px 60px at 18% 18%, rgba(255, 255, 255, 0.94), transparent 70%),
-    radial-gradient(120px 80px at 40% 8%, rgba(255, 255, 255, 0.9), transparent 70%),
-    radial-gradient(130px 90px at 65% 26%, rgba(255, 255, 255, 0.86), transparent 72%);
+  background: rgba(255, 255, 255, 0.7);
   opacity: 0.72;
 }
 
@@ -193,10 +187,7 @@
   width: 150px;
   height: 96px;
   border-radius: 16px;
-  background:
-    linear-gradient(135deg, transparent 0 42%, rgba(255, 139, 115, 0.72) 42% 50%, transparent 50%),
-    linear-gradient(45deg, transparent 0 42%, rgba(77, 161, 207, 0.6) 42% 50%, transparent 50%);
-  background-size: 28px 28px;
+  background: rgba(255, 255, 255, 0.36);
   opacity: 0.5;
 }
 
@@ -209,14 +200,14 @@
 
 .caseText h2,
 .caseReflection h2 {
-  color: #22724e;
+  color: #3f3d39;
   font-size: 15px;
   line-height: 1.45;
   letter-spacing: -0.02em;
 }
 
 .caseText h3 {
-  color: #1f6a4a;
+  color: #171614;
   font-size: 18px;
   line-height: 1.45;
   letter-spacing: -0.02em;
@@ -234,7 +225,7 @@
 .caseText ul {
   margin-top: 12px;
   padding-left: 18px;
-  color: #1f6a4a;
+  color: #171614;
   font-size: 13px;
   line-height: 1.8;
   font-weight: 650;
@@ -259,7 +250,7 @@
   left: 28px;
   top: 28px;
   width: 220px;
-  color: #16486c;
+  color: #2d2b28;
   font-size: 18px;
   line-height: 1.35;
   font-weight: 700;
@@ -271,7 +262,7 @@
   width: 150px;
   min-height: 260px;
   border-radius: 20px;
-  background: linear-gradient(180deg, #ffffff, #f7fbff);
+  background: #ffffff;
   border: 3px solid #2c8bc1;
   box-shadow: 0 18px 30px rgba(49, 116, 153, 0.18);
   padding: 22px 14px;
@@ -283,7 +274,7 @@
 
 .mockPhoneTall span,
 .mockPhoneTilt span {
-  color: #1f6a4a;
+  color: #171614;
   font-size: 12px;
   font-weight: 800;
 }
@@ -293,7 +284,7 @@
   display: block;
   height: 42px;
   border-radius: 6px;
-  background: linear-gradient(90deg, #ffe0d3, #dff3fb);
+  background: #f8ded7;
   border: 1px solid rgba(44, 139, 193, 0.18);
 }
 
@@ -339,7 +330,7 @@
   min-height: 120px;
   display: grid;
   place-items: center;
-  color: #16486c;
+  color: #2d2b28;
   font-weight: 800;
 }
 
@@ -361,11 +352,11 @@
 .topCard {
   min-height: 210px;
   padding: 18px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.86), rgba(255, 238, 224, 0.82));
+  background: rgba(255, 255, 255, 0.86);
 }
 
 .topCard span {
-  color: #16486c;
+  color: #2d2b28;
   font-size: 13px;
   font-weight: 800;
 }
@@ -375,7 +366,7 @@
   height: 46px;
   border-radius: 6px;
   margin-top: 18px;
-  background: linear-gradient(90deg, #ffd0bf, #d6eef7);
+  background: #ffd0bf;
   border: 1px solid rgba(44, 139, 193, 0.16);
 }
 
@@ -387,11 +378,9 @@
   min-height: 140px;
   display: grid;
   place-items: center;
-  color: #16486c;
+  color: #2d2b28;
   font-weight: 800;
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(255, 242, 231, 0.82)),
-    repeating-linear-gradient(135deg, rgba(99, 182, 220, 0.18) 0 8px, transparent 8px 18px);
+  background: rgba(255, 255, 255, 0.82);
 }
 
 .visualReview {
@@ -401,8 +390,7 @@
 
 .reviewCard {
   min-height: 220px;
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(255, 245, 237, 0.96));
+  background: rgba(255, 255, 255, 0.95);
   transform: rotate(-8deg);
 }
 
@@ -414,7 +402,7 @@
   top: 28px;
   height: 78px;
   border-radius: 8px;
-  background: linear-gradient(135deg, #ffd0bf, #d8f0f8);
+  background: #ffd0bf;
 }
 
 .reviewCard::after {
@@ -445,9 +433,9 @@
   min-height: 90px;
   display: grid;
   place-items: center;
-  color: #16486c;
+  color: #2d2b28;
   font-weight: 800;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.84), rgba(229, 247, 252, 0.82));
+  background: rgba(255, 255, 255, 0.84);
 }
 
 @media (max-width: 760px) {
