@@ -17,8 +17,8 @@ export default function Home() {
             <span className={styles.heroTagPill}>Hangzhou · Open to work</span>
           </div>
           <StickerTitle className={styles.title} text="Jiamin Li" />
-          <div className={styles.stickerSubWrap} aria-label="subtitle sticker">
-            <span className={styles.stickerSub}>产品设计 × 独立开发（0→1）</span>
+          <div className={styles.stickerSubWrap} aria-label="identity stickers">
+            <span className={styles.stickerSub}>产品设计 · 独立开发（0→1）</span>
           </div>
           <p className={styles.subtitle}>
             我是一名关注产品体验与交互设计的设计师，擅长把模糊需求拆成清晰的问题、流程和界面。

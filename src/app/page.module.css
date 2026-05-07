@@ -75,7 +75,8 @@
 .stickerSubWrap {
   display: flex;
   justify-content: center;
-  margin-top: -14px;
+  align-items: center;
+  margin-top: -6px;
   margin-bottom: 12px;
   position: relative;
   z-index: 1;
@@ -91,7 +92,7 @@
   font-size: 22px;
   font-weight: 900;
   letter-spacing: -0.02em;
-  transform: rotate(-2.2deg);
+  transform: translateY(2px) rotate(-2deg);
   box-shadow: 0 10px 0 rgba(0, 0, 0, 0.18);
   text-transform: none;
   line-height: 1;
@@ -100,7 +101,7 @@
 }
 
 .stickerSub:hover {
-  transform: translateY(-5px) rotate(-3.2deg);
+  transform: translateY(-3px) rotate(-3deg);
   box-shadow: 0 13px 0 rgba(0, 0, 0, 0.16);
 }
 
