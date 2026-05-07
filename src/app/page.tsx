@@ -50,13 +50,18 @@ export default function Home() {
             package launch assets. On the side, I like making interfaces a bit more joyful :D
           </p>
           <ol className={styles.workList}>
-            {projects.map((p) => (
+            {projects.map((p, idx) => (
               <li key={p.slug} className={styles.workItem}>
                 <Link className={styles.workLink} href={`/projects/${p.slug}`}>
-                  <span className={styles.workTitle}>{p.title}</span>
-                  <span className={styles.workMeta}>
-                    {p.subtitle} <span className={styles.dot}>·</span>{" "}
-                    {p.tags.slice(0, 3).join(", ")}
+                  <span className={styles.pin} aria-hidden="true" />
+                  <span className={styles.workNote}>
+                    <span className={styles.workIndex}>{String(idx + 1).padStart(2, "0")}</span>
+                    <span className={styles.workTitle}>{p.title}</span>
+                    <span className={styles.workMeta}>
+                      {p.subtitle} <span className={styles.dot}>·</span>{" "}
+                      {p.tags.slice(0, 3).join(", ")}
+                    </span>
+                    <span className={styles.workMore}>Open case →</span>
                   </span>
                 </Link>
               </li>
