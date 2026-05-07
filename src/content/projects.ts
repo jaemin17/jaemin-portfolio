@@ -20,6 +20,13 @@ export type Project = {
     uxDecisions: string[];
     implementation: string[];
     reflection: string[];
+    visualSections: Array<{
+      label: string;
+      title: string;
+      body: string;
+      notes: string[];
+      visual: "overview" | "structure" | "focus" | "modules" | "review" | "build";
+    }>;
   };
   sections: Array<{
     title: string;
@@ -83,6 +90,50 @@ export const projects: Project[] = [
       reflection: [
         "Selfly 让我更明确地意识到，产品的“感觉”不是表层装饰。对于自我记录类产品来说，用户是否愿意回来，取决于产品是否让人感到安全、轻松和被陪伴。",
         "这个项目也训练了我从模糊感受出发，持续拆解问题、做出设计判断，并把想法推进到真实产品的能力。",
+      ],
+      visualSections: [
+        {
+          label: "概览",
+          title: "一个不把自我记录变成待办清单的产品",
+          body: "Selfly 的核心不是让用户完成更多任务，而是帮助用户持续看见自己在意的事。页面节奏围绕“记录、整理、回看”展开，让自我观察变得轻一点。",
+          notes: ["个人需求出发", "温柔、安静、有陪伴感", "从想法推进到真实 App"],
+          visual: "overview",
+        },
+        {
+          label: "产品结构",
+          title: "用 Today / Explore / Review 建立清晰路径",
+          body: "我把 Selfly 拆成三个稳定入口：今日负责聚焦，探索负责承载不同形式的记录，回顾负责把过去的内容重新带回用户面前。",
+          notes: ["Today: Focus, but not pressure", "Explore: Record in different forms", "Review: Return to yourself"],
+          visual: "structure",
+        },
+        {
+          label: "关键决策 01",
+          title: "Top 3 限制让今日页更轻，而不是更满",
+          body: "我没有把首页设计成无限任务列表，而是让用户只选择三件最重要的事。限制本身就是设计：它减少压力，也让用户更容易判断什么真正重要。",
+          notes: ["减少任务堆积", "强调选择", "保留完成反馈"],
+          visual: "focus",
+        },
+        {
+          label: "关键决策 02",
+          title: "模块化记录让不同类型的想法有不同容器",
+          body: "自我记录不只有长文字。Selfly 支持清单、计划、日记和图册，也提供灵感模板，让用户可以用更贴近内容本身的方式开始记录。",
+          notes: ["清单 / 计划 / 日记 / 图册", "灵感模板", "自定义模块"],
+          visual: "modules",
+        },
+        {
+          label: "关键决策 03",
+          title: "回顾不是统计，而是重新看见自己",
+          body: "回顾页用卡片把过去写下的内容重新组织出来。它不是一个数据报表，而是让用户在轻松翻看中重新连接自己的想法和经历。",
+          notes: ["卡片式浏览", "低压力回看", "记录变成理解自己的材料"],
+          visual: "review",
+        },
+        {
+          label: "落地",
+          title: "把有温度的体验做成真实可用的 iOS App",
+          body: "为了让体验成立，我也完成了 SwiftUI 界面、SwiftData 数据模型、iCloud 同步、StoreKit 订阅、多语言和数据重置等真实产品能力。",
+          notes: ["SwiftUI", "SwiftData + iCloud", "StoreKit / 多语言 / 数据迁移"],
+          visual: "build",
+        },
       ],
     },
     sections: [

@@ -84,131 +84,426 @@
 .featuredHero {
   position: relative;
   overflow: hidden;
-  padding: 22px;
-  border: 1px solid var(--border);
-  border-radius: 22px;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.82), rgba(255, 246, 230, 0.72));
-  box-shadow: var(--shadow);
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 42px 0 28px;
+  text-align: center;
+  border-bottom: 0;
 }
 
 .eyebrow {
-  color: var(--muted);
+  color: #22724e;
   font-size: 12px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   margin-bottom: 10px;
+  font-weight: 700;
 }
 
-.featuredIntro {
-  display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(260px, 0.9fr);
-  gap: 18px;
-  padding: 24px 0;
+.featuredHero .title {
+  color: #1f6a4a;
+  font-size: 32px;
+  letter-spacing: -0.03em;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 720px;
+}
+
+.featuredHero .subtitle {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 62ch;
+}
+
+.featuredHero .meta {
+  justify-content: center;
+}
+
+.featuredHero .tags {
+  justify-content: center;
+}
+
+.caseLead {
+  max-width: 760px;
+  margin: 10px auto 48px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border);
+}
+
+.caseLead p {
+  color: var(--fg);
+  font-size: 15px;
+  line-height: 1.9;
+  max-width: 68ch;
+}
+
+.caseLead blockquote {
+  margin-top: 20px;
+  color: #1f6a4a;
+  font-size: 22px;
+  line-height: 1.55;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+
+.caseSection {
+  max-width: 760px;
+  margin: 0 auto 56px;
+  padding-bottom: 48px;
   border-bottom: 1px solid var(--border);
 }
 
-.problem {
-  margin-top: 10px;
-  max-width: 70ch;
-  color: var(--fg);
-  font-size: 20px;
-  line-height: 1.55;
+.visualPlate {
+  min-height: 360px;
+  border-radius: 8px;
+  border: 2px solid #ff8b73;
+  background:
+    radial-gradient(180px 90px at 18% 80%, rgba(255, 173, 139, 0.28), transparent 72%),
+    radial-gradient(220px 120px at 78% 20%, rgba(103, 190, 218, 0.22), transparent 72%),
+    linear-gradient(135deg, rgba(255, 242, 231, 0.95), rgba(255, 252, 243, 0.98));
+  color: #16486c;
+  overflow: hidden;
+  position: relative;
+  display: grid;
+  place-items: center;
+  margin-bottom: 26px;
+}
+
+.visualPlate::before,
+.visualPlate::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+}
+
+.visualPlate::before {
+  inset: auto -8% -32% 18%;
+  height: 58%;
+  border-radius: 999px 999px 0 0;
+  background:
+    radial-gradient(90px 60px at 18% 18%, rgba(255, 255, 255, 0.94), transparent 70%),
+    radial-gradient(120px 80px at 40% 8%, rgba(255, 255, 255, 0.9), transparent 70%),
+    radial-gradient(130px 90px at 65% 26%, rgba(255, 255, 255, 0.86), transparent 72%);
+  opacity: 0.72;
+}
+
+.visualPlate::after {
+  right: 40px;
+  bottom: 34px;
+  width: 150px;
+  height: 96px;
+  border-radius: 16px;
+  background:
+    linear-gradient(135deg, transparent 0 42%, rgba(255, 139, 115, 0.72) 42% 50%, transparent 50%),
+    linear-gradient(45deg, transparent 0 42%, rgba(77, 161, 207, 0.6) 42% 50%, transparent 50%);
+  background-size: 28px 28px;
+  opacity: 0.5;
+}
+
+.caseText {
+  display: grid;
+  grid-template-columns: 132px minmax(0, 1fr);
+  gap: 28px;
+  align-items: start;
+}
+
+.caseText h2,
+.caseReflection h2 {
+  color: #22724e;
+  font-size: 15px;
+  line-height: 1.45;
   letter-spacing: -0.02em;
 }
 
-.phonePanel {
-  min-height: 320px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid var(--border);
-  border-radius: 22px;
-  background: rgba(255, 255, 255, 0.58);
-}
-
-.phoneFrame {
-  width: min(220px, 70%);
-  min-height: 280px;
-  padding: 22px 16px;
-  border: 2px solid rgba(17, 18, 23, 0.18);
-  border-radius: 34px;
-  background: linear-gradient(180deg, #fff0cc, #fffaf2);
-  box-shadow: 0 18px 34px rgba(17, 18, 23, 0.1);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 12px;
-}
-
-.phoneFrame span {
-  display: block;
-  padding: 12px;
-  border-radius: 16px;
-  background: rgba(255, 255, 255, 0.76);
-  border: 1px solid rgba(17, 18, 23, 0.08);
-  color: var(--fg);
-  font-size: 13px;
-  line-height: 1.45;
-}
-
-.strategyGrid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 12px;
-}
-
-.strategyCard {
-  padding: 16px;
-  border: 1px solid var(--border);
-  border-radius: 18px;
-  background: rgba(255, 255, 255, 0.64);
-  box-shadow: var(--shadow);
-}
-
-.strategyTitle {
-  display: inline-flex;
-  margin-bottom: 10px;
-  color: var(--muted);
-  font-size: 12px;
-}
-
-.strategyCard h3 {
+.caseText h3 {
+  color: #1f6a4a;
   font-size: 18px;
-  line-height: 1.25;
-  letter-spacing: -0.03em;
+  line-height: 1.45;
+  letter-spacing: -0.02em;
   margin-bottom: 10px;
 }
 
-.strategyCard p {
-  color: var(--muted);
+.caseText p,
+.caseReflection p {
+  color: var(--fg);
+  opacity: 0.88;
   font-size: 14px;
-  line-height: 1.7;
+  line-height: 1.9;
 }
 
-.featuredSplit {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 18px;
-  padding: 20px 0;
+.caseText ul {
+  margin-top: 12px;
+  padding-left: 18px;
+  color: #1f6a4a;
+  font-size: 13px;
+  line-height: 1.8;
+  font-weight: 650;
+}
+
+.caseReflection {
+  max-width: 760px;
+  margin: 0 auto 48px;
+  padding-bottom: 48px;
   border-bottom: 1px solid var(--border);
+  display: grid;
+  grid-template-columns: 132px minmax(0, 1fr);
+  gap: 28px;
+}
+
+.caseReflection p + p {
+  margin-top: 14px;
+}
+
+.visualCaption {
+  position: absolute;
+  left: 28px;
+  top: 28px;
+  width: 220px;
+  color: #16486c;
+  font-size: 18px;
+  line-height: 1.35;
+  font-weight: 700;
+  z-index: 1;
+}
+
+.mockPhoneTall,
+.mockPhoneTilt {
+  width: 150px;
+  min-height: 260px;
+  border-radius: 20px;
+  background: linear-gradient(180deg, #ffffff, #f7fbff);
+  border: 3px solid #2c8bc1;
+  box-shadow: 0 18px 30px rgba(49, 116, 153, 0.18);
+  padding: 22px 14px;
+  display: grid;
+  align-content: start;
+  gap: 12px;
+  z-index: 1;
+}
+
+.mockPhoneTall span,
+.mockPhoneTilt span {
+  color: #1f6a4a;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.mockPhoneTall i,
+.mockPhoneTilt i {
+  display: block;
+  height: 42px;
+  border-radius: 6px;
+  background: linear-gradient(90deg, #ffe0d3, #dff3fb);
+  border: 1px solid rgba(44, 139, 193, 0.18);
+}
+
+.mockPhoneTilt {
+  position: absolute;
+  right: 140px;
+  transform: rotate(-14deg) translateY(12px);
+}
+
+.visualOverview .mockPhoneTall {
+  transform: rotate(8deg) translateX(60px);
+}
+
+.visualFlow,
+.visualTopThree,
+.visualModules,
+.visualReview,
+.visualBuild {
+  width: min(88%, 600px);
+  display: grid;
+  gap: 18px;
+}
+
+.visualFlow {
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+}
+
+.flowNode,
+.moduleTile,
+.topCard,
+.reviewCard,
+.visualBuild span {
+  border: 2px solid #ff8b73;
+  background: rgba(255, 255, 255, 0.74);
+  border-radius: 6px;
+  box-shadow: 0 18px 34px rgba(49, 116, 153, 0.12);
+  position: relative;
+  z-index: 1;
+}
+
+.flowNode {
+  min-height: 120px;
+  display: grid;
+  place-items: center;
+  color: #16486c;
+  font-weight: 800;
+}
+
+.flowNode::after {
+  content: "";
+  position: absolute;
+  left: 18%;
+  right: 18%;
+  bottom: 22px;
+  height: 8px;
+  border-radius: 999px;
+  background: #63b6dc;
+}
+
+.visualTopThree {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.topCard {
+  min-height: 210px;
+  padding: 18px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.86), rgba(255, 238, 224, 0.82));
+}
+
+.topCard span {
+  color: #16486c;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.topCard i {
+  display: block;
+  height: 46px;
+  border-radius: 6px;
+  margin-top: 18px;
+  background: linear-gradient(90deg, #ffd0bf, #d6eef7);
+  border: 1px solid rgba(44, 139, 193, 0.16);
+}
+
+.visualModules {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.moduleTile {
+  min-height: 140px;
+  display: grid;
+  place-items: center;
+  color: #16486c;
+  font-weight: 800;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(255, 242, 231, 0.82)),
+    repeating-linear-gradient(135deg, rgba(99, 182, 220, 0.18) 0 8px, transparent 8px 18px);
+}
+
+.visualReview {
+  grid-template-columns: repeat(3, 150px);
+  justify-content: center;
+}
+
+.reviewCard {
+  min-height: 220px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(255, 245, 237, 0.96));
+  transform: rotate(-8deg);
+}
+
+.reviewCard::before {
+  content: "";
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  top: 28px;
+  height: 78px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #ffd0bf, #d8f0f8);
+}
+
+.reviewCard::after {
+  content: "";
+  position: absolute;
+  left: 24px;
+  right: 34px;
+  bottom: 34px;
+  height: 10px;
+  border-radius: 999px;
+  background: #63b6dc;
+  box-shadow: 0 18px 0 rgba(99, 182, 220, 0.55), 0 36px 0 rgba(255, 139, 115, 0.5);
+}
+
+.reviewCard:nth-child(2) {
+  transform: rotate(4deg) translateY(-12px);
+}
+
+.reviewCard:nth-child(3) {
+  transform: rotate(10deg);
+}
+
+.visualBuild {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.visualBuild span {
+  min-height: 90px;
+  display: grid;
+  place-items: center;
+  color: #16486c;
+  font-weight: 800;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.84), rgba(229, 247, 252, 0.82));
 }
 
 @media (max-width: 760px) {
-  .featuredIntro,
-  .featuredSplit {
+  .featuredHero {
+    padding-top: 26px;
+    text-align: left;
+  }
+
+  .featuredHero .title {
+    font-size: 28px;
+  }
+
+  .featuredHero .meta,
+  .featuredHero .tags {
+    justify-content: flex-start;
+  }
+
+  .caseText,
+  .caseReflection {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .visualPlate {
+    min-height: 280px;
+  }
+
+  .caseLead blockquote {
+    font-size: 19px;
+  }
+
+  .visualCaption {
+    position: static;
+    width: auto;
+    padding: 24px 24px 0;
+  }
+
+  .mockPhoneTilt {
+    display: none;
+  }
+
+  .visualFlow,
+  .visualTopThree,
+  .visualModules,
+  .visualReview,
+  .visualBuild {
+    grid-template-columns: 1fr;
+    width: min(82%, 320px);
+  }
+
+  .visualReview {
     grid-template-columns: 1fr;
   }
 
-  .strategyGrid {
-    grid-template-columns: 1fr;
-  }
-
-  .phonePanel {
-    min-height: 260px;
-  }
-
-  .problem {
-    font-size: 18px;
+  .reviewCard:nth-child(n) {
+    transform: none;
   }
 }
 

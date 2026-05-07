@@ -15,6 +15,76 @@ export default async function ProjectDetailPage({
   if (!project) notFound();
   const featured = project.featured;
 
+  function visualPlate(visual: NonNullable<typeof featured>["visualSections"][number]["visual"]) {
+    switch (visual) {
+      case "overview":
+        return (
+          <div className={styles.visualOverview}>
+            <div className={styles.mockPhoneTall}>
+              <span>Today</span>
+              <i />
+              <i />
+              <i />
+            </div>
+            <div className={styles.mockPhoneTilt}>
+              <span>Review</span>
+              <i />
+              <i />
+            </div>
+            <div className={styles.visualCaption}>A gentle system for daily focus and self-reflection</div>
+          </div>
+        );
+      case "structure":
+        return (
+          <div className={styles.visualFlow}>
+            {["Today", "Explore", "Review"].map((item) => (
+              <div key={item} className={styles.flowNode}>
+                <span>{item}</span>
+              </div>
+            ))}
+          </div>
+        );
+      case "focus":
+        return (
+          <div className={styles.visualTopThree}>
+            {[1, 2, 3].map((item) => (
+              <div key={item} className={styles.topCard}>
+                <span>0{item}</span>
+                <i />
+                <i />
+              </div>
+            ))}
+          </div>
+        );
+      case "modules":
+        return (
+          <div className={styles.visualModules}>
+            {["清单", "计划", "日记", "图册"].map((item) => (
+              <div key={item} className={styles.moduleTile}>
+                <span>{item}</span>
+              </div>
+            ))}
+          </div>
+        );
+      case "review":
+        return (
+          <div className={styles.visualReview}>
+            {[0, 1, 2].map((item) => (
+              <div key={item} className={styles.reviewCard} />
+            ))}
+          </div>
+        );
+      case "build":
+        return (
+          <div className={styles.visualBuild}>
+            {["SwiftUI", "SwiftData", "iCloud", "StoreKit"].map((item) => (
+              <span key={item}>{item}</span>
+            ))}
+          </div>
+        );
+    }
+  }
+
   return (
     <>
       <SiteHeader />
@@ -47,75 +117,52 @@ export default async function ProjectDetailPage({
 
         {featured ? (
           <>
-            <section className={styles.featuredIntro}>
-              <div>
-                <h2 className={styles.h2}>起点</h2>
-                <p className={styles.p}>{featured.origin}</p>
-                <h2 className={styles.h2}>设计问题</h2>
-                <p className={styles.problem}>{featured.problem}</p>
-              </div>
-              <aside className={styles.phonePanel} aria-label={featured.visualLabel}>
-                <div className={styles.phoneFrame}>
-                  {featured.visualNotes.map((note) => (
-                    <span key={note}>{note}</span>
-                  ))}
+            <section className={styles.caseLead}>
+              <p>{featured.origin}</p>
+              <blockquote>{featured.problem}</blockquote>
+            </section>
+
+            {featured.visualSections.map((section) => (
+              <section key={section.title} className={styles.caseSection}>
+                <div className={styles.visualPlate} aria-label={section.title}>
+                  {visualPlate(section.visual)}
                 </div>
-              </aside>
-            </section>
+                <div className={styles.caseText}>
+                  <h2>{section.label}</h2>
+                  <div>
+                    <h3>{section.title}</h3>
+                    <p>{section.body}</p>
+                    <ul>
+                      {section.notes.map((note) => (
+                        <li key={note}>{note}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </section>
+            ))}
 
-            <section className={styles.section}>
-              <h2 className={styles.h2}>产品策略</h2>
-              <div className={styles.strategyGrid}>
-                {featured.strategy.map((item) => (
-                  <article key={item.title} className={styles.strategyCard}>
-                    <span className={styles.strategyTitle}>{item.title}</span>
-                    <h3>{item.principle}</h3>
-                    <p>{item.description}</p>
-                  </article>
-                ))}
-              </div>
-            </section>
-
-            <section className={styles.featuredSplit}>
-              <div>
-                <h2 className={styles.h2}>关键 UX 决策</h2>
-                <ul className={styles.list}>
-                  {featured.uxDecisions.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-              </div>
-              <div>
-                <h2 className={styles.h2}>落地实现</h2>
-                <ul className={styles.list}>
-                  {featured.implementation.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-              </div>
-            </section>
-
-            <section className={styles.section}>
-              <h2 className={styles.h2}>项目反思</h2>
+            <section className={styles.caseReflection}>
+              <h2>项目反思</h2>
               {featured.reflection.map((item) => (
-                <p key={item} className={styles.p}>
-                  {item}
-                </p>
+                <p key={item}>{item}</p>
               ))}
             </section>
           </>
         ) : null}
 
-        <section className={styles.section}>
-          <h2 className={styles.h2}>亮点</h2>
-          <ul className={styles.list}>
-            {project.highlights.map((h) => (
-              <li key={h}>{h}</li>
-            ))}
-          </ul>
-        </section>
+        {!featured ? (
+          <section className={styles.section}>
+            <h2 className={styles.h2}>亮点</h2>
+            <ul className={styles.list}>
+              {project.highlights.map((h) => (
+                <li key={h}>{h}</li>
+              ))}
+            </ul>
+          </section>
+        ) : null}
 
-        {(!featured ? project.sections : project.sections.slice(0, 1)).map((s) => (
+        {(!featured ? project.sections : []).map((s) => (
           <section key={s.title} className={styles.section}>
             <h2 className={styles.h2}>{s.title}</h2>
             {s.paragraphs?.map((p) => (
