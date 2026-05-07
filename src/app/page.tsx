@@ -18,7 +18,7 @@ export default function Home() {
           </div>
           <StickerTitle className={styles.title} text="Jiamin Li" />
           <div className={styles.stickerSubWrap} aria-label="subtitle sticker">
-            <span className={styles.stickerSub}>Product Designer (UI/UX)</span>
+            <span className={styles.stickerSub}>产品设计 × 独立开发（0→1）</span>
           </div>
           <p className={styles.subtitle}>
             Jiamin is a product designer (UI/UX) based in Seoul — this is an exhibition of my works :DDD
