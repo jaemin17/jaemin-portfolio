@@ -6,6 +6,21 @@ export type Project = {
   role: string;
   tags: string[];
   highlights: string[];
+  featured?: {
+    eyebrow: string;
+    origin: string;
+    problem: string;
+    visualLabel: string;
+    visualNotes: string[];
+    strategy: Array<{
+      title: string;
+      principle: string;
+      description: string;
+    }>;
+    uxDecisions: string[];
+    implementation: string[];
+    reflection: string[];
+  };
   sections: Array<{
     title: string;
     bullets?: string[];
@@ -15,48 +30,66 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    slug: "ai-app-0-to-launch",
-    title: "AI-assisted solo build: an app from 0 → launch",
-    subtitle: "From an idea to something downloadable — flows, UI, system, iteration, and launch assets",
-    timeframe: "2026",
-    role: "Solo product designer (AI as a collaborator)",
-    tags: ["UI/UX", "Product thinking", "Design system", "AI workflow", "Launch"],
+    slug: "selfly-ios-app",
+    title: "Selfly：从 0 到 1 设计并开发一款有温度的自我记录 App",
+    subtitle: "一款面向自我观察和每日聚焦的 iOS App，帮助用户记录重要的事、整理关于自己的想法，并在回顾中重新看见自己。",
+    timeframe: "2025–2026",
+    role: "Solo product designer & iOS developer",
+    tags: ["UX Design", "Product Design", "iOS", "SwiftUI", "0→1"],
     highlights: [
-      "From 0→1: turned vague needs into testable goals + key task flows",
-      "From messy→solid: built a reusable system to iterate fast (without looking cheap)",
-      "From design→store: screenshots, copy, description, and a launch checklist",
+      "从个人真实需求出发，把“更温柔地理解自己”转化为 Today / Explore / Review 的产品结构。",
+      "设计 Top 3、模块化记录和卡片式回顾，让自我记录不变成另一个待办清单。",
+      "独立完成 SwiftUI、SwiftData、iCloud 同步、订阅和多语言等真实 App 落地工作。",
     ],
+    featured: {
+      eyebrow: "Featured UX case study",
+      origin:
+        "Selfly 起源于我自己的需求：我想要一个更温柔地理解自己的地方。它可以容纳每天最重要的事、零散的观察、日记、计划和视觉灵感，但不会把自我探索变成又一个冷冰冰的效率清单。",
+      problem:
+        "我们如何帮助用户持续看见自己在意的事，而不是把自我记录变成另一个待办清单？",
+      visualLabel: "App experience map",
+      visualNotes: ["Today · Top 3", "Explore · 多种记录模块", "Review · 卡片式回顾"],
+      strategy: [
+        {
+          title: "今日",
+          principle: "Focus, but not pressure",
+          description:
+            "今日页只强调最重要的三件事，而不是无限增长的任务列表。Top 3 的限制让用户更容易聚焦，也减少了被任务压迫的感觉。",
+        },
+        {
+          title: "探索",
+          principle: "Record in different forms",
+          description:
+            "自我记录不只有一种形式。Selfly 用清单、计划、图册和日记承载不同类型的想法，也提供灵感模板帮助用户开始。",
+        },
+        {
+          title: "回顾",
+          principle: "Return to yourself",
+          description:
+            "记录不是结束。回顾页把过去写下的内容重新组织成卡片，让用户可以轻松翻看、重新连接自己的想法和经历。",
+        },
+      ],
+      uxDecisions: [
+        "用 Top 3 替代普通待办列表，强调选择和聚焦，而不是堆积任务。",
+        "用模块化记录承载不同类型的自我探索，避免把所有内容塞进同一个输入框。",
+        "用卡片式回顾让记录重新出现，帮助用户从过去的内容中理解自己。",
+        "视觉上使用柔和色彩、轻量反馈和温暖的空状态，让 App 不像工具，更像一个可以长期回来的地方。",
+      ],
+      implementation: [
+        "使用 SwiftUI 完成主要界面和交互。",
+        "使用 SwiftData 建立任务、记录模块、日记、图册和归档的数据模型。",
+        "加入 iCloud 同步、数据重置、多语言切换和 StoreKit 订阅，让设计成为真实可用的产品。",
+      ],
+      reflection: [
+        "Selfly 让我更明确地意识到，产品的“感觉”不是表层装饰。对于自我记录类产品来说，用户是否愿意回来，取决于产品是否让人感到安全、轻松和被陪伴。",
+        "这个项目也训练了我从模糊感受出发，持续拆解问题、做出设计判断，并把想法推进到真实产品的能力。",
+      ],
+    },
     sections: [
       {
-        title: "Overview",
+        title: "项目简介",
         paragraphs: [
-          "A solo end-to-end app project with a simple goal: make it real and make it launchable. AI helped me explore and iterate faster — but key product decisions stayed grounded in user value, hierarchy, usability, and feasibility.",
-        ],
-      },
-      {
-        title: "Problem & goals",
-        bullets: [
-          "Core problem: one sentence (e.g. users struggle to ___ in ___ scenario)",
-          "Target users: who, when, and why this matters",
-          "Success signals: activation, retention, conversion, or a concrete validation plan",
-        ],
-      },
-      {
-        title: "Process (timeline)",
-        bullets: [
-          "Research: competitor scan, lightweight user input, synthesizing pain points (AI for faster synthesis)",
-          "Define: journey, IA, and the key task flow",
-          "Prototype: low → high fidelity, with real states (empty/error/loading)",
-          "System: typography, color, spacing, components (buttons/inputs/cards/lists/modals)",
-          "Validation: walkthroughs / small tests, then iterate",
-        ],
-      },
-      {
-        title: "Outcome & deliverables",
-        bullets: [
-          "Launch assets: store copy, keywords, screenshots, icons, privacy notes",
-          "Design handoff: clean Figma structure, components, specs, and a checklist",
-          "Reflection: what worked, what didn’t, and what I’d do next",
+          "Selfly 是一个面向自我观察和个人成长的 iOS App。它不是传统待办工具，而是把每日重点、长期自我记录、愿景板、日记和回顾串成一个连续体验。",
         ],
       },
     ],
