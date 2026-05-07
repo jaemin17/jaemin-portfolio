@@ -20,6 +20,7 @@ export type Project = {
     uxDecisions: string[];
     implementation: string[];
     reflection: string[];
+    appDownloadUrl?: string;
     visualSections: Array<{
       label: string;
       title: string;
@@ -91,6 +92,7 @@ export const projects: Project[] = [
         "Selfly 让我更明确地意识到，产品的“感觉”不是表层装饰。对于自我记录类产品来说，用户是否愿意回来，取决于产品是否让人感到安全、轻松和被陪伴。",
         "这个项目也训练了我从模糊感受出发，持续拆解问题、做出设计判断，并把想法推进到真实产品的能力。",
       ],
+      appDownloadUrl: "https://apps.apple.com/cn/app/selfly%E6%97%A5%E8%AE%B0/id6762545235",
       visualSections: [
         {
           label: "概览",

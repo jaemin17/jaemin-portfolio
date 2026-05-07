@@ -48,6 +48,11 @@
   margin-top: 14px;
 }
 
+.headerCta {
+  margin-top: 16px;
+  display: flex;
+}
+
 .section {
   padding: 20px 0;
   border-bottom: 1px solid var(--border);
@@ -120,6 +125,10 @@
 }
 
 .featuredHero .tags {
+  justify-content: center;
+}
+
+.featuredHero .headerCta {
   justify-content: center;
 }
 

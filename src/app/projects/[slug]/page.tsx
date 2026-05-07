@@ -113,6 +113,18 @@ export default async function ProjectDetailPage({
               </span>
             ))}
           </div>
+          {featured?.appDownloadUrl ? (
+            <div className={styles.headerCta}>
+              <a
+                className="buttonPrimary"
+                href={featured.appDownloadUrl}
+                target="_blank"
+                rel="noreferrer"
+              >
+                下载体验 App
+              </a>
+            </div>
+          ) : null}
         </header>
 
         {featured ? (
