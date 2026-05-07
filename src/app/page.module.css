@@ -31,6 +31,13 @@
   font-weight: 500;
   color: #0b0b0b;
   letter-spacing: -0.02em;
+  transition: transform 150ms ease, box-shadow 150ms ease;
+  will-change: transform;
+}
+
+.heroTagIcon:hover {
+  transform: translateY(-4px) rotate(-6deg);
+  box-shadow: 0 9px 0 rgba(0, 0, 0, 0.14);
 }
 
 .heroTagPill {
@@ -47,6 +54,13 @@
   font-size: 14px;
   letter-spacing: -0.01em;
   transform: rotate(-1deg);
+  transition: transform 150ms ease, box-shadow 150ms ease;
+  will-change: transform;
+}
+
+.heroTagPill:hover {
+  transform: translateY(-4px) rotate(1deg);
+  box-shadow: 0 9px 0 rgba(0, 0, 0, 0.14);
 }
 
 .title {
@@ -81,10 +95,17 @@
   box-shadow: 0 10px 0 rgba(0, 0, 0, 0.18);
   text-transform: none;
   line-height: 1;
+  transition: transform 160ms ease, box-shadow 160ms ease;
+  will-change: transform;
+}
+
+.stickerSub:hover {
+  transform: translateY(-5px) rotate(-3.2deg);
+  box-shadow: 0 13px 0 rgba(0, 0, 0, 0.16);
 }
 
 .subtitle {
-  margin-top: 10px;
+  margin-top: 80px;
   font-size: 18px;
   color: var(--fg);
   letter-spacing: -0.02em;

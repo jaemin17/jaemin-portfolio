@@ -1,11 +1,55 @@
 .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin: 0;
+  width: 100%;
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  transform-origin: center;
+  width: max-content;
+}
+
+.wordWrap {
+  display: block;
+  flex: 0 0 var(--word-width);
+  width: var(--word-width);
+  transition: transform 160ms ease;
+  will-change: transform;
+}
+
+.wordWrap:nth-child(1) {
+  transform: rotate(-1.2deg);
+  margin-right: -18px;
+}
+
+.wordWrap:nth-child(2) {
+  transform: rotate(1.1deg);
+}
+
+.wordWrap:hover {
+  transform: translateY(-6px) rotate(-2.4deg);
+}
+
+.wordWrap:nth-child(2):hover {
+  transform: translateY(-6px) rotate(2.2deg);
 }
 
 .svg {
   display: block;
   width: 100%;
   margin: 0 auto;
-  height: clamp(76px, 12vw, 128px);
+  height: 128px;
 }
 
+@media (max-width: 520px) {
+  .inner {
+    --title-scale: min(1, calc((100vw - 40px) / var(--title-width)));
+    transform: scale(var(--title-scale));
+  }
+}
