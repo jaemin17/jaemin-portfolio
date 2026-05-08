@@ -7,9 +7,10 @@
 }
 
 .inner {
-  max-width: 1040px;
+  max-width: none;
   margin: 0 auto;
-  padding: 14px 20px;
+  width: 100%;
+  padding: 22px 40px 12px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -35,7 +36,7 @@
 }
 
 .brandText {
-  font-size: 13px;
+  font-size: 18px;
 }
 
 .menuItem {
@@ -58,16 +59,26 @@
 }
 
 .link {
-  font-size: 13px;
-  color: color-mix(in oklab, var(--fg) 70%, transparent);
-  padding: 8px 10px;
-  border-radius: 10px;
-  transition: background 140ms ease, color 140ms ease;
+  display: inline-flex;
+  align-items: center;
+  height: 34px;
+  padding: 0 14px;
+  border-radius: 999px;
+  background: #f6682f;
+  border: 1px solid #0b0b0b;
+  box-shadow: 0 6px 0 rgba(0, 0, 0, 0.16);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  transform: rotate(-1deg);
+  transition: transform 150ms ease, box-shadow 150ms ease;
+  will-change: transform;
 }
 
 .link:hover {
-  color: var(--fg);
-  background: rgba(255, 255, 255, 0.65);
+  transform: translateY(-4px) rotate(1deg);
+  box-shadow: 0 9px 0 rgba(0, 0, 0, 0.14);
 }
 
 @media (max-width: 520px) {
