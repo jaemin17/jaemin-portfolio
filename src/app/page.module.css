@@ -127,21 +127,6 @@
   box-shadow: 0 13px 0 rgba(0, 0, 0, 0.16);
 }
 
-.subtitle {
-  margin-top: 80px;
-  font-size: 18px;
-  color: var(--fg);
-  letter-spacing: -0.02em;
-}
-
-.tagline {
-  margin-top: 14px;
-  color: var(--muted);
-  line-height: 1.8;
-  max-width: 78ch;
-  font-size: 15px;
-}
-
 .projectWall {
   position: static;
 }
@@ -363,9 +348,56 @@
   font-size: 13px;
 }
 
+.heroCopyNotes {
+  margin: 74px auto 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  max-width: 720px;
+}
+
+.heroCopyItem {
+  --note-rotation: -1deg;
+  --note-accent: #ffffff;
+  --pin-color: #f6682f;
+  position: relative;
+  padding: 42px 14px 14px;
+  border: 1px solid rgba(17, 18, 23, 0.1);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow:
+    0 18px 34px rgba(17, 18, 23, 0.12),
+    0 2px 0 rgba(255, 255, 255, 0.8) inset;
+  transform: rotate(var(--note-rotation));
+}
+
+.heroCopyItem:nth-child(2) {
+  --note-rotation: 1.1deg;
+  --note-accent: #dfe8ff;
+  --pin-color: #2f7bff;
+}
+
+.heroCopyNote {
+  display: flex;
+  min-height: 132px;
+  flex-direction: column;
+  padding: 16px;
+  border: 1px solid rgba(17, 18, 23, 0.08);
+  border-radius: 12px;
+  background: var(--note-accent);
+}
+
+.heroCopyBody {
+  display: block;
+  margin-top: 14px;
+  color: rgba(17, 18, 23, 0.72);
+  line-height: 1.72;
+  font-size: 14px;
+}
+
 @media (max-width: 1100px) {
   .wall {
-    min-height: 1120px;
+    min-height: 1180px;
   }
 
   .hero {
@@ -440,16 +472,15 @@
     padding: 34px 20px 70px;
   }
 
-  .subtitle {
-    margin-top: 56px;
-  }
-
+  .heroCopyNotes,
   .infoNotes,
   .workList {
     grid-template-columns: 1fr;
     gap: 16px;
   }
 
+  .heroCopyItem,
+  .heroCopyItem:nth-child(2),
   .infoItem,
   .infoItem:nth-child(1),
   .infoItem:nth-child(2),
@@ -479,6 +510,19 @@
   }
 
   .infoNote {
+    min-height: 0;
+    padding: 16px;
+  }
+
+  .heroCopyNotes {
+    margin-top: 56px;
+  }
+
+  .heroCopyItem {
+    padding: 44px 14px 14px;
+  }
+
+  .heroCopyNote {
     min-height: 0;
     padding: 16px;
   }
