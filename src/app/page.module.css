@@ -1,7 +1,7 @@
 .main {
-  max-width: 1280px;
+  max-width: none;
   margin: 0 auto;
-  padding: 34px 20px 48px;
+  padding: 34px clamp(18px, 3vw, 56px) 48px;
   width: 100%;
 }
 
@@ -149,7 +149,7 @@
 
 .workItem:nth-child(1) {
   left: 0;
-  bottom: 24px;
+  bottom: -34px;
 }
 
 .workItem:nth-child(2) {
@@ -158,7 +158,7 @@
   --note-accent: #dfe8ff;
   --pin-color: #2f7bff;
   left: 50%;
-  bottom: 0;
+  bottom: -54px;
   transform: translateX(-50%) translateY(var(--note-offset)) rotate(var(--note-rotation));
 }
 
@@ -168,7 +168,7 @@
   --note-accent: #f2dcff;
   --pin-color: #7c5cff;
   right: 0;
-  bottom: 28px;
+  bottom: -30px;
 }
 
 .workLink {
