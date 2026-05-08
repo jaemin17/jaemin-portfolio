@@ -348,6 +348,56 @@
   font-size: 13px;
 }
 
+.todayStamp {
+  --note-rotation: 2.3deg;
+  --note-accent: #fff1a8;
+  --pin-color: #ffcf56;
+  position: absolute;
+  top: -6px;
+  left: clamp(180px, 16vw, 280px);
+  z-index: 4;
+  width: 170px;
+  padding: 38px 12px 12px;
+  border: 1px solid rgba(17, 18, 23, 0.1);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow:
+    0 14px 28px rgba(17, 18, 23, 0.12),
+    0 2px 0 rgba(255, 255, 255, 0.8) inset;
+  transform: rotate(var(--note-rotation));
+}
+
+.todayNote {
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  border: 1px solid rgba(17, 18, 23, 0.08);
+  border-radius: 12px;
+  background: var(--note-accent);
+}
+
+.todayLabel {
+  color: color-mix(in oklab, var(--pin-color) 60%, #111217);
+  font-size: 13px;
+  line-height: 1;
+  font-family: var(--font-kalam), var(--font-geist-sans), system-ui, sans-serif;
+}
+
+.todayDate {
+  margin-top: 10px;
+  font-size: 15px;
+  font-weight: 850;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.todayTime {
+  margin-top: 6px;
+  color: rgba(17, 18, 23, 0.68);
+  font-size: 13px;
+  font-weight: 750;
+}
+
 .heroCopyNotes {
   margin: 92px auto 0;
   display: grid;
@@ -411,6 +461,10 @@
   .infoItem {
     width: min(22vw, 206px);
   }
+
+  .todayStamp {
+    left: 180px;
+  }
 }
 
 @media (max-width: 920px) {
@@ -433,6 +487,14 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 16px;
     margin-top: 10px;
+  }
+
+  .todayStamp {
+    position: relative;
+    top: auto;
+    right: auto;
+    width: 220px;
+    margin: 8px auto 20px;
   }
 
   .infoItem,
@@ -481,6 +543,7 @@
 
   .heroCopyItem,
   .heroCopyItem:nth-child(2),
+  .todayStamp,
   .infoItem,
   .infoItem:nth-child(1),
   .infoItem:nth-child(2),

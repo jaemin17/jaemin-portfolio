@@ -2,6 +2,7 @@ import Link from "next/link";
 import { projects } from "@/content/projects";
 import { SiteHeader } from "@/components/SiteHeader";
 import { StickerTitle } from "@/components/StickerTitle";
+import { TodayStamp } from "./TodayStamp";
 import styles from "./page.module.css";
 
 const infoNotes = [
@@ -71,6 +72,8 @@ export default function Home() {
               ))}
             </div>
           </header>
+
+          <TodayStamp />
 
           <div id="about" className={styles.infoNotes} aria-label="关于我">
             {infoNotes.map((note) => (
