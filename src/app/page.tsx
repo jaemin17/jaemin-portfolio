@@ -60,17 +60,29 @@ export default function Home() {
             <div className={styles.stickerSubWrap} aria-label="identity stickers">
               <span className={styles.stickerSub}>产品设计 · 独立开发（0→1）</span>
             </div>
-            <div className={styles.heroCopyNotes} aria-label="核心介绍">
-              {heroNotes.map((note) => (
-                <article key={note.index} className={styles.heroCopyItem}>
-                  <span className={styles.pin} aria-hidden="true" />
-                  <span className={styles.heroCopyNote}>
-                    <span className={styles.workIndex}>{note.index}</span>
-                    <span className={styles.heroCopyBody}>{note.body}</span>
-                  </span>
-                </article>
-              ))}
-            </div>
+            <section id="project" className={styles.projectWall} aria-labelledby="project-title">
+              <h2 id="project-title" className={styles.srOnly}>
+                项目
+              </h2>
+              <ol className={styles.workList}>
+                {projects.map((p, idx) => (
+                  <li key={p.slug} className={styles.workItem}>
+                    <Link className={styles.workLink} href={`/projects/${p.slug}`}>
+                      <span className={styles.pin} aria-hidden="true" />
+                      <span className={styles.workNote}>
+                        <span className={styles.workIndex}>{String(idx + 1).padStart(2, "0")}</span>
+                        <span className={styles.workTitle}>{p.title}</span>
+                        <span className={styles.workMeta}>
+                          {p.subtitle} <span className={styles.dot}>·</span>{" "}
+                          {p.tags.slice(0, 3).join(", ")}
+                        </span>
+                        <span className={styles.workMore}>查看案例 →</span>
+                      </span>
+                    </Link>
+                  </li>
+                ))}
+              </ol>
+            </section>
           </header>
 
           <TodayStamp />
@@ -88,29 +100,17 @@ export default function Home() {
             ))}
           </div>
 
-          <section id="project" className={styles.projectWall} aria-labelledby="project-title">
-            <h2 id="project-title" className={styles.srOnly}>
-              项目
-            </h2>
-            <ol className={styles.workList}>
-              {projects.map((p, idx) => (
-                <li key={p.slug} className={styles.workItem}>
-                  <Link className={styles.workLink} href={`/projects/${p.slug}`}>
-                    <span className={styles.pin} aria-hidden="true" />
-                    <span className={styles.workNote}>
-                      <span className={styles.workIndex}>{String(idx + 1).padStart(2, "0")}</span>
-                      <span className={styles.workTitle}>{p.title}</span>
-                      <span className={styles.workMeta}>
-                        {p.subtitle} <span className={styles.dot}>·</span>{" "}
-                        {p.tags.slice(0, 3).join(", ")}
-                      </span>
-                      <span className={styles.workMore}>查看案例 →</span>
-                    </span>
-                  </Link>
-                </li>
-              ))}
-            </ol>
-          </section>
+          <div className={styles.heroCopyNotes} aria-label="核心介绍">
+            {heroNotes.map((note) => (
+              <article key={note.index} className={styles.heroCopyItem}>
+                <span className={styles.pin} aria-hidden="true" />
+                <span className={styles.heroCopyNote}>
+                  <span className={styles.workIndex}>{note.index}</span>
+                  <span className={styles.heroCopyBody}>{note.body}</span>
+                </span>
+              </article>
+            ))}
+          </div>
         </section>
       </main>
     </>
