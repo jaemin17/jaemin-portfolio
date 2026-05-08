@@ -49,7 +49,6 @@
 
 @media (max-width: 520px) {
   .inner {
-    --title-scale: min(1, calc((100vw - 40px) / var(--title-width)));
-    transform: scale(var(--title-scale));
+    transform: scale(0.66);
   }
 }
