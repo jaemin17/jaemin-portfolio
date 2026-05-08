@@ -1,7 +1,7 @@
 .main {
   max-width: none;
   margin: 0 auto;
-  padding: 34px clamp(18px, 3vw, 56px) 48px;
+  padding: 34px clamp(28px, 4vw, 76px) 48px;
   width: 100%;
 }
 
