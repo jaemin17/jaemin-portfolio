@@ -71,13 +71,14 @@
   font-size: 14px;
   font-weight: 700;
   letter-spacing: -0.01em;
-  transform: rotate(-1deg);
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
   transition: transform 150ms ease, box-shadow 150ms ease;
-  will-change: transform;
 }
 
 .link:hover {
-  transform: translateY(-4px) rotate(1deg);
+  transform: translate3d(0, -4px, 0);
   box-shadow: 0 9px 0 rgba(0, 0, 0, 0.14);
 }
 

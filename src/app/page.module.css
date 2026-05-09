@@ -77,13 +77,14 @@
   font-weight: 700;
   font-size: 14px;
   letter-spacing: -0.01em;
-  transform: rotate(-1deg);
+  transform: translateZ(0) rotate(-1deg);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
   transition: transform 150ms ease, box-shadow 150ms ease;
-  will-change: transform;
 }
 
 .heroTagPill:hover {
-  transform: translateY(-4px) rotate(1deg);
+  transform: translate3d(0, -4px, 0) rotate(1deg);
   box-shadow: 0 9px 0 rgba(0, 0, 0, 0.14);
 }
 
@@ -116,16 +117,17 @@
   font-size: 22px;
   font-weight: 900;
   letter-spacing: -0.02em;
-  transform: translateY(2px) rotate(-2deg);
+  transform: translate3d(0, 2px, 0) rotate(-2deg);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
   box-shadow: 0 10px 0 rgba(0, 0, 0, 0.18);
   text-transform: none;
   line-height: 1;
   transition: transform 160ms ease, box-shadow 160ms ease;
-  will-change: transform;
 }
 
 .stickerSub:hover {
-  transform: translateY(-3px) rotate(-3deg);
+  transform: translate3d(0, -3px, 0) rotate(-3deg);
   box-shadow: 0 13px 0 rgba(0, 0, 0, 0.16);
 }
 
