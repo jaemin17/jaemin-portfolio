@@ -353,6 +353,7 @@
 
 .infoItem {
   --note-rotation: -1.6deg;
+  --note-hover-rotation-factor: -0.45;
   --note-accent: #fff1a8;
   --pin-color: #f6682f;
   position: absolute;
@@ -360,6 +361,7 @@
   width: clamp(212px, 16vw, 260px);
   padding-top: 34px;
   transform: rotate(var(--note-rotation));
+  transition: transform 160ms ease;
 }
 
 .infoItem:nth-child(1) {
@@ -400,6 +402,16 @@
   border-radius: 12px;
   background: var(--note-accent);
   box-shadow: 0 14px 26px rgba(17, 18, 23, 0.12);
+  transition: box-shadow 160ms ease, border-color 160ms ease;
+}
+
+.infoItem:hover {
+  transform: translateY(-5px) rotate(calc(var(--note-rotation) * var(--note-hover-rotation-factor)));
+}
+
+.infoItem:hover .infoNote {
+  border-color: rgba(17, 18, 23, 0.18);
+  box-shadow: 0 24px 40px rgba(17, 18, 23, 0.16);
 }
 
 .infoTitle {
@@ -421,6 +433,7 @@
 
 .todayStamp {
   --note-rotation: 2.3deg;
+  --note-hover-rotation-factor: -0.45;
   --note-accent: #fff1a8;
   --pin-color: #ffcf56;
   position: absolute;
@@ -430,6 +443,7 @@
   width: 170px;
   padding-top: 34px;
   transform: rotate(var(--note-rotation));
+  transition: transform 160ms ease;
 }
 
 .todayNote {
@@ -440,6 +454,16 @@
   border-radius: 12px;
   background: var(--note-accent);
   box-shadow: 0 12px 22px rgba(17, 18, 23, 0.12);
+  transition: box-shadow 160ms ease, border-color 160ms ease;
+}
+
+.todayStamp:hover {
+  transform: translateY(-5px) rotate(calc(var(--note-rotation) * var(--note-hover-rotation-factor)));
+}
+
+.todayStamp:hover .todayNote {
+  border-color: rgba(17, 18, 23, 0.18);
+  box-shadow: 0 22px 36px rgba(17, 18, 23, 0.16);
 }
 
 .todayLabel {
@@ -474,11 +498,13 @@
 
 .heroCopyItem {
   --note-rotation: -1deg;
+  --note-hover-rotation-factor: -0.45;
   --note-accent: #ffffff;
   --pin-color: #f6682f;
   position: relative;
   padding-top: 34px;
   transform: rotate(var(--note-rotation));
+  transition: transform 160ms ease;
 }
 
 .heroCopyItem:nth-child(2) {
@@ -496,6 +522,16 @@
   border-radius: 12px;
   background: var(--note-accent);
   box-shadow: 0 14px 26px rgba(17, 18, 23, 0.12);
+  transition: box-shadow 160ms ease, border-color 160ms ease;
+}
+
+.heroCopyItem:hover {
+  transform: translateY(-5px) rotate(calc(var(--note-rotation) * var(--note-hover-rotation-factor)));
+}
+
+.heroCopyItem:hover .heroCopyNote {
+  border-color: rgba(17, 18, 23, 0.18);
+  box-shadow: 0 24px 40px rgba(17, 18, 23, 0.16);
 }
 
 .heroCopyBody {
