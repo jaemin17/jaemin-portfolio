@@ -73,8 +73,14 @@ export default function Home() {
                         <span className={styles.workIndex}>{String(idx + 1).padStart(2, "0")}</span>
                         <span className={styles.workTitle}>{p.title}</span>
                         <span className={styles.workMeta}>
-                          {p.subtitle} <span className={styles.dot}>·</span>{" "}
-                          {p.tags.slice(0, 3).join(", ")}
+                          <span className={styles.workSubtitle}>{p.subtitle}</span>
+                          <span className={styles.workTags} aria-label="项目标签">
+                            {p.tags.slice(0, 3).map((tag) => (
+                              <span key={tag} className={styles.workTag}>
+                                {tag}
+                              </span>
+                            ))}
+                          </span>
                         </span>
                         <span className={styles.workMore}>查看案例 →</span>
                       </span>

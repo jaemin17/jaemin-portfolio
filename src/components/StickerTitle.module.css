@@ -49,7 +49,7 @@
 
 @media (max-width: 480px) {
   .inner {
-    transform: scale(0.85);
+    transform: scale(0.8);
   }
 }
 

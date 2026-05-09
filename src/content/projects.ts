@@ -40,7 +40,7 @@ export const projects: Project[] = [
   {
     slug: "selfly-ios-app",
     title: "Selfly：从 0 到 1 设计并开发一款有温度的自我记录 App",
-    subtitle: "一款面向自我观察和每日聚焦的 iOS App，帮助用户记录重要的事、整理关于自己的想法，并在回顾中重新看见自己。",
+    subtitle: "一款用于每日聚焦、自我记录和轻量回顾的 iOS App。",
     timeframe: "2025–2026",
     role: "Solo product designer & iOS developer",
     tags: ["UX Design", "Product Design", "iOS", "SwiftUI", "0→1"],
@@ -150,7 +150,7 @@ export const projects: Project[] = [
   {
     slug: "project-b",
     title: "Project B (placeholder)",
-    subtitle: "Use this to show a different strength: complex B2B flows, dashboards, or systems thinking",
+    subtitle: "复杂流程、B2B 工具或仪表盘方向的项目占位。",
     timeframe: "2025",
     role: "Product designer",
     tags: ["B2B", "Information architecture", "Complex flows"],
@@ -165,7 +165,7 @@ export const projects: Project[] = [
   {
     slug: "project-c",
     title: "Project C (placeholder)",
-    subtitle: "Show taste & storytelling: brand, campaign, or a concept project is fine",
+    subtitle: "品牌叙事、视觉探索或概念项目方向的占位。",
     timeframe: "2025",
     role: "Product designer",
     tags: ["Visual craft", "Narrative", "Motion (optional)"],
