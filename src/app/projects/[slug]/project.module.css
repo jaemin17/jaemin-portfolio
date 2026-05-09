@@ -1,3 +1,8 @@
+.pagePlain {
+  min-height: 100vh;
+  background: var(--bg);
+}
+
 .main {
   max-width: 1040px;
   margin: 0 auto;
@@ -51,6 +56,17 @@
 .headerCta {
   margin-top: 16px;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.appPreviewPlaceholder {
+  width: min(100%, 760px);
+  min-height: 360px;
+  border-radius: 8px;
+  border: 2px dashed color-mix(in oklab, var(--accentA) 60%, #1a1a1a);
+  background: color-mix(in oklab, var(--accentA) 14%, white);
 }
 
 .section {

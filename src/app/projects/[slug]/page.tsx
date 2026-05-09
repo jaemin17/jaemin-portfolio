@@ -94,17 +94,10 @@ export default async function ProjectDetailPage({
   }
 
   return (
-    <>
+    <div className={styles.pagePlain}>
       <SiteHeader />
       <main className={styles.main}>
-        <div className={styles.top}>
-          <Link className="buttonGhost" href="/#project">
-            ← 返回项目列表
-          </Link>
-        </div>
-
         <header className={featured ? styles.featuredHero : styles.header}>
-          {featured ? <p className={styles.eyebrow}>{featured.eyebrow}</p> : null}
           <h1 className={styles.title}>{project.title}</h1>
           <p className={styles.subtitle}>{project.subtitle}</p>
           <div className={styles.meta}>
@@ -114,17 +107,11 @@ export default async function ProjectDetailPage({
             </span>
             <span className={styles.metaItem}>{project.role}</span>
           </div>
-          <div className={styles.tags} aria-label="标签">
-            {project.tags.map((t) => (
-              <span key={t} className="chip">
-                {t}
-              </span>
-            ))}
-          </div>
           {featured?.appDownloadUrl ? (
             <div className={styles.headerCta}>
+              <div className={styles.appPreviewPlaceholder} aria-hidden="true" />
               <a
-                className="buttonPrimary"
+                className="buttonSticker buttonStickerOrange"
                 href={featured.appDownloadUrl}
                 target="_blank"
                 rel="noreferrer"
@@ -201,7 +188,7 @@ export default async function ProjectDetailPage({
         ))}
 
         <footer className={styles.footer}>
-          <Link className="buttonPrimary" href="/#where">
+          <Link className="buttonSticker buttonStickerBlue" href="/#where">
             联系我
           </Link>
           <Link className="buttonGhost" href="/">
@@ -209,6 +196,6 @@ export default async function ProjectDetailPage({
           </Link>
         </footer>
       </main>
-    </>
+    </div>
   );
 }
