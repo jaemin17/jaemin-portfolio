@@ -32,17 +32,6 @@ const infoNotes = [
   },
 ];
 
-const heroNotes = [
-  {
-    index: "H1",
-    body: "我是一名关注产品体验与交互设计的设计师，擅长把模糊需求拆成清晰的问题、流程和界面。",
-  },
-  {
-    index: "H2",
-    body: "我也在尝试把 AI 融入设计工作流：用它加速调研、整理、写作和迭代，但核心判断仍然来自用户价值、信息结构、可用性和可交付性。",
-  },
-];
-
 export default function Home() {
   return (
     <>
@@ -130,7 +119,6 @@ export default function Home() {
                             ))}
                           </span>
                         </span>
-                        <span className={styles.workMore}>查看案例 →</span>
                       </span>
                     </Link>
                   </li>
@@ -154,17 +142,6 @@ export default function Home() {
             ))}
           </div>
 
-          <div className={styles.heroCopyNotes} aria-label="核心介绍">
-            {heroNotes.map((note) => (
-              <article key={note.index} className={styles.heroCopyItem}>
-                <span className={styles.pin} aria-hidden="true" />
-                <span className={styles.heroCopyNote}>
-                  <span className={styles.workIndex}>{note.index}</span>
-                  <span className={styles.heroCopyBody}>{note.body}</span>
-                </span>
-              </article>
-            ))}
-          </div>
         </section>
       </main>
     </>
