@@ -264,6 +264,11 @@
   border: 1px solid rgba(255, 255, 255, 0.44);
 }
 
+.infoItem .pin,
+.todayStamp .pin {
+  top: 42px;
+}
+
 .workNote {
   display: flex;
   min-height: 194px;
@@ -400,7 +405,11 @@
   padding: 16px;
   border: 1px solid rgba(17, 18, 23, 0.12);
   border-radius: 12px;
-  background: var(--note-accent);
+  background: linear-gradient(
+    180deg,
+    var(--note-accent) 0%,
+    color-mix(in oklab, var(--note-accent) 80%, white) 100%
+  );
   box-shadow: 0 14px 26px rgba(17, 18, 23, 0.12);
   transition: box-shadow 160ms ease, border-color 160ms ease;
 }
@@ -453,7 +462,11 @@
   padding: 12px;
   border: 1px solid rgba(17, 18, 23, 0.12);
   border-radius: 12px;
-  background: var(--note-accent);
+  background: linear-gradient(
+    180deg,
+    var(--note-accent) 0%,
+    color-mix(in oklab, var(--note-accent) 80%, white) 100%
+  );
   box-shadow: 0 12px 22px rgba(17, 18, 23, 0.12);
   transition: box-shadow 160ms ease, border-color 160ms ease;
 }
