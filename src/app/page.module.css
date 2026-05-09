@@ -196,7 +196,7 @@
 }
 
 .workItem:nth-child(1) .workNote {
-  background: linear-gradient(180deg, #ffd6c7 0%, #fff3f0 100%);
+  background: linear-gradient(180deg, #ffdccb 0%, #fff3f0 100%);
 }
 
 .workItem:nth-child(1) .workTag {
