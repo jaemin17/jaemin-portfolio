@@ -4,7 +4,7 @@
 }
 
 .main {
-  max-width: 1040px;
+  max-width: 940px;
   margin: 0 auto;
   padding: 28px 20px 64px;
   width: 100%;
@@ -20,10 +20,37 @@
 }
 
 .title {
-  font-size: 34px;
+  font-size: 48px;
   line-height: 1.12;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.02em;
   margin-bottom: 10px;
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.titleZh {
+  font-size: 44px;
+}
+
+.titleEn {
+  font-weight: 500;
+}
+
+.strikeWord {
+  position: relative;
+  display: inline-block;
+  margin-left: 0.16em;
+  font-style: italic;
+}
+
+.strikeWord::after {
+  content: "";
+  position: absolute;
+  left: -2px;
+  right: -2px;
+  top: 54%;
+  border-top: 3px solid rgba(255, 208, 64, 0.7);
+  transform: rotate(8deg);
+  pointer-events: none;
 }
 
 .subtitle {
@@ -40,6 +67,7 @@
   margin-top: 12px;
   color: var(--muted);
   font-size: 13px;
+  font-family: "Roboto Mono", "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
 .metaDot {
@@ -62,7 +90,7 @@
 }
 
 .appPreviewPlaceholder {
-  width: min(100%, 760px);
+  width: min(100%, 940px);
   min-height: 360px;
   border-radius: 8px;
   border: 2px dashed color-mix(in oklab, var(--accentA) 60%, #1a1a1a);
@@ -105,7 +133,7 @@
 .featuredHero {
   position: relative;
   overflow: hidden;
-  max-width: 760px;
+  max-width: 940px;
   margin: 0 auto;
   padding: 42px 0 28px;
   text-align: center;
@@ -122,9 +150,9 @@
 }
 
 .featuredHero .title {
-  color: #171614;
-  font-size: 32px;
-  letter-spacing: -0.03em;
+  color: rgba(0, 0, 0, 0.9);
+  font-size: 48px;
+  letter-spacing: -0.01em;
   margin-left: auto;
   margin-right: auto;
   max-width: 720px;
@@ -148,8 +176,21 @@
   justify-content: center;
 }
 
+.projectOneHero .title {
+  margin-bottom: 30px;
+}
+
+.projectOneHero .subtitle {
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.projectOneHero .headerCta {
+  margin-top: 52px;
+}
+
 .caseLead {
-  max-width: 760px;
+  max-width: 940px;
   margin: 10px auto 48px;
   padding-top: 18px;
   border-top: 0;
@@ -172,7 +213,7 @@
 }
 
 .caseSection {
-  max-width: 760px;
+  max-width: 940px;
   margin: 0 auto 56px;
   padding-bottom: 48px;
   border-bottom: 0;
@@ -257,7 +298,7 @@
 }
 
 .caseReflection {
-  max-width: 760px;
+  max-width: 940px;
   margin: 0 auto 48px;
   padding-bottom: 48px;
   border-bottom: 0;
@@ -473,6 +514,10 @@
     font-size: 28px;
   }
 
+  .featuredHero .titleZh {
+    font-size: 24px;
+  }
+
   .featuredHero .meta,
   .featuredHero .tags {
     justify-content: center;
@@ -523,6 +568,10 @@
 @media (max-width: 600px) {
   .title {
     font-size: 28px;
+  }
+
+  .titleZh {
+    font-size: 24px;
   }
   .footer {
     flex-direction: column;

@@ -19,9 +19,14 @@ export default async function ProjectDetailPage({
 }) {
   const { slug } = await params;
   const project = getProjectBySlug(slug);
+  const isProjectOne = slug === "selfly-ios-app";
 
   if (!project) notFound();
   const featured = project.featured;
+  const [titleLead, titleTail] = project.title.split("：");
+  const hasBilingualTitle = Boolean(titleTail);
+  const stressWord = "压力";
+  const titleTailParts = hasBilingualTitle ? titleTail.split(stressWord) : [];
 
   function visualPlate(visual: NonNullable<typeof featured>["visualSections"][number]["visual"]) {
     switch (visual) {
@@ -97,8 +102,34 @@ export default async function ProjectDetailPage({
     <div className={styles.pagePlain}>
       <SiteHeader />
       <main className={styles.main}>
-        <header className={featured ? styles.featuredHero : styles.header}>
-          <h1 className={styles.title}>{project.title}</h1>
+        <header
+          className={[
+            featured ? styles.featuredHero : styles.header,
+            isProjectOne ? styles.projectOneHero : "",
+          ]
+            .filter(Boolean)
+            .join(" ")}
+        >
+          <h1 className={styles.title}>
+            {hasBilingualTitle ? (
+              <>
+                <span className={styles.titleEn}>{titleLead}</span>：
+                <span className={styles.titleZh}>
+                  {titleTailParts.length > 1 ? (
+                    <>
+                      {titleTailParts[0]}
+                      <span className={styles.strikeWord}>{stressWord}</span>
+                      {titleTailParts.slice(1).join(stressWord)}
+                    </>
+                  ) : (
+                    titleTail
+                  )}
+                </span>
+              </>
+            ) : (
+              project.title
+            )}
+          </h1>
           <p className={styles.subtitle}>{project.subtitle}</p>
           {featured?.appDownloadUrl ? (
             <div className={styles.headerCta}>
