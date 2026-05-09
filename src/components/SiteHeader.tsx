@@ -1,6 +1,8 @@
 import Link from "next/link";
 import styles from "./SiteHeader.module.css";
 
+const portfolioDownloadUrl = "https://drive.google.com/file/d/1QowvXwQdM2GcpHMw60DGumxEhw75aBfT/view";
+
 export function SiteHeader() {
   return (
     <header className={styles.header}>
@@ -12,7 +14,7 @@ export function SiteHeader() {
         </div>
 
         <nav className={styles.nav} aria-label="主导航">
-          <a className={styles.link} href="/resume.pdf" target="_blank" rel="noreferrer">
+          <a className={styles.link} href={portfolioDownloadUrl} target="_blank" rel="noreferrer">
             下载简历
           </a>
         </nav>
