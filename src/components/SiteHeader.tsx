@@ -7,7 +7,7 @@ export function SiteHeader() {
       <div className={styles.inner}>
         <div className={styles.menuLeft} aria-label="menu bar">
           <Link className={styles.brand} href="/">
-            <span className={styles.brandText}>design.cc</span>
+            <span className={styles.brandText}>Jiamin’s Board</span>
           </Link>
         </div>
 
