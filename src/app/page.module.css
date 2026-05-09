@@ -274,7 +274,7 @@
   background: linear-gradient(
     180deg,
     var(--note-accent) 0%,
-    color-mix(in oklab, var(--note-accent) 40%, white) 100%
+    color-mix(in oklab, var(--note-accent) 50%, white) 100%
   );
 }
 
