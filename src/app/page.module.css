@@ -1,7 +1,7 @@
 .main {
   max-width: none;
-  margin: 0 auto;
-  padding: 34px clamp(28px, 4vw, 76px) 48px;
+  margin: -20px auto 0;
+  padding: 14px clamp(28px, 4vw, 76px) 48px;
   width: 100%;
 }
 
@@ -525,7 +525,7 @@
 
 @media (max-width: 560px) {
   .main {
-    padding: 34px 20px 70px;
+    padding: 14px 20px 70px;
   }
 
   .heroCopyNotes,

@@ -15,6 +15,7 @@ function formatHangzhouTime(date: Date) {
     timeZone: "Asia/Shanghai",
     hour: "2-digit",
     minute: "2-digit",
+    second: "2-digit",
     hour12: false,
   }).format(date);
 
@@ -25,7 +26,7 @@ export function TodayStamp() {
   const [now, setNow] = useState(() => new Date());
 
   useEffect(() => {
-    const timer = window.setInterval(() => setNow(new Date()), 60_000);
+    const timer = window.setInterval(() => setNow(new Date()), 1_000);
 
     return () => window.clearInterval(timer);
   }, []);
