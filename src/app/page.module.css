@@ -406,6 +406,7 @@
 }
 
 .infoItem:hover {
+  z-index: 30;
   transform: translateY(-5px) rotate(calc(var(--note-rotation) * var(--note-hover-rotation-factor)));
 }
 
@@ -458,6 +459,7 @@
 }
 
 .todayStamp:hover {
+  z-index: 30;
   transform: translateY(-5px) rotate(calc(var(--note-rotation) * var(--note-hover-rotation-factor)));
 }
 
@@ -526,6 +528,7 @@
 }
 
 .heroCopyItem:hover {
+  z-index: 30;
   transform: translateY(-5px) rotate(calc(var(--note-rotation) * var(--note-hover-rotation-factor)));
 }
 
