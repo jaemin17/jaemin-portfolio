@@ -181,8 +181,16 @@
 }
 
 .projectOneHero .subtitle {
-  font-size: 20px;
+  font-size: 16px;
   color: rgba(0, 0, 0, 0.7);
+}
+
+.projectOneHero .titleEn {
+  font-weight: 600;
+}
+
+.projectOneHero .titleZh {
+  font-weight: 750;
 }
 
 .projectOneHero .headerCta {
