@@ -19,6 +19,8 @@
 
 .wall {
   position: relative;
+  max-width: 1440px;
+  margin: 0 auto;
   min-height: max(920px, calc(100svh - 118px));
   padding: 18px 0 28px;
 }
@@ -174,7 +176,7 @@
   list-style: none;
   padding-left: 0;
   position: relative;
-  min-height: clamp(300px, 26vw, 380px);
+  min-height: 320px;
 }
 
 .workItem {
@@ -190,7 +192,16 @@
 
 .workItem:nth-child(1) {
   left: 0;
-  bottom: -6px;
+  bottom: -46px;
+}
+
+.workItem:nth-child(1) .workNote {
+  background: linear-gradient(180deg, #ffd6c7 0%, #fff3f0 100%);
+}
+
+.workItem:nth-child(1) .workTag {
+  background: color-mix(in oklab, #f6682f 10%, white);
+  color: color-mix(in oklab, #f6682f 80%, #111217);
 }
 
 .workItem:nth-child(2) {
@@ -199,7 +210,7 @@
   --note-accent: #dfe8ff;
   --pin-color: #2f7bff;
   left: 50%;
-  bottom: -28px;
+  bottom: -68px;
   transform: translateX(-50%) translateY(var(--note-offset)) rotate(var(--note-rotation));
 }
 
@@ -209,7 +220,7 @@
   --note-accent: #f2dcff;
   --pin-color: #7c5cff;
   right: 0;
-  bottom: -4px;
+  bottom: -44px;
 }
 
 .workLink {
@@ -621,7 +632,7 @@
   }
 
   .workList {
-    margin-top: 24px;
+    margin-top: 64px;
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 12px;
@@ -652,6 +663,10 @@
   .workList {
     grid-template-columns: 1fr;
     gap: 12px;
+  }
+
+  .workList {
+    margin-top: 72px;
   }
 
   .heroCopyItem,
