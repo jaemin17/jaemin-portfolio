@@ -54,7 +54,31 @@ export default function Home() {
               <span className={styles.heroTagIcon} aria-hidden="true">
                 :)
               </span>
-              <span className={styles.heroTagPill}>Hangzhou · Open to work</span>
+              <span className={styles.heroTagPill}>
+                <svg className={styles.heroTagPlate} viewBox="0 0 220 52" aria-hidden="true">
+                  <rect
+                    x="8"
+                    y="16"
+                    width="206"
+                    height="34"
+                    rx="17"
+                    fill="rgba(0, 0, 0, 0.16)"
+                    transform="rotate(-1 110 33)"
+                  />
+                  <rect
+                    x="7"
+                    y="8"
+                    width="206"
+                    height="34"
+                    rx="17"
+                    fill="#f6682f"
+                    stroke="#0b0b0b"
+                    strokeWidth="1"
+                    transform="rotate(-1 110 25)"
+                  />
+                </svg>
+                <span className={styles.heroTagText}>Hangzhou · Open to work</span>
+              </span>
             </div>
             <StickerTitle className={styles.title} text="Jiamin Li" />
             <div className={styles.stickerSubWrap} aria-label="identity stickers">

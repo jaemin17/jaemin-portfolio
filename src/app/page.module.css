@@ -66,26 +66,37 @@
 
 .heroTagPill {
   display: inline-flex;
+  position: relative;
   align-items: center;
+  justify-content: center;
   height: 34px;
   padding: 0 14px;
-  border-radius: 999px;
-  background: #f6682f;
-  border: 1px solid #0b0b0b;
-  box-shadow: 0 6px 0 rgba(0, 0, 0, 0.16);
+  isolation: isolate;
   color: #ffffff;
   font-weight: 700;
   font-size: 14px;
   letter-spacing: -0.01em;
-  transform: translateZ(0) rotate(-1deg);
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  transition: transform 150ms ease, box-shadow 150ms ease;
+  transform: translateZ(0);
+  transition: transform 150ms ease;
 }
 
 .heroTagPill:hover {
-  transform: translate3d(0, -4px, 0) rotate(1deg);
-  box-shadow: 0 9px 0 rgba(0, 0, 0, 0.14);
+  transform: translate3d(0, -4px, 0);
+}
+
+.heroTagPlate {
+  position: absolute;
+  inset: -9px -16px -10px;
+  z-index: -1;
+  width: calc(100% + 32px);
+  height: calc(100% + 19px);
+  overflow: visible;
+  pointer-events: none;
+}
+
+.heroTagText {
+  position: relative;
+  z-index: 1;
 }
 
 .title {
