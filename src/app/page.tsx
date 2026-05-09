@@ -82,7 +82,31 @@ export default function Home() {
             </div>
             <StickerTitle className={styles.title} text="Jiamin Li" />
             <div className={styles.stickerSubWrap} aria-label="identity stickers">
-              <span className={styles.stickerSub}>产品设计 · 独立开发（0→1）</span>
+              <span className={styles.stickerSub}>
+                <svg className={styles.stickerSubPlate} viewBox="0 0 382 88" aria-hidden="true">
+                  <rect
+                    x="12"
+                    y="20"
+                    width="358"
+                    height="58"
+                    rx="18"
+                    fill="rgba(0, 0, 0, 0.18)"
+                    transform="rotate(-2 191 49)"
+                  />
+                  <rect
+                    x="10"
+                    y="9"
+                    width="358"
+                    height="58"
+                    rx="18"
+                    fill="#ff9e1d"
+                    stroke="#0b0b0b"
+                    strokeWidth="2"
+                    transform="rotate(-2 191 38)"
+                  />
+                </svg>
+                <span className={styles.stickerSubText}>产品设计 · 独立开发（0→1）</span>
+              </span>
             </div>
             <section id="project" className={styles.projectWall} aria-labelledby="project-title">
               <h2 id="project-title" className={styles.srOnly}>
