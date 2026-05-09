@@ -39,8 +39,8 @@ export type Project = {
 export const projects: Project[] = [
   {
     slug: "selfly-ios-app",
-    title: "Selfly｜从 0 到 1 的自我探索记录 App",
-    subtitle: "",
+    title: "让记录不再变成压力",
+    subtitle: "从 0 到 1 设计并开发一款有温度的自我记录 App",
     timeframe: "2025–2026",
     role: "Solo Product Designer & iOS Developer",
     tags: ["UX Design", "Product Design", "iOS", "SwiftUI", "0→1"],

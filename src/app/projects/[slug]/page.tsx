@@ -100,16 +100,16 @@ export default async function ProjectDetailPage({
         <header className={featured ? styles.featuredHero : styles.header}>
           <h1 className={styles.title}>{project.title}</h1>
           <p className={styles.subtitle}>{project.subtitle}</p>
-          <div className={styles.meta}>
-            <span className={styles.metaItem}>{project.timeframe}</span>
-            <span className={styles.metaDot} aria-hidden="true">
-              ·
-            </span>
-            <span className={styles.metaItem}>{project.role}</span>
-          </div>
           {featured?.appDownloadUrl ? (
             <div className={styles.headerCta}>
               <div className={styles.appPreviewPlaceholder} aria-hidden="true" />
+              <div className={styles.meta}>
+                <span className={styles.metaItem}>{project.timeframe}</span>
+                <span className={styles.metaDot} aria-hidden="true">
+                  ·
+                </span>
+                <span className={styles.metaItem}>{project.role}</span>
+              </div>
               <a
                 className="buttonSticker buttonStickerOrange"
                 href={featured.appDownloadUrl}
