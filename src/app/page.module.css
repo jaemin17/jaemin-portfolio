@@ -34,21 +34,7 @@
 @keyframes noteDropIn {
   from {
     opacity: 0;
-    transform: translate3d(0, calc(var(--note-offset) - 20px), 0) rotate(calc(var(--note-rotation) - 0.4deg));
-  }
-  70% {
-    opacity: 1;
-  }
-  to {
-    opacity: 1;
-    transform: translate3d(0, var(--note-offset), 0) rotate(var(--note-rotation));
-  }
-}
-
-@keyframes centerNoteDropIn {
-  from {
-    opacity: 0;
-    transform: translateX(-50%) translate3d(0, calc(var(--note-offset) - 20px), 0)
+    transform: translate3d(var(--entry-x, 0), calc(var(--note-offset) - 20px), 0)
       rotate(calc(var(--note-rotation) - 0.4deg));
   }
   70% {
@@ -56,7 +42,7 @@
   }
   to {
     opacity: 1;
-    transform: translateX(-50%) translate3d(0, var(--note-offset), 0) rotate(var(--note-rotation));
+    transform: translate3d(var(--entry-x, 0), var(--note-offset), 0) rotate(var(--note-rotation));
   }
 }
 
@@ -275,10 +261,10 @@
   --note-offset: 14px;
   --note-accent: #dfe8ff;
   --pin-color: #2f7bff;
+  --entry-x: -50%;
   left: 50%;
   bottom: -68px;
   transform: translateX(-50%) translateY(var(--note-offset)) rotate(var(--note-rotation));
-  animation-name: centerNoteDropIn;
   --entry-delay: 430ms;
 }
 
@@ -726,8 +712,8 @@
   }
 
   .workItem:nth-child(2) {
+    --entry-x: 0;
     transform: translateY(var(--note-offset)) rotate(var(--note-rotation));
-    animation-name: noteDropIn;
   }
 }
 
