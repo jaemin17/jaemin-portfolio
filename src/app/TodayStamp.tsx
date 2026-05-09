@@ -23,20 +23,26 @@ function formatHangzhouTime(date: Date) {
 }
 
 export function TodayStamp() {
-  const [now, setNow] = useState(() => new Date());
+  const [now, setNow] = useState<Date | null>(null);
 
   useEffect(() => {
+    const initialTimer = window.setTimeout(() => setNow(new Date()), 0);
     const timer = window.setInterval(() => setNow(new Date()), 1_000);
 
-    return () => window.clearInterval(timer);
+    return () => {
+      window.clearTimeout(initialTimer);
+      window.clearInterval(timer);
+    };
   }, []);
 
-  const { dateText, timeText } = formatHangzhouTime(now);
+  const { dateText, timeText } = now
+    ? formatHangzhouTime(now)
+    : { dateText: "--", timeText: "--:--:--" };
 
   return (
     <aside className={styles.todayStamp} aria-label="今日时间">
       <span className={styles.pin} aria-hidden="true" />
-      <time className={styles.todayNote} dateTime={now.toISOString()} suppressHydrationWarning>
+      <time className={styles.todayNote} dateTime={now?.toISOString()}>
         <span className={styles.todayLabel}>Hangzhou time</span>
         <span className={styles.todayDate}>{dateText}</span>
         <span className={styles.todayTime}>{timeText}</span>
