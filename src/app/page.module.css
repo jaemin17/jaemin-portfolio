@@ -247,10 +247,6 @@
   --entry-delay: 340ms;
 }
 
-.workItem:nth-child(1) .workNote {
-  background: linear-gradient(180deg, #ffdccb 0%, #fff3f0 100%);
-}
-
 .workItem:nth-child(1) .workTag {
   background: color-mix(in oklab, #f6682f 10%, white);
   color: color-mix(in oklab, #f6682f 80%, #111217);
