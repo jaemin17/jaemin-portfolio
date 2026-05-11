@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { SiteHeader } from "@/components/SiteHeader";
 import styles from "./about.module.css";
 
@@ -30,15 +29,11 @@ export default function AboutPage() {
                 我是谁
               </h1>
             </div>
-            <Link className={styles.backLink} href="/">
-              回到首页
-            </Link>
           </header>
 
           <div className={styles.noteGrid} aria-label="关于我的便利贴">
             {notes.map((note, index) => (
               <article key={note} className={styles.noteItem}>
-                <span className={styles.pin} aria-hidden="true" />
                 <span className={styles.note}>
                   <span className={styles.noteIndex}>{String(index + 1).padStart(2, "0")}</span>
                   <span className={styles.noteText}>{note}</span>
