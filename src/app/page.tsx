@@ -133,11 +133,19 @@ export default function Home() {
             {infoNotes.map((note) => (
               <article key={note.id} id={note.id} className={styles.infoItem}>
                 <span className={styles.pin} aria-hidden="true" />
-                <span className={styles.infoNote}>
-                  <span className={styles.workIndex}>{note.index}</span>
-                  <span className={styles.infoTitle}>{note.title}</span>
-                  <span className={styles.infoBody}>{note.body}</span>
-                </span>
+                {note.id === "about" ? (
+                  <Link className={`${styles.infoNote} ${styles.infoNoteLink}`} href="/about">
+                    <span className={styles.workIndex}>{note.index}</span>
+                    <span className={styles.infoTitle}>{note.title}</span>
+                    <span className={styles.infoBody}>{note.body}</span>
+                  </Link>
+                ) : (
+                  <span className={styles.infoNote}>
+                    <span className={styles.workIndex}>{note.index}</span>
+                    <span className={styles.infoTitle}>{note.title}</span>
+                    <span className={styles.infoBody}>{note.body}</span>
+                  </span>
+                )}
               </article>
             ))}
           </div>

@@ -1,36 +1,53 @@
 import Link from "next/link";
 import { SiteHeader } from "@/components/SiteHeader";
+import styles from "./about.module.css";
+
+const notes = [
+  "把模糊问题拆成可执行的路径",
+  "喜欢从真实任务流里找答案",
+  "产品思维和界面细节都在意",
+  "会自己动手把想法做出来",
+  "重视信息层级和阅读节奏",
+  "习惯先验证，再放大投入",
+  "对 AI 工具有持续好奇心",
+  "偏爱清晰、轻快、有温度的体验",
+  "能在 0 到 1 阶段快速推进",
+  "关注交付质量，也关注使用感受",
+  "愿意反复打磨关键交互",
+  "相信设计应该能解决具体问题",
+];
 
 export default function AboutPage() {
   return (
     <>
       <SiteHeader />
-      <main style={{ maxWidth: 1040, margin: "0 auto", padding: "28px 20px 72px" }}>
-        <h1 style={{ fontSize: 34, letterSpacing: "-0.04em" }}>关于我</h1>
-        <p style={{ marginTop: 12, color: "var(--muted)", lineHeight: 1.8, maxWidth: "78ch" }}>
-          这里先放占位文案。建议用 6–10 行讲清楚：你擅长的领域、做过的事情、你在团队中的价值，
-          以及你如何使用 AI 工具提升研究/表达/迭代效率（但决策仍以用户价值与可用性为核心）。
-        </p>
+      <main className={styles.main}>
+        <section className={styles.wall} aria-labelledby="about-title">
+          <header className={styles.topBar}>
+            <div className={styles.titleBlock}>
+              <span className={styles.eyebrow}>About · brainstorm wall</span>
+              <h1 id="about-title" className={styles.title}>
+                我是谁
+              </h1>
+            </div>
+            <Link className={styles.backLink} href="/">
+              回到首页
+            </Link>
+          </header>
 
-        <section style={{ marginTop: 22 }}>
-          <h2 style={{ fontSize: 16, marginBottom: 10 }}>我能提供的能力</h2>
-          <ul style={{ paddingLeft: 18, lineHeight: 1.9, maxWidth: "80ch" }}>
-            <li>问题定义与目标拆解（把“需求”变成可验证的假设与指标）</li>
-            <li>信息架构与关键任务流（复杂流程的取舍与一致性）</li>
-            <li>端到端交付（原型、视觉、规范、交付清单、上架素材）</li>
-          </ul>
+          <div className={styles.noteGrid} aria-label="关于我的便利贴">
+            {notes.map((note, index) => (
+              <article key={note} className={styles.noteItem}>
+                <span className={styles.pin} aria-hidden="true" />
+                <span className={styles.note}>
+                  <span className={styles.noteIndex}>{String(index + 1).padStart(2, "0")}</span>
+                  <span className={styles.noteText}>{note}</span>
+                </span>
+              </article>
+            ))}
+          </div>
         </section>
-
-        <div style={{ display: "flex", gap: 10, marginTop: 22, flexWrap: "wrap" }}>
-          <a className="buttonGhost" href="mailto:you@example.com">
-            you@example.com
-          </a>
-          <Link className="buttonGhost" href="/">
-            回到首页
-          </Link>
-        </div>
       </main>
     </>
   );
 }
-

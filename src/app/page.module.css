@@ -482,6 +482,15 @@
   transition: box-shadow 160ms ease, border-color 160ms ease;
 }
 
+.infoNoteLink {
+  cursor: pointer;
+}
+
+.infoNoteLink:focus-visible {
+  outline: 3px solid color-mix(in oklab, var(--pin-color) 70%, white);
+  outline-offset: 5px;
+}
+
 .infoItem:hover {
   z-index: 30;
   transform: translateY(-5px) rotate(calc(var(--note-rotation) * var(--note-hover-rotation-factor)));
