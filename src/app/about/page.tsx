@@ -2,6 +2,8 @@ import { SiteHeader } from "@/components/SiteHeader";
 import styles from "./about.module.css";
 
 const notes = [
+  "为了让人感觉舒服而设计",
+  "体验驱动 + 情绪感知型产品设计师",
   "把模糊问题拆成可执行的路径",
   "喜欢从真实任务流里找答案",
   "产品思维和界面细节都在意",
