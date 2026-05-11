@@ -100,7 +100,7 @@
   display: block;
   font-size: clamp(16px, 1.35vw, 20px);
   line-height: 1.28;
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: 0;
 }
 
