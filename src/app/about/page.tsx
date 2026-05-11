@@ -24,7 +24,6 @@ export default function AboutPage() {
         <section className={styles.wall} aria-labelledby="about-title">
           <header className={styles.topBar}>
             <div className={styles.titleBlock}>
-              <span className={styles.eyebrow}>About · brainstorm wall</span>
               <h1 id="about-title" className={styles.title}>
                 我是谁
               </h1>
