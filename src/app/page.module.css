@@ -48,6 +48,7 @@
 
 .heroTag,
 .title,
+.polaroid,
 .stickerSubWrap,
 .todayStamp,
 .workItem,
@@ -159,6 +160,114 @@
   position: relative;
   z-index: 20;
   animation-delay: 160ms;
+}
+
+.bottomKeepsakes {
+  display: contents;
+}
+
+.polaroidPair {
+  position: absolute;
+  top: 88px;
+  left: 50%;
+  z-index: 18;
+  width: min(820px, 100%);
+  height: 132px;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.polaroid {
+  position: absolute;
+  top: 0;
+  width: 116px;
+  margin: 0;
+  padding: 9px 9px 15px;
+  border: 1px solid rgba(17, 18, 23, 0.14);
+  border-radius: 4px;
+  background: #fffaf0;
+  box-shadow:
+    0 16px 28px rgba(17, 18, 23, 0.16),
+    0 1px 0 rgba(255, 255, 255, 0.86) inset;
+  transform: rotate(5deg);
+  animation-name: softDropIn;
+  animation-delay: 220ms;
+  pointer-events: auto;
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.profilePolaroid {
+  left: 18px;
+  transform: rotate(-5deg);
+}
+
+.catPolaroid {
+  right: 18px;
+  transform: rotate(5deg);
+}
+
+.polaroid:hover {
+  transform: translateY(-4px) rotate(3deg);
+  box-shadow:
+    0 22px 36px rgba(17, 18, 23, 0.18),
+    0 1px 0 rgba(255, 255, 255, 0.86) inset;
+}
+
+.catPolaroid:hover {
+  transform: translateY(-4px) rotate(3deg);
+}
+
+.polaroidTape {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  width: 54px;
+  height: 20px;
+  border: 1px solid rgba(17, 18, 23, 0.1);
+  border-radius: 2px;
+  background: rgba(255, 207, 86, 0.78);
+  box-shadow: 0 5px 10px rgba(17, 18, 23, 0.08);
+  transform: translateX(-50%) rotate(-8deg);
+}
+
+.polaroidImage {
+  position: relative;
+  display: block;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border: 1px solid rgba(17, 18, 23, 0.1);
+  border-radius: 2px;
+  background:
+    linear-gradient(180deg, #dfe8ff 0 58%, #dff7e8 58% 100%);
+}
+
+.polaroidPhoto {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.catImage {
+  background:
+    linear-gradient(180deg, #fff1a8 0 52%, #dff7e8 52% 100%);
+}
+
+.catImage .polaroidPhoto {
+  object-position: 50% 42%;
+}
+
+.profileImage .polaroidPhoto {
+  object-position: 66% 64%;
+}
+
+.polaroidCaption {
+  margin-top: 8px;
+  color: rgba(17, 18, 23, 0.62);
+  font-family: var(--font-kalam), var(--font-geist-sans), system-ui, sans-serif;
+  font-size: 15px;
+  line-height: 1;
+  text-align: center;
 }
 
 .stickerSubWrap {
@@ -694,6 +803,18 @@
   .todayStamp {
     left: 180px;
   }
+
+  .polaroid {
+    width: 108px;
+  }
+
+  .profilePolaroid {
+    left: 40px;
+  }
+
+  .catPolaroid {
+    right: 40px;
+  }
 }
 
 @media (max-width: 920px) {
@@ -708,7 +829,48 @@
   }
 
   .hero {
-    padding-bottom: 34px;
+    padding-bottom: 44px;
+  }
+
+  .title {
+    margin-bottom: 8px;
+  }
+
+  .bottomKeepsakes {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 22px;
+  }
+
+  .polaroidPair {
+    position: relative;
+    top: auto;
+    left: auto;
+    flex: 0 0 min(260px, 42%);
+    width: min(260px, 100%);
+    height: 126px;
+    margin: 0;
+    transform: none;
+  }
+
+  .polaroid {
+    position: absolute;
+    top: auto;
+    width: 100px;
+    margin: 0;
+  }
+
+  .profilePolaroid {
+    left: 0;
+    transform: rotate(-3deg);
+  }
+
+  .catPolaroid {
+    left: auto;
+    right: 0;
+    transform: translateY(10px) rotate(3deg);
   }
 
   .infoNotes {
@@ -721,9 +883,11 @@
   .todayStamp {
     position: relative;
     top: auto;
+    left: auto;
     right: auto;
     width: 220px;
-    margin: 8px auto 20px;
+    margin: 0;
+    flex: 0 1 220px;
   }
 
   .infoItem,
@@ -742,7 +906,7 @@
   }
 
   .workList {
-    margin-top: 64px;
+    margin-top: 42px;
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 12px;
@@ -778,6 +942,11 @@
 
   .workList {
     margin-top: 72px;
+  }
+
+  .bottomKeepsakes {
+    gap: 8px;
+    margin-top: 16px;
   }
 
   .heroCopyItem,
@@ -838,11 +1007,90 @@
     min-height: 0;
     padding: 16px;
   }
+
+  .polaroid {
+    width: 68px;
+  }
+
+  .polaroidPair {
+    top: auto;
+    left: auto;
+    flex-basis: 126px;
+    width: 126px;
+    height: 82px;
+    margin: 0;
+    z-index: 6;
+  }
+
+  .profilePolaroid {
+    left: 0;
+    transform: rotate(-5deg);
+  }
+
+  .catPolaroid {
+    left: 58px;
+    right: auto;
+    transform: translateY(6px) rotate(4deg);
+  }
+
+  .polaroid {
+    padding: 6px 6px 10px;
+  }
+
+  .polaroidTape {
+    top: -8px;
+    width: 40px;
+    height: 14px;
+  }
+
+  .polaroidCaption {
+    margin-top: 5px;
+    font-size: 11px;
+  }
+
+  .todayStamp {
+    position: relative;
+    top: auto;
+    left: auto;
+    z-index: 30;
+    width: min(158px, calc(100% - 134px));
+    flex: 1 1 148px;
+    margin: 0;
+    padding-top: 22px;
+  }
+
+  .todayStamp .pin {
+    top: 31px;
+    width: 22px;
+    height: 22px;
+  }
+
+  .todayNote {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    padding: 10px;
+  }
+
+  .todayLabel {
+    font-size: 11px;
+  }
+
+  .todayDate {
+    margin-top: 8px;
+    font-size: 13px;
+  }
+
+  .todayTime {
+    margin-top: 5px;
+    font-size: 12px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .heroTag,
   .title,
+  .polaroid,
   .stickerSubWrap,
   .todayStamp,
   .workItem,

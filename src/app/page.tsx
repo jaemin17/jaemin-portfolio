@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Fragment } from "react";
 import { projects } from "@/content/projects";
 import { SiteHeader } from "@/components/SiteHeader";
@@ -128,8 +129,6 @@ export default function Home() {
             </section>
           </header>
 
-          <TodayStamp />
-
           <div id="about" className={styles.infoNotes} aria-label="关于我">
             {infoNotes.map((note) => (
               <Fragment key={note.id}>
@@ -161,6 +160,41 @@ export default function Home() {
                 </article>
               </Fragment>
             ))}
+          </div>
+
+          <div className={styles.bottomKeepsakes} aria-label="底部照片和时间">
+            <div className={styles.polaroidPair} aria-label="照片占位">
+              <figure className={`${styles.polaroid} ${styles.profilePolaroid}`} aria-label="个人照片">
+                <span className={styles.polaroidTape} aria-hidden="true" />
+                <span className={`${styles.polaroidImage} ${styles.profileImage}`}>
+                  <Image
+                    className={styles.polaroidPhoto}
+                    src="/images/profile-polaroid.jpg"
+                    alt="花丛前的个人照片"
+                    fill
+                    sizes="116px"
+                    unoptimized
+                  />
+                </span>
+                <figcaption className={styles.polaroidCaption}>me</figcaption>
+              </figure>
+              <figure className={`${styles.polaroid} ${styles.catPolaroid}`} aria-label="小猫照片">
+                <span className={styles.polaroidTape} aria-hidden="true" />
+                <span className={`${styles.polaroidImage} ${styles.catImage}`}>
+                  <Image
+                    className={styles.polaroidPhoto}
+                    src="/images/cat-polaroid.jpg"
+                    alt="小猫照片"
+                    fill
+                    sizes="116px"
+                    unoptimized
+                  />
+                </span>
+                <figcaption className={styles.polaroidCaption}>my cat</figcaption>
+              </figure>
+            </div>
+
+            <TodayStamp />
           </div>
         </section>
       </main>
