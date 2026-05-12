@@ -3,27 +3,27 @@ import styles from "./about.module.css";
 
 const noteGroups = [
   {
-    title: "设计立场",
+    title: "我关注什么",
     tone: "yellow",
     notes: ["减少使用压力", "让流程更自然", "不为设计而设计", "关注长期使用", "尊重用户状态", "让产品有温度"],
   },
   {
-    title: "UX 能力",
+    title: "我擅长什么",
     tone: "green",
     notes: ["问题定义", "任务流梳理", "信息层级", "内容阅读节奏", "关键交互", "可用性优化"],
   },
   {
-    title: "交付内容",
+    title: "我能交付什么",
     tone: "blue",
     notes: ["产品定位", "用户路径", "线框图", "交互原型", "高保真 UI", "组件规范", "开发交付素材"],
   },
   {
-    title: "工具与方法",
+    title: "我用什么工具",
     tone: "purple",
     notes: ["Figma", "FigJam", "SwiftUI", "Next.js", "AI 辅助设计", "竞品分析", "可用性测试"],
   },
   {
-    title: "工作方式",
+    title: "我如何工作",
     tone: "orange",
     notes: ["先验证方向", "快速推进 0→1", "自己动手实现", "持续观察反馈", "反复迭代细节", "打磨到可交付"],
   },
