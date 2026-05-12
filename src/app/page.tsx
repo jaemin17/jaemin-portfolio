@@ -51,6 +51,7 @@ function HoverPolaroid({
   tone = "warm",
   focusable = true,
   block = false,
+  photo,
 }: {
   children: ReactNode;
   caption: string;
@@ -58,8 +59,23 @@ function HoverPolaroid({
   tone?: "warm" | "sky" | "mint" | "lavender" | "sun";
   focusable?: boolean;
   block?: boolean;
+  photo?: "me" | "cat" | "hangzhou" | "smile" | "project01";
 }) {
   const Component = block ? "div" : "span";
+
+  const imageWrapClass = [
+    styles.hoverPolaroidImage,
+    photo === "me" && styles.profileImage,
+    photo === "cat" && styles.catImage,
+    photo === "hangzhou" && styles.hangzhouHoverImage,
+    photo === "smile" && styles.smileHoverImage,
+    photo === "project01" && styles.project01HoverImage,
+    photo && styles.hoverPolaroidImagePhoto,
+  ]
+    .filter(Boolean)
+    .join(" ");
+
+  const titlePhotoOffset = photo === "me" || photo === "cat";
 
   return (
     <Component className={styles.hoverPhotoAnchor} tabIndex={focusable ? 0 : undefined}>
@@ -69,11 +85,61 @@ function HoverPolaroid({
           styles.hoverPolaroid,
           photoClassName("hoverPolaroid", placement),
           photoClassName("hoverPolaroidTone", tone),
-        ].join(" ")}
+          titlePhotoOffset ? styles.hoverPolaroidTitlePhotoPos : "",
+        ]
+          .filter(Boolean)
+          .join(" ")}
         aria-hidden="true"
       >
         <span className={styles.hoverPolaroidTape} />
-        <span className={styles.hoverPolaroidImage} />
+        <span className={imageWrapClass}>
+          {photo === "me" ? (
+            <Image
+              className={styles.polaroidPhoto}
+              src="/images/profile-polaroid.jpg"
+              alt=""
+              fill
+              sizes="96px"
+              unoptimized
+            />
+          ) : photo === "cat" ? (
+            <Image
+              className={styles.polaroidPhoto}
+              src="/images/cat-polaroid.jpg"
+              alt=""
+              fill
+              sizes="96px"
+              unoptimized
+            />
+          ) : photo === "hangzhou" ? (
+            <Image
+              className={styles.polaroidPhoto}
+              src="/images/hangzhou-hover.png"
+              alt=""
+              fill
+              sizes="96px"
+              unoptimized
+            />
+          ) : photo === "smile" ? (
+            <Image
+              className={styles.polaroidPhoto}
+              src="/images/smile-hover.jpg"
+              alt=""
+              fill
+              sizes="96px"
+              unoptimized
+            />
+          ) : photo === "project01" ? (
+            <Image
+              className={styles.polaroidPhoto}
+              src="/images/project-01-hover.png"
+              alt=""
+              fill
+              sizes="96px"
+              unoptimized
+            />
+          ) : null}
+        </span>
         <span className={styles.hoverPolaroidCaption}>{caption}</span>
       </span>
     </Component>
@@ -87,11 +153,13 @@ export default function Home() {
       <main className={styles.main}>
         <section className={styles.wall} aria-label="首页信息墙">
           <header className={styles.hero}>
-            <HoverPolaroid caption="hangzhou" placement="topRight" tone="mint" block>
-              <div className={styles.heroTag} aria-label="status tag">
+            <div className={styles.heroTag} aria-label="status tag">
+              <HoverPolaroid caption=":)" placement="left" tone="sun" photo="smile">
                 <span className={styles.heroTagIcon} aria-hidden="true">
                   :)
                 </span>
+              </HoverPolaroid>
+              <HoverPolaroid caption="hangzhou" placement="topRight" tone="mint" photo="hangzhou">
                 <span className={styles.heroTagPill}>
                   <svg className={styles.heroTagPlate} viewBox="0 0 220 52" aria-hidden="true">
                     <rect
@@ -117,16 +185,17 @@ export default function Home() {
                   </svg>
                   <span className={styles.heroTagText}>Hangzhou · Open to work</span>
                 </span>
-              </div>
-            </HoverPolaroid>
+              </HoverPolaroid>
+            </div>
             <StickerTitle
               className={styles.title}
               text="Jiamin Li"
               renderWord={(word, index, wordNode) => (
                 <HoverPolaroid
-                  caption={word.toLowerCase()}
+                  caption={index === 0 ? "me" : "my cat"}
                   placement={index === 0 ? "topLeft" : "topRight"}
                   tone={index === 0 ? "warm" : "sky"}
+                  photo={index === 0 ? "me" : "cat"}
                 >
                   {wordNode}
                 </HoverPolaroid>
@@ -175,6 +244,7 @@ export default function Home() {
                         placement={projectPhotoPlacements[idx] ?? "right"}
                         tone={projectPhotoTones[idx] ?? "warm"}
                         focusable={false}
+                        photo={idx === 0 ? "project01" : undefined}
                       >
                         <span className={styles.workNote}>
                           <span className={styles.workIndex}>{String(idx + 1).padStart(2, "0")}</span>
@@ -246,38 +316,7 @@ export default function Home() {
             ))}
           </div>
 
-          <div className={styles.bottomKeepsakes} aria-label="底部照片和时间">
-            <div className={styles.polaroidPair} aria-label="照片占位">
-              <figure className={`${styles.polaroid} ${styles.profilePolaroid}`} aria-label="个人照片">
-                <span className={styles.polaroidTape} aria-hidden="true" />
-                <span className={`${styles.polaroidImage} ${styles.profileImage}`}>
-                  <Image
-                    className={styles.polaroidPhoto}
-                    src="/images/profile-polaroid.jpg"
-                    alt="花丛前的个人照片"
-                    fill
-                    sizes="116px"
-                    unoptimized
-                  />
-                </span>
-                <figcaption className={styles.polaroidCaption}>me</figcaption>
-              </figure>
-              <figure className={`${styles.polaroid} ${styles.catPolaroid}`} aria-label="小猫照片">
-                <span className={styles.polaroidTape} aria-hidden="true" />
-                <span className={`${styles.polaroidImage} ${styles.catImage}`}>
-                  <Image
-                    className={styles.polaroidPhoto}
-                    src="/images/cat-polaroid.jpg"
-                    alt="小猫照片"
-                    fill
-                    sizes="116px"
-                    unoptimized
-                  />
-                </span>
-                <figcaption className={styles.polaroidCaption}>my cat</figcaption>
-              </figure>
-            </div>
-
+          <div className={styles.bottomKeepsakes} aria-label="底部时间">
             <TodayStamp />
           </div>
         </section>

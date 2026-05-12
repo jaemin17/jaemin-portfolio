@@ -346,6 +346,15 @@
   --hover-photo-rotation: 6deg;
 }
 
+/* Title name hover photos (me / cat): sit lower than default top corners */
+.hoverPolaroidTitlePhotoPos.hoverPolaroidTopLeft {
+  bottom: calc(100% - 76px);
+}
+
+.hoverPolaroidTitlePhotoPos.hoverPolaroidTopRight {
+  bottom: calc(100% - 78px);
+}
+
 .hoverPolaroidLeft {
   right: calc(100% + 14px);
   top: 50%;
@@ -401,6 +410,26 @@
   border-radius: 999px 999px 6px 6px;
   background: color-mix(in oklab, var(--hover-photo-c) 72%, #111217);
   opacity: 0.32;
+}
+
+.hoverPolaroidImagePhoto::after {
+  display: none;
+}
+
+.hangzhouHoverImage .polaroidPhoto {
+  object-fit: cover;
+  object-position: 50% 42%;
+}
+
+.smileHoverImage .polaroidPhoto {
+  object-fit: cover;
+  object-position: 50% 38%;
+}
+
+.project01HoverImage .polaroidPhoto {
+  object-fit: contain;
+  object-position: 50% 50%;
+  background: #fff;
 }
 
 .hoverPolaroidCaption {
