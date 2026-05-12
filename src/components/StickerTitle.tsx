@@ -1,4 +1,4 @@
-import type { CSSProperties } from "react";
+import type { CSSProperties, ReactNode } from "react";
 import styles from "./StickerTitle.module.css";
 
 const titleHeight = 220;
@@ -14,9 +14,11 @@ function getWordBoxWidth(word: string) {
 export function StickerTitle({
   text,
   className,
+  renderWord,
 }: {
   text: string;
   className?: string;
+  renderWord?: (word: string, index: number, wordNode: ReactNode) => ReactNode;
 }) {
   const words = text.split(" ").filter(Boolean);
   const wordItems = words.map((word) => {
@@ -36,12 +38,8 @@ export function StickerTitle({
       style={{ "--title-width": `${titleWidth}px` } as CSSProperties}
     >
       <span className={styles.inner}>
-        {wordItems.map(({ word, boxWidth, displayWidth }, index) => (
-          <span
-            key={`${word}-${index}`}
-            className={styles.wordWrap}
-            style={{ "--word-width": `${displayWidth}px` } as CSSProperties}
-          >
+        {wordItems.map(({ word, boxWidth, displayWidth }, index) => {
+          const wordNode = (
             <svg
               className={styles.svg}
               viewBox={`-72 0 ${boxWidth} ${titleHeight}`}
@@ -106,8 +104,18 @@ export function StickerTitle({
                 {word}
               </text>
             </svg>
-          </span>
-        ))}
+          );
+
+          return (
+            <span
+              key={`${word}-${index}`}
+              className={styles.wordWrap}
+              style={{ "--word-width": `${displayWidth}px` } as CSSProperties}
+            >
+              {renderWord ? renderWord(word, index, wordNode) : wordNode}
+            </span>
+          );
+        })}
       </span>
     </h1>
   );

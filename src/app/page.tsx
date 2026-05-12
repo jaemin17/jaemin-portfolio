@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import type { ReactNode } from "react";
 import { Fragment } from "react";
 import { projects } from "@/content/projects";
 import { SiteHeader } from "@/components/SiteHeader";
@@ -34,6 +35,51 @@ const infoNotes = [
   },
 ];
 
+const projectPhotoPlacements = ["topLeft", "topRight", "right"] as const;
+const projectPhotoTones = ["warm", "sky", "lavender"] as const;
+const infoPhotoPlacements = ["right", "left", "left", "topLeft"] as const;
+const infoPhotoTones = ["sun", "mint", "lavender", "warm"] as const;
+
+function photoClassName(base: string, value: string) {
+  return styles[`${base}${value[0].toUpperCase()}${value.slice(1)}`];
+}
+
+function HoverPolaroid({
+  children,
+  caption,
+  placement = "right",
+  tone = "warm",
+  focusable = true,
+  block = false,
+}: {
+  children: ReactNode;
+  caption: string;
+  placement?: "topLeft" | "topRight" | "left" | "right" | "bottomRight";
+  tone?: "warm" | "sky" | "mint" | "lavender" | "sun";
+  focusable?: boolean;
+  block?: boolean;
+}) {
+  const Component = block ? "div" : "span";
+
+  return (
+    <Component className={styles.hoverPhotoAnchor} tabIndex={focusable ? 0 : undefined}>
+      {children}
+      <span
+        className={[
+          styles.hoverPolaroid,
+          photoClassName("hoverPolaroid", placement),
+          photoClassName("hoverPolaroidTone", tone),
+        ].join(" ")}
+        aria-hidden="true"
+      >
+        <span className={styles.hoverPolaroidTape} />
+        <span className={styles.hoverPolaroidImage} />
+        <span className={styles.hoverPolaroidCaption}>{caption}</span>
+      </span>
+    </Component>
+  );
+}
+
 export default function Home() {
   return (
     <>
@@ -41,63 +87,79 @@ export default function Home() {
       <main className={styles.main}>
         <section className={styles.wall} aria-label="首页信息墙">
           <header className={styles.hero}>
-            <div className={styles.heroTag} aria-label="status tag">
-              <span className={styles.heroTagIcon} aria-hidden="true">
-                :)
-              </span>
-              <span className={styles.heroTagPill}>
-                <svg className={styles.heroTagPlate} viewBox="0 0 220 52" aria-hidden="true">
-                  <rect
-                    x="8"
-                    y="16"
-                    width="206"
-                    height="34"
-                    rx="17"
-                    fill="rgba(0, 0, 0, 0.16)"
-                    transform="rotate(-1 110 33)"
-                  />
-                  <rect
-                    x="7"
-                    y="8"
-                    width="206"
-                    height="34"
-                    rx="17"
-                    fill="#f6682f"
-                    stroke="#0b0b0b"
-                    strokeWidth="1"
-                    transform="rotate(-1 110 25)"
-                  />
-                </svg>
-                <span className={styles.heroTagText}>Hangzhou · Open to work</span>
-              </span>
-            </div>
-            <StickerTitle className={styles.title} text="Jiamin Li" />
+            <HoverPolaroid caption="hangzhou" placement="topRight" tone="mint" block>
+              <div className={styles.heroTag} aria-label="status tag">
+                <span className={styles.heroTagIcon} aria-hidden="true">
+                  :)
+                </span>
+                <span className={styles.heroTagPill}>
+                  <svg className={styles.heroTagPlate} viewBox="0 0 220 52" aria-hidden="true">
+                    <rect
+                      x="8"
+                      y="16"
+                      width="206"
+                      height="34"
+                      rx="17"
+                      fill="rgba(0, 0, 0, 0.16)"
+                      transform="rotate(-1 110 33)"
+                    />
+                    <rect
+                      x="7"
+                      y="8"
+                      width="206"
+                      height="34"
+                      rx="17"
+                      fill="#f6682f"
+                      stroke="#0b0b0b"
+                      strokeWidth="1"
+                      transform="rotate(-1 110 25)"
+                    />
+                  </svg>
+                  <span className={styles.heroTagText}>Hangzhou · Open to work</span>
+                </span>
+              </div>
+            </HoverPolaroid>
+            <StickerTitle
+              className={styles.title}
+              text="Jiamin Li"
+              renderWord={(word, index, wordNode) => (
+                <HoverPolaroid
+                  caption={word.toLowerCase()}
+                  placement={index === 0 ? "topLeft" : "topRight"}
+                  tone={index === 0 ? "warm" : "sky"}
+                >
+                  {wordNode}
+                </HoverPolaroid>
+              )}
+            />
             <div className={styles.stickerSubWrap} aria-label="identity stickers">
-              <span className={styles.stickerSub}>
-                <svg className={styles.stickerSubPlate} viewBox="0 0 382 88" aria-hidden="true">
-                  <rect
-                    x="12"
-                    y="20"
-                    width="358"
-                    height="58"
-                    rx="18"
-                    fill="rgba(0, 0, 0, 0.18)"
-                    transform="rotate(-2 191 49)"
-                  />
-                  <rect
-                    x="10"
-                    y="9"
-                    width="358"
-                    height="58"
-                    rx="18"
-                    fill="#ff9e1d"
-                    stroke="#0b0b0b"
-                    strokeWidth="2"
-                    transform="rotate(-2 191 38)"
-                  />
-                </svg>
-                <span className={styles.stickerSubText}>产品设计 · 独立开发（0→1）</span>
-              </span>
+              <HoverPolaroid caption="0 to 1" placement="bottomRight" tone="sun">
+                <span className={styles.stickerSub}>
+                  <svg className={styles.stickerSubPlate} viewBox="0 0 382 88" aria-hidden="true">
+                    <rect
+                      x="12"
+                      y="20"
+                      width="358"
+                      height="58"
+                      rx="18"
+                      fill="rgba(0, 0, 0, 0.18)"
+                      transform="rotate(-2 191 49)"
+                    />
+                    <rect
+                      x="10"
+                      y="9"
+                      width="358"
+                      height="58"
+                      rx="18"
+                      fill="#ff9e1d"
+                      stroke="#0b0b0b"
+                      strokeWidth="2"
+                      transform="rotate(-2 191 38)"
+                    />
+                  </svg>
+                  <span className={styles.stickerSubText}>产品设计 · 独立开发（0→1）</span>
+                </span>
+              </HoverPolaroid>
             </div>
             <section id="project" className={styles.projectWall} aria-labelledby="project-title">
               <h2 id="project-title" className={styles.srOnly}>
@@ -108,20 +170,27 @@ export default function Home() {
                   <li key={p.slug} className={styles.workItem}>
                     <Link className={styles.workLink} href={`/projects/${p.slug}`}>
                       <span className={styles.pin} aria-hidden="true" />
-                      <span className={styles.workNote}>
-                        <span className={styles.workIndex}>{String(idx + 1).padStart(2, "0")}</span>
-                        <span className={styles.workTitle}>{p.title}</span>
-                        <span className={styles.workMeta}>
-                          <span className={styles.workSubtitle}>{p.subtitle}</span>
-                          <span className={styles.workTags} aria-label="项目标签">
-                            {p.tags.slice(0, 3).map((tag) => (
-                              <span key={tag} className={styles.workTag}>
-                                {tag}
-                              </span>
-                            ))}
+                      <HoverPolaroid
+                        caption={`case ${String(idx + 1).padStart(2, "0")}`}
+                        placement={projectPhotoPlacements[idx] ?? "right"}
+                        tone={projectPhotoTones[idx] ?? "warm"}
+                        focusable={false}
+                      >
+                        <span className={styles.workNote}>
+                          <span className={styles.workIndex}>{String(idx + 1).padStart(2, "0")}</span>
+                          <span className={styles.workTitle}>{p.title}</span>
+                          <span className={styles.workMeta}>
+                            <span className={styles.workSubtitle}>{p.subtitle}</span>
+                            <span className={styles.workTags} aria-label="项目标签">
+                              {p.tags.slice(0, 3).map((tag) => (
+                                <span key={tag} className={styles.workTag}>
+                                  {tag}
+                                </span>
+                              ))}
+                            </span>
                           </span>
                         </span>
-                      </span>
+                      </HoverPolaroid>
                     </Link>
                   </li>
                 ))}
@@ -136,9 +205,11 @@ export default function Home() {
                   <article className={styles.lifeEntry}>
                     <span className={styles.pin} aria-hidden="true" />
                     <Link className={styles.lifeNote} href="/life">
-                      <span className={styles.workIndex}>B1</span>
-                      <span className={styles.infoTitle}>非设计小事</span>
-                      <span className={styles.infoBody}>手绳 / 钢琴 / 猫 / 旅行</span>
+                      <HoverPolaroid caption="life" placement="left" tone="mint" focusable={false}>
+                        <span className={styles.workIndex}>B1</span>
+                        <span className={styles.infoTitle}>非设计小事</span>
+                        <span className={styles.infoBody}>手绳 / 钢琴 / 猫 / 旅行</span>
+                      </HoverPolaroid>
                     </Link>
                   </article>
                 ) : null}
@@ -146,15 +217,28 @@ export default function Home() {
                   <span className={styles.pin} aria-hidden="true" />
                   {note.id === "about" ? (
                     <Link className={`${styles.infoNote} ${styles.infoNoteLink}`} href="/about">
-                      <span className={styles.workIndex}>{note.index}</span>
-                      <span className={styles.infoTitle}>{note.title}</span>
-                      <span className={styles.infoBody}>{note.body}</span>
+                      <HoverPolaroid
+                        caption={note.id}
+                        placement={infoPhotoPlacements[0]}
+                        tone={infoPhotoTones[0]}
+                        focusable={false}
+                      >
+                        <span className={styles.workIndex}>{note.index}</span>
+                        <span className={styles.infoTitle}>{note.title}</span>
+                        <span className={styles.infoBody}>{note.body}</span>
+                      </HoverPolaroid>
                     </Link>
                   ) : (
                     <span className={styles.infoNote}>
-                      <span className={styles.workIndex}>{note.index}</span>
-                      <span className={styles.infoTitle}>{note.title}</span>
-                      <span className={styles.infoBody}>{note.body}</span>
+                      <HoverPolaroid
+                        caption={note.id}
+                        placement={infoPhotoPlacements[Math.max(0, Number(note.index.slice(1)) - 1)] ?? "right"}
+                        tone={infoPhotoTones[Math.max(0, Number(note.index.slice(1)) - 1)] ?? "warm"}
+                      >
+                        <span className={styles.workIndex}>{note.index}</span>
+                        <span className={styles.infoTitle}>{note.title}</span>
+                        <span className={styles.infoBody}>{note.body}</span>
+                      </HoverPolaroid>
                     </span>
                   )}
                 </article>
