@@ -8,8 +8,25 @@ import { StickerTitle } from "@/components/StickerTitle";
 import { TodayStamp } from "./TodayStamp";
 import styles from "./page.module.css";
 
-/** Public folder paths; `next/image` + static export does not prefix `basePath` on `<img src>`. */
-const asset = (path: string) => `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`;
+/**
+ * Public assets on GitHub Pages project sites live under `/{repo}/…`.
+ * `next/image` + static export omits `basePath` on `<img src>`.
+ * CI sets `NEXT_PUBLIC_*` in `.github/workflows/deploy-github-pages.yml` so the
+ * prefix is inlined into static HTML (see `next.config.ts` `basePath` for the same rules).
+ */
+function staticExportAssetBase(): string {
+  if (process.env.NEXT_PUBLIC_GITHUB_PAGES_BUILD === "true") {
+    const repo = process.env.NEXT_PUBLIC_GITHUB_REPOSITORY?.split("/")[1] ?? "";
+    if (repo && !repo.endsWith(".github.io")) return `/${repo}`;
+  }
+  if (process.env.GITHUB_PAGES === "true") {
+    const repo = process.env.GITHUB_REPOSITORY?.split("/")[1] ?? "";
+    if (repo && !repo.endsWith(".github.io")) return `/${repo}`;
+  }
+  return process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+}
+
+const asset = (path: string) => `${staticExportAssetBase()}${path}`;
 
 const infoNotes = [
   {

@@ -19,6 +19,9 @@ jobs:
     runs-on: ubuntu-latest
     env:
       GITHUB_PAGES: "true"
+      # Next inlines `NEXT_PUBLIC_*` into prerendered HTML; implicit `GITHUB_*` is not always visible there.
+      NEXT_PUBLIC_GITHUB_PAGES_BUILD: "true"
+      NEXT_PUBLIC_GITHUB_REPOSITORY: ${{ github.repository }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
