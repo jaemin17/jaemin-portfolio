@@ -8,6 +8,9 @@ import { StickerTitle } from "@/components/StickerTitle";
 import { TodayStamp } from "./TodayStamp";
 import styles from "./page.module.css";
 
+/** Public folder paths; `next/image` + static export does not prefix `basePath` on `<img src>`. */
+const asset = (path: string) => `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`;
+
 const infoNotes = [
   {
     id: "about",
@@ -96,7 +99,7 @@ function HoverPolaroid({
           {photo === "me" ? (
             <Image
               className={styles.polaroidPhoto}
-              src="/images/profile-polaroid.jpg"
+              src={asset("/images/profile-polaroid.jpg")}
               alt=""
               fill
               sizes="96px"
@@ -105,7 +108,7 @@ function HoverPolaroid({
           ) : photo === "cat" ? (
             <Image
               className={styles.polaroidPhoto}
-              src="/images/cat-polaroid.jpg"
+              src={asset("/images/cat-polaroid.jpg")}
               alt=""
               fill
               sizes="96px"
@@ -114,7 +117,7 @@ function HoverPolaroid({
           ) : photo === "hangzhou" ? (
             <Image
               className={styles.polaroidPhoto}
-              src="/images/hangzhou-hover.png"
+              src={asset("/images/hangzhou-hover.png")}
               alt=""
               fill
               sizes="96px"
@@ -123,7 +126,7 @@ function HoverPolaroid({
           ) : photo === "smile" ? (
             <Image
               className={styles.polaroidPhoto}
-              src="/images/smile-hover.jpg"
+              src={asset("/images/smile-hover.jpg")}
               alt=""
               fill
               sizes="96px"
@@ -132,7 +135,7 @@ function HoverPolaroid({
           ) : photo === "project01" ? (
             <Image
               className={styles.polaroidPhoto}
-              src="/images/project-01-hover.png"
+              src={asset("/images/project-01-hover.png")}
               alt=""
               fill
               sizes="96px"
