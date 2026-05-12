@@ -150,6 +150,15 @@ export default function Home() {
             ))}
           </div>
 
+          <article className={styles.lifeEntry}>
+            <span className={styles.pin} aria-hidden="true" />
+            <Link className={styles.lifeNote} href="/life">
+              <span className={styles.workIndex}>B1</span>
+              <span className={styles.infoTitle}>非设计小事</span>
+              <span className={styles.infoBody}>手绳 / 钢琴 / 猫 / 旅行</span>
+            </Link>
+          </article>
+
         </section>
       </main>
     </>

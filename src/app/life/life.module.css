@@ -1,0 +1,210 @@
+.main {
+  max-width: none;
+  margin: -20px auto 0;
+  padding: 14px clamp(18px, 3vw, 56px) 64px;
+  width: 100%;
+}
+
+.wall {
+  max-width: 1180px;
+  min-height: calc(100svh - 118px);
+  margin: 0 auto;
+  padding: 54px 0 40px;
+}
+
+.intro {
+  max-width: 720px;
+  margin-bottom: 28px;
+}
+
+.kicker {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 0 11px;
+  border: 1px solid #111217;
+  border-radius: 999px;
+  background: #f6682f;
+  box-shadow: 0 5px 0 rgba(17, 18, 23, 0.16);
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 760;
+  transform: rotate(-1deg);
+}
+
+.title {
+  margin-top: 20px;
+  font-size: clamp(42px, 8vw, 104px);
+  line-height: 0.9;
+  font-weight: 950;
+  letter-spacing: 0;
+}
+
+.lede {
+  max-width: 620px;
+  margin-top: 18px;
+  color: rgba(17, 18, 23, 0.7);
+  font-size: clamp(15px, 1.6vw, 19px);
+  line-height: 1.58;
+}
+
+.windowStack {
+  display: grid;
+  gap: 18px;
+}
+
+.window {
+  --accent: #f6682f;
+  overflow: hidden;
+  border: 1px solid rgba(17, 18, 23, 0.14);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: 0 18px 36px rgba(17, 18, 23, 0.11);
+}
+
+.orange {
+  --accent: #f6682f;
+  --paper: #ffe4d5;
+}
+
+.green {
+  --accent: #16884b;
+  --paper: #dff7e8;
+}
+
+.blue {
+  --accent: #2f7bff;
+  --paper: #dfe8ff;
+}
+
+.purple {
+  --accent: #7c5cff;
+  --paper: #f2dcff;
+}
+
+.windowBar {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+  height: 34px;
+  padding: 0 13px;
+  border-bottom: 1px solid rgba(17, 18, 23, 0.12);
+  background: color-mix(in oklab, var(--paper) 74%, white);
+}
+
+.windowBar span {
+  width: 10px;
+  height: 10px;
+  border: 1px solid rgba(17, 18, 23, 0.2);
+  border-radius: 999px;
+  background: var(--accent);
+}
+
+.windowBar span:nth-child(2) {
+  background: #ffcf56;
+}
+
+.windowBar span:nth-child(3) {
+  background: #ffffff;
+}
+
+.windowBody {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.82fr) minmax(0, 1.6fr);
+  gap: clamp(18px, 3vw, 34px);
+  padding: clamp(18px, 2.6vw, 30px);
+  background:
+    linear-gradient(90deg, color-mix(in oklab, var(--paper) 58%, white), rgba(255, 255, 255, 0.72)),
+    rgba(255, 255, 255, 0.78);
+}
+
+.sectionCopy {
+  min-width: 0;
+}
+
+.sectionIndex {
+  display: inline-block;
+  color: color-mix(in oklab, var(--accent) 78%, #111217);
+  font-family: var(--font-kalam), var(--font-geist-sans), system-ui, sans-serif;
+  font-size: 24px;
+  line-height: 1;
+}
+
+.sectionTitle {
+  margin-top: 12px;
+  font-size: clamp(24px, 3vw, 38px);
+  line-height: 1;
+  font-weight: 900;
+  letter-spacing: 0;
+}
+
+.sectionDescription {
+  margin-top: 12px;
+  color: rgba(17, 18, 23, 0.68);
+  font-size: 14px;
+  line-height: 1.68;
+}
+
+.photoRail {
+  display: grid;
+  grid-auto-columns: minmax(138px, 1fr);
+  grid-auto-flow: column;
+  gap: 12px;
+  min-width: 0;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  padding: 2px 2px 12px;
+  scrollbar-color: color-mix(in oklab, var(--accent) 44%, white) transparent;
+}
+
+.photoCard {
+  min-width: 138px;
+}
+
+.photoPlaceholder {
+  display: grid;
+  aspect-ratio: 4 / 3;
+  place-items: center;
+  border: 1px solid color-mix(in oklab, var(--accent) 24%, rgba(17, 18, 23, 0.16));
+  border-radius: 6px;
+  background:
+    linear-gradient(135deg, color-mix(in oklab, var(--paper) 72%, white), rgba(255, 255, 255, 0.8)),
+    repeating-linear-gradient(
+      -45deg,
+      rgba(17, 18, 23, 0.06) 0 1px,
+      transparent 1px 10px
+    );
+}
+
+.photoPlaceholder span {
+  color: color-mix(in oklab, var(--accent) 78%, #111217);
+  font-family: var(--font-kalam), var(--font-geist-sans), system-ui, sans-serif;
+  font-size: 28px;
+}
+
+.photoCard p {
+  margin-top: 8px;
+  color: rgba(17, 18, 23, 0.72);
+  font-size: 13px;
+  font-weight: 760;
+  line-height: 1.2;
+}
+
+@media (max-width: 760px) {
+  .main {
+    margin-top: 0;
+    padding: 10px 16px 48px;
+  }
+
+  .wall {
+    padding-top: 34px;
+  }
+
+  .windowBody {
+    grid-template-columns: 1fr;
+  }
+
+  .photoRail {
+    grid-auto-columns: minmax(142px, 64%);
+  }
+}
