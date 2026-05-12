@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Fragment } from "react";
 import { projects } from "@/content/projects";
 import { SiteHeader } from "@/components/SiteHeader";
 import { StickerTitle } from "@/components/StickerTitle";
@@ -131,34 +132,36 @@ export default function Home() {
 
           <div id="about" className={styles.infoNotes} aria-label="关于我">
             {infoNotes.map((note) => (
-              <article key={note.id} id={note.id} className={styles.infoItem}>
-                <span className={styles.pin} aria-hidden="true" />
-                {note.id === "about" ? (
-                  <Link className={`${styles.infoNote} ${styles.infoNoteLink}`} href="/about">
-                    <span className={styles.workIndex}>{note.index}</span>
-                    <span className={styles.infoTitle}>{note.title}</span>
-                    <span className={styles.infoBody}>{note.body}</span>
-                  </Link>
-                ) : (
-                  <span className={styles.infoNote}>
-                    <span className={styles.workIndex}>{note.index}</span>
-                    <span className={styles.infoTitle}>{note.title}</span>
-                    <span className={styles.infoBody}>{note.body}</span>
-                  </span>
-                )}
-              </article>
+              <Fragment key={note.id}>
+                {note.id === "where" ? (
+                  <article className={styles.lifeEntry}>
+                    <span className={styles.pin} aria-hidden="true" />
+                    <Link className={styles.lifeNote} href="/life">
+                      <span className={styles.workIndex}>B1</span>
+                      <span className={styles.infoTitle}>非设计小事</span>
+                      <span className={styles.infoBody}>手绳 / 钢琴 / 猫 / 旅行</span>
+                    </Link>
+                  </article>
+                ) : null}
+                <article id={note.id} className={styles.infoItem}>
+                  <span className={styles.pin} aria-hidden="true" />
+                  {note.id === "about" ? (
+                    <Link className={`${styles.infoNote} ${styles.infoNoteLink}`} href="/about">
+                      <span className={styles.workIndex}>{note.index}</span>
+                      <span className={styles.infoTitle}>{note.title}</span>
+                      <span className={styles.infoBody}>{note.body}</span>
+                    </Link>
+                  ) : (
+                    <span className={styles.infoNote}>
+                      <span className={styles.workIndex}>{note.index}</span>
+                      <span className={styles.infoTitle}>{note.title}</span>
+                      <span className={styles.infoBody}>{note.body}</span>
+                    </span>
+                  )}
+                </article>
+              </Fragment>
             ))}
           </div>
-
-          <article className={styles.lifeEntry}>
-            <span className={styles.pin} aria-hidden="true" />
-            <Link className={styles.lifeNote} href="/life">
-              <span className={styles.workIndex}>B1</span>
-              <span className={styles.infoTitle}>非设计小事</span>
-              <span className={styles.infoBody}>手绳 / 钢琴 / 猫 / 旅行</span>
-            </Link>
-          </article>
-
         </section>
       </main>
     </>

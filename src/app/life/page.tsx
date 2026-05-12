@@ -43,7 +43,9 @@ export default function LifePage() {
             <h1 id="life-title" className={styles.title}>
               非设计小事
             </h1>
-            <p className={styles.lede}>这些不是作品项目，但它们也在塑造我看东西和动手做事的方式。</p>
+            <p className={styles.lede}>
+              这些不是作品项目，但它们也在塑造我看东西和动手做事的方式。
+            </p>
           </header>
 
           <div className={styles.windowStack}>
