@@ -80,6 +80,10 @@
   padding: 60px 0 40px;
 }
 
+.hero:has(.heroTag:hover, .heroTag:focus-within, .title:hover, .title:focus-within, .stickerSubWrap:hover, .stickerSubWrap:focus-within) {
+  z-index: 30;
+}
+
 .heroTag {
   display: flex;
   align-items: center;
@@ -435,8 +439,7 @@
   border: 1px solid rgba(255, 255, 255, 0.44);
 }
 
-.infoItem .pin,
-.todayStamp .pin {
+.infoItem .pin {
   top: 42px;
 }
 
@@ -674,7 +677,7 @@
   left: clamp(180px, 16vw, 280px);
   z-index: 2;
   width: 170px;
-  padding-top: 34px;
+  padding-top: 0;
   transform: rotate(var(--note-rotation));
   animation-name: noteDropIn;
   animation-delay: 560ms;
@@ -1056,13 +1059,7 @@
     width: min(158px, calc(100% - 134px));
     flex: 1 1 148px;
     margin: 0;
-    padding-top: 22px;
-  }
-
-  .todayStamp .pin {
-    top: 31px;
-    width: 22px;
-    height: 22px;
+    padding-top: 0;
   }
 
   .todayNote {

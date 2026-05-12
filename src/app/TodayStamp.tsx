@@ -41,7 +41,6 @@ export function TodayStamp() {
 
   return (
     <aside className={styles.todayStamp} aria-label="今日时间">
-      <span className={styles.pin} aria-hidden="true" />
       <time className={styles.todayNote} dateTime={now?.toISOString()}>
         <span className={styles.todayLabel}>Hangzhou time</span>
         <span className={styles.todayDate}>{dateText}</span>
