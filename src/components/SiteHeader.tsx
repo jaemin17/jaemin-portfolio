@@ -1,7 +1,8 @@
 import Link from "next/link";
 import styles from "./SiteHeader.module.css";
 
-const portfolioDownloadUrl = "https://drive.google.com/file/d/1QowvXwQdM2GcpHMw60DGumxEhw75aBfT/view";
+const portfolioDownloadUrl =
+  "https://drive.google.com/file/d/1ixfK3WGaswqJQ_xjclbjdxqZvugWPGaf/view?usp=drive_link";
 
 export function SiteHeader() {
   return (

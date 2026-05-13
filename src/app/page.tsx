@@ -33,7 +33,7 @@ const infoNotes = [
     id: "about",
     index: "A1",
     title: "我是谁",
-    body: "偏产品型的 UI/UX 设计师，也会自己做独立开发项目。",
+    body: "偏产品型的 UX/UI 设计师，也会自己做独立开发项目。",
   },
   {
     id: "focus",

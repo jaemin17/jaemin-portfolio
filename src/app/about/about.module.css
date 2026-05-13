@@ -41,6 +41,15 @@
   white-space: nowrap;
 }
 
+.credential {
+  max-width: min(100%, 980px);
+  margin-top: 8px;
+  color: rgba(17, 18, 23, 0.48);
+  font-size: clamp(12px, 1.25vw, 15px);
+  line-height: 1.45;
+  letter-spacing: 0.01em;
+}
+
 .map {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -195,6 +204,10 @@
   }
 
   .intro {
+    white-space: normal;
+  }
+
+  .credential {
     white-space: normal;
   }
 

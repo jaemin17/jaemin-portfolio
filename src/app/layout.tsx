@@ -21,7 +21,7 @@ const kalam = Kalam({
 export const metadata: Metadata = {
   title: "jaemin · product design",
   description:
-    "jaemin is a product designer (UI/UX). This is an exhibition of selected works — from 0 to launch, with AI as a collaborator (not a replacement).",
+    "jaemin is a product designer (UX/UI). This is an exhibition of selected works — from 0 to launch, with AI as a collaborator (not a replacement).",
 };
 
 export default function RootLayout({

@@ -41,7 +41,10 @@ export default function AboutPage() {
                 我是谁
               </h1>
               <p className={styles.intro}>
-                偏产品型的 UX/UI 设计师，擅长把模糊需求拆成清晰任务流、界面结构和可落地的产品体验。
+                偏产品型的 UX/UI 设计师，也会自己做独立开发项目，擅长把模糊需求拆成清晰任务流、界面结构和可落地的产品体验。
+              </p>
+              <p className={styles.credential}>
+                中国美术学院 · 工业设计本科 · 2011—2015
               </p>
             </div>
           </header>
