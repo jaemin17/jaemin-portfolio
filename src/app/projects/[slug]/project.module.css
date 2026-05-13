@@ -206,16 +206,16 @@
 
 .caseLead p {
   color: var(--fg);
-  font-size: 15px;
-  line-height: 1.9;
-  max-width: 68ch;
+  font-size: 17px;
+  line-height: 1.85;
+  max-width: none;
 }
 
 .caseLead blockquote {
   margin-top: 20px;
   color: #171614;
-  font-size: 22px;
-  line-height: 1.55;
+  font-size: 24px;
+  line-height: 1.5;
   letter-spacing: -0.02em;
   font-weight: 700;
 }
@@ -282,27 +282,29 @@
 
 .caseText h3 {
   color: #171614;
-  font-size: 18px;
-  line-height: 1.45;
+  font-size: 22px;
+  line-height: 1.35;
   letter-spacing: -0.02em;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .caseText p,
 .caseReflection p {
   color: var(--fg);
   opacity: 0.88;
-  font-size: 14px;
-  line-height: 1.9;
+  font-size: 17px;
+  line-height: 1.85;
+  max-width: none;
 }
 
 .caseText ul {
-  margin-top: 12px;
-  padding-left: 18px;
+  margin-top: 14px;
+  padding-left: 20px;
   color: #171614;
-  font-size: 13px;
-  line-height: 1.8;
-  font-weight: 650;
+  font-size: 16px;
+  line-height: 1.75;
+  font-weight: 600;
+  max-width: none;
 }
 
 .caseReflection {
@@ -542,7 +544,7 @@
   }
 
   .caseLead blockquote {
-    font-size: 19px;
+    font-size: 21px;
   }
 
   .visualCaption {

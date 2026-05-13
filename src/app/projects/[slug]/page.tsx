@@ -182,9 +182,11 @@ export default async function ProjectDetailPage({
 
             <section className={styles.caseReflection}>
               <h2>项目反思</h2>
-              {featured.reflection.map((item) => (
-                <p key={item}>{item}</p>
-              ))}
+              <div>
+                {featured.reflection.map((item) => (
+                  <p key={item}>{item}</p>
+                ))}
+              </div>
             </section>
           </>
         ) : null}
