@@ -20,6 +20,7 @@ export default async function ProjectDetailPage({
   const { slug } = await params;
   const project = getProjectBySlug(slug);
   const isProjectOne = slug === "selfly-ios-app";
+  const isEvidenceCase = slug === "project-c";
 
   if (!project) notFound();
   const featured = project.featured;
@@ -44,7 +45,7 @@ export default async function ProjectDetailPage({
               <i />
               <i />
             </div>
-            <div className={styles.visualCaption}>A gentle system for daily focus and self-reflection</div>
+            <div className={styles.visualCaption}>每日聚焦、记录与回顾的轻量系统</div>
           </div>
         );
       case "structure":
@@ -87,6 +88,18 @@ export default async function ProjectDetailPage({
             ))}
           </div>
         );
+      case "completion":
+        return (
+          <div className={styles.visualCompletion}>
+            {["未完成", "完成态", "可恢复"].map((item, index) => (
+              <div key={item} className={styles.completionStep}>
+                <span>0{index + 1}</span>
+                <b>{item}</b>
+                <i />
+              </div>
+            ))}
+          </div>
+        );
       case "build":
         return (
           <div className={styles.visualBuild}>
@@ -106,6 +119,7 @@ export default async function ProjectDetailPage({
           className={[
             featured ? styles.featuredHero : styles.header,
             isProjectOne ? styles.projectOneHero : "",
+            isEvidenceCase ? styles.evidenceHero : "",
           ]
             .filter(Boolean)
             .join(" ")}
@@ -133,7 +147,24 @@ export default async function ProjectDetailPage({
           <p className={styles.subtitle}>{project.subtitle}</p>
           {featured?.appDownloadUrl ? (
             <div className={styles.headerCta}>
-              <div className={styles.appPreviewPlaceholder} aria-hidden="true" />
+              {isEvidenceCase ? (
+                <div className={styles.evidenceHeroVisual} aria-hidden="true">
+                  {[
+                    ["Today", "Top 3", "Tomorrow"],
+                    ["Explore", "List", "Journal"],
+                    ["Review", "Cards", "Reflect"],
+                  ].map(([label, first, second]) => (
+                    <div key={label} className={styles.evidencePhone}>
+                      <span>{label}</span>
+                      <i />
+                      <b>{first}</b>
+                      <b>{second}</b>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <div className={styles.appPreviewPlaceholder} aria-hidden="true" />
+              )}
               <div className={styles.meta}>
                 <span className={styles.metaItem}>{project.timeframe}</span>
                 <span className={styles.metaDot} aria-hidden="true">
@@ -161,7 +192,12 @@ export default async function ProjectDetailPage({
             </section>
 
             {featured.visualSections.map((section) => (
-              <section key={section.title} className={styles.caseSection}>
+              <section
+                key={section.title}
+                className={[styles.caseSection, isEvidenceCase ? styles.evidenceSection : ""]
+                  .filter(Boolean)
+                  .join(" ")}
+              >
                 <div className={styles.visualPlate} aria-label={section.title}>
                   {visualPlate(section.visual)}
                 </div>
@@ -170,6 +206,24 @@ export default async function ProjectDetailPage({
                   <div>
                     <h3>{section.title}</h3>
                     <p>{section.body}</p>
+                    {section.before && section.after ? (
+                      <div className={styles.beforeAfterGrid} aria-label="改造前后对比">
+                        <div className={styles.beforeAfterCard}>
+                          <span>改造前</span>
+                          <p>{section.before}</p>
+                        </div>
+                        <div className={styles.beforeAfterCard}>
+                          <span>改造后</span>
+                          <p>{section.after}</p>
+                        </div>
+                        {section.capability ? (
+                          <div className={styles.capabilityCard}>
+                            <span>设计能力</span>
+                            <p>{section.capability}</p>
+                          </div>
+                        ) : null}
+                      </div>
+                    ) : null}
                     <ul>
                       {section.notes.map((note) => (
                         <li key={note}>{note}</li>
@@ -179,6 +233,29 @@ export default async function ProjectDetailPage({
                 </div>
               </section>
             ))}
+
+            {isEvidenceCase ? (
+              <section className={styles.detailWall}>
+                <div>
+                  <h2>细节治理</h2>
+                  <p>
+                    除了核心结构，我也持续处理高频使用里的小摩擦。它们单独看是细节，合在一起决定产品是否像一个真实、稳定、可以长期使用的 App。
+                  </p>
+                </div>
+                <div className={styles.detailGrid}>
+                  {[
+                    "长文本适配",
+                    "滑动操作不裁剪",
+                    "底部模糊更轻",
+                    "图册缩略图更清晰",
+                    "英文标签换行",
+                    "二级页导航状态",
+                  ].map((item) => (
+                    <span key={item}>{item}</span>
+                  ))}
+                </div>
+              </section>
+            ) : null}
 
             <section className={styles.caseReflection}>
               <h2>项目反思</h2>

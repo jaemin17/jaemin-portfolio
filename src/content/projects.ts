@@ -26,7 +26,10 @@ export type Project = {
       title: string;
       body: string;
       notes: string[];
-      visual: "overview" | "structure" | "focus" | "modules" | "review" | "build";
+      visual: "overview" | "structure" | "focus" | "modules" | "review" | "build" | "completion";
+      before?: string;
+      after?: string;
+      capability?: string;
     }>;
   };
   sections: Array<{
@@ -257,16 +260,128 @@ export const projects: Project[] = [
   },
   {
     slug: "project-c",
-    title: "Project C (placeholder)",
-    subtitle: "品牌叙事、视觉探索或概念项目方向的占位。",
-    timeframe: "2025",
-    role: "Product designer",
-    tags: ["Visual craft", "Narrative", "Motion (optional)"],
-    highlights: ["One-line highlight 1", "One-line highlight 2", "One-line highlight 3"],
+    title: "Selfly：从自我探索到持续记录",
+    subtitle: "从 0 到 1 独立上线的 iOS App，以及我如何通过多轮迭代让体验更轻、更清晰。",
+    timeframe: "2025–2026",
+    role: "Solo Product Designer & iOS Developer",
+    tags: ["UX Strategy", "Product Design", "Interaction Design", "0→1"],
+    highlights: [
+      "从零完成产品定位、信息架构、核心体验、SwiftUI 开发和 App Store 上线。",
+      "把分散功能收敛成清单、计划、日记、图册四类记录模块。",
+      "通过灵感模板、今日聚焦、可撤销完成和卡片式回顾，降低长期使用压力。",
+    ],
+      featured: {
+      eyebrow: "UX Evidence Case Study",
+      origin:
+        "Selfly 是我独立设计并上线的自我记录 App。项目早期包含很多探索方向：价值观、愿景板、日记、计划、清单和回顾。随着迭代推进，我把重点从“做出更多功能”转向“让用户更容易开始、理解和长期回来”。",
+      problem:
+        "如何把分散的自我探索功能，收敛成一个低压力、可持续的记录与回顾系统？",
+      visualLabel: "Before / After experience evidence",
+      visualNotes: ["收敛产品结构", "降低开始成本", "建立每日节奏"],
+      strategy: [
+        {
+          title: "收敛",
+          principle: "Less features, clearer system",
+          description:
+            "把多个相似功能归并成可复用模块，让用户理解的是记录方式，而不是一堆独立工具。",
+        },
+        {
+          title: "启动",
+          principle: "Start from inspiration",
+          description:
+            "用灵感模板替代空白配置，让用户先进入真实场景，再逐步理解产品结构。",
+        },
+        {
+          title: "持续",
+          principle: "Daily rhythm over task pressure",
+          description:
+            "用今日三件事、明日草稿、放一放和卡片回顾，帮助记录形成轻节奏，而不是效率压力。",
+        },
+      ],
+      uxDecisions: [
+        "从功能集合转向模块化记录系统，降低信息架构复杂度。",
+        "从空白创建转向灵感模板，一键创建并直接进入模块。",
+        "从普通待办转向 Today / Tomorrow / Backlog 的每日节奏。",
+        "从立刻消失的完成动作转向延迟提交与可恢复反馈。",
+        "从打断式完成页转向连续的卡片式回顾体验。",
+      ],
+      implementation: [
+        "独立完成 SwiftUI 界面和关键交互实现。",
+        "使用 SwiftData 和 iCloud 支撑真实记录、同步与迁移。",
+        "处理多语言、StoreKit、隐私、订阅和 App Store 发布细节。",
+      ],
+      reflection: [
+        "这个项目让我意识到，0 到 1 不只是把功能做出来，而是不断把模糊需求翻译成更清晰的体验结构。",
+        "Selfly 后期变得更好，不是因为功能更多，而是因为它更轻、更聚焦，用户也更容易知道下一步该做什么。",
+        "我希望这个案例呈现的是一组设计能力：信息架构收敛、行为模型设计、交互安全感、反馈节奏控制，以及把设计真正落到可上线产品里的能力。",
+      ],
+      appDownloadUrl: "https://apps.apple.com/cn/app/selfly%E6%97%A5%E8%AE%B0/id6762545235",
+      visualSections: [
+        {
+          label: "设计挑战",
+          title: "从 0 到 1 之后，真正的挑战是把体验收清楚",
+          body: "Selfly 不是缺少功能，而是需要一个清晰的使用节奏。我需要判断哪些入口应该保留，哪些可以合并，以及怎样让用户不用先理解复杂系统，也能自然开始记录。",
+          notes: ["从真实需求出发", "独立设计与上线", "用迭代验证体验判断"],
+          visual: "overview",
+        },
+        {
+          label: "改造 01",
+          title: "产品收敛：把多个入口归并成四类记录容器",
+          body: "早期版本里，愿景板、成功日记、感恩日记、我喜欢等功能各自独立。它们看起来丰富，但也让用户每次都要重新理解规则。我把这些场景收敛成清单、计划、日记、图册四类模块，让产品结构更稳定。",
+          notes: ["减少入口数量", "保留核心场景", "让结构更容易扩展"],
+          visual: "structure",
+          before: "多个自我探索功能并列出现，每个入口都有自己的规则。",
+          after: "用四类记录容器承载不同场景，用户先理解记录方式。",
+          capability: "产品架构与信息归类",
+        },
+        {
+          label: "改造 02",
+          title: "创建体验：让用户从场景开始，而不是从表单开始",
+          body: "原来的创建流程自由度很高，但新用户需要先选择类型、填写名称、说明、图标和设置。我保留自定义入口，同时加入灵感模板，让用户可以从情绪日记、年度目标、理想自我、我的边界等具体场景直接开始。",
+          notes: ["降低空白页压力", "用场景解释模块", "创建后直接进入记录"],
+          visual: "modules",
+          before: "用户先面对配置项，再决定自己要记录什么。",
+          after: "用户先看到真实场景，再一键创建对应模块。",
+          capability: "低摩擦创建路径",
+        },
+        {
+          label: "改造 03",
+          title: "今日聚焦：把任务列表改成一天的节奏",
+          body: "如果首页只是普通待办，任务会不断累积，Selfly 也会变成另一个效率工具。我把今日页拆成三层：今天只聚焦三件事，暂时不处理的放进 Backlog，晚上可以提前写下明日重点。",
+          notes: ["用限制帮助选择", "降低第二天启动成本", "让待办服务于自我记录"],
+          visual: "focus",
+          before: "待办不断增加，首页容易变成压力来源。",
+          after: "Top 3、明日草稿和 Backlog 形成更轻的每日节奏。",
+          capability: "行为模型设计",
+        },
+        {
+          label: "改造 04",
+          title: "完成交互：给高频动作留一个恢复窗口",
+          body: "完成任务是高频操作，也很容易误触。原本任务完成后会立刻离开当前位置，我把它改成延迟提交：先显示完成态，短时间内可以恢复，再真正归档。",
+          notes: ["反馈立即出现", "误触可以撤回", "完成后不突然消失"],
+          visual: "completion",
+          before: "点击完成后，任务马上消失，用户难以确认或撤回。",
+          after: "任务先保留完成态和恢复机会，再进入完成状态。",
+          capability: "高频交互安全感",
+        },
+        {
+          label: "改造 05",
+          title: "回顾体验：让结束成为浏览的一部分",
+          body: "早期回顾完成后会跳到单独的结束页，节奏上像完成了一个任务。我把完成状态放回卡片流里，让用户自然翻到结束；庆祝反馈也只在当天首次完成时出现。",
+          notes: ["不打断回顾节奏", "降低反馈强度", "适配重复进入场景"],
+          visual: "review",
+          before: "独立结束页打断浏览，让回顾更像任务流程。",
+          after: "完成卡片留在回顾流中，用户可以自然停下或继续查看。",
+          capability: "反馈节奏与情绪强度控制",
+        },
+      ],
+    },
     sections: [
       {
-        title: "Overview",
-        paragraphs: ["Replace this with a real project. Keep structure clear and the pacing crisp."],
+        title: "项目说明",
+        paragraphs: [
+          "这个项目三版本更强调 Selfly 的迭代证据：每个亮点都回答“我把什么改成了什么，以及这个改动体现了什么设计能力”。",
+        ],
       },
     ],
   },
