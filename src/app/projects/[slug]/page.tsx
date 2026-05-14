@@ -58,6 +58,35 @@ export default async function ProjectDetailPage({
             ))}
           </div>
         );
+      case "challenge":
+        return (
+          <div className={styles.visualChallenge}>
+            {["入口太多", "开始太重", "难以持续"].map((item, index) => (
+              <div key={item} className={styles.challengeNode}>
+                <span>0{index + 1}</span>
+                <b>{item}</b>
+              </div>
+            ))}
+          </div>
+        );
+      case "consolidation":
+        return (
+          <div className={styles.visualConsolidation}>
+            <div className={styles.beforeCluster}>
+              {["愿景板", "成功日记", "感恩", "我喜欢", "目标", "灵感"].map((item) => (
+                <span key={item}>{item}</span>
+              ))}
+            </div>
+            <div className={styles.flowArrow} aria-hidden="true">
+              →
+            </div>
+            <div className={styles.afterCluster}>
+              {["清单", "计划", "日记", "图册"].map((item) => (
+                <span key={item}>{item}</span>
+              ))}
+            </div>
+          </div>
+        );
       case "focus":
         return (
           <div className={styles.visualTopThree}>
@@ -66,6 +95,35 @@ export default async function ProjectDetailPage({
                 <span>0{item}</span>
                 <i />
                 <i />
+              </div>
+            ))}
+          </div>
+        );
+      case "templates":
+        return (
+          <div className={styles.visualTemplates}>
+            <div className={styles.blankForm}>
+              <span>空白配置</span>
+              <i />
+              <i />
+              <i />
+            </div>
+            <div className={styles.templateShelf}>
+              {["情绪日记", "年度目标", "理想自我", "我的边界"].map((item) => (
+                <span key={item}>{item}</span>
+              ))}
+            </div>
+          </div>
+        );
+      case "rhythm":
+        return (
+          <div className={styles.visualRhythm}>
+            {["今日 Top 3", "明日草稿", "Backlog"].map((item, index) => (
+              <div key={item} className={styles.rhythmColumn}>
+                <span>{item}</span>
+                {Array.from({ length: index === 0 ? 3 : 2 }).map((_, itemIndex) => (
+                  <i key={itemIndex} />
+                ))}
               </div>
             ))}
           </div>
@@ -216,19 +274,21 @@ export default async function ProjectDetailPage({
                           <span>改造后</span>
                           <p>{section.after}</p>
                         </div>
-                        {section.capability ? (
-                          <div className={styles.capabilityCard}>
-                            <span>设计能力</span>
-                            <p>{section.capability}</p>
-                          </div>
-                        ) : null}
                       </div>
                     ) : null}
-                    <ul>
-                      {section.notes.map((note) => (
-                        <li key={note}>{note}</li>
-                      ))}
-                    </ul>
+                    <div className={styles.designPoints}>
+                      <h4>设计要点</h4>
+                      <ul>
+                        {section.capability ? (
+                          <li>
+                            <strong>{section.capability}</strong>
+                          </li>
+                        ) : null}
+                        {section.notes.map((note) => (
+                          <li key={note}>{note}</li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
                 </div>
               </section>

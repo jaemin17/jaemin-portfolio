@@ -268,9 +268,9 @@ export default function Home() {
                       >
                         <span className={styles.workNote}>
                           <span className={styles.workIndex}>{String(idx + 1).padStart(2, "0")}</span>
-                          <span className={styles.workTitle}>{p.title}</span>
+                          <span className={styles.workTitle}>{p.cardTitle ?? p.title}</span>
                           <span className={styles.workMeta}>
-                            <span className={styles.workSubtitle}>{p.subtitle}</span>
+                            <span className={styles.workSubtitle}>{p.cardSubtitle ?? p.subtitle}</span>
                             <span className={styles.workTags} aria-label="项目标签">
                               {p.tags.slice(0, 3).map((tag) => (
                                 <span key={tag} className={styles.workTag}>
