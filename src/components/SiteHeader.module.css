@@ -46,12 +46,15 @@
 .brand {
   display: inline-flex;
   align-items: center;
-  font-weight: 750;
   letter-spacing: -0.02em;
 }
 
 .brandText {
-  font-size: 18px;
+  font-family: var(--font-kalam), var(--font-geist-sans), system-ui, sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  color: #f6682f;
+  -webkit-text-stroke: 0.35px #f6682f;
 }
 
 .menuItem {
