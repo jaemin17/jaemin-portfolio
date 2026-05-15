@@ -39,7 +39,9 @@ export type Project = {
         | "challenge"
         | "consolidation"
         | "templates"
-        | "rhythm";
+        | "rhythm"
+        | "shiftCards"
+        | "shiftCompact";
       before?: string;
       after?: string;
       capability?: string;
@@ -333,6 +335,20 @@ export const projects: Project[] = [
       ],
       appDownloadUrl: "https://apps.apple.com/cn/app/selfly%E6%97%A5%E8%AE%B0/id6762545235",
       visualSections: [
+        {
+          label: "项目转变 · 版本 A",
+          title: "从一次性探索，到持续理解自己",
+          body: "早期 Selfly 更像结构化自我探索工具。迭代中我发现，固定模块无法覆盖每个人想记录的内容，单纯记录也容易被遗忘。因此我将产品从预设练习调整为可配置的个人记录空间，并用每日聚焦和回顾让记录进入日常循环。",
+          notes: ["发现：固定模块太窄，单纯记录会沉底", "改变：从预设练习转向可配置记录空间", "机制：每日聚焦 + 回顾，形成日常循环"],
+          visual: "shiftCards",
+        },
+        {
+          label: "项目转变 · 版本 B",
+          title: "Selfly 的核心转变不是增加更多功能",
+          body: "我重新定义用户如何长期记录、提问和回看自己：从固定的自我探索练习，到清单、计划、日记、图册组成的可配置记录空间，再到围绕每日聚焦和回顾运转的使用节奏。",
+          notes: ["Before：价值观 / 目标 / 习惯等固定练习", "After：清单 / 计划 / 日记 / 图册 + 每日聚焦 + 回顾", "核心：记录、提问、回看"],
+          visual: "shiftCompact",
+        },
         {
           label: "设计挑战",
           title: "从独立功能，到一个可以长期回来的系统",

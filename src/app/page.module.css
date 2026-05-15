@@ -72,6 +72,225 @@
   padding: 18px 0 28px;
 }
 
+.decorations {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.sparkle {
+  position: absolute;
+  width: var(--sparkle-size, 14px);
+  height: var(--sparkle-size, 14px);
+  color: var(--sparkle-color, #ff9e1d);
+  font-size: var(--sparkle-size, 14px);
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  font-weight: 700;
+  line-height: 1;
+  opacity: 0.74;
+  transform: translate(-50%, -50%) rotate(var(--sparkle-rotation, 0deg));
+}
+
+/* Per 5-shape cycle (✦★✸✿✽): large → medium → small → medium+ → accent */
+.sparkle:nth-child(5n + 1) {
+  --sparkle-size: 22px;
+}
+
+.sparkle:nth-child(5n + 2) {
+  --sparkle-size: 15px;
+}
+
+.sparkle:nth-child(5n + 3) {
+  --sparkle-size: 12px;
+}
+
+.sparkle:nth-child(5n + 4) {
+  --sparkle-size: 18px;
+}
+
+.sparkle:nth-child(5n) {
+  --sparkle-size: 26px;
+}
+
+.sparkle:nth-child(1) {
+  --sparkle-color: #e78aa6;
+  --sparkle-rotation: 45deg;
+  top: 5%;
+  left: 7%;
+}
+
+.sparkle:nth-child(2) {
+  --sparkle-color: #eaa0b6;
+  --sparkle-rotation: 8deg;
+  top: 8%;
+  left: 43%;
+}
+
+.sparkle:nth-child(3) {
+  --sparkle-color: #ffb47c;
+  --sparkle-rotation: 28deg;
+  top: 13%;
+  left: 59%;
+}
+
+.sparkle:nth-child(4) {
+  --sparkle-color: #b8a6ff;
+  --sparkle-rotation: 22deg;
+  top: 4%;
+  left: 66%;
+}
+
+.sparkle:nth-child(5) {
+  --sparkle-color: #ffb47c;
+  --sparkle-rotation: 32deg;
+  top: 18%;
+  right: 7%;
+}
+
+.sparkle:nth-child(6) {
+  --sparkle-color: #ff9e6f;
+  --sparkle-rotation: 12deg;
+  top: 16%;
+  left: 15%;
+}
+
+.sparkle:nth-child(7) {
+  --sparkle-color: #e78aa6;
+  --sparkle-rotation: 45deg;
+  top: 24%;
+  left: 22%;
+}
+
+.sparkle:nth-child(8) {
+  --sparkle-color: #b8a6ff;
+  --sparkle-rotation: 4deg;
+  top: 31%;
+  left: 11%;
+}
+
+.sparkle:nth-child(9) {
+  --sparkle-color: #ff9e6f;
+  --sparkle-rotation: 34deg;
+  top: 34%;
+  left: 16%;
+}
+
+.sparkle:nth-child(10) {
+  --sparkle-color: #e78aa6;
+  --sparkle-rotation: 16deg;
+  top: 31%;
+  right: 13%;
+}
+
+.sparkle:nth-child(11) {
+  --sparkle-color: #ffb47c;
+  --sparkle-rotation: 48deg;
+  top: 34%;
+  right: 11%;
+}
+
+.sparkle:nth-child(12) {
+  --sparkle-color: #ff9e6f;
+  --sparkle-rotation: 13deg;
+  top: 45%;
+  right: 12%;
+}
+
+.sparkle:nth-child(13) {
+  --sparkle-color: #e78aa6;
+  --sparkle-rotation: 25deg;
+  top: 50%;
+  right: 10%;
+}
+
+.sparkle:nth-child(14) {
+  --sparkle-color: #e78aa6;
+  --sparkle-rotation: 45deg;
+  top: 52%;
+  left: 46%;
+}
+
+.sparkle:nth-child(15) {
+  --sparkle-color: #ffb47c;
+  --sparkle-rotation: 18deg;
+  top: 49%;
+  left: 55%;
+}
+
+.sparkle:nth-child(16) {
+  --sparkle-color: #e78aa6;
+  --sparkle-rotation: 37deg;
+  top: 51%;
+  left: 61%;
+}
+
+.sparkle:nth-child(17) {
+  --sparkle-color: #b8a6ff;
+  --sparkle-rotation: 10deg;
+  top: 53%;
+  left: 40%;
+}
+
+.sparkle:nth-child(18) {
+  --sparkle-color: #ff9e6f;
+  --sparkle-rotation: 45deg;
+  top: 46%;
+  left: 6%;
+}
+
+.sparkle:nth-child(19) {
+  --sparkle-color: #ffb47c;
+  --sparkle-rotation: 35deg;
+  top: 20%;
+  left: 36%;
+}
+
+.sparkle:nth-child(20) {
+  --sparkle-color: #b8a6ff;
+  --sparkle-rotation: 12deg;
+  top: 21%;
+  left: 64%;
+}
+
+.cursorSparkles {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.cursorSparkle {
+  position: fixed;
+  left: var(--cursor-sparkle-x);
+  top: var(--cursor-sparkle-y);
+  color: var(--cursor-sparkle-color);
+  font-size: var(--cursor-sparkle-size);
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  font-weight: 700;
+  line-height: 1;
+  opacity: 0;
+  text-shadow: 0 2px 5px rgba(17, 18, 23, 0.1);
+  transform: translate(-50%, -50%) rotate(var(--cursor-sparkle-rotation)) scale(0.78);
+  animation: cursorSparkleFly 720ms ease-out forwards;
+}
+
+@keyframes cursorSparkleFly {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(var(--cursor-sparkle-rotation)) scale(0.55);
+  }
+  18% {
+    opacity: 0.86;
+    transform: translate(-50%, -56%) rotate(var(--cursor-sparkle-rotation)) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -132%) rotate(calc(var(--cursor-sparkle-rotation) + 18deg)) scale(0.34);
+  }
+}
+
 .hero {
   position: relative;
   z-index: 8;

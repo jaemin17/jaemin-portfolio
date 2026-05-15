@@ -5,6 +5,7 @@ import { Fragment } from "react";
 import { projects } from "@/content/projects";
 import { SiteHeader } from "@/components/SiteHeader";
 import { StickerTitle } from "@/components/StickerTitle";
+import { CursorSparkles } from "./CursorSparkles";
 import { TodayStamp } from "./TodayStamp";
 import styles from "./page.module.css";
 
@@ -59,6 +60,28 @@ const projectPhotoPlacements = ["topLeft", "topRight", "right"] as const;
 const projectPhotoTones = ["warm", "sky", "lavender"] as const;
 const infoPhotoPlacements = ["right", "left", "left", "topLeft"] as const;
 const infoPhotoTones = ["sun", "mint", "lavender", "warm"] as const;
+const decorationShapes = [
+  "✦",
+  "★",
+  "✸",
+  "✿",
+  "✽",
+  "✦",
+  "★",
+  "✸",
+  "✿",
+  "✽",
+  "✦",
+  "★",
+  "✸",
+  "✿",
+  "✽",
+  "✦",
+  "★",
+  "✸",
+  "✿",
+  "✽",
+] as const;
 
 function photoClassName(base: string, value: string) {
   return styles[`${base}${value[0].toUpperCase()}${value.slice(1)}`];
@@ -171,7 +194,15 @@ export default function Home() {
     <>
       <SiteHeader />
       <main className={styles.main}>
+        <CursorSparkles />
         <section className={styles.wall} aria-label="首页信息墙">
+          <div className={styles.decorations} aria-hidden="true">
+            {decorationShapes.map((shape, index) => (
+              <span key={index} className={styles.sparkle}>
+                {shape}
+              </span>
+            ))}
+          </div>
           <header className={styles.hero}>
             <div className={styles.heroTag} aria-label="status tag">
               <HoverPolaroid caption=":)" placement="left" tone="sun" photo="smile">

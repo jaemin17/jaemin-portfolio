@@ -198,35 +198,49 @@
 }
 
 .evidenceHero {
-  text-align: left;
-  padding-top: 36px;
+  text-align: center;
+  padding-top: 42px;
 }
 
 .evidenceHero .title {
-  margin-left: 0;
-  margin-right: 0;
-  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+  max-width: 940px;
+  font-size: 36px;
+  white-space: nowrap;
 }
 
 .evidenceHero .subtitle {
-  margin-left: 0;
-  margin-right: 0;
-  max-width: 68ch;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 940px;
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 16px;
+  white-space: nowrap;
 }
 
 .evidenceHero .headerCta {
-  align-items: flex-start;
+  align-items: center;
+  margin-top: 52px;
 }
 
 .evidenceHero .meta {
-  justify-content: flex-start;
+  justify-content: center;
+}
+
+.evidenceHero .titleEn {
+  font-weight: 600;
+}
+
+.evidenceHero .titleZh {
+  font-size: inherit;
+  font-weight: 750;
 }
 
 .evidenceHero .appPreviewPlaceholder {
   min-height: 300px;
-  background:
-    linear-gradient(90deg, rgba(255, 139, 115, 0.14), rgba(99, 182, 220, 0.12)),
-    color-mix(in oklab, var(--accentA) 12%, white);
+  background: #050505;
 }
 
 .evidenceHeroVisual {
@@ -234,9 +248,7 @@
   min-height: 330px;
   border-radius: 8px;
   border: 2px solid #171614;
-  background:
-    linear-gradient(90deg, rgba(255, 139, 115, 0.18), rgba(99, 182, 220, 0.14)),
-    rgba(255, 248, 240, 0.96);
+  background: #050505;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 150px));
   justify-content: center;
@@ -600,6 +612,8 @@
 .visualReview,
 .visualCompletion,
 .visualChallenge,
+.visualShiftCards,
+.visualShiftCompact,
 .visualConsolidation,
 .visualTemplates,
 .visualRhythm,
@@ -620,6 +634,8 @@
 .reviewCard,
 .completionStep,
 .challengeNode,
+.shiftCard,
+.shiftCompactNode,
 .beforeCluster span,
 .afterCluster span,
 .blankForm,
@@ -662,6 +678,155 @@
 .challengeNode:nth-child(2) {
   transform: translateY(-12px);
   border-color: #2c8bc1;
+}
+
+.visualShiftCards {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  width: min(92%, 760px);
+}
+
+.shiftCard {
+  min-height: 178px;
+  padding: 18px;
+  display: grid;
+  align-content: start;
+  gap: 12px;
+}
+
+.shiftCard:nth-child(2) {
+  transform: translateY(-12px);
+  border-color: #2c8bc1;
+}
+
+.shiftCard span,
+.shiftCompactHeader span,
+.shiftCompactNode span,
+.shiftCompactRows span {
+  color: #2d2b28;
+  font-family: "Roboto Mono", "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 12px;
+  font-weight: 850;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.shiftCard b,
+.shiftCompactHeader b,
+.shiftCompactNode b {
+  color: #171614;
+  font-size: 18px;
+  line-height: 1.28;
+}
+
+.shiftCard p,
+.shiftCompactNode p,
+.shiftCompactRows p {
+  color: #3f3d39;
+  font-size: 14px;
+  line-height: 1.55;
+  font-weight: 650;
+}
+
+.shiftBeforeAfter {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  gap: 14px;
+  border: 2px solid rgba(255, 139, 115, 0.8);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.68);
+  padding: 16px;
+  position: relative;
+  z-index: 1;
+}
+
+.shiftBeforeAfter span {
+  color: #171614;
+  font-size: 15px;
+  line-height: 1.55;
+  font-weight: 800;
+}
+
+.shiftBeforeAfter strong {
+  color: #ff8b73;
+  font-size: 24px;
+  line-height: 1;
+}
+
+.visualShiftCompact {
+  width: min(92%, 760px);
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+
+.shiftCompactHeader {
+  border: 2px solid #ff8b73;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.74);
+  padding: 20px;
+  display: grid;
+  gap: 8px;
+  position: relative;
+  z-index: 1;
+}
+
+.shiftCompactHeader b {
+  font-size: 24px;
+  letter-spacing: -0.02em;
+}
+
+.shiftCompactFlow {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.shiftCompactNode {
+  min-height: 142px;
+  padding: 16px;
+  display: grid;
+  align-content: start;
+  gap: 10px;
+}
+
+.shiftCompactNode:nth-child(2) {
+  border-color: #2c8bc1;
+  transform: translateY(-8px);
+}
+
+.shiftCompactNode i {
+  position: absolute;
+  right: -24px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #ff8b73;
+  font-style: normal;
+  font-size: 24px;
+  font-weight: 850;
+  z-index: 2;
+}
+
+.shiftCompactRows {
+  display: grid;
+  gap: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.shiftCompactRows p {
+  border: 2px solid rgba(45, 43, 40, 0.22);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.66);
+  padding: 14px 16px;
+  color: #171614;
+}
+
+.shiftCompactRows span {
+  display: inline-block;
+  min-width: 72px;
+  margin-right: 10px;
 }
 
 .visualConsolidation {
@@ -952,6 +1117,117 @@
   background: rgba(255, 255, 255, 0.84);
 }
 
+.evidenceHeroVisual,
+.evidenceSection .visualPlate {
+  border-color: #ff7a45;
+  background: #050505;
+}
+
+.evidenceSection .visualPlate {
+  color: #fff7ef;
+}
+
+.evidenceSection .visualPlate::before,
+.evidenceSection .visualPlate::after {
+  display: none;
+}
+
+.evidenceHeroVisual .evidencePhone,
+.evidenceSection .mockPhoneTall,
+.evidenceSection .mockPhoneTilt,
+.evidenceSection .flowNode,
+.evidenceSection .moduleTile,
+.evidenceSection .topCard,
+.evidenceSection .reviewCard,
+.evidenceSection .completionStep,
+.evidenceSection .challengeNode,
+.evidenceSection .shiftCard,
+.evidenceSection .shiftCompactHeader,
+.evidenceSection .shiftCompactNode,
+.evidenceSection .shiftCompactRows p,
+.evidenceSection .beforeCluster span,
+.evidenceSection .afterCluster span,
+.evidenceSection .blankForm,
+.evidenceSection .templateShelf span,
+.evidenceSection .rhythmColumn,
+.evidenceSection .visualBuild span {
+  border-color: #ff7a45;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff7ef;
+  box-shadow: none;
+}
+
+.evidenceHeroVisual .evidencePhone span,
+.evidenceHeroVisual .evidencePhone b,
+.evidenceSection .mockPhoneTall span,
+.evidenceSection .mockPhoneTilt span,
+.evidenceSection .challengeNode span,
+.evidenceSection .challengeNode b,
+.evidenceSection .shiftCard span,
+.evidenceSection .shiftCard b,
+.evidenceSection .shiftCard p,
+.evidenceSection .shiftCompactHeader span,
+.evidenceSection .shiftCompactHeader b,
+.evidenceSection .shiftCompactNode span,
+.evidenceSection .shiftCompactNode b,
+.evidenceSection .shiftCompactNode p,
+.evidenceSection .shiftCompactRows span,
+.evidenceSection .shiftCompactRows p,
+.evidenceSection .completionStep span,
+.evidenceSection .completionStep b,
+.evidenceSection .beforeCluster span,
+.evidenceSection .afterCluster span,
+.evidenceSection .blankForm span,
+.evidenceSection .templateShelf span,
+.evidenceSection .rhythmColumn span {
+  color: #fff7ef;
+}
+
+.evidenceHeroVisual .evidencePhone i,
+.evidenceSection .mockPhoneTall i,
+.evidenceSection .mockPhoneTilt i,
+.evidenceSection .topCard i,
+.evidenceSection .blankForm i,
+.evidenceSection .rhythmColumn i,
+.evidenceSection .completionStep i {
+  border-color: rgba(255, 122, 69, 0.5);
+  background: rgba(255, 122, 69, 0.18);
+}
+
+.evidenceSection .afterCluster span,
+.evidenceSection .challengeNode:nth-child(2),
+.evidenceSection .shiftCard:nth-child(2),
+.evidenceSection .shiftCompactNode:nth-child(2),
+.evidenceSection .rhythmColumn:nth-child(1),
+.evidenceSection .completionStep:nth-child(2) {
+  border-color: #ff7a45;
+}
+
+.evidenceSection .flowArrow,
+.evidenceSection .shiftBeforeAfter strong,
+.evidenceSection .shiftCompactNode i {
+  color: #ff7a45;
+}
+
+.evidenceSection .shiftBeforeAfter {
+  border-color: rgba(255, 122, 69, 0.72);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.evidenceSection .shiftBeforeAfter span {
+  color: #fff7ef;
+}
+
+.evidenceSection .flowNode::after,
+.evidenceSection .reviewCard::after {
+  background: #ff7a45;
+  box-shadow: none;
+}
+
+.evidenceSection .reviewCard::before {
+  background: rgba(255, 122, 69, 0.2);
+}
+
 @media (max-width: 760px) {
   .featuredHero {
     padding-top: 26px;
@@ -969,6 +1245,11 @@
   .featuredHero .meta,
   .featuredHero .tags {
     justify-content: center;
+  }
+
+  .evidenceHero .title,
+  .evidenceHero .subtitle {
+    white-space: normal;
   }
 
   .caseText,
@@ -1007,6 +1288,8 @@
   .visualReview,
   .visualCompletion,
   .visualChallenge,
+  .visualShiftCards,
+  .visualShiftCompact,
   .visualConsolidation,
   .visualTemplates,
   .visualRhythm,
@@ -1016,8 +1299,26 @@
   }
 
   .visualConsolidation,
-  .visualTemplates {
+  .visualTemplates,
+  .visualShiftCards,
+  .visualShiftCompact {
     width: min(88%, 340px);
+  }
+
+  .shiftBeforeAfter,
+  .shiftCompactFlow {
+    grid-template-columns: 1fr;
+  }
+
+  .shiftBeforeAfter strong,
+  .shiftCompactNode i {
+    transform: rotate(90deg);
+    justify-self: center;
+    position: static;
+  }
+
+  .shiftCompactHeader b {
+    font-size: 20px;
   }
 
   .beforeCluster,
@@ -1033,6 +1334,8 @@
   }
 
   .challengeNode:nth-child(n),
+  .shiftCard:nth-child(n),
+  .shiftCompactNode:nth-child(n),
   .rhythmColumn:nth-child(n) {
     min-height: 110px;
     transform: none;
@@ -1094,7 +1397,7 @@
 
   .evidenceHero .meta {
     display: grid;
-    justify-items: start;
+    justify-items: center;
     gap: 4px;
     line-height: 1.4;
   }

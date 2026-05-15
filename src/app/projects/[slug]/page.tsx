@@ -24,6 +24,10 @@ export default async function ProjectDetailPage({
 
   if (!project) notFound();
   const featured = project.featured;
+  const frontVisualSections =
+    featured && isEvidenceCase ? featured.visualSections.slice(0, 2) : [];
+  const remainingVisualSections =
+    featured && isEvidenceCase ? featured.visualSections.slice(2) : featured?.visualSections ?? [];
   const [titleLead, titleTail] = project.title.split("：");
   const hasBilingualTitle = Boolean(titleTail);
   const stressWord = "压力";
@@ -67,6 +71,60 @@ export default async function ProjectDetailPage({
                 <b>{item}</b>
               </div>
             ))}
+          </div>
+        );
+      case "shiftCards":
+        return (
+          <div className={styles.visualShiftCards}>
+            {[
+              ["01 发现", "固定模块无法覆盖每个人想记录的内容", "单纯记录容易沉下去，用户不一定会回看"],
+              ["02 改变", "从预设练习转向可配置记录空间", "用户可以创建清单 / 计划 / 日记 / 图册"],
+              ["03 机制", "加入每日聚焦和回顾", "每天重新提问重要的事，让过去记录重新浮现"],
+            ].map(([label, title, body]) => (
+              <div key={label} className={styles.shiftCard}>
+                <span>{label}</span>
+                <b>{title}</b>
+                <p>{body}</p>
+              </div>
+            ))}
+            <div className={styles.shiftBeforeAfter}>
+              <span>原来：固定的自我探索练习 / 完成一次探索结果</span>
+              <strong>→</strong>
+              <span>后来：可配置的个人记录空间 / 记录、提问、回看的日常循环</span>
+            </div>
+          </div>
+        );
+      case "shiftCompact":
+        return (
+          <div className={styles.visualShiftCompact}>
+            <div className={styles.shiftCompactHeader}>
+              <span>PROJECT SHIFT</span>
+              <b>从一次性探索，到持续理解自己</b>
+            </div>
+            <div className={styles.shiftCompactFlow}>
+              {[
+                ["发现", "固定模块太窄", "单纯记录会沉底"],
+                ["改变", "可配置记录空间", "四种记录方式"],
+                ["机制", "每日聚焦 + 回顾", "形成日常循环"],
+              ].map(([label, title, body], index) => (
+                <div key={label} className={styles.shiftCompactNode}>
+                  <span>{label}</span>
+                  <b>{title}</b>
+                  <p>{body}</p>
+                  {index < 2 ? <i aria-hidden="true">→</i> : null}
+                </div>
+              ))}
+            </div>
+            <div className={styles.shiftCompactRows}>
+              <p>
+                <span>BEFORE</span>
+                价值观 / 目标 / 习惯等固定练习
+              </p>
+              <p>
+                <span>AFTER</span>
+                清单 / 计划 / 日记 / 图册 + 每日聚焦 + 回顾
+              </p>
+            </div>
           </div>
         );
       case "consolidation":
@@ -244,12 +302,40 @@ export default async function ProjectDetailPage({
 
         {featured ? (
           <>
+            {frontVisualSections.map((section) => (
+              <section
+                key={section.title}
+                className={[styles.caseSection, isEvidenceCase ? styles.evidenceSection : ""]
+                  .filter(Boolean)
+                  .join(" ")}
+              >
+                <div className={styles.visualPlate} aria-label={section.title}>
+                  {visualPlate(section.visual)}
+                </div>
+                <div className={styles.caseText}>
+                  <h2>{section.label}</h2>
+                  <div>
+                    <h3>{section.title}</h3>
+                    <p>{section.body}</p>
+                    <div className={styles.designPoints}>
+                      <h4>设计要点</h4>
+                      <ul>
+                        {section.notes.map((note) => (
+                          <li key={note}>{note}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            ))}
+
             <section className={styles.caseLead}>
               <p>{featured.origin}</p>
               <blockquote>{featured.problem}</blockquote>
             </section>
 
-            {featured.visualSections.map((section) => (
+            {remainingVisualSections.map((section) => (
               <section
                 key={section.title}
                 className={[styles.caseSection, isEvidenceCase ? styles.evidenceSection : ""]
