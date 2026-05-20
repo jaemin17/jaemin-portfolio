@@ -1,11 +1,11 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { getProjectBySlug, projects } from "@/content/projects";
+import { getProjectBySlug, projectArchive } from "@/content/projects";
 import { SiteHeader } from "@/components/SiteHeader";
 import styles from "./project.module.css";
 
 export function generateStaticParams() {
-  return projects.map((project) => ({
+  return projectArchive.map((project) => ({
     slug: project.slug,
   }));
 }

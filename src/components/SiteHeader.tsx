@@ -15,6 +15,9 @@ export function SiteHeader() {
         </div>
 
         <nav className={styles.nav} aria-label="主导航">
+          <Link className="buttonSticker buttonStickerBlue" href="/test">
+            测试
+          </Link>
           <a className="buttonSticker buttonStickerOrange" href={portfolioDownloadUrl} target="_blank" rel="noreferrer">
             下载简历
           </a>

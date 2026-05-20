@@ -54,7 +54,7 @@ export type Project = {
   }>;
 };
 
-export const projects: Project[] = [
+const allProjects: Project[] = [
   {
     slug: "selfly-ios-app",
     title: "Selfly：让记录不再变成压力",
@@ -419,6 +419,12 @@ export const projects: Project[] = [
   },
 ];
 
+export const projects: Project[] = [allProjects[2]];
+
+export const testProjects: Project[] = [allProjects[0], allProjects[1]];
+
+export const projectArchive: Project[] = allProjects;
+
 export function getProjectBySlug(slug: string) {
-  return projects.find((p) => p.slug === slug);
+  return allProjects.find((p) => p.slug === slug);
 }
