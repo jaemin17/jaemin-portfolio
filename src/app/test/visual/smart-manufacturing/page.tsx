@@ -40,15 +40,13 @@ export default function SmartManufacturingVisualPage() {
 
         <section className={styles.caseGallery} aria-label="智能制造 VR 截图">
           <div className={styles.caseGalleryInner}>
-            {scenarioShots.map((shot, index) => (
+            {scenarioShots.map((shot) => (
               <article key={shot.src} className={styles.caseScenario}>
-                <p>Scenario {index + 1}</p>
+                <p className={styles.caseScenarioTitle}>{shot.subtitle}</p>
                 <figure>
-                  <Image src={shot.src} width={1920} height={1080} alt={`智能制造 VR ${shot.title}${shot.subtitle}`} />
-                  <figcaption>
-                    <span>{shot.subtitle}</span>
-                    <strong>{shot.title}</strong>
-                  </figcaption>
+                  <div className={styles.caseImageFrame}>
+                    <Image src={shot.src} width={1920} height={1080} alt={`智能制造 VR ${shot.title} ${shot.subtitle}`} />
+                  </div>
                 </figure>
               </article>
             ))}

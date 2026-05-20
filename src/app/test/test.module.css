@@ -12,13 +12,22 @@
 }
 
 .caseStudyPage {
+  --case-gutter: 104px;
+  --case-content-max: 1712px;
+  --case-content-width: calc(100% - 2 * var(--case-gutter));
   background: #ffffff;
 }
 
+@media (min-width: 1921px) {
+  .caseStudyPage {
+    --case-content-width: var(--case-content-max);
+  }
+}
+
 .caseIntro {
-  width: min(1080px, calc(100% - 88px));
+  width: var(--case-content-width);
   margin: 0 auto;
-  padding: 96px 0 118px;
+  padding: clamp(58px, 8vw, 96px) 0 clamp(72px, 10vw, 118px);
 }
 
 .caseIntro h1 {
@@ -71,16 +80,16 @@
 }
 
 .caseGalleryInner {
-  width: min(1160px, calc(100% - 54px));
+  width: var(--case-content-width);
   margin: 0 auto;
-  padding: 92px 0 118px;
+  padding: clamp(54px, 8vw, 92px) 0 clamp(70px, 10vw, 118px);
 }
 
 .caseScenario + .caseScenario {
   margin-top: 110px;
 }
 
-.caseScenario > p {
+.caseScenarioTitle {
   margin: 0 0 8px;
   color: #0095ff;
   font-size: 12px;
@@ -89,39 +98,20 @@
 }
 
 .caseScenario figure {
-  overflow: hidden;
   margin: 0;
+}
+
+.caseImageFrame {
+  overflow: hidden;
   border: 2px solid #0095ff;
   border-radius: 5px;
   background: #0f1117;
 }
 
-.caseScenario img {
+.caseImageFrame img {
   display: block;
   width: 100%;
   height: auto;
-}
-
-.caseScenario figcaption {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 16px;
-  padding: 14px 16px 16px;
-  background: #18191d;
-}
-
-.caseScenario figcaption span {
-  color: #0095ff;
-  font-size: 12px;
-  font-weight: 700;
-}
-
-.caseScenario figcaption strong {
-  color: #ffffff;
-  font-size: 17px;
-  font-weight: 500;
-  line-height: 1.2;
 }
 
 .caseContact {
@@ -371,8 +361,12 @@ a.card:hover {
     grid-template-columns: 1fr;
   }
 
+  .caseStudyPage {
+    --case-gutter: 18px;
+  }
+
   .caseIntro {
-    width: min(100% - 36px, 1080px);
+    width: var(--case-content-width);
     padding: 58px 0 72px;
   }
 
@@ -387,7 +381,7 @@ a.card:hover {
   }
 
   .caseGalleryInner {
-    width: min(100% - 28px, 1160px);
+    width: var(--case-content-width);
     padding: 54px 0 70px;
   }
 
@@ -417,12 +411,6 @@ a.card:hover {
 
   .caseMetaGrid {
     grid-template-columns: 1fr;
-  }
-
-  .caseScenario figcaption {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 5px;
   }
 
   .visualShotGrid {
