@@ -421,7 +421,7 @@ const allProjects: Project[] = [
 
 export const projects: Project[] = [allProjects[2]];
 
-export const testProjects: Project[] = [allProjects[0], allProjects[1]];
+export const testProjects: Project[] = [allProjects[2], allProjects[0], allProjects[1]];
 
 export const projectArchive: Project[] = allProjects;
 

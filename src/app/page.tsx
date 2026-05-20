@@ -2,7 +2,6 @@ import Link from "next/link";
 import Image from "next/image";
 import type { ReactNode } from "react";
 import { Fragment } from "react";
-import { projects } from "@/content/projects";
 import { SiteHeader } from "@/components/SiteHeader";
 import { StickerTitle } from "@/components/StickerTitle";
 import { CursorSparkles } from "./CursorSparkles";
@@ -81,6 +80,27 @@ const decorationShapes = [
   "✸",
   "✿",
   "✽",
+] as const;
+
+const homeEntries = [
+  {
+    href: "/projects/project-c",
+    title: "独立开发 App",
+    subtitle: "Selfly：从产品设计、SwiftUI 开发到 App Store 上线的完整 0→1 案例。",
+    tags: ["Selfly", "0→1", "iOS"],
+  },
+  {
+    href: "/test/tools",
+    title: "工具类产品 UI/UX",
+    subtitle: "XR / 3D / 多端协同工具：3D说明书、模型编辑器、Sync Space、VT-PPT 等。",
+    tags: ["XR Tools", "3D", "B2B"],
+  },
+  {
+    href: "/test/visual",
+    title: "视觉作品",
+    subtitle: "VR 教育软件、医学、动物、智能制造、汽车实训等 3D 视觉项目合集。",
+    tags: ["VR Education", "Visual", "3D"],
+  },
 ] as const;
 
 function photoClassName(base: string, value: string) {
@@ -297,9 +317,9 @@ export default function Home() {
                 项目
               </h2>
               <ol className={styles.workList}>
-                {projects.map((p, idx) => (
-                  <li key={p.slug} className={styles.workItem}>
-                    <Link className={styles.workLink} href={`/projects/${p.slug}`}>
+                {homeEntries.map((entry, idx) => (
+                  <li key={entry.href} className={styles.workItem}>
+                    <Link className={styles.workLink} href={entry.href}>
                       <span className={styles.pin} aria-hidden="true" />
                       <HoverPolaroid
                         caption={`case ${String(idx + 1).padStart(2, "0")}`}
@@ -310,11 +330,11 @@ export default function Home() {
                       >
                         <span className={styles.workNote}>
                           <span className={styles.workIndex}>{String(idx + 1).padStart(2, "0")}</span>
-                          <span className={styles.workTitle}>{p.cardTitle ?? p.title}</span>
+                          <span className={styles.workTitle}>{entry.title}</span>
                           <span className={styles.workMeta}>
-                            <span className={styles.workSubtitle}>{p.cardSubtitle ?? p.subtitle}</span>
+                            <span className={styles.workSubtitle}>{entry.subtitle}</span>
                             <span className={styles.workTags} aria-label="项目标签">
-                              {p.tags.slice(0, 3).map((tag) => (
+                              {entry.tags.map((tag) => (
                                 <span key={tag} className={styles.workTag}>
                                   {tag}
                                 </span>
