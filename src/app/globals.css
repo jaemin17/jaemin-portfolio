@@ -1,4 +1,5 @@
 :root {
+  --page-gutter: 40px;
   --bg: #fff5e4;
   --fg: #111217;
   --muted: rgba(17, 18, 23, 0.62);

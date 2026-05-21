@@ -34,11 +34,10 @@ const aboutNote = {
   body: "偏产品型的 UX/UI 设计师，也会自己做独立开发项目。",
 } as const;
 
+const contactEmail = "lijiaemin1993@gmail.com";
+
 const contactNote = {
   id: "where",
-  index: "A4",
-  title: "联系",
-  body: "Email: you@example.com · GitHub: jaemin17",
 } as const;
 
 const projectPhotoPlacements = ["topLeft", "topRight", "right"] as const;
@@ -204,14 +203,15 @@ export default function Home() {
       <main className={styles.main}>
         <CursorSparkles />
         <section className={styles.wall} aria-label="首页信息墙">
-          <div className={styles.decorations} aria-hidden="true">
-            {decorationShapes.map((shape, index) => (
-              <span key={index} className={styles.sparkle}>
-                {shape}
-              </span>
-            ))}
-          </div>
-          <div className={styles.middleZone}>
+          <div className={styles.wallBoard}>
+            <div className={styles.decorations} aria-hidden="true">
+              {decorationShapes.map((shape, index) => (
+                <span key={index} className={styles.sparkle}>
+                  {shape}
+                </span>
+              ))}
+            </div>
+            <div className={styles.middleZone}>
             <div className={styles.middleScatter} aria-hidden="true">
               <ScatterPolaroid
                 className={styles.scatterMe}
@@ -232,7 +232,30 @@ export default function Home() {
                 imageClassName={styles.hangzhouScatterImage}
               />
             </div>
-          <header className={styles.hero}>
+            <aside className={styles.sideKeepsakes} aria-label="侧边信息">
+              <article id={aboutNote.id} className={`${styles.infoItem} ${styles.sideAboutEntry}`}>
+                <span className={styles.pin} aria-hidden="true" />
+                <Link className={`${styles.infoNote} ${styles.infoNoteLink}`} href="/about">
+                  <HoverPolaroid caption={aboutNote.id} placement="left" tone="sun" focusable={false}>
+                    <span className={styles.workIndex}>{aboutNote.index}</span>
+                    <span className={styles.infoTitle}>{aboutNote.title}</span>
+                    <span className={styles.infoBody}>{aboutNote.body}</span>
+                  </HoverPolaroid>
+                </Link>
+              </article>
+              <article className={`${styles.lifeEntry} ${styles.sideLifeEntry}`}>
+                <span className={styles.pin} aria-hidden="true" />
+                <Link className={styles.lifeNote} href="/life">
+                  <HoverPolaroid caption="life" placement="left" tone="mint" focusable={false}>
+                    <span className={styles.workIndex}>B1</span>
+                    <span className={styles.infoTitle}>非设计小事</span>
+                    <span className={styles.infoBody}>手绳 / 钢琴 / 猫 / 旅行</span>
+                  </HoverPolaroid>
+                </Link>
+              </article>
+              <TodayStamp />
+            </aside>
+            <header className={styles.hero}>
             <div className={styles.heroTag} aria-label="status tag">
               <HoverPolaroid caption=":)" placement="left" tone="sun">
                 <span className={styles.heroTagIcon} aria-hidden="true">
@@ -342,40 +365,16 @@ export default function Home() {
               </ol>
             </section>
           </header>
+            </div>
           </div>
 
           <div className={styles.bottomKeepsakes} aria-label="底部信息">
-            <article id={aboutNote.id} className={`${styles.infoItem} ${styles.bottomAboutEntry}`}>
-              <span className={styles.pin} aria-hidden="true" />
-              <Link className={`${styles.infoNote} ${styles.infoNoteLink}`} href="/about">
-                <HoverPolaroid caption={aboutNote.id} placement="left" tone="sun" focusable={false}>
-                  <span className={styles.workIndex}>{aboutNote.index}</span>
-                  <span className={styles.infoTitle}>{aboutNote.title}</span>
-                  <span className={styles.infoBody}>{aboutNote.body}</span>
-                </HoverPolaroid>
-              </Link>
-            </article>
-            <article className={`${styles.lifeEntry} ${styles.bottomLifeEntry}`}>
-              <span className={styles.pin} aria-hidden="true" />
-              <Link className={styles.lifeNote} href="/life">
-                <HoverPolaroid caption="life" placement="left" tone="mint" focusable={false}>
-                  <span className={styles.workIndex}>B1</span>
-                  <span className={styles.infoTitle}>非设计小事</span>
-                  <span className={styles.infoBody}>手绳 / 钢琴 / 猫 / 旅行</span>
-                </HoverPolaroid>
-              </Link>
-            </article>
-            <article id={contactNote.id} className={`${styles.infoItem} ${styles.bottomContactEntry}`}>
-              <span className={styles.pin} aria-hidden="true" />
-              <span className={styles.infoNote}>
-                <HoverPolaroid caption={contactNote.id} placement="right" tone="warm">
-                  <span className={styles.workIndex}>{contactNote.index}</span>
-                  <span className={styles.infoTitle}>{contactNote.title}</span>
-                  <span className={styles.infoBody}>{contactNote.body}</span>
-                </HoverPolaroid>
-              </span>
-            </article>
-            <TodayStamp />
+            <div id={contactNote.id} className={styles.bottomContact}>
+              <p className={styles.bottomContactGreeting}>I&apos;d love to meet you :) ✰.</p>
+              <a className={styles.bottomContactLink} href={`mailto:${contactEmail}`}>
+                → Email
+              </a>
+            </div>
           </div>
         </section>
       </main>
