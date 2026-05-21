@@ -110,6 +110,7 @@
   pointer-events: auto;
   z-index: 6;
   animation-name: scatterDropIn;
+  transform: rotate(var(--scatter-rotate, 0deg));
 }
 
 @keyframes scatterDropIn {
@@ -127,11 +128,10 @@
 }
 
 .scatterMe {
-  --scatter-rotate: -8deg;
+  --scatter-rotate: -5deg;
   top: 148px;
   left: clamp(0px, 1.5vw, 18px);
   z-index: 7;
-  transform: rotate(-8deg);
   animation-delay: 240ms;
 }
 
@@ -139,17 +139,17 @@
   --scatter-rotate: 7deg;
   top: 228px;
   right: clamp(0px, 2vw, 28px);
-  transform: rotate(7deg);
+  z-index: 8;
   animation-delay: 300ms;
 }
 
 .scatterHangzhou {
   --scatter-rotate: 5deg;
-  top: 370px;
-  left: clamp(136px, 18vw, 188px);
+  top: 340px;
+  left: clamp(56px, 10vw, 108px);
+  right: auto;
   width: 108px;
   z-index: 6;
-  transform: rotate(5deg);
   animation-delay: 360ms;
 }
 
@@ -1375,8 +1375,9 @@
   }
 
   .scatterHangzhou {
-    top: 352px;
-    left: clamp(124px, 16vw, 168px);
+    top: 318px;
+    left: 56px;
+    right: auto;
   }
 
   .hero {
@@ -1430,26 +1431,25 @@
   }
 
   .scatterMe {
-    --scatter-rotate: -7deg;
+    --scatter-rotate: -4deg;
     top: 116px;
     left: 0;
-    transform: rotate(-7deg);
   }
 
   .scatterCat {
     --scatter-rotate: 6deg;
     top: 190px;
     right: 0;
-    transform: rotate(6deg);
+    z-index: 8;
   }
 
   .scatterHangzhou {
     --scatter-rotate: 4deg;
-    top: 314px;
+    top: 292px;
     bottom: auto;
-    left: 128px;
+    left: 52px;
+    right: auto;
     width: 96px;
-    transform: rotate(4deg);
   }
 
   .title {
@@ -1656,10 +1656,9 @@
   }
 
   .scatterMe {
-    --scatter-rotate: -7deg;
+    --scatter-rotate: -4deg;
     top: 108px;
     left: 0;
-    transform: rotate(-7deg);
   }
 
   .scatterCat {
@@ -1667,16 +1666,16 @@
     top: 170px;
     right: 0;
     left: auto;
-    transform: rotate(6deg);
+    z-index: 8;
   }
 
   .scatterHangzhou {
     --scatter-rotate: 4deg;
-    top: 280px;
+    top: 244px;
     bottom: auto;
-    left: 96px;
+    left: 44px;
+    right: auto;
     width: 72px;
-    transform: rotate(4deg);
   }
 
   .polaroidPair {
