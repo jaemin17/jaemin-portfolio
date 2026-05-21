@@ -127,21 +127,16 @@ button.buttonGhost {
   height: 34px;
   padding: 0 14px;
   border-radius: 999px;
-  border: 1px solid #0b0b0b;
-  box-shadow: 0 6px 0 rgba(0, 0, 0, 0.16);
+  border: none;
   color: #ffffff;
   font-size: 14px;
   font-weight: 700;
   letter-spacing: -0.01em;
-  transform: translateZ(0);
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  transition: transform 150ms ease, box-shadow 150ms ease;
+  transition: transform 150ms ease;
 }
 
 .buttonSticker:hover {
-  transform: translate3d(0, -4px, 0);
-  box-shadow: 0 9px 0 rgba(0, 0, 0, 0.14);
+  transform: translate3d(0, -2px, 0);
 }
 
 .buttonStickerOrange {

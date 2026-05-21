@@ -50,11 +50,13 @@
 }
 
 .brandText {
-  font-family: var(--font-kalam), var(--font-geist-sans), system-ui, sans-serif;
+  font-family: var(--font-montserrat), var(--font-geist-sans), system-ui, sans-serif;
   font-size: 22px;
-  font-weight: 800;
-  color: #f6682f;
-  -webkit-text-stroke: 0.35px #f6682f;
+  font-weight: 700;
+  color: #303239;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 2px;
 }
 
 .menuItem {
@@ -83,21 +85,16 @@
   padding: 0 14px;
   border-radius: 999px;
   background: #f6682f;
-  border: 1px solid #0b0b0b;
-  box-shadow: 0 6px 0 rgba(0, 0, 0, 0.16);
+  border: none;
   color: #ffffff;
   font-size: 14px;
   font-weight: 700;
   letter-spacing: -0.01em;
-  transform: translateZ(0);
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  transition: transform 150ms ease, box-shadow 150ms ease;
+  transition: transform 150ms ease;
 }
 
 .link:hover {
-  transform: translate3d(0, -4px, 0);
-  box-shadow: 0 9px 0 rgba(0, 0, 0, 0.14);
+  transform: translate3d(0, -2px, 0);
 }
 
 @media (max-width: 520px) {

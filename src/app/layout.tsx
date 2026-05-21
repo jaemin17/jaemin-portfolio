@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Kalam } from "next/font/google";
+import { Geist, Geist_Mono, Kalam, Montserrat } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -18,6 +18,12 @@ const kalam = Kalam({
   weight: ["400", "700"],
 });
 
+const montserrat = Montserrat({
+  variable: "--font-montserrat",
+  subsets: ["latin"],
+  weight: ["600", "700", "800"],
+});
+
 export const metadata: Metadata = {
   title: "jaemin · product design",
   description:
@@ -32,7 +38,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} ${kalam.variable}`}
+      className={`${geistSans.variable} ${geistMono.variable} ${kalam.variable} ${montserrat.variable}`}
     >
       <body>{children}</body>
     </html>
