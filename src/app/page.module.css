@@ -642,17 +642,6 @@
   object-position: 50% 42%;
 }
 
-.smileHoverImage .polaroidPhoto {
-  object-fit: cover;
-  object-position: 50% 38%;
-}
-
-.project01HoverImage .polaroidPhoto {
-  object-fit: contain;
-  object-position: 50% 50%;
-  background: #fff;
-}
-
 .hoverPolaroidCaption {
   display: block;
   margin-top: 8px;

@@ -122,17 +122,17 @@ function HoverPolaroid({
   tone?: "warm" | "sky" | "mint" | "lavender" | "sun";
   focusable?: boolean;
   block?: boolean;
-  photo?: "me" | "cat" | "hangzhou" | "smile" | "project01";
+  photo?: "me" | "cat" | "hangzhou";
 }) {
   const Component = block ? "div" : "span";
+
+  if (!photo) return <>{children}</>;
 
   const imageWrapClass = [
     styles.hoverPolaroidImage,
     photo === "me" && styles.profileImage,
     photo === "cat" && styles.catImage,
     photo === "hangzhou" && styles.hangzhouHoverImage,
-    photo === "smile" && styles.smileHoverImage,
-    photo === "project01" && styles.project01HoverImage,
     photo && styles.hoverPolaroidImagePhoto,
   ]
     .filter(Boolean)
@@ -183,24 +183,6 @@ function HoverPolaroid({
               sizes="96px"
               unoptimized
             />
-          ) : photo === "smile" ? (
-            <Image
-              className={styles.polaroidPhoto}
-              src={asset("/images/smile-hover.jpg")}
-              alt=""
-              fill
-              sizes="96px"
-              unoptimized
-            />
-          ) : photo === "project01" ? (
-            <Image
-              className={styles.polaroidPhoto}
-              src={asset("/images/project-01-hover.png")}
-              alt=""
-              fill
-              sizes="96px"
-              unoptimized
-            />
           ) : null}
         </span>
         <span className={styles.hoverPolaroidCaption}>{caption}</span>
@@ -225,7 +207,7 @@ export default function Home() {
           </div>
           <header className={styles.hero}>
             <div className={styles.heroTag} aria-label="status tag">
-              <HoverPolaroid caption=":)" placement="left" tone="sun" photo="smile">
+              <HoverPolaroid caption=":)" placement="left" tone="sun">
                 <span className={styles.heroTagIcon} aria-hidden="true">
                   :)
                 </span>
@@ -326,7 +308,6 @@ export default function Home() {
                         placement={projectPhotoPlacements[idx] ?? "right"}
                         tone={projectPhotoTones[idx] ?? "warm"}
                         focusable={false}
-                        photo={idx === 0 ? "project01" : undefined}
                       >
                         <span className={styles.workNote}>
                           <span className={styles.workIndex}>{String(idx + 1).padStart(2, "0")}</span>
