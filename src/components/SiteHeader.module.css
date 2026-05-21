@@ -74,8 +74,30 @@
 
 .nav {
   display: inline-flex;
-  gap: 14px;
+  gap: clamp(22px, 2.8vw, 40px);
   align-items: center;
+}
+
+.navLink {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  padding: 0 2px;
+  color: rgba(17, 18, 23, 0.44);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  line-height: 1;
+  text-transform: uppercase;
+  transition: color 140ms ease, opacity 140ms ease;
+}
+
+.navLink:hover {
+  color: rgba(17, 18, 23, 0.78);
+}
+
+.navLinkActive {
+  color: rgba(17, 18, 23, 0.92);
 }
 
 .link {
@@ -99,10 +121,12 @@
 
 @media (max-width: 520px) {
   .nav {
-    gap: 6px;
+    gap: 14px;
   }
-  .link {
-    padding: 8px 8px;
+  .navLink {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    padding: 8px 0;
   }
 }
 
