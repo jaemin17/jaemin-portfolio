@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { ReactNode } from "react";
-import { Fragment } from "react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { StickerTitle } from "@/components/StickerTitle";
 import { CursorSparkles } from "./CursorSparkles";
@@ -28,37 +27,22 @@ function staticExportAssetBase(): string {
 
 const asset = (path: string) => `${staticExportAssetBase()}${path}`;
 
-const infoNotes = [
-  {
-    id: "about",
-    index: "A1",
-    title: "我是谁",
-    body: "偏产品型的 UX/UI 设计师，也会自己做独立开发项目。",
-  },
-  {
-    id: "focus",
-    index: "A2",
-    title: "我关注什么",
-    body: "问题定义、任务流程、信息层级、可用性和可交付性。",
-  },
-  {
-    id: "delivery",
-    index: "A3",
-    title: "我能交付什么",
-    body: "问题拆解、关键任务流、原型、视觉设计、组件规范和交付素材。",
-  },
-  {
-    id: "where",
-    index: "A4",
-    title: "联系",
-    body: "Email: you@example.com · GitHub: jaemin17",
-  },
-];
+const aboutNote = {
+  id: "about",
+  index: "A1",
+  title: "我是谁",
+  body: "偏产品型的 UX/UI 设计师，也会自己做独立开发项目。",
+} as const;
+
+const contactNote = {
+  id: "where",
+  index: "A4",
+  title: "联系",
+  body: "Email: you@example.com · GitHub: jaemin17",
+} as const;
 
 const projectPhotoPlacements = ["topLeft", "topRight", "right"] as const;
 const projectPhotoTones = ["warm", "sky", "lavender"] as const;
-const infoPhotoPlacements = ["right", "left", "left", "topLeft"] as const;
-const infoPhotoTones = ["sun", "mint", "lavender", "warm"] as const;
 const decorationShapes = [
   "✦",
   "★",
@@ -331,55 +315,37 @@ export default function Home() {
             </section>
           </header>
 
-          <div id="about" className={styles.infoNotes} aria-label="关于我">
-            {infoNotes.map((note) => (
-              <Fragment key={note.id}>
-                {note.id === "where" ? (
-                  <article className={styles.lifeEntry}>
-                    <span className={styles.pin} aria-hidden="true" />
-                    <Link className={styles.lifeNote} href="/life">
-                      <HoverPolaroid caption="life" placement="left" tone="mint" focusable={false}>
-                        <span className={styles.workIndex}>B1</span>
-                        <span className={styles.infoTitle}>非设计小事</span>
-                        <span className={styles.infoBody}>手绳 / 钢琴 / 猫 / 旅行</span>
-                      </HoverPolaroid>
-                    </Link>
-                  </article>
-                ) : null}
-                <article id={note.id} className={styles.infoItem}>
-                  <span className={styles.pin} aria-hidden="true" />
-                  {note.id === "about" ? (
-                    <Link className={`${styles.infoNote} ${styles.infoNoteLink}`} href="/about">
-                      <HoverPolaroid
-                        caption={note.id}
-                        placement={infoPhotoPlacements[0]}
-                        tone={infoPhotoTones[0]}
-                        focusable={false}
-                      >
-                        <span className={styles.workIndex}>{note.index}</span>
-                        <span className={styles.infoTitle}>{note.title}</span>
-                        <span className={styles.infoBody}>{note.body}</span>
-                      </HoverPolaroid>
-                    </Link>
-                  ) : (
-                    <span className={styles.infoNote}>
-                      <HoverPolaroid
-                        caption={note.id}
-                        placement={infoPhotoPlacements[Math.max(0, Number(note.index.slice(1)) - 1)] ?? "right"}
-                        tone={infoPhotoTones[Math.max(0, Number(note.index.slice(1)) - 1)] ?? "warm"}
-                      >
-                        <span className={styles.workIndex}>{note.index}</span>
-                        <span className={styles.infoTitle}>{note.title}</span>
-                        <span className={styles.infoBody}>{note.body}</span>
-                      </HoverPolaroid>
-                    </span>
-                  )}
-                </article>
-              </Fragment>
-            ))}
-          </div>
-
-          <div className={styles.bottomKeepsakes} aria-label="底部时间">
+          <div className={styles.bottomKeepsakes} aria-label="底部信息">
+            <article id={aboutNote.id} className={`${styles.infoItem} ${styles.bottomAboutEntry}`}>
+              <span className={styles.pin} aria-hidden="true" />
+              <Link className={`${styles.infoNote} ${styles.infoNoteLink}`} href="/about">
+                <HoverPolaroid caption={aboutNote.id} placement="left" tone="sun" focusable={false}>
+                  <span className={styles.workIndex}>{aboutNote.index}</span>
+                  <span className={styles.infoTitle}>{aboutNote.title}</span>
+                  <span className={styles.infoBody}>{aboutNote.body}</span>
+                </HoverPolaroid>
+              </Link>
+            </article>
+            <article className={`${styles.lifeEntry} ${styles.bottomLifeEntry}`}>
+              <span className={styles.pin} aria-hidden="true" />
+              <Link className={styles.lifeNote} href="/life">
+                <HoverPolaroid caption="life" placement="left" tone="mint" focusable={false}>
+                  <span className={styles.workIndex}>B1</span>
+                  <span className={styles.infoTitle}>非设计小事</span>
+                  <span className={styles.infoBody}>手绳 / 钢琴 / 猫 / 旅行</span>
+                </HoverPolaroid>
+              </Link>
+            </article>
+            <article id={contactNote.id} className={`${styles.infoItem} ${styles.bottomContactEntry}`}>
+              <span className={styles.pin} aria-hidden="true" />
+              <span className={styles.infoNote}>
+                <HoverPolaroid caption={contactNote.id} placement="right" tone="warm">
+                  <span className={styles.workIndex}>{contactNote.index}</span>
+                  <span className={styles.infoTitle}>{contactNote.title}</span>
+                  <span className={styles.infoBody}>{contactNote.body}</span>
+                </HoverPolaroid>
+              </span>
+            </article>
             <TodayStamp />
           </div>
         </section>

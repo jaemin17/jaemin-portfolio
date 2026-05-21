@@ -2,15 +2,23 @@
   position: sticky;
   top: 0;
   z-index: 10;
-  background: transparent;
-  border-bottom: none;
+  background: var(--bg);
+}
+
+.header::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-bottom: 1px dashed rgba(17, 18, 23, 0.16);
 }
 
 .inner {
   max-width: none;
   margin: 0 auto;
   width: 100%;
-  padding: 22px 40px 12px;
+  padding: 18px 40px 16px;
   display: flex;
   align-items: center;
   justify-content: space-between;
