@@ -100,6 +100,10 @@
   --polaroid-stack-offset: 60px;
   --cat-stack-offset: 30px;
   --right-cluster-offset: 56px;
+  --scatter-clear-below-header: 20px;
+  --scatter-top-cat: 20px;
+  --scatter-top-me: 26px;
+  --scatter-top-hangzhou: 96px;
   position: relative;
   z-index: 2;
   display: flow-root;
@@ -148,25 +152,25 @@
   }
 }
 
-.scatterMe {
+.middleScatter .scatterMe {
   --scatter-rotate: -5deg;
-  top: calc(188px + var(--top-cluster-offset) + var(--polaroid-stack-offset));
+  top: max(var(--scatter-top-me), var(--scatter-clear-below-header));
   left: clamp(120px, 4vw, 138px);
   z-index: 7;
   animation-delay: 240ms;
 }
 
-.scatterCat {
+.middleScatter .scatterCat {
   --scatter-rotate: 7deg;
-  top: calc(228px + var(--cat-stack-offset));
+  top: max(var(--scatter-top-cat), var(--scatter-clear-below-header));
   right: calc(clamp(148px, 7vw, 176px) + var(--right-cluster-offset));
   z-index: 8;
   animation-delay: 300ms;
 }
 
-.scatterHangzhou {
+.middleScatter .scatterHangzhou {
   --scatter-rotate: 5deg;
-  top: calc(340px + var(--top-cluster-offset) + var(--polaroid-stack-offset));
+  top: max(var(--scatter-top-hangzhou), calc(var(--scatter-clear-below-header) + 78px));
   left: clamp(216px, 14vw, 268px);
   right: auto;
   width: 108px;
@@ -530,9 +534,12 @@
   pointer-events: none;
 }
 
+.polaroidPair .polaroid {
+  top: 0;
+}
+
 .polaroid {
   position: absolute;
-  top: 0;
   width: 116px;
   margin: 0;
   padding: 9px 9px 15px;
@@ -1442,15 +1449,15 @@
     max-width: min(1520px, 100%);
   }
 
-  .scatterMe {
+  .middleScatter .scatterMe {
     left: clamp(132px, 6vw, 192px);
   }
 
-  .scatterCat {
+  .middleScatter .scatterCat {
     right: calc(clamp(160px, 8vw, 216px) + var(--right-cluster-offset));
   }
 
-  .scatterHangzhou {
+  .middleScatter .scatterHangzhou {
     left: clamp(256px, 16vw, 340px);
   }
 
@@ -1479,18 +1486,21 @@
     min-height: 1180px;
   }
 
-  .scatterMe {
-    top: calc(176px + var(--top-cluster-offset) + var(--polaroid-stack-offset));
+  .middleZone {
+    --scatter-top-cat: 22px;
+    --scatter-top-me: 28px;
+    --scatter-top-hangzhou: 100px;
+  }
+
+  .middleScatter .scatterMe {
     left: 120px;
   }
 
-  .scatterCat {
-    top: calc(220px + var(--cat-stack-offset));
+  .middleScatter .scatterCat {
     right: calc(148px + var(--right-cluster-offset));
   }
 
-  .scatterHangzhou {
-    top: calc(318px + var(--top-cluster-offset) + var(--polaroid-stack-offset));
+  .middleScatter .scatterHangzhou {
     left: 216px;
     right: auto;
   }
@@ -1549,22 +1559,26 @@
     width: 100px;
   }
 
-  .scatterMe {
+  .middleZone {
+    --scatter-clear-below-header: 18px;
+    --scatter-top-cat: 18px;
+    --scatter-top-me: 28px;
+    --scatter-top-hangzhou: 102px;
+  }
+
+  .middleScatter .scatterMe {
     --scatter-rotate: -4deg;
-    top: calc(148px + var(--top-cluster-offset) + var(--polaroid-stack-offset));
     left: 120px;
   }
 
-  .scatterCat {
+  .middleScatter .scatterCat {
     --scatter-rotate: 6deg;
-    top: calc(190px + var(--cat-stack-offset));
     right: calc(140px + var(--right-cluster-offset));
     z-index: 8;
   }
 
-  .scatterHangzhou {
+  .middleScatter .scatterHangzhou {
     --scatter-rotate: 4deg;
-    top: calc(292px + var(--top-cluster-offset) + var(--polaroid-stack-offset));
     bottom: auto;
     left: 212px;
     right: auto;
@@ -1824,23 +1838,27 @@
     padding: 6px 6px 10px;
   }
 
-  .scatterMe {
+  .middleZone {
+    --scatter-clear-below-header: 16px;
+    --scatter-top-cat: 16px;
+    --scatter-top-me: 24px;
+    --scatter-top-hangzhou: 88px;
+  }
+
+  .middleScatter .scatterMe {
     --scatter-rotate: -4deg;
-    top: calc(136px + var(--top-cluster-offset) + var(--polaroid-stack-offset));
     left: 120px;
   }
 
-  .scatterCat {
+  .middleScatter .scatterCat {
     --scatter-rotate: 6deg;
-    top: calc(170px + var(--cat-stack-offset));
     right: calc(136px + var(--right-cluster-offset));
     left: auto;
     z-index: 8;
   }
 
-  .scatterHangzhou {
+  .middleScatter .scatterHangzhou {
     --scatter-rotate: 4deg;
-    top: calc(244px + var(--top-cluster-offset) + var(--polaroid-stack-offset));
     bottom: auto;
     left: 204px;
     right: auto;
