@@ -30,36 +30,30 @@ export const about2Copy = {
       title: "Take initiative",
       description:
         "I love taking the lead, sharing well-prepared proposals to inspire and get everyone on board with exciting ideas.",
-      period: "Apr 2016 — Mar 2017",
     },
     {
       title: "Navigate ambiguity",
       description:
         "I enjoy bringing people together by using clear communication to find common goals, especially when things are a bit uncertain.",
-      period: "Apr 2016 — Mar 2017",
     },
     {
       title: "Exhibit adaptability",
       description:
         "I get a kick out of exploring different sides of myself when tackling various challenges and adapting to new environments.",
-      period: "Apr 2016 — Mar 2017",
     },
   ],
   jobs: [
     {
       company: "KMAX-ShenZhen",
       role: "UI/UX Designer",
-      period: "Apr 2016 — Mar 2017",
     },
     {
       company: "VIA-Guangzhou",
       role: "UI Designer",
-      period: "Apr 2016 — Mar 2017",
     },
     {
       company: "ISAR-Beijing",
       role: "Visual and UX Designer",
-      period: "Apr 2016 — Mar 2017",
     },
   ],
   sectionWhatIDo: "What I do",

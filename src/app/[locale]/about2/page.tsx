@@ -30,7 +30,7 @@ export default async function About2Page({ params }: About2PageProps) {
                     <br />
                     <br />
                     {about2Copy.introCtaPrefix}
-                    {"\u00a0\u00a0"}
+                    <br />
                     <Link className={styles.pdfLink} href={about2PdfUrl} target="_blank" rel="noreferrer">
                       {about2Copy.pdfLinkLabel}
                     </Link>
@@ -82,7 +82,6 @@ export default async function About2Page({ params }: About2PageProps) {
                     <article key={item.title} className={styles.card}>
                       <div className={styles.cardTitle}>{item.title}</div>
                       <p className={styles.cardText}>{item.description}</p>
-                      <p className={styles.cardMeta}>{item.period}</p>
                     </article>
                   ))}
                 </div>
@@ -101,7 +100,6 @@ export default async function About2Page({ params }: About2PageProps) {
                     <article key={job.company} className={styles.card}>
                       <div className={styles.cardTitle}>{job.company}</div>
                       <p className={styles.cardText}>{job.role}</p>
-                      <p className={styles.cardMeta}>{job.period}</p>
                     </article>
                   ))}
                 </div>
