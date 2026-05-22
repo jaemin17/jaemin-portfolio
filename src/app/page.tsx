@@ -70,16 +70,6 @@ const decorationShapes = [
   "✸",
   "✿",
   "✽",
-  "✦",
-  "★",
-  "✸",
-  "✿",
-  "✽",
-  "✦",
-  "★",
-  "✸",
-  "✿",
-  "✽",
 ] as const;
 
 const homeEntries = [
@@ -350,17 +340,6 @@ export default function Home() {
                   <span className={styles.stickerSubText}>产品设计 · 独立开发（0→1）</span>
                 </span>
               </HoverPolaroid>
-            </div>
-            <div className={styles.heroIllustration} aria-hidden="true">
-              <Image
-                className={styles.heroIllustrationImage}
-                src={asset("/images/stormy-illustration.svg")}
-                alt=""
-                width={390}
-                height={390}
-                priority
-                unoptimized
-              />
             </div>
             <section id="project" className={styles.projectWall} aria-labelledby="project-title">
               <h2 id="project-title" className={styles.srOnly}>

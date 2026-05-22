@@ -53,7 +53,6 @@
 .title,
 .polaroid,
 .stickerSubWrap,
-.heroIllustration,
 .todayStamp,
 .workItem,
 .infoItem {
@@ -64,8 +63,7 @@
 
 .heroTag,
 .title,
-.stickerSubWrap,
-.heroIllustration {
+.stickerSubWrap {
   animation-name: softDropIn;
 }
 
@@ -305,108 +303,38 @@
 }
 
 .sparkle:nth-child(6) {
-  --sparkle-color: #ff9e6f;
-  --sparkle-rotation: 12deg;
-  top: 16%;
-  left: 15%;
-}
-
-.sparkle:nth-child(7) {
-  --sparkle-color: #e78aa6;
-  --sparkle-rotation: 45deg;
-  top: 24%;
-  left: 22%;
-}
-
-.sparkle:nth-child(8) {
   --sparkle-color: #b8a6ff;
   --sparkle-rotation: 4deg;
   top: 31%;
   left: 11%;
 }
 
-.sparkle:nth-child(9) {
-  --sparkle-color: #ff9e6f;
-  --sparkle-rotation: 34deg;
-  top: 34%;
-  left: 16%;
-}
-
-.sparkle:nth-child(10) {
+.sparkle:nth-child(7) {
   --sparkle-color: #e78aa6;
   --sparkle-rotation: 16deg;
   top: 31%;
   right: 13%;
 }
 
-.sparkle:nth-child(11) {
-  --sparkle-color: #ffb47c;
-  --sparkle-rotation: 48deg;
-  top: 34%;
-  right: 11%;
-}
-
-.sparkle:nth-child(12) {
+.sparkle:nth-child(8) {
   --sparkle-color: #ff9e6f;
   --sparkle-rotation: 13deg;
   top: 45%;
   right: 12%;
 }
 
-.sparkle:nth-child(13) {
-  --sparkle-color: #e78aa6;
-  --sparkle-rotation: 25deg;
-  top: 50%;
-  right: 10%;
-}
-
-.sparkle:nth-child(14) {
+.sparkle:nth-child(9) {
   --sparkle-color: #e78aa6;
   --sparkle-rotation: 45deg;
   top: 52%;
   left: 46%;
 }
 
-.sparkle:nth-child(15) {
-  --sparkle-color: #ffb47c;
-  --sparkle-rotation: 18deg;
-  top: 49%;
-  left: 55%;
-}
-
-.sparkle:nth-child(16) {
-  --sparkle-color: #e78aa6;
-  --sparkle-rotation: 37deg;
-  top: 51%;
-  left: 61%;
-}
-
-.sparkle:nth-child(17) {
-  --sparkle-color: #b8a6ff;
-  --sparkle-rotation: 10deg;
-  top: 53%;
-  left: 40%;
-}
-
-.sparkle:nth-child(18) {
+.sparkle:nth-child(10) {
   --sparkle-color: #ff9e6f;
   --sparkle-rotation: 45deg;
   top: 46%;
   left: 6%;
-}
-
-.sparkle:nth-child(19) {
-  --sparkle-color: #ffb47c;
-  --sparkle-rotation: 35deg;
-  top: 20%;
-  left: 36%;
-}
-
-.sparkle:nth-child(20) {
-  --sparkle-color: #b8a6ff;
-  --sparkle-rotation: 12deg;
-  top: 21%;
-  left: 64%;
 }
 
 .cursorSparkles {
@@ -923,26 +851,6 @@
   transform: translateY(-2px) rotate(-2deg);
   transform-origin: center;
   white-space: nowrap;
-}
-
-.heroIllustration {
-  position: absolute;
-  top: calc(132px + var(--hero-stack-offset));
-  right: calc(clamp(-34px, -2vw, -14px) + var(--right-cluster-offset));
-  z-index: 18;
-  width: clamp(112px, 12vw, 150px);
-  aspect-ratio: 1;
-  pointer-events: none;
-  transform: rotate(2deg);
-  animation-delay: 300ms;
-}
-
-.heroIllustrationImage {
-  display: block;
-  width: 100%;
-  height: auto;
-  border-radius: 28px;
-  filter: drop-shadow(0 14px 16px rgba(17, 18, 23, 0.12));
 }
 
 .projectWall {
@@ -1618,11 +1526,6 @@
     max-width: 760px;
   }
 
-  .heroIllustration {
-    right: calc(8px + var(--right-cluster-offset));
-    width: 118px;
-  }
-
   .workItem {
     width: min(30vw, 286px);
   }
@@ -1660,99 +1563,123 @@
     padding-bottom: 0;
   }
 
-  .hero {
-    padding-bottom: 44px;
-  }
-
-  .middleScatter .polaroid {
-    width: 100px;
-  }
-
   .middleZone {
-    --scatter-clear-below-header: 18px;
-    --scatter-top-cat: 18px;
-    --scatter-top-me: 28px;
-    --scatter-top-hangzhou: 102px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .hero {
+    order: 1;
+    width: 100%;
+    max-width: 100%;
+    margin-top: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .middleScatter,
+  .sideKeepsakes {
+    display: contents;
   }
 
   .middleScatter .scatterMe {
-    --scatter-rotate: -4deg;
-    --note-rotation: -4deg;
-    left: 120px;
+    order: 2;
+    margin-top: 20px;
   }
 
   .middleScatter .scatterCat {
-    --scatter-rotate: 6deg;
-    --note-rotation: 6deg;
-    right: calc(140px + var(--right-cluster-offset));
-    z-index: 8;
+    order: 3;
   }
 
   .middleScatter .scatterHangzhou {
-    --scatter-rotate: 4deg;
-    --note-rotation: 4deg;
-    bottom: auto;
-    left: 212px;
-    right: auto;
+    order: 4;
   }
 
-  .middleScatter .scatterNote {
-    width: clamp(184px, 26vw, 220px);
+  .sideKeepsakes .sideAboutEntry {
+    order: 5;
   }
 
-  .middleScatter .scatterNote.scatterCat {
-    right: calc(140px + var(--right-cluster-offset));
+  .sideKeepsakes .sideLifeEntry {
+    order: 6;
   }
 
-  .middleScatter .scatterNote.scatterHangzhou {
-    left: 212px;
+  .sideKeepsakes .sideContactEntry {
+    order: 7;
   }
 
-  .title {
-    margin-bottom: 8px;
-  }
-
-  .heroIllustration {
-    position: relative;
-    top: auto;
-    right: auto;
-    width: 128px;
-    margin: -2px auto 8px;
-    transform: rotate(2deg);
-  }
-
-  .sideKeepsakes {
-    position: static;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 18px;
-    width: min(620px, 100%);
-    margin: calc(38px + var(--top-cluster-offset)) auto 0;
-    pointer-events: auto;
-  }
-
+  .middleScatter .scatterNote,
+  .middleScatter .scatterNote.scatterCat,
+  .middleScatter .scatterNote.scatterHangzhou,
+  .middleScatter .scatterMe,
+  .middleScatter .todayStamp,
   .sideKeepsakes .sideAboutEntry,
   .sideKeepsakes .sideLifeEntry,
-  .sideKeepsakes .sideContactEntry,
-  .sideKeepsakes .todayStamp {
+  .sideKeepsakes .sideContactEntry {
     position: relative;
     inset: auto;
     top: auto;
     left: auto;
     right: auto;
-    flex: 0 1 210px;
-    width: min(210px, 100%);
-    margin-top: 0;
+    bottom: auto;
+    width: 100%;
+    max-width: none;
+    margin: 0;
     padding-top: 34px;
+    transform: none;
   }
 
-  .sideKeepsakes .todayStamp {
-    flex: 0 0 170px;
-    width: 170px;
+  .middleScatter .todayStamp.scatterMe {
     padding-top: 0;
   }
+
+  .middleScatter .scatterNote .infoNote {
+    min-height: 112px;
+    padding: 14px;
+  }
+
+  .middleScatter .scatterNote .infoTitle {
+    margin-top: 10px;
+    font-size: 16px;
+  }
+
+  .middleScatter .scatterNote .infoBody {
+    margin-top: 8px;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .hoverPolaroid {
+    display: none;
+  }
+
+  .projectWall {
+    left: auto;
+    width: 100%;
+    transform: none;
+    margin-top: 12px;
+  }
+
+  .workList {
+    min-height: 0;
+    margin-bottom: 0;
+  }
+
+  .title {
+    margin-top: 32px;
+    margin-bottom: 8px;
+  }
+
+  .title > span {
+    transform: scale(clamp(0.78, calc(0.68 + 0.22 * ((100vw - 360px) / 560)), 0.92));
+  }
+
+  .stickerSub {
+    font-size: clamp(16px, 3.8vw, 20px);
+    padding: 8px 14px;
+  }
+
 
   .bottomKeepsakes {
     align-items: flex-start;
@@ -1805,9 +1732,11 @@
     top: auto;
     left: auto;
     right: auto;
-    width: 220px;
+    width: 100%;
+    max-width: none;
     margin: 0;
-    flex: 0 1 220px;
+    flex: none;
+    transform: none;
   }
 
   .infoItem,
@@ -1818,7 +1747,17 @@
   .lifeEntry {
     position: relative;
     inset: auto;
-    width: auto;
+    width: 100%;
+    max-width: none;
+    transform: none;
+  }
+
+  .middleScatter .todayNote,
+  .middleScatter .scatterNote .infoNote,
+  .sideKeepsakes .infoNote,
+  .sideKeepsakes .lifeNote {
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .lifeEntry {
@@ -1862,12 +1801,6 @@
 
   .workList {
     margin-top: 44px;
-  }
-
-  .heroIllustration {
-    width: 112px;
-    margin-top: 0;
-    margin-bottom: 4px;
   }
 
   .sideKeepsakes {
@@ -1970,41 +1903,21 @@
     --scatter-top-hangzhou: 88px;
   }
 
-  .middleScatter .scatterMe {
-    --scatter-rotate: -4deg;
-    --note-rotation: -4deg;
-    left: 120px;
-  }
-
-  .middleScatter .scatterCat {
-    --scatter-rotate: 6deg;
-    --note-rotation: 6deg;
-    right: calc(136px + var(--right-cluster-offset));
+  .middleScatter .scatterMe,
+  .middleScatter .scatterCat,
+  .middleScatter .scatterHangzhou,
+  .middleScatter .scatterNote.scatterCat,
+  .middleScatter .scatterNote.scatterHangzhou {
     left: auto;
-    z-index: 8;
-  }
-
-  .middleScatter .scatterHangzhou {
-    --scatter-rotate: 4deg;
-    --note-rotation: 4deg;
-    bottom: auto;
-    left: 204px;
     right: auto;
+    bottom: auto;
+    top: auto;
+    width: 100%;
+    max-width: none;
   }
 
   .middleScatter .scatterNote {
-    width: min(176px, calc(100vw - 40px));
     padding-top: 28px;
-  }
-
-  .middleScatter .scatterNote.scatterCat {
-    right: calc(136px + var(--right-cluster-offset));
-    left: auto;
-  }
-
-  .middleScatter .scatterNote.scatterHangzhou {
-    left: 204px;
-    right: auto;
   }
 
   .middleScatter .scatterNote .infoNote {
@@ -2097,7 +2010,6 @@
   .title,
   .polaroid,
   .stickerSubWrap,
-  .heroIllustration,
   .todayStamp,
   .workItem,
   .infoItem,
