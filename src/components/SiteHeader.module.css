@@ -6,6 +6,15 @@
   border-bottom: 1px dashed rgba(17, 18, 23, 0.16);
 }
 
+.headerWhite {
+  background-color: #ffffff;
+  border-bottom-color: rgba(0, 0, 0, 0.12);
+}
+
+html:has([data-page="about2"]) .header {
+  background-color: #fffcf8;
+}
+
 .header::after {
   display: none;
 }

@@ -4,9 +4,15 @@ import styles from "./SiteHeader.module.css";
 const portfolioDownloadUrl =
   "https://drive.google.com/file/d/1ixfK3WGaswqJQ_xjclbjdxqZvugWPGaf/view?usp=drive_link";
 
-export function SiteHeader() {
+type SiteHeaderProps = {
+  surface?: "default" | "white";
+};
+
+export function SiteHeader({ surface = "default" }: SiteHeaderProps) {
   return (
-    <header className={styles.header}>
+    <header
+      className={`${styles.header} ${surface === "white" ? styles.headerWhite : ""}`}
+    >
       <div className={styles.inner}>
         <div className={styles.menuLeft} aria-label="menu bar">
           <Link className={styles.brand} href="/">
@@ -20,6 +26,9 @@ export function SiteHeader() {
           </Link>
           <Link className={styles.navLink} href="/about">
             About
+          </Link>
+          <Link className={styles.navLink} href="/about2">
+            About2
           </Link>
           <Link className={styles.navLink} href="/test">
             Test

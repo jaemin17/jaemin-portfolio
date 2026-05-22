@@ -32,6 +32,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+html:has([data-page="about2"]) body {
+  background: #fffcf8;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
