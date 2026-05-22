@@ -34,10 +34,27 @@ const aboutNote = {
   body: "偏产品型的 UX/UI 设计师，也会自己做独立开发项目。",
 } as const;
 
+const focusNote = {
+  id: "focus",
+  index: "A2",
+  title: "我关注什么",
+  body: "问题定义、任务流程、信息层级、可用性和可交付性。",
+} as const;
+
+const deliveryNote = {
+  id: "delivery",
+  index: "A3",
+  title: "我能交付什么",
+  body: "问题拆解、关键任务流、原型、视觉设计、组件规范和交付素材。",
+} as const;
+
 const contactEmail = "lijiaemin1993@gmail.com";
 
 const contactNote = {
   id: "where",
+  index: "A4",
+  title: "联系",
+  body: contactEmail,
 } as const;
 
 const projectPhotoPlacements = ["topLeft", "topRight", "right"] as const;
@@ -90,25 +107,34 @@ function photoClassName(base: string, value: string) {
   return styles[`${base}${value[0].toUpperCase()}${value.slice(1)}`];
 }
 
-function ScatterPolaroid({
+function ScatterInfoNote({
   className,
-  caption,
-  src,
-  imageClassName,
+  note,
+  href,
 }: {
   className: string;
-  caption: string;
-  src: string;
-  imageClassName?: string;
+  note: typeof aboutNote | typeof focusNote | typeof deliveryNote;
+  href?: string;
 }) {
+  const content = (
+    <>
+      <span className={styles.workIndex}>{note.index}</span>
+      <span className={styles.infoTitle}>{note.title}</span>
+      <span className={styles.infoBody}>{note.body}</span>
+    </>
+  );
+
   return (
-    <figure className={`${styles.polaroid} ${className}`}>
-      <span className={styles.polaroidTape} aria-hidden="true" />
-      <span className={[styles.polaroidImage, imageClassName].filter(Boolean).join(" ")}>
-        <Image className={styles.polaroidPhoto} src={src} alt="" fill sizes="116px" unoptimized />
-      </span>
-      <figcaption className={styles.polaroidCaption}>{caption}</figcaption>
-    </figure>
+    <article id={note.id} className={`${styles.infoItem} ${styles.scatterNote} ${className}`}>
+      <span className={styles.pin} aria-hidden="true" />
+      {href ? (
+        <Link className={`${styles.infoNote} ${styles.infoNoteLink}`} href={href}>
+          {content}
+        </Link>
+      ) : (
+        <span className={styles.infoNote}>{content}</span>
+      )}
+    </article>
   );
 }
 
@@ -212,36 +238,21 @@ export default function Home() {
               ))}
             </div>
             <div className={styles.middleZone}>
-            <div className={styles.middleScatter} aria-hidden="true">
-              <ScatterPolaroid
-                className={styles.scatterMe}
-                caption="me"
-                src={asset("/images/profile-polaroid.jpg")}
-                imageClassName={styles.profileImage}
-              />
-              <ScatterPolaroid
-                className={styles.scatterCat}
-                caption="my cat"
-                src={asset("/images/cat-polaroid.jpg")}
-                imageClassName={styles.catImage}
-              />
-              <ScatterPolaroid
-                className={styles.scatterHangzhou}
-                caption="hangzhou"
-                src={asset("/images/hangzhou-hover.png")}
-                imageClassName={styles.hangzhouScatterImage}
-              />
+            <div className={styles.middleScatter} aria-label="中区信息贴">
+              <TodayStamp className={styles.scatterMe} />
+              <ScatterInfoNote className={styles.scatterCat} note={deliveryNote} />
+              <ScatterInfoNote className={styles.scatterHangzhou} note={aboutNote} href="/about" />
             </div>
             <aside className={styles.sideKeepsakes} aria-label="侧边信息">
-              <article id={aboutNote.id} className={`${styles.infoItem} ${styles.sideAboutEntry}`}>
+              <article id={focusNote.id} className={`${styles.infoItem} ${styles.sideAboutEntry}`}>
                 <span className={styles.pin} aria-hidden="true" />
-                <Link className={`${styles.infoNote} ${styles.infoNoteLink}`} href="/about">
-                  <HoverPolaroid caption={aboutNote.id} placement="left" tone="sun" focusable={false}>
-                    <span className={styles.workIndex}>{aboutNote.index}</span>
-                    <span className={styles.infoTitle}>{aboutNote.title}</span>
-                    <span className={styles.infoBody}>{aboutNote.body}</span>
+                <span className={styles.infoNote}>
+                  <HoverPolaroid caption={focusNote.id} placement="left" tone="sun" focusable={false}>
+                    <span className={styles.workIndex}>{focusNote.index}</span>
+                    <span className={styles.infoTitle}>{focusNote.title}</span>
+                    <span className={styles.infoBody}>{focusNote.body}</span>
                   </HoverPolaroid>
-                </Link>
+                </span>
               </article>
               <article className={`${styles.lifeEntry} ${styles.sideLifeEntry}`}>
                 <span className={styles.pin} aria-hidden="true" />
@@ -253,7 +264,14 @@ export default function Home() {
                   </HoverPolaroid>
                 </Link>
               </article>
-              <TodayStamp />
+              <article className={`${styles.infoItem} ${styles.sideContactEntry}`}>
+                <span className={styles.pin} aria-hidden="true" />
+                <a className={styles.infoNote} href={`mailto:${contactEmail}`}>
+                  <span className={styles.workIndex}>{contactNote.index}</span>
+                  <span className={styles.infoTitle}>{contactNote.title}</span>
+                  <span className={styles.infoBody}>{contactNote.body}</span>
+                </a>
+              </article>
             </aside>
             <header className={styles.hero}>
             <div className={styles.heroTag} aria-label="status tag">

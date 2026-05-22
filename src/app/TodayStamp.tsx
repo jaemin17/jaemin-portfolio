@@ -22,7 +22,7 @@ function formatHangzhouTime(date: Date) {
   return { dateText, timeText };
 }
 
-export function TodayStamp() {
+export function TodayStamp({ className }: { className?: string }) {
   const [now, setNow] = useState<Date | null>(null);
 
   useEffect(() => {
@@ -40,7 +40,7 @@ export function TodayStamp() {
     : { dateText: "--", timeText: "--:--:--" };
 
   return (
-    <aside className={styles.todayStamp} aria-label="今日时间">
+    <aside className={[styles.todayStamp, className].filter(Boolean).join(" ")} aria-label="今日时间">
       <time className={styles.todayNote} dateTime={now?.toISOString()}>
         <span className={styles.todayLabel}>Hangzhou time</span>
         <span className={styles.todayDate}>{dateText}</span>

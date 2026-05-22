@@ -125,7 +125,7 @@
 .middleScatter {
   position: absolute;
   inset: 0;
-  z-index: 6;
+  z-index: 12;
   max-width: min(1200px, 100%);
   margin: 0 auto;
   pointer-events: none;
@@ -136,6 +136,42 @@
   z-index: 6;
   animation-name: scatterDropIn;
   transform: rotate(var(--scatter-rotate, 0deg));
+}
+
+.middleScatter .scatterNote,
+.middleScatter .todayStamp {
+  position: absolute;
+  pointer-events: auto;
+}
+
+.middleScatter .scatterNote {
+  width: clamp(196px, 15vw, 232px);
+  padding-top: 34px;
+  transform: rotate(var(--note-rotation));
+  animation-name: noteDropIn;
+  transition: transform 160ms ease;
+}
+
+.middleScatter .scatterNote.scatterCat {
+  top: max(var(--scatter-top-cat), var(--scatter-clear-below-header));
+  right: calc(clamp(148px, 7vw, 176px) + var(--right-cluster-offset));
+  left: auto;
+  z-index: 8;
+}
+
+.middleScatter .scatterNote.scatterHangzhou {
+  --note-accent: #fff1a8;
+  --pin-color: #f6682f;
+  top: max(var(--scatter-top-hangzhou), calc(var(--scatter-clear-below-header) + 78px));
+  left: clamp(216px, 14vw, 268px);
+  right: auto;
+  z-index: 6;
+}
+
+.middleScatter .todayStamp {
+  width: 170px;
+  margin-top: 0;
+  transform: rotate(var(--note-rotation));
 }
 
 @keyframes scatterDropIn {
@@ -154,6 +190,7 @@
 
 .middleScatter .scatterMe {
   --scatter-rotate: -5deg;
+  --note-rotation: -5deg;
   top: max(var(--scatter-top-me), var(--scatter-clear-below-header));
   left: clamp(120px, 4vw, 138px);
   z-index: 7;
@@ -162,6 +199,10 @@
 
 .middleScatter .scatterCat {
   --scatter-rotate: 7deg;
+  --note-rotation: 7deg;
+  --note-hover-rotation-factor: -0.45;
+  --note-accent: #dff7e8;
+  --pin-color: #2f7bff;
   top: max(var(--scatter-top-cat), var(--scatter-clear-below-header));
   right: calc(clamp(148px, 7vw, 176px) + var(--right-cluster-offset));
   z-index: 8;
@@ -170,10 +211,14 @@
 
 .middleScatter .scatterHangzhou {
   --scatter-rotate: 5deg;
+  --note-rotation: 5deg;
+  --note-hover-rotation-factor: -0.45;
+  --note-accent: #fff1a8;
+  --pin-color: #f6682f;
   top: max(var(--scatter-top-hangzhou), calc(var(--scatter-clear-below-header) + 78px));
   left: clamp(216px, 14vw, 268px);
   right: auto;
-  width: 108px;
+  width: clamp(196px, 15vw, 232px);
   z-index: 6;
   animation-delay: 360ms;
 }
@@ -1136,6 +1181,11 @@
   --entry-delay: 700ms;
 }
 
+.middleScatter .scatterNote.scatterHangzhou {
+  --note-accent: #fff1a8;
+  --pin-color: #f6682f;
+}
+
 .infoItem:nth-child(5) {
   --note-rotation: -1.4deg;
   --note-accent: #ffe4d5;
@@ -1164,7 +1214,8 @@
 }
 
 .sideKeepsakes .sideAboutEntry,
-.sideKeepsakes .sideLifeEntry {
+.sideKeepsakes .sideLifeEntry,
+.sideKeepsakes .sideContactEntry {
   position: absolute;
   inset: auto;
   width: clamp(212px, 14vw, 248px);
@@ -1174,8 +1225,8 @@
 .sideKeepsakes .sideAboutEntry {
   --note-rotation: -1.8deg;
   --note-hover-rotation-factor: -0.45;
-  --note-accent: #fff1a8;
-  --pin-color: #f6682f;
+  --note-accent: #dff7e8;
+  --pin-color: #2f7bff;
   top: calc(100px + var(--top-cluster-offset));
   left: clamp(0px, 0.6vw, 12px);
   z-index: 2;
@@ -1190,6 +1241,36 @@
   top: 188px;
   right: calc(clamp(0px, 2.5vw, 40px) + var(--right-cluster-offset));
   animation-delay: 860ms;
+}
+
+.sideKeepsakes .sideContactEntry {
+  --note-rotation: 2.3deg;
+  --note-hover-rotation-factor: -0.45;
+  --note-accent: #ffe4d5;
+  --pin-color: #f6682f;
+  top: 64px;
+  right: calc(clamp(-42px, -3vw, -26px) + var(--right-cluster-offset));
+  z-index: 7;
+  width: clamp(178px, 13vw, 206px);
+  transform: rotate(var(--note-rotation));
+  animation-delay: 900ms;
+}
+
+.sideKeepsakes .sideContactEntry .infoNote {
+  min-height: 96px;
+  padding: 12px;
+}
+
+.sideKeepsakes .sideContactEntry .infoTitle {
+  margin-top: 8px;
+  font-size: 16px;
+}
+
+.sideKeepsakes .sideContactEntry .infoBody {
+  margin-top: 7px;
+  font-size: 12px;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
 }
 
 .sideKeepsakes .todayStamp {
@@ -1217,7 +1298,7 @@
   margin: 0;
   color: #111217;
   font-family: var(--font-montserrat), sans-serif;
-  font-size: 56px;
+  font-size: clamp(34px, 4vw, 46px);
   line-height: 1.12;
   letter-spacing: -0.03em;
   font-weight: 400;
@@ -1286,10 +1367,24 @@
   transform: translateY(-5px) rotate(calc(var(--note-rotation) * var(--note-hover-rotation-factor)));
 }
 
+.middleScatter .infoItem:hover {
+  z-index: 30;
+}
+
+.sideKeepsakes .sideAboutEntry:hover {
+  z-index: 2;
+  transform: rotate(var(--note-rotation));
+}
+
 .infoItem:hover .infoNote,
 .lifeEntry:hover .lifeNote {
   border-color: rgba(17, 18, 23, 0.18);
   box-shadow: 0 24px 40px rgba(17, 18, 23, 0.16);
+}
+
+.sideKeepsakes .sideAboutEntry:hover .infoNote {
+  border-color: rgba(17, 18, 23, 0.12);
+  box-shadow: 0 14px 26px rgba(17, 18, 23, 0.12);
 }
 
 .infoTitle {
@@ -1473,6 +1568,12 @@
     width: clamp(208px, 12vw, 236px);
   }
 
+  .sideKeepsakes .sideContactEntry {
+    top: 70px;
+    right: calc(clamp(-42px, -3vw, -26px) + var(--right-cluster-offset));
+    width: clamp(178px, 12vw, 206px);
+  }
+
   .sideKeepsakes .todayStamp {
     top: 140px;
     right: calc(clamp(0px, 0.6vw, 8px) + var(--right-cluster-offset));
@@ -1568,21 +1669,35 @@
 
   .middleScatter .scatterMe {
     --scatter-rotate: -4deg;
+    --note-rotation: -4deg;
     left: 120px;
   }
 
   .middleScatter .scatterCat {
     --scatter-rotate: 6deg;
+    --note-rotation: 6deg;
     right: calc(140px + var(--right-cluster-offset));
     z-index: 8;
   }
 
   .middleScatter .scatterHangzhou {
     --scatter-rotate: 4deg;
+    --note-rotation: 4deg;
     bottom: auto;
     left: 212px;
     right: auto;
-    width: 96px;
+  }
+
+  .middleScatter .scatterNote {
+    width: clamp(184px, 26vw, 220px);
+  }
+
+  .middleScatter .scatterNote.scatterCat {
+    right: calc(140px + var(--right-cluster-offset));
+  }
+
+  .middleScatter .scatterNote.scatterHangzhou {
+    left: 212px;
   }
 
   .title {
@@ -1612,6 +1727,7 @@
 
   .sideKeepsakes .sideAboutEntry,
   .sideKeepsakes .sideLifeEntry,
+  .sideKeepsakes .sideContactEntry,
   .sideKeepsakes .todayStamp {
     position: relative;
     inset: auto;
@@ -1754,6 +1870,7 @@
 
   .sideKeepsakes .sideAboutEntry,
   .sideKeepsakes .sideLifeEntry,
+  .sideKeepsakes .sideContactEntry,
   .sideKeepsakes .todayStamp {
     flex: 1 1 100%;
     width: 100%;
@@ -1847,11 +1964,13 @@
 
   .middleScatter .scatterMe {
     --scatter-rotate: -4deg;
+    --note-rotation: -4deg;
     left: 120px;
   }
 
   .middleScatter .scatterCat {
     --scatter-rotate: 6deg;
+    --note-rotation: 6deg;
     right: calc(136px + var(--right-cluster-offset));
     left: auto;
     z-index: 8;
@@ -1859,10 +1978,41 @@
 
   .middleScatter .scatterHangzhou {
     --scatter-rotate: 4deg;
+    --note-rotation: 4deg;
     bottom: auto;
     left: 204px;
     right: auto;
-    width: 72px;
+  }
+
+  .middleScatter .scatterNote {
+    width: min(176px, calc(100vw - 40px));
+    padding-top: 28px;
+  }
+
+  .middleScatter .scatterNote.scatterCat {
+    right: calc(136px + var(--right-cluster-offset));
+    left: auto;
+  }
+
+  .middleScatter .scatterNote.scatterHangzhou {
+    left: 204px;
+    right: auto;
+  }
+
+  .middleScatter .scatterNote .infoNote {
+    min-height: 104px;
+    padding: 12px;
+  }
+
+  .middleScatter .scatterNote .infoTitle {
+    margin-top: 8px;
+    font-size: 15px;
+  }
+
+  .middleScatter .scatterNote .infoBody {
+    margin-top: 6px;
+    font-size: 11px;
+    line-height: 1.45;
   }
 
   .polaroidPair {
