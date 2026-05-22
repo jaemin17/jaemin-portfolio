@@ -780,6 +780,14 @@
   --hover-photo-rotation: 5deg;
 }
 
+/* Hangzhou tag: show to the right of pill — clear of nav above and Jiamin below */
+.heroTag > .hoverPhotoAnchor:last-child .hoverPolaroidRight {
+  left: calc(100% + 20px);
+  top: -8px;
+  --hover-photo-shift-y: 0;
+  --hover-photo-rotation: 4deg;
+}
+
 .hoverPolaroidTape {
   position: absolute;
   top: -11px;

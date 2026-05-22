@@ -280,33 +280,48 @@ export default function Home() {
                   :)
                 </span>
               </HoverPolaroid>
-              <span className={styles.heroTagPill}>
-                <svg className={styles.heroTagPlate} viewBox="0 0 220 52" aria-hidden="true">
-                  <rect
-                    x="8"
-                    y="16"
-                    width="206"
-                    height="34"
-                    rx="17"
-                    fill="rgba(0, 0, 0, 0.16)"
-                    transform="rotate(-1 110 33)"
-                  />
-                  <rect
-                    x="7"
-                    y="8"
-                    width="206"
-                    height="34"
-                    rx="17"
-                    fill="#f6682f"
-                    stroke="#0b0b0b"
-                    strokeWidth="1"
-                    transform="rotate(-1 110 25)"
-                  />
-                </svg>
-                <span className={styles.heroTagText}>Hangzhou · Open to work</span>
-              </span>
+              <HoverPolaroid caption="hangzhou" placement="right" tone="mint" photo="hangzhou">
+                <span className={styles.heroTagPill}>
+                  <svg className={styles.heroTagPlate} viewBox="0 0 220 52" aria-hidden="true">
+                    <rect
+                      x="8"
+                      y="16"
+                      width="206"
+                      height="34"
+                      rx="17"
+                      fill="rgba(0, 0, 0, 0.16)"
+                      transform="rotate(-1 110 33)"
+                    />
+                    <rect
+                      x="7"
+                      y="8"
+                      width="206"
+                      height="34"
+                      rx="17"
+                      fill="#f6682f"
+                      stroke="#0b0b0b"
+                      strokeWidth="1"
+                      transform="rotate(-1 110 25)"
+                    />
+                  </svg>
+                  <span className={styles.heroTagText}>Hangzhou · Open to work</span>
+                </span>
+              </HoverPolaroid>
             </div>
-            <StickerTitle className={styles.title} text="Jiamin Li" />
+            <StickerTitle
+              className={styles.title}
+              text="Jiamin Li"
+              renderWord={(word, index, wordNode) => (
+                <HoverPolaroid
+                  caption={index === 0 ? "me" : "my cat"}
+                  placement={index === 0 ? "topLeft" : "topRight"}
+                  tone={index === 0 ? "warm" : "sky"}
+                  photo={index === 0 ? "me" : "cat"}
+                >
+                  {wordNode}
+                </HoverPolaroid>
+              )}
+            />
             <div className={styles.stickerSubWrap} aria-label="identity stickers">
               <HoverPolaroid caption="0 to 1" placement="bottomRight" tone="sun">
                 <span className={styles.stickerSub}>
