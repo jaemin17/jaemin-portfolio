@@ -1,5 +1,8 @@
 import Link from "next/link";
+import { notFound } from "next/navigation";
 import { SiteHeader } from "@/components/SiteHeader";
+import { isLocale, type Locale } from "@/i18n/config";
+import { localePath } from "@/i18n/paths";
 import styles from "../test.module.css";
 
 const visualProjects = [
@@ -22,7 +25,7 @@ const visualProjects = [
     title: "智能制造 VR",
     body: "变速器、工业机器人、注塑模具等工业设备实训画面和教学操作界面。",
     tags: ["Manufacturing", "Industry", "Simulation"],
-    href: "/test/visual/smart-manufacturing",
+    path: "/test/visual/smart-manufacturing",
   },
   {
     title: "汽车实训 VR",
@@ -31,10 +34,18 @@ const visualProjects = [
   },
 ];
 
-export default function VisualPage() {
+type VisualPageProps = {
+  params: Promise<{ locale: string }>;
+};
+
+export default async function VisualPage({ params }: VisualPageProps) {
+  const { locale: localeParam } = await params;
+  if (!isLocale(localeParam)) notFound();
+  const locale: Locale = localeParam;
+
   return (
     <>
-      <SiteHeader />
+      <SiteHeader locale={locale} active="test" />
       <main className={styles.main}>
         <section className={styles.hero}>
           <p className={styles.eyebrow}>Visual Collection</p>
@@ -55,12 +66,12 @@ export default function VisualPage() {
                       <span key={tag}>{tag}</span>
                     ))}
                   </div>
-                  {project.href ? <span className={styles.cardAction}>查看详情</span> : null}
+                  {project.path ? <span className={styles.cardAction}>查看详情</span> : null}
                 </>
               );
 
-              return project.href ? (
-                <Link key={project.title} className={styles.card} href={project.href}>
+              return project.path ? (
+                <Link key={project.title} className={styles.card} href={localePath(locale, project.path)}>
                   {cardContent}
                 </Link>
               ) : (
@@ -72,7 +83,7 @@ export default function VisualPage() {
           </div>
         </section>
 
-        <Link className="buttonSticker buttonStickerOrange" href="/">
+        <Link className="buttonSticker buttonStickerOrange" href={localePath(locale, "/")}>
           返回首页
         </Link>
       </main>

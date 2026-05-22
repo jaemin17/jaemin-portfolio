@@ -1,17 +1,19 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import type { Locale } from "@/i18n/config";
 import styles from "./page.module.css";
 
-function formatHangzhouTime(date: Date) {
-  const dateText = new Intl.DateTimeFormat("zh-CN", {
+function formatHangzhouTime(date: Date, locale: Locale) {
+  const intlLocale = locale === "zh" ? "zh-CN" : "en-US";
+  const dateText = new Intl.DateTimeFormat(intlLocale, {
     timeZone: "Asia/Shanghai",
     month: "long",
     day: "numeric",
     weekday: "short",
   }).format(date);
 
-  const timeText = new Intl.DateTimeFormat("zh-CN", {
+  const timeText = new Intl.DateTimeFormat(intlLocale, {
     timeZone: "Asia/Shanghai",
     hour: "2-digit",
     minute: "2-digit",
@@ -22,7 +24,7 @@ function formatHangzhouTime(date: Date) {
   return { dateText, timeText };
 }
 
-export function TodayStamp({ className }: { className?: string }) {
+export function TodayStamp({ className, locale = "zh" }: { className?: string; locale?: Locale }) {
   const [now, setNow] = useState<Date | null>(null);
 
   useEffect(() => {
@@ -36,7 +38,7 @@ export function TodayStamp({ className }: { className?: string }) {
   }, []);
 
   const { dateText, timeText } = now
-    ? formatHangzhouTime(now)
+    ? formatHangzhouTime(now, locale)
     : { dateText: "--", timeText: "--:--:--" };
 
   return (

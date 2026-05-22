@@ -1,15 +1,25 @@
 import Image from "next/image";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 import { SiteHeader } from "@/components/SiteHeader";
+import { isLocale, type Locale } from "@/i18n/config";
+import { localePath } from "@/i18n/paths";
 import styles from "../../test.module.css";
 import { smartManufacturingShots } from "../smartManufacturingData";
 
-export default function SmartManufacturingVisualPage() {
+type SmartManufacturingPageProps = {
+  params: Promise<{ locale: string }>;
+};
+
+export default async function SmartManufacturingVisualPage({ params }: SmartManufacturingPageProps) {
+  const { locale: localeParam } = await params;
+  if (!isLocale(localeParam)) notFound();
+  const locale: Locale = localeParam;
   const [heroShot, ...scenarioShots] = smartManufacturingShots;
 
   return (
     <div className={styles.plainWhitePage}>
-      <SiteHeader />
+      <SiteHeader locale={locale} active="test" />
       <main className={styles.caseStudyPage}>
         <section className={styles.caseIntro}>
           <h1>智能制造 VR</h1>
@@ -57,7 +67,7 @@ export default function SmartManufacturingVisualPage() {
           <p>Curious for more details?</p>
           <span>Reach out and let us chat.</span>
           <a href="mailto:lijiaemin1993@gmail.com">lijiaemin1993@gmail.com</a>
-          <Link className="buttonSticker buttonStickerOrange" href="/test/visual">
+          <Link className="buttonSticker buttonStickerOrange" href={localePath(locale, "/test/visual")}>
             返回视觉作品
           </Link>
         </section>

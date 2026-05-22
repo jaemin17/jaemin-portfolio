@@ -1,5 +1,8 @@
 import Link from "next/link";
+import { notFound } from "next/navigation";
 import { SiteHeader } from "@/components/SiteHeader";
+import { isLocale, type Locale } from "@/i18n/config";
+import { localePath } from "@/i18n/paths";
 import styles from "../test.module.css";
 
 const toolProjects = [
@@ -30,10 +33,18 @@ const toolProjects = [
   },
 ];
 
-export default function ToolsPage() {
+type ToolsPageProps = {
+  params: Promise<{ locale: string }>;
+};
+
+export default async function ToolsPage({ params }: ToolsPageProps) {
+  const { locale: localeParam } = await params;
+  if (!isLocale(localeParam)) notFound();
+  const locale: Locale = localeParam;
+
   return (
     <>
-      <SiteHeader />
+      <SiteHeader locale={locale} active="test" />
       <main className={styles.main}>
         <section className={styles.hero}>
           <p className={styles.eyebrow}>UI/UX Collection</p>
@@ -58,7 +69,7 @@ export default function ToolsPage() {
           </div>
         </section>
 
-        <Link className="buttonSticker buttonStickerOrange" href="/">
+        <Link className="buttonSticker buttonStickerOrange" href={localePath(locale, "/")}>
           返回首页
         </Link>
       </main>

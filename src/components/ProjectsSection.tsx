@@ -2,7 +2,9 @@
 
 import Link from "next/link";
 import { useMemo, useState } from "react";
-import type { Project } from "@/content/projects";
+import type { Locale } from "@/i18n/config";
+import { localePath } from "@/i18n/paths";
+import type { Project } from "@/content/types";
 import styles from "./ProjectsSection.module.css";
 
 function shuffle<T>(arr: T[]) {
@@ -15,10 +17,12 @@ function shuffle<T>(arr: T[]) {
 }
 
 export function ProjectsSection({
+  locale,
   projects,
   title = "项目",
   subtitle,
 }: {
+  locale: Locale;
   projects: Project[];
   title?: string;
   subtitle?: string;
@@ -50,7 +54,7 @@ export function ProjectsSection({
 
       <div className={styles.grid}>
         {view.map((p, idx) => (
-          <Link key={p.slug} className={styles.card} href={`/projects/${p.slug}`}>
+          <Link key={p.slug} className={styles.card} href={localePath(locale, `/projects/${p.slug}`)}>
             <div className={styles.cardTop}>
               <span className={styles.index}>#{String(idx + 1).padStart(2, "0")}</span>
               <span className="chip">{p.timeframe}</span>

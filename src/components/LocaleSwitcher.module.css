@@ -1,0 +1,36 @@
+.switcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  margin-left: 0.35rem;
+  padding: 2px;
+  border-radius: 999px;
+  background: rgb(255 255 255 / 0.55);
+  border: 1px solid rgb(0 0 0 / 0.08);
+}
+
+.option {
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: rgb(0 0 0 / 0.55);
+  text-decoration: none;
+  transition:
+    background 0.15s ease,
+    color 0.15s ease;
+}
+
+.option:hover {
+  color: rgb(0 0 0 / 0.85);
+}
+
+.optionActive {
+  background: rgb(0 0 0 / 0.88);
+  color: #fff;
+}
+
+.optionActive:hover {
+  color: #fff;
+}

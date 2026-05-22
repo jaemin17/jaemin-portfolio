@@ -1,13 +1,18 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { getProjectBySlug, projectArchive } from "@/content/projects";
+import { getProjectArchive, getProjectBySlug } from "@/content";
 import { SiteHeader } from "@/components/SiteHeader";
+import { isLocale, locales, type Locale } from "@/i18n/config";
+import { localePath } from "@/i18n/paths";
 import styles from "./project.module.css";
 
 export function generateStaticParams() {
-  return projectArchive.map((project) => ({
-    slug: project.slug,
-  }));
+  return locales.flatMap((locale) =>
+    getProjectArchive(locale).map((project) => ({
+      locale,
+      slug: project.slug,
+    })),
+  );
 }
 
 export const dynamicParams = false;
@@ -15,10 +20,12 @@ export const dynamicParams = false;
 export default async function ProjectDetailPage({
   params,
 }: {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ locale: string; slug: string }>;
 }) {
-  const { slug } = await params;
-  const project = getProjectBySlug(slug);
+  const { locale: localeParam, slug } = await params;
+  if (!isLocale(localeParam)) notFound();
+  const locale: Locale = localeParam;
+  const project = getProjectBySlug(locale, slug);
   const isProjectOne = slug === "selfly-ios-app";
   const isEvidenceCase = slug === "project-c";
 
@@ -229,7 +236,7 @@ export default async function ProjectDetailPage({
 
   return (
     <div className={styles.pagePlain}>
-      <SiteHeader />
+      <SiteHeader locale={locale} />
       <main className={styles.main}>
         <header
           className={[
@@ -444,10 +451,10 @@ export default async function ProjectDetailPage({
         ))}
 
         <footer className={styles.footer}>
-          <Link className="buttonSticker buttonStickerBlue" href="/#where">
+          <Link className="buttonSticker buttonStickerBlue" href={`${localePath(locale, "/")}#where`}>
             联系我
           </Link>
-          <Link className="buttonGhost" href="/">
+          <Link className="buttonGhost" href={localePath(locale, "/")}>
             回到首页
           </Link>
         </footer>

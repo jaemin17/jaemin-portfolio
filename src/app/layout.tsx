@@ -37,7 +37,6 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
       className={`${geistSans.variable} ${geistMono.variable} ${kalam.variable} ${montserrat.variable}`}
     >
       <body>{children}</body>

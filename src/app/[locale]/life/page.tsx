@@ -1,4 +1,6 @@
+import { notFound } from "next/navigation";
 import { SiteHeader } from "@/components/SiteHeader";
+import { isLocale, type Locale } from "@/i18n/config";
 import styles from "./life.module.css";
 
 const lifeSections = [
@@ -32,10 +34,18 @@ const lifeSections = [
   },
 ];
 
-export default function LifePage() {
+type LifePageProps = {
+  params: Promise<{ locale: string }>;
+};
+
+export default async function LifePage({ params }: LifePageProps) {
+  const { locale: localeParam } = await params;
+  if (!isLocale(localeParam)) notFound();
+  const locale: Locale = localeParam;
+
   return (
     <>
-      <SiteHeader />
+      <SiteHeader locale={locale} />
       <main className={styles.main}>
         <section className={styles.wall} aria-labelledby="life-title">
           <header className={styles.intro}>

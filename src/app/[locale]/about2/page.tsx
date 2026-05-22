@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 import { SiteHeader } from "@/components/SiteHeader";
+import { isLocale, type Locale } from "@/i18n/config";
 import styles from "./about.module.css";
 
 const pdfUrl =
@@ -59,10 +61,18 @@ const jobs = [
   },
 ];
 
-export default function About2Page() {
+type About2PageProps = {
+  params: Promise<{ locale: string }>;
+};
+
+export default async function About2Page({ params }: About2PageProps) {
+  const { locale: localeParam } = await params;
+  if (!isLocale(localeParam)) notFound();
+  const locale: Locale = localeParam;
+
   return (
     <div className={styles.shell} data-page="about2">
-      <SiteHeader />
+      <SiteHeader locale={locale} active="about2" surface="white" />
       <main className={styles.main}>
           <section className={styles.section} aria-label="About intro">
             <div className={styles.container}>

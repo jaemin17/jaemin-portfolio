@@ -1,6 +1,9 @@
 import Link from "next/link";
+import { notFound } from "next/navigation";
 import { SiteHeader } from "@/components/SiteHeader";
-import { testProjects } from "@/content/projects";
+import { getTestProjects } from "@/content";
+import { isLocale, type Locale } from "@/i18n/config";
+import { localePath } from "@/i18n/paths";
 import styles from "./test.module.css";
 
 const draftDirections = [
@@ -21,10 +24,19 @@ const draftDirections = [
   },
 ];
 
-export default function TestPage() {
+type TestPageProps = {
+  params: Promise<{ locale: string }>;
+};
+
+export default async function TestPage({ params }: TestPageProps) {
+  const { locale: localeParam } = await params;
+  if (!isLocale(localeParam)) notFound();
+  const locale: Locale = localeParam;
+  const testProjects = getTestProjects(locale);
+
   return (
     <>
-      <SiteHeader />
+      <SiteHeader locale={locale} active="test" />
       <main className={styles.main}>
         <section className={styles.hero}>
           <p className={styles.eyebrow}>Portfolio Lab</p>
@@ -43,7 +55,11 @@ export default function TestPage() {
           </div>
           <div className={styles.grid}>
             {testProjects.map((project) => (
-              <Link key={project.slug} className={styles.card} href={`/projects/${project.slug}`}>
+              <Link
+                key={project.slug}
+                className={styles.card}
+                href={localePath(locale, `/projects/${project.slug}`)}
+              >
                 <span className={styles.cardLabel}>{project.timeframe}</span>
                 <h3>{project.cardTitle ?? project.title}</h3>
                 <p>{project.cardSubtitle ?? project.subtitle}</p>
