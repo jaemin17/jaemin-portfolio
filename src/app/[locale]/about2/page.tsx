@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { SiteHeader } from "@/components/SiteHeader";
 import { isLocale, type Locale } from "@/i18n/config";
-import { about2Copy, about2Email, about2PdfUrl } from "./content";
+import { about2Email, about2PdfUrl, getAbout2Copy } from "./content";
 import styles from "./about.module.css";
 
 type About2PageProps = {
@@ -14,6 +14,7 @@ export default async function About2Page({ params }: About2PageProps) {
   const { locale: localeParam } = await params;
   if (!isLocale(localeParam)) notFound();
   const locale: Locale = localeParam;
+  const about2Copy = getAbout2Copy(locale);
 
   return (
     <div className={styles.shell} data-page="about2">
