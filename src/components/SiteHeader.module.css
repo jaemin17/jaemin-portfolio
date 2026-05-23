@@ -15,6 +15,10 @@ html:has([data-page="about2"]) .header {
   background-color: #fffcf8;
 }
 
+html:has([data-page="plain-white"]) .header {
+  background-color: #ffffff;
+}
+
 .header::after {
   display: none;
 }

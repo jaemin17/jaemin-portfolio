@@ -18,7 +18,7 @@ export default async function SmartManufacturingVisualPage({ params }: SmartManu
   const [heroShot, ...scenarioShots] = smartManufacturingShots;
 
   return (
-    <div className={styles.plainWhitePage}>
+    <div className={styles.plainWhitePage} data-page="plain-white">
       <SiteHeader locale={locale} active="test" />
       <main className={styles.caseStudyPage}>
         <section className={styles.caseIntro}>

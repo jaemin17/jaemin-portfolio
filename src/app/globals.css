@@ -36,6 +36,14 @@ html:has([data-page="about2"]) body {
   background: #fffcf8;
 }
 
+html:has([data-page="plain-white"]) {
+  background: #ffffff;
+}
+
+html:has([data-page="plain-white"]) body {
+  background: #ffffff;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
