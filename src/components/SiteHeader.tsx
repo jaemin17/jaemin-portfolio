@@ -1,11 +1,9 @@
 import Link from "next/link";
+import { resumeDownloadUrl } from "@/content/resume";
 import type { Locale } from "@/i18n/config";
 import { localePath } from "@/i18n/paths";
 import { LocaleSwitcher } from "./LocaleSwitcher";
 import styles from "./SiteHeader.module.css";
-
-const portfolioDownloadUrl =
-  "https://drive.google.com/file/d/1ixfK3WGaswqJQ_xjclbjdxqZvugWPGaf/view?usp=drive_link";
 
 type SiteHeaderProps = {
   locale: Locale;
@@ -55,7 +53,7 @@ export function SiteHeader({ locale, surface = "default", active }: SiteHeaderPr
           >
             Test
           </Link>
-          <a className={styles.navLink} href={portfolioDownloadUrl} target="_blank" rel="noreferrer">
+          <a className={styles.navLink} href={resumeDownloadUrl} target="_blank" rel="noreferrer">
             Resume
           </a>
           <LocaleSwitcher current={locale} />

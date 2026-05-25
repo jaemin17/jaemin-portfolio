@@ -49,7 +49,7 @@
 
 .label {
   margin: 0 0 10px;
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 500;
   line-height: 20px;
   letter-spacing: 1px;
@@ -263,7 +263,14 @@
   .skillsGridReversed .sectionTitleCol,
   .skillsGridReversed .cardStack {
     grid-column: auto;
-    grid-row: auto;
+  }
+
+  .skillsGridReversed .sectionTitleCol {
+    grid-row: 1;
+  }
+
+  .skillsGridReversed .cardStack {
+    grid-row: 2;
   }
 
   .sectionTitleCol {

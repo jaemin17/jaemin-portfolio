@@ -1,11 +1,11 @@
 import type { Locale } from "@/i18n/config";
+import { resumeDownloadUrl } from "@/content/resume";
 
 /**
  * Copy aligned with https://jaemins-sublime-site.webflow.io/about
  * (navigation labels are defined separately in SiteHeader.)
  */
-export const about2PdfUrl =
-  "https://drive.google.com/file/d/1QowvXwQdM2GcpHMw60DGumxEhw75aBfT/view?usp=sharing";
+export const about2PdfUrl = resumeDownloadUrl;
 
 export const about2Email = "lijaemin1993@gmail.com";
 
@@ -13,7 +13,7 @@ const about2CopyEn = {
   label: "Hey there!",
   heroTitle: "Who am I？",
   introBio:
-    "I'm a User Experience Product Designer based in Hangzhou. I focus on blending technology and aesthetics to create intuitive and appealing user interfaces. In this dynamic city, I draw constant inspiration, eager to bring unique design solutions to your projects, I like to build for the web and make things pretty.",
+    "I’m an independent developer focused on UI/UX and product experience, passionate about solving real problems and creating products that naturally fit into everyday life. Beyond the interface itself, I care about why users stop using products and what makes an experience sustainable in the long term. I’m currently building my own product, Selfly, while continuously exploring a more balanced relationship between design, product thinking, and technology.",
   introCtaPrefix: "Looking for a more detailed self intro?",
   pdfLinkLabel: "Maybe this PDF will do ✰",
   skillsLeft: [
@@ -71,7 +71,7 @@ const about2CopyZh = {
   label: "你好！",
   heroTitle: "我是谁？",
   introBio:
-    "我是常驻杭州的用户体验产品设计师，专注融合技术与美学，打造直观且富有吸引力的界面。在这座充满活力的城市里，我不断汲取灵感，渴望为你的项目带来独特的设计方案。我喜欢做 Web 相关的设计，也热衷于把东西做得漂亮。",
+    "我是一个专注于 UI/UX 与产品体验的独立开发者，喜欢从真实问题出发，思考产品如何更自然地融入日常。我关注的不只是界面本身，也在意用户为什么会放弃、什么样的体验才能被长期使用。目前正在独立打磨自己的产品 Selfly，并持续探索设计、产品与技术之间更平衡的表达方式。",
   introCtaPrefix: "想了解更详细的自我介绍？",
   pdfLinkLabel: "也许这份 PDF 能帮到你 ✰",
   skillsLeft: ["用户体验", "UI\u00a0设计", "平面设计", "原型设计"],
