@@ -245,7 +245,7 @@ export default async function Home({ params }: HomePageProps) {
               <ScatterInfoNote
                 className={styles.scatterHangzhou}
                 note={aboutNote}
-                href={localePath(locale, "/about")}
+                href={localePath(locale, "/about2")}
               />
             </div>
             <aside className={styles.sideKeepsakes} aria-label="侧边信息">

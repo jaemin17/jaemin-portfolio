@@ -13,9 +13,14 @@ type SiteHeaderProps = {
 
 export function SiteHeader({ locale, surface = "default", active }: SiteHeaderProps) {
   const homeHref = localePath(locale, "/");
-  const aboutHref = localePath(locale, "/about");
   const about2Href = localePath(locale, "/about2");
   const testHref = localePath(locale, "/test");
+  const selflyTestLinks = [
+    { label: "selfly0", href: localePath(locale, "/projects/selfly0") },
+    { label: "selfly1", href: localePath(locale, "/projects/project-c") },
+    { label: "selfly2", href: localePath(locale, "/projects/selfly-ios-app") },
+    { label: "selfly3", href: localePath(locale, "/projects/project-b") },
+  ];
 
   return (
     <header
@@ -36,16 +41,10 @@ export function SiteHeader({ locale, surface = "default", active }: SiteHeaderPr
             Home
           </Link>
           <Link
-            className={`${styles.navLink} ${active === "about" ? styles.navLinkActive : ""}`}
-            href={aboutHref}
-          >
-            About
-          </Link>
-          <Link
             className={`${styles.navLink} ${active === "about2" ? styles.navLinkActive : ""}`}
             href={about2Href}
           >
-            About2
+            About
           </Link>
           <Link
             className={`${styles.navLink} ${active === "test" ? styles.navLinkActive : ""}`}
@@ -53,6 +52,11 @@ export function SiteHeader({ locale, surface = "default", active }: SiteHeaderPr
           >
             Test
           </Link>
+          {selflyTestLinks.map((link) => (
+            <Link key={link.label} className={styles.navLink} href={link.href}>
+              {link.label}
+            </Link>
+          ))}
           <a className={styles.navLink} href={resumeDownloadUrl} target="_blank" rel="noreferrer">
             Resume
           </a>

@@ -28,6 +28,7 @@ export default async function ProjectDetailPage({
   const project = getProjectBySlug(locale, slug);
   const isProjectOne = slug === "selfly-ios-app";
   const isEvidenceCase = slug === "project-c";
+  const hideProjectHeader = slug === "selfly-ios-app" || slug === "project-b";
 
   if (!project) notFound();
   const featured = project.featured;
@@ -238,74 +239,76 @@ export default async function ProjectDetailPage({
     <div className={styles.pagePlain}>
       <SiteHeader locale={locale} />
       <main className={styles.main}>
-        <header
-          className={[
-            featured ? styles.featuredHero : styles.header,
-            isProjectOne ? styles.projectOneHero : "",
-            isEvidenceCase ? styles.evidenceHero : "",
-          ]
-            .filter(Boolean)
-            .join(" ")}
-        >
-          <h1 className={styles.title}>
-            {hasBilingualTitle ? (
-              <>
-                <span className={styles.titleEn}>{titleLead}</span>：
-                <span className={styles.titleZh}>
-                  {titleTailParts.length > 1 ? (
-                    <>
-                      {titleTailParts[0]}
-                      <span className={styles.strikeWord}>{stressWord}</span>
-                      {titleTailParts.slice(1).join(stressWord)}
-                    </>
-                  ) : (
-                    titleTail
-                  )}
-                </span>
-              </>
-            ) : (
-              project.title
-            )}
-          </h1>
-          <p className={styles.subtitle}>{project.subtitle}</p>
-          {featured?.appDownloadUrl ? (
-            <div className={styles.headerCta}>
-              {isEvidenceCase ? (
-                <div className={styles.evidenceHeroVisual} aria-hidden="true">
-                  {[
-                    ["Today", "Top 3", "Tomorrow"],
-                    ["Explore", "List", "Journal"],
-                    ["Review", "Cards", "Reflect"],
-                  ].map(([label, first, second]) => (
-                    <div key={label} className={styles.evidencePhone}>
-                      <span>{label}</span>
-                      <i />
-                      <b>{first}</b>
-                      <b>{second}</b>
-                    </div>
-                  ))}
-                </div>
+        {!hideProjectHeader ? (
+          <header
+            className={[
+              featured ? styles.featuredHero : styles.header,
+              isProjectOne ? styles.projectOneHero : "",
+              isEvidenceCase ? styles.evidenceHero : "",
+            ]
+              .filter(Boolean)
+              .join(" ")}
+          >
+            <h1 className={styles.title}>
+              {hasBilingualTitle ? (
+                <>
+                  <span className={styles.titleEn}>{titleLead}</span>：
+                  <span className={styles.titleZh}>
+                    {titleTailParts.length > 1 ? (
+                      <>
+                        {titleTailParts[0]}
+                        <span className={styles.strikeWord}>{stressWord}</span>
+                        {titleTailParts.slice(1).join(stressWord)}
+                      </>
+                    ) : (
+                      titleTail
+                    )}
+                  </span>
+                </>
               ) : (
-                <div className={styles.appPreviewPlaceholder} aria-hidden="true" />
+                project.title
               )}
-              <div className={styles.meta}>
-                <span className={styles.metaItem}>{project.timeframe}</span>
-                <span className={styles.metaDot} aria-hidden="true">
-                  ·
-                </span>
-                <span className={styles.metaItem}>{project.role}</span>
+            </h1>
+            <p className={styles.subtitle}>{project.subtitle}</p>
+            {featured?.appDownloadUrl ? (
+              <div className={styles.headerCta}>
+                {isEvidenceCase ? (
+                  <div className={styles.evidenceHeroVisual} aria-hidden="true">
+                    {[
+                      ["Today", "Top 3", "Tomorrow"],
+                      ["Explore", "List", "Journal"],
+                      ["Review", "Cards", "Reflect"],
+                    ].map(([label, first, second]) => (
+                      <div key={label} className={styles.evidencePhone}>
+                        <span>{label}</span>
+                        <i />
+                        <b>{first}</b>
+                        <b>{second}</b>
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <div className={styles.appPreviewPlaceholder} aria-hidden="true" />
+                )}
+                <div className={styles.meta}>
+                  <span className={styles.metaItem}>{project.timeframe}</span>
+                  <span className={styles.metaDot} aria-hidden="true">
+                    ·
+                  </span>
+                  <span className={styles.metaItem}>{project.role}</span>
+                </div>
+                <a
+                  className="buttonSticker buttonStickerOrange"
+                  href={featured.appDownloadUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  下载体验 App
+                </a>
               </div>
-              <a
-                className="buttonSticker buttonStickerOrange"
-                href={featured.appDownloadUrl}
-                target="_blank"
-                rel="noreferrer"
-              >
-                下载体验 App
-              </a>
-            </div>
-          ) : null}
-        </header>
+            ) : null}
+          </header>
+        ) : null}
 
         {featured ? (
           <>

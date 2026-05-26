@@ -13,38 +13,41 @@ const about2CopyEn = {
   label: "Hey there!",
   heroTitle: "Who am I？",
   introBio:
-    "I’m an independent developer focused on UI/UX and product experience, passionate about solving real problems and creating products that naturally fit into everyday life. Beyond the interface itself, I care about why users stop using products and what makes an experience sustainable in the long term. I’m currently building my own product, Selfly, while continuously exploring a more balanced relationship between design, product thinking, and technology.",
+    "I’m an independent developer focused on UI/UX and product experience, creating products that naturally fit into everyday life through real problem-solving. Beyond the interface itself, I care about building experiences people can continue using over time. I’m currently building my own product, Selfly, while exploring a more balanced relationship between design, product thinking, and technology.",
   introCtaPrefix: "Looking for a more detailed self intro?",
   pdfLinkLabel: "Maybe this PDF will do ✰",
   skillsLeft: [
-    "User Experience",
-    "UI\u00a0Design",
-    "Graphic Design",
-    "Prototyping",
+    "Product Design",
+    "UI / UX Design",
+    "Interaction Design",
   ],
   skillsRight: [
-    "Systems Thinking",
-    "Creative Thinking",
-    "Design System Development",
+    "Design Systems",
+    "Web & App Design",
+    "Visual Design",
   ],
   superpowers: [
     {
-      title: "Take initiative",
+      title: "Long-term perspective",
       description:
-        "I love taking the lead, sharing well-prepared proposals to inspire and get everyone on board with exciting ideas.",
+        "I care more about why a product can keep being used, rather than just briefly attracting users.",
     },
     {
-      title: "Navigate ambiguity",
+      title: "Simplify complexity",
       description:
-        "I enjoy bringing people together by using clear communication to find common goals, especially when things are a bit uncertain.",
+        "I like organizing messy information and ideas, turning complex problems into clear and natural experiences.",
     },
     {
-      title: "Exhibit adaptability",
+      title: "Self-driven execution",
       description:
-        "I get a kick out of exploring different sides of myself when tackling various challenges and adapting to new environments.",
+        "I enjoy shaping products from zero and continuously iterating until they truly go live.",
     },
   ],
   jobs: [
+    {
+      company: "Xiyiweireality",
+      role: "Product Experience Designer",
+    },
     {
       company: "KMAX-ShenZhen",
       role: "UI/UX Designer",
@@ -59,7 +62,7 @@ const about2CopyEn = {
     },
   ],
   sectionWhatIDo: "What I do",
-  sectionSuperpower: "Superpower",
+  sectionSuperpower: "What I’m good at",
   sectionExperience: "My experience",
   experienceSummary:
     "I've designed products for China Mobile, Haier, Desay SV Automotive, and General Electric Appliances. I also led VR education platform and software design.",
@@ -71,29 +74,30 @@ const about2CopyZh = {
   label: "你好！",
   heroTitle: "我是谁？",
   introBio:
-    "我是一个专注于 UI/UX 与产品体验的独立开发者，喜欢从真实问题出发，思考产品如何更自然地融入日常。我关注的不只是界面本身，也在意用户为什么会放弃、什么样的体验才能被长期使用。目前正在独立打磨自己的产品 Selfly，并持续探索设计、产品与技术之间更平衡的表达方式。",
+    "我是一个专注于 UI/UX 与产品体验的独立开发者，喜欢从真实问题出发，打造更自然融入日常的产品。我关注的不只是界面本身，也在意什么样的体验才能被长期使用。目前正在独立打磨自己的产品 Selfly，并持续探索设计、产品与技术之间更平衡的表达方式。",
   introCtaPrefix: "想了解更详细的自我介绍？",
   pdfLinkLabel: "也许这份 PDF 能帮到你 ✰",
-  skillsLeft: ["用户体验", "UI\u00a0设计", "平面设计", "原型设计"],
-  skillsRight: ["系统思维", "创意思维", "设计系统搭建"],
+  skillsLeft: ["产品体验设计", "UI / UX 设计", "交互与产品结构"],
+  skillsRight: ["设计系统搭建", "Web & App Design", "视觉与创意表达"],
   superpowers: [
     {
-      title: "主动推进",
-      description:
-        "我喜欢主动牵头，用充分准备的方案激发团队共鸣，让大家认同并投入令人兴奋的想法。",
+      title: "长期视角",
+      description: "我更关注产品为什么能被持续使用，而不只是短暂吸引用户。",
     },
     {
-      title: "驾驭模糊",
-      description:
-        "我善于用清晰的沟通凝聚共识、找到共同目标，尤其在方向尚不明确的阶段。",
+      title: "简化复杂",
+      description: "我喜欢整理混乱的信息与想法，把复杂的问题变成清晰自然的体验。",
     },
     {
-      title: "快速适应",
-      description:
-        "面对不同挑战和新环境时，我喜欢探索自己的多种可能性，并从中获得成长的动力。",
+      title: "自驱落地",
+      description: "我享受从 0 开始打磨产品，并持续迭代直到真正上线。",
     },
   ],
   jobs: [
+    {
+      company: "Xiyiweireality",
+      role: "产品体验设计师",
+    },
     {
       company: "KMAX-ShenZhen",
       role: "UI/UX 设计师",
@@ -108,7 +112,7 @@ const about2CopyZh = {
     },
   ],
   sectionWhatIDo: "我做什么",
-  sectionSuperpower: "超能力",
+  sectionSuperpower: "我擅长",
   sectionExperience: "工作经历",
   experienceSummary:
     "我曾为中国移动、海尔、德赛西威、通用电气家电等品牌设计产品，也主导过 VR 教育平台与软件设计。",

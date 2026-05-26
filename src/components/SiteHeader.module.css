@@ -91,8 +91,10 @@ html:has([data-page="plain-white"]) .header {
 
 .nav {
   display: inline-flex;
-  gap: clamp(22px, 2.8vw, 40px);
+  gap: clamp(14px, 1.8vw, 28px);
   align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
 }
 
 .navLink {

@@ -47,6 +47,25 @@ export default async function TestPage({ params }: TestPageProps) {
           </p>
         </section>
 
+        <section className={styles.section} aria-labelledby="backup-title">
+          <div className={styles.sectionHeader}>
+            <p className={styles.sectionKicker}>Backups</p>
+            <h2 id="backup-title">旧页面备份</h2>
+            <p>从导航移除的旧版本先保留在这里，方便需要时回看和比较。</p>
+          </div>
+          <div className={styles.grid}>
+            <Link className={styles.card} href={localePath(locale, "/about")}>
+              <span className={styles.cardLabel}>Archive</span>
+              <h3>旧 About 页面</h3>
+              <p>原导航栏 About 版本，当前作为备份入口保留。</p>
+              <div className={styles.tags}>
+                <span>About backup</span>
+                <span>Archived page</span>
+              </div>
+            </Link>
+          </div>
+        </section>
+
         <section className={styles.section} aria-labelledby="selfly-test-title">
           <div className={styles.sectionHeader}>
             <p className={styles.sectionKicker}>Current project variants</p>
