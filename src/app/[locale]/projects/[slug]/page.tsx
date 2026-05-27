@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { getProjectArchive, getProjectBySlug } from "@/content";
+import { getMergedSelflyProjects, getProjectArchive, getProjectBySlug } from "@/content";
 import { SiteHeader } from "@/components/SiteHeader";
 import { isLocale, locales, type Locale } from "@/i18n/config";
 import { localePath } from "@/i18n/paths";
@@ -32,6 +32,7 @@ export default async function ProjectDetailPage({
 
   if (!project) notFound();
   const featured = project.featured;
+  const mergedSelflyProjects = isEvidenceCase ? getMergedSelflyProjects(locale) : [];
   const frontVisualSections =
     featured && isEvidenceCase ? featured.visualSections.slice(0, 2) : [];
   const remainingVisualSections =
@@ -249,47 +250,36 @@ export default async function ProjectDetailPage({
               .filter(Boolean)
               .join(" ")}
           >
-            <h1 className={styles.title}>
-              {hasBilingualTitle ? (
-                <>
-                  <span className={styles.titleEn}>{titleLead}</span>：
-                  <span className={styles.titleZh}>
-                    {titleTailParts.length > 1 ? (
-                      <>
-                        {titleTailParts[0]}
-                        <span className={styles.strikeWord}>{stressWord}</span>
-                        {titleTailParts.slice(1).join(stressWord)}
-                      </>
-                    ) : (
-                      titleTail
-                    )}
-                  </span>
-                </>
-              ) : (
-                project.title
-              )}
-            </h1>
-            <p className={styles.subtitle}>{project.subtitle}</p>
-            {featured?.appDownloadUrl ? (
-              <div className={styles.headerCta}>
-                {isEvidenceCase ? (
-                  <div className={styles.evidenceHeroVisual} aria-hidden="true">
-                    {[
-                      ["Today", "Top 3", "Tomorrow"],
-                      ["Explore", "List", "Journal"],
-                      ["Review", "Cards", "Reflect"],
-                    ].map(([label, first, second]) => (
-                      <div key={label} className={styles.evidencePhone}>
-                        <span>{label}</span>
-                        <i />
-                        <b>{first}</b>
-                        <b>{second}</b>
-                      </div>
-                    ))}
-                  </div>
+            {!isEvidenceCase ? (
+              <h1 className={styles.title}>
+                {hasBilingualTitle ? (
+                  <>
+                    <span className={styles.titleEn}>{titleLead}</span>：
+                    <span className={styles.titleZh}>
+                      {titleTailParts.length > 1 ? (
+                        <>
+                          {titleTailParts[0]}
+                          <span className={styles.strikeWord}>{stressWord}</span>
+                          {titleTailParts.slice(1).join(stressWord)}
+                        </>
+                      ) : (
+                        titleTail
+                      )}
+                    </span>
+                  </>
                 ) : (
-                  <div className={styles.appPreviewPlaceholder} aria-hidden="true" />
+                  project.title
                 )}
+              </h1>
+            ) : null}
+            {isEvidenceCase ? (
+              <h1 className={styles.subtitle}>{project.subtitle}</h1>
+            ) : (
+              <p className={styles.subtitle}>{project.subtitle}</p>
+            )}
+            {featured?.appDownloadUrl && !isEvidenceCase ? (
+              <div className={styles.headerCta}>
+                <div className={styles.appPreviewPlaceholder} aria-hidden="true" />
                 <div className={styles.meta}>
                   <span className={styles.metaItem}>{project.timeframe}</span>
                   <span className={styles.metaDot} aria-hidden="true">
@@ -312,33 +302,39 @@ export default async function ProjectDetailPage({
 
         {featured ? (
           <>
-            {frontVisualSections.map((section) => (
-              <section
-                key={section.title}
-                className={[styles.caseSection, isEvidenceCase ? styles.evidenceSection : ""]
-                  .filter(Boolean)
-                  .join(" ")}
-              >
-                <div className={styles.visualPlate} aria-label={section.title}>
-                  {visualPlate(section.visual)}
-                </div>
-                <div className={styles.caseText}>
-                  <h2>{section.label}</h2>
-                  <div>
-                    <h3>{section.title}</h3>
-                    <p>{section.body}</p>
-                    <div className={styles.designPoints}>
-                      <h4>设计要点</h4>
-                      <ul>
-                        {section.notes.map((note) => (
-                          <li key={note}>{note}</li>
-                        ))}
-                      </ul>
+            {frontVisualSections.map((section) => {
+              const hideVisualPlate = isEvidenceCase && section.visual === "shiftCompact";
+
+              return (
+                <section
+                  key={section.title}
+                  className={[styles.caseSection, isEvidenceCase ? styles.evidenceSection : ""]
+                    .filter(Boolean)
+                    .join(" ")}
+                >
+                  {hideVisualPlate ? null : (
+                    <div className={styles.visualPlate} aria-label={section.title}>
+                      {visualPlate(section.visual)}
+                    </div>
+                  )}
+                  <div className={styles.caseText}>
+                    <h2>{section.label}</h2>
+                    <div>
+                      <h3>{section.title}</h3>
+                      <p>{section.body}</p>
+                      <div className={styles.designPoints}>
+                        <h4>设计要点</h4>
+                        <ul>
+                          {section.notes.map((note) => (
+                            <li key={note}>{note}</li>
+                          ))}
+                        </ul>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </section>
-            ))}
+                </section>
+              );
+            })}
 
             <section className={styles.caseLead}>
               <p>{featured.origin}</p>
@@ -352,9 +348,11 @@ export default async function ProjectDetailPage({
                   .filter(Boolean)
                   .join(" ")}
               >
-                <div className={styles.visualPlate} aria-label={section.title}>
-                  {visualPlate(section.visual)}
-                </div>
+                {isEvidenceCase && section.title === "回顾机制：把沉淀内容重新分发给用户" ? null : (
+                  <div className={styles.visualPlate} aria-label={section.title}>
+                    {visualPlate(section.visual)}
+                  </div>
+                )}
                 <div className={styles.caseText}>
                   <h2>{section.label}</h2>
                   <div>
@@ -390,37 +388,16 @@ export default async function ProjectDetailPage({
               </section>
             ))}
 
-            {isEvidenceCase ? (
-              <section className={styles.detailWall}>
+            {featured.reflection.length ? (
+              <section className={styles.caseReflection}>
+                <h2>项目反思</h2>
                 <div>
-                  <h2>细节治理</h2>
-                  <p>
-                    除了核心结构，我也持续处理高频使用里的小摩擦。它们单独看是细节，合在一起决定产品是否像一个真实、稳定、可以长期使用的 App。
-                  </p>
-                </div>
-                <div className={styles.detailGrid}>
-                  {[
-                    "长文本适配",
-                    "滑动操作不裁剪",
-                    "底部模糊更轻",
-                    "图册缩略图更清晰",
-                    "英文标签换行",
-                    "二级页导航状态",
-                  ].map((item) => (
-                    <span key={item}>{item}</span>
+                  {featured.reflection.map((item) => (
+                    <p key={item}>{item}</p>
                   ))}
                 </div>
               </section>
             ) : null}
-
-            <section className={styles.caseReflection}>
-              <h2>项目反思</h2>
-              <div>
-                {featured.reflection.map((item) => (
-                  <p key={item}>{item}</p>
-                ))}
-              </div>
-            </section>
           </>
         ) : null}
 
@@ -453,14 +430,115 @@ export default async function ProjectDetailPage({
           </section>
         ))}
 
-        <footer className={styles.footer}>
-          <Link className="buttonSticker buttonStickerBlue" href={`${localePath(locale, "/")}#where`}>
-            联系我
-          </Link>
-          <Link className="buttonGhost" href={localePath(locale, "/")}>
-            回到首页
-          </Link>
-        </footer>
+        {mergedSelflyProjects.map((mergedProject, projectIndex) => {
+          const mergedFeatured = mergedProject.featured;
+          const mergedLabel = `selfly${projectIndex + 2}`;
+
+          return (
+            <section key={mergedProject.slug} className={styles.mergedProjectBlock}>
+              {projectIndex !== 0 && mergedProject.slug !== "project-b" ? (
+                <div className={styles.mergedProjectHeader}>
+                  <span>{mergedLabel}</span>
+                  <h2>{mergedProject.title}</h2>
+                  <p>{mergedProject.subtitle}</p>
+                  <div className={styles.mergedProjectMeta}>
+                    <span>{mergedProject.timeframe}</span>
+                    <span>{mergedProject.role}</span>
+                  </div>
+                  <div className={styles.mergedTags}>
+                    {mergedProject.tags.map((tag) => (
+                      <span key={tag}>{tag}</span>
+                    ))}
+                  </div>
+                </div>
+              ) : null}
+
+              {mergedProject.slug !== "project-b" ? (
+                <div className={styles.mergedContentGrid}>
+                  <h3>项目亮点</h3>
+                  <ul>
+                    {mergedProject.highlights.map((highlight) => (
+                      <li key={highlight}>{highlight}</li>
+                    ))}
+                  </ul>
+                </div>
+              ) : null}
+
+              {mergedFeatured ? (
+                <>
+                  {mergedFeatured.visualSections
+                    .filter((section) => section.title !== "把有温度的体验做成真实可用的 iOS App")
+                    .map((section) => (
+                      <section key={`${section.label}-${section.title}`} className={styles.caseSection}>
+                        <div className={styles.caseText}>
+                          <h2>{section.label}</h2>
+                          <div>
+                            {section.title ? <h3>{section.title}</h3> : null}
+                            <p>{section.body}</p>
+                            {section.before && section.after ? (
+                              <div className={styles.beforeAfterGrid} aria-label="改造前后对比">
+                                <div className={styles.beforeAfterCard}>
+                                  <span>改造前</span>
+                                  <p>{section.before}</p>
+                                </div>
+                                <div className={styles.beforeAfterCard}>
+                                  <span>改造后</span>
+                                  <p>{section.after}</p>
+                                </div>
+                              </div>
+                            ) : null}
+                            <div className={styles.designPoints}>
+                              <h4>设计要点</h4>
+                              <ul>
+                                {section.capability ? (
+                                  <li>
+                                    <strong>{section.capability}</strong>
+                                  </li>
+                                ) : null}
+                                {section.notes.map((note) => (
+                                  <li key={note}>{note}</li>
+                                ))}
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </section>
+                    ))}
+
+                </>
+              ) : null}
+
+              {(mergedProject.slug !== "project-b" ? mergedProject.sections : []).map((section) => (
+                <div key={section.title} className={styles.mergedContentGrid}>
+                  <h3>{section.title}</h3>
+                  <div>
+                    {section.paragraphs?.map((paragraph) => (
+                      <p key={paragraph}>{paragraph}</p>
+                    ))}
+                    {section.bullets?.length ? (
+                      <ul>
+                        {section.bullets.map((bullet) => (
+                          <li key={bullet}>{bullet}</li>
+                        ))}
+                      </ul>
+                    ) : null}
+                  </div>
+                </div>
+              ))}
+            </section>
+          );
+        })}
+
+        {isEvidenceCase ? null : (
+          <footer className={styles.footer}>
+            <Link className="buttonSticker buttonStickerBlue" href={`${localePath(locale, "/")}#where`}>
+              联系我
+            </Link>
+            <Link className="buttonGhost" href={localePath(locale, "/")}>
+              回到首页
+            </Link>
+          </footer>
+        )}
       </main>
     </div>
   );

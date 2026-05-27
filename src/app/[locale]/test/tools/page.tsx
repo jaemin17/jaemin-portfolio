@@ -30,6 +30,7 @@ const toolProjects = [
     title: "VT-PPT / XR-PPT player",
     body: "PPT 和 XR 内容播放相关工具，支持 3D 模型、资源库和 3D PPT 内容浏览。",
     tags: ["PPT", "3D Assets", "PICO"],
+    path: "/projects/selfly-style",
   },
 ];
 
@@ -54,18 +55,38 @@ export default async function ToolsPage({ params }: ToolsPageProps) {
 
         <section className={styles.section} aria-label="工具类产品列表">
           <div className={styles.grid}>
-            {toolProjects.map((project) => (
-              <article key={project.title} className={styles.card}>
-                <span className={styles.cardLabel}>Tool</span>
-                <h3>{project.title}</h3>
-                <p>{project.body}</p>
-                <div className={styles.tags}>
-                  {project.tags.map((tag) => (
-                    <span key={tag}>{tag}</span>
-                  ))}
-                </div>
-              </article>
-            ))}
+            {toolProjects.map((project) => {
+              const cardContent = (
+                <>
+                  <span className={styles.cardLabel}>Tool</span>
+                  <h3>{project.title}</h3>
+                  <p>{project.body}</p>
+                  <div className={styles.tags}>
+                    {project.tags.map((tag) => (
+                      <span key={tag}>{tag}</span>
+                    ))}
+                  </div>
+                </>
+              );
+
+              if (project.path) {
+                return (
+                  <Link
+                    key={project.title}
+                    className={styles.card}
+                    href={localePath(locale, project.path)}
+                  >
+                    {cardContent}
+                  </Link>
+                );
+              }
+
+              return (
+                <article key={project.title} className={styles.card}>
+                  {cardContent}
+                </article>
+              );
+            })}
           </div>
         </section>
 

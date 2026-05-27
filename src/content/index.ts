@@ -19,6 +19,10 @@ export function getProjectArchive(locale: Locale): Project[] {
   return catalogs[locale].projectArchive;
 }
 
+export function getMergedSelflyProjects(locale: Locale): Project[] {
+  return catalogs[locale].mergedSelflyProjects;
+}
+
 export function getProjectBySlug(locale: Locale, slug: string): Project | undefined {
   return catalogs[locale].getProjectBySlug(slug);
 }

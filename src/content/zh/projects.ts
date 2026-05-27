@@ -5,7 +5,7 @@ const allProjects: Project[] = [
   {
     slug: "selfly-ios-app",
     title: "Selfly：让记录不再变成压力",
-    subtitle: "从 0 到 1 设计并开发一款有温度的自我记录 App",
+    subtitle: "帮助用户每日聚焦、自我记录与长期回看的 iOS 产品",
     timeframe: "2025–2026",
     role: "Solo Product Designer & iOS Developer",
     tags: ["UX Design", "Product Design", "iOS", "SwiftUI", "0→1"],
@@ -55,64 +55,12 @@ const allProjects: Project[] = [
       ],
       reflection: [
         "Selfly 让我重新理解了“产品感觉”：它不是某一个功能，而是大量细微判断的累积。",
-        "对于自我记录类产品，用户是否愿意长期回来，不取决于功能数量，而取决于是否感到安全、放松、被理解并愿意停留。",
         "这个项目也训练了我从模糊感受出发，逐步拆解问题、建立产品判断、完成设计取舍，并最终把它推进成真实可上线的产品。",
       ],
       appDownloadUrl: "https://apps.apple.com/cn/app/selfly%E6%97%A5%E8%AE%B0/id6762545235",
-      visualSections: [
-        {
-          label: "项目背景",
-          title: "我想做的，不是另一个效率工具",
-          body: "我希望 Selfly 帮助用户整理状态、看见真正重要的事，并保留那些零散但真实的想法。它不以“完成更多”为目标，而是让用户在生活里重新找到和自己的连接。",
-          notes: ["从个人真实需求出发", "反对记录被效率化", "更轻、更安静、更像陪伴"],
-          visual: "overview",
-        },
-        {
-          label: "产品定位与结构",
-          title: "Selfly 不想管理用户，而是陪伴用户",
-          body: "我把产品拆成 Today / Explore / Review 三个长期稳定入口，分别对应当下、记录、回看。它们不是复杂信息层级，而是帮助用户持续看见自己关心事物的清晰节奏。",
-          notes: ["Today: Focus, but not pressure", "Explore: Record in different forms", "Review: Return to yourself"],
-          visual: "structure",
-        },
-        {
-          label: "关键决策 01",
-          title: "为什么 Today 页只保留 Top 3",
-          body: "首页如果同时容纳更多待办、计划与快速记录，很快就会回到传统任务管理器。最终我只保留 Top 3、完成反馈和最轻任务结构，用克制换取聚焦与低压力体验。",
-          notes: ["弱化无限待办", "弱化高密度信息", "限制本身就是设计"],
-          visual: "focus",
-        },
-        {
-          label: "关键决策 02",
-          title: "为什么记录需要不同容器",
-          body: "真实生活中的内容形态不同：有些是一句话，有些需要长文整理，有些更偏视觉表达。Selfly 通过清单、计划、日记、图册、灵感模板和自定义模块，让用户按内容本身选择记录方式。",
-          notes: ["自由记录但不失序", "给内容匹配容器", "支持长期坚持"],
-          visual: "modules",
-        },
-        {
-          label: "关键决策 03",
-          title: "为什么 Review 不做成数据中心",
-          body: "我刻意弱化连续打卡、完成统计和趋势分析带来的焦虑，让回顾更像翻旧笔记：轻松浏览过去的自己，并重新理解曾经在意的事。",
-          notes: ["弱化 KPI 感", "卡片式结构", "低压力回看节奏"],
-          visual: "review",
-        },
-        {
-          label: "从设计到真实产品",
-          title: "把体验真正做成可上线的 App",
-          body: "除了产品设计，我也独立完成 iOS 开发与上线过程，包括 SwiftUI、SwiftData、iCloud 同步、StoreKit、多语言、数据迁移与重置，以及 App Store 提交流程。",
-          notes: ["温柔感是系统设计", "真实环境细节决定体验", "设计与工程一体化落地"],
-          visual: "build",
-        },
-      ],
+      visualSections: [],
     },
-    sections: [
-      {
-        title: "项目说明",
-        paragraphs: [
-          "Selfly 是一个帮助用户每日聚焦、自我记录与长期回看的 iOS 产品。",
-          "我负责了从产品定位、体验设计到 SwiftUI 开发与 App Store 上线的完整过程。",
-        ],
-      },
-    ],
+    sections: [],
   },
   {
     slug: "project-b",
@@ -162,31 +110,16 @@ const allProjects: Project[] = [
         "加入 iCloud 同步、数据重置、多语言切换和 StoreKit 订阅，让设计成为真实可用的产品。",
       ],
       reflection: [
-        "Selfly 让我更明确地意识到，产品的“感觉”不是表层装饰。对于自我记录类产品来说，用户是否愿意回来，取决于产品是否让人感到安全、轻松和被陪伴。",
         "这个项目也训练了我从模糊感受出发，持续拆解问题、做出设计判断，并把想法推进到真实产品的能力。",
       ],
       appDownloadUrl: "https://apps.apple.com/cn/app/selfly%E6%97%A5%E8%AE%B0/id6762545235",
       visualSections: [
         {
           label: "概览",
-          title: "一个不把自我记录变成待办清单的产品",
+          title: "",
           body: "Selfly 的核心不是让用户完成更多任务，而是帮助用户持续看见自己在意的事。页面节奏围绕“记录、整理、回看”展开，让自我观察变得轻一点。",
           notes: ["个人需求出发", "温柔、安静、有陪伴感", "从想法推进到真实 App"],
           visual: "overview",
-        },
-        {
-          label: "产品结构",
-          title: "用 Today / Explore / Review 建立清晰路径",
-          body: "我把 Selfly 拆成三个稳定入口：今日负责聚焦，探索负责承载不同形式的记录，回顾负责把过去的内容重新带回用户面前。",
-          notes: ["Today: Focus, but not pressure", "Explore: Record in different forms", "Review: Return to yourself"],
-          visual: "structure",
-        },
-        {
-          label: "关键决策 01",
-          title: "Top 3 限制让今日页更轻，而不是更满",
-          body: "我没有把首页设计成无限任务列表，而是让用户只选择三件最重要的事。限制本身就是设计：它减少压力，也让用户更容易判断什么真正重要。",
-          notes: ["减少任务堆积", "强调选择", "保留完成反馈"],
-          visual: "focus",
         },
         {
           label: "关键决策 02",
@@ -275,11 +208,7 @@ const allProjects: Project[] = [
         "使用 SwiftData 和 iCloud 支撑真实记录、同步与迁移。",
         "处理多语言、StoreKit、隐私、订阅和 App Store 发布细节。",
       ],
-      reflection: [
-        "这个项目让我意识到，0 到 1 不只是把功能做出来，而是不断把模糊需求翻译成更清晰的体验结构。",
-        "Selfly 后期变得更好，不是因为功能更多，而是因为它从一组工具变成了一个更轻、更聚焦、更容易返回的记录系统。",
-        "我希望这个案例呈现的是一组具体的产品判断：信息架构如何抽象，首次使用如何降低空白压力，日常行为如何形成节奏，回顾机制如何让旧内容重新出现，以及这些判断如何落到真实可上线的产品里。",
-      ],
+      reflection: [],
       appDownloadUrl: "https://apps.apple.com/cn/app/selfly%E6%97%A5%E8%AE%B0/id6762545235",
       visualSections: [
         {
@@ -289,89 +218,20 @@ const allProjects: Project[] = [
           notes: ["发现：固定模块太窄，单纯记录会沉底", "改变：从预设练习转向可配置记录空间", "机制：每日聚焦 + 回顾，形成日常循环"],
           visual: "shiftCards",
         },
-        {
-          label: "项目转变 · 版本 B",
-          title: "Selfly 的核心转变不是增加更多功能",
-          body: "我重新定义用户如何长期记录、提问和回看自己：从固定的自我探索练习，到清单、计划、日记、图册组成的可配置记录空间，再到围绕每日聚焦和回顾运转的使用节奏。",
-          notes: ["Before：价值观 / 目标 / 习惯等固定练习", "After：清单 / 计划 / 日记 / 图册 + 每日聚焦 + 回顾", "核心：记录、提问、回看"],
-          visual: "shiftCompact",
-        },
-        {
-          label: "设计挑战",
-          title: "从独立功能，到一个可以长期回来的系统",
-          body: "Selfly 早期并不缺功能。真正的问题是：每个入口都有自己的规则，用户每开始一次记录，都要重新理解“我该进哪里、用什么方式写、写完之后还会不会再看到”。我把后续迭代的重点，从增加功能转向重构使用节奏。",
-          notes: ["从真实需求出发", "独立设计与上线", "用迭代验证体验判断"],
-          visual: "challenge",
-        },
-        {
-          label: "改造 01",
-          title: "架构收敛：从功能名称到记录方式",
-          body: "我没有继续堆叠更多自我探索功能，而是把价值观、愿景板、成功日记、优势测试等独立入口，重新抽象成清单、计划、日记和图册四类记录容器。这样用户理解的是记录方式，而不是一组彼此割裂的工具。",
-          notes: ["抽象内容模型", "减少入口规则", "让结构更容易扩展"],
-          visual: "consolidation",
-          before: "用户看到的是一组功能名称，需要分别理解每个入口的用途和规则。",
-          after: "用户看到的是四种记录方式，再用模板进入具体场景。",
-          capability: "产品架构抽象",
-        },
-        {
-          label: "改造 02",
-          title: "创建体验：从空白配置到场景模板",
-          body: "我发现高度自定义并不等于容易开始。新用户如果先面对类型、名称、图标和设置，其实是在被要求先设计自己的系统。因此我把创建模块改成两条路径：熟悉产品的人可以自定义，新用户可以从情绪日记、年度目标、我的边界、理想自我等模板直接开始。",
-          notes: ["降低空白页压力", "用场景解释模块", "创建后直接进入记录"],
-          visual: "templates",
-          before: "用户先面对配置项，再决定自己要记录什么。",
-          after: "用户先看到真实场景，再一键创建对应模块。",
-          capability: "首次使用路径优化",
-        },
-        {
-          label: "改造 03",
-          title: "每日节奏：从任务列表到 Today / Tomorrow / Backlog",
-          body: "如果首页只是普通待办，任务会不断累积，Selfly 也会变成另一个效率工具。我把今日页拆成三层：今天只聚焦 Top 3，暂时不处理的进入 Backlog，晚上可以提前写下明日三件事，并在跨日后自动成为新的今日重点。",
-          notes: ["用限制帮助选择", "降低第二天启动成本", "让待办服务于记录节奏"],
-          visual: "rhythm",
-          before: "待办不断增加，首页容易变成压力来源。",
-          after: "Top 3、明日草稿和 Backlog 形成更轻的每日节奏。",
-          capability: "日常使用行为模型",
-        },
-        {
-          label: "改造 04",
-          title: "回顾机制：把沉淀内容重新分发给用户",
-          body: "如果记录只停留在各个模块里，用户很难主动回看。我把回顾设计成一个跨模块的内容再分发机制：清单、计划、日记、图册里的内容都可以进入每日卡片流，用户也可以选择全部、指定模块或指定分类。这样回顾不再依赖用户主动寻找，而是让过去的记录自然重新出现。",
-          notes: ["跨模块收集内容", "每日稳定抽样", "支持自选范围"],
-          visual: "review",
-          before: "内容分散在不同模块中，回顾依赖用户主动进入。",
-          after: "系统每天从真实记录中抽取卡片，让旧内容重新出现。",
-          capability: "回顾机制设计",
-        },
-        {
-          label: "改造 05",
-          title: "完成反馈：让高频操作保留恢复空间",
-          body: "完成任务是高频操作，也很容易误触。我没有让任务立刻消失，而是设计了短暂的恢复窗口：反馈先出现，状态稍后提交，用户在几秒内可以撤回。",
-          notes: ["反馈立即出现", "误触可以撤回", "完成后不突然消失"],
-          visual: "completion",
-          before: "点击完成后，任务马上消失，用户难以确认或撤回。",
-          after: "任务先保留完成态和恢复机会，再真正进入完成状态。",
-          capability: "交互安全与反馈节奏",
-        },
       ],
     },
-    sections: [
-      {
-        title: "项目说明",
-        paragraphs: [
-          "这个项目三版本更强调 Selfly 的产品系统演进：我把分散的自我探索入口收敛成四类记录容器，并通过模板、每日节奏和回顾机制，让记录从一次性使用变成可以长期回来的系统。",
-        ],
-      },
-    ],
+    sections: [],
   },
 ];
 
 export const projects: Project[] = [allProjects[2]];
 
-export const testProjects: Project[] = [allProjects[2], allProjects[0], allProjects[1]];
+export const testProjects: Project[] = [allProjects[2]];
 
-export const projectArchive: Project[] = allProjects;
+export const projectArchive: Project[] = [allProjects[2]];
+
+export const mergedSelflyProjects: Project[] = [allProjects[0]];
 
 export function getProjectBySlug(slug: string) {
-  return allProjects.find((p) => p.slug === slug);
+  return projectArchive.find((p) => p.slug === slug);
 }

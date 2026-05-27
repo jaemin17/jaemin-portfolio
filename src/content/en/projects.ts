@@ -3,5 +3,6 @@ export {
   projects,
   testProjects,
   projectArchive,
+  mergedSelflyProjects,
   getProjectBySlug,
 } from "../zh/projects";
