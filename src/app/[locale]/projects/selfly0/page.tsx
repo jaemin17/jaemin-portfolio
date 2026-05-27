@@ -262,47 +262,25 @@ export default async function Selfly0Page({ params }: Selfly0PageProps) {
         <hr className={styles.selfly0SectionDivider} aria-hidden="true" />
         <section className={`${styles.caseSection} ${styles.selfly0CaseSection}`}>
           <div className={styles.caseText}>
-            <h2>细节治理</h2>
-            <div>
-              <h3>持续处理高频使用中的小摩擦</h3>
-              <p>
-                这些问题单独看都很小，但会共同影响产品在长期使用中的稳定感和完成度。
-              </p>
-              <div className={styles.designPoints}>
-                <h4>治理清单</h4>
-                <ul>
-                  <li>
-                    <strong>长文本适配</strong>
-                  </li>
-                  <li>滑动操作不裁剪</li>
-                  <li>底部模糊更轻</li>
-                  <li>图册缩略图更清晰</li>
-                  <li>英文标签换行</li>
-                  <li>二级页导航状态</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-        <hr className={styles.selfly0SectionDivider} aria-hidden="true" />
-        <section className={`${styles.caseSection} ${styles.selfly0CaseSection}`}>
-          <div className={styles.caseText}>
             <h2>产品化落地</h2>
             <div>
               <h3>把设计方案推进到真实可用的 iOS 产品</h3>
               <p>
-                除了体验设计，我也完成了 SwiftUI 界面实现、SwiftData 数据模型、iCloud
-                同步、StoreKit 订阅、多语言和数据重置等产品化能力，让设计方案能够在真实交互和上线环境中成立。
+                除了体验设计，我也独立完成了 Selfly 的 iOS 实现，包括 SwiftUI 界面、SwiftData
+                数据模型、iCloud 同步、StoreKit 订阅、多语言和数据重置等能力，让设计方案能够在真实交互和上线环境中成立。
+              </p>
+              <p>
+                在实现过程中，我也持续校准真实使用中的体验边界，例如长文本承载、多语言显示、交互状态、内容清晰度和页面反馈，
+                确保产品在不同内容和使用场景下依然稳定、清楚、可用。
               </p>
               <div className={styles.designPoints}>
-                <h4>工程落地</h4>
+                <h4>落地能力</h4>
                 <ul>
                   <li>
-                    <strong>SwiftUI 界面实现</strong>
+                    <strong>从设计方案到 SwiftUI 实现</strong>
                   </li>
-                  <li>SwiftData 数据模型与迁移</li>
-                  <li>iCloud 同步</li>
-                  <li>StoreKit 订阅与多语言支持</li>
+                  <li>数据模型、同步、订阅与多语言支持</li>
+                  <li>真实使用场景下的体验边界校准</li>
                 </ul>
               </div>
             </div>
