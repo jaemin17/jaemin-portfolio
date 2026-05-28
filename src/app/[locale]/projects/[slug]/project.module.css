@@ -362,6 +362,79 @@
   max-width: 100vw;
 }
 
+.selfly0ChapterIntro {
+  margin: 72px calc(50% - 50vw) 72px;
+  padding: 0;
+  background: #000;
+  color: #f7f7f7;
+}
+
+.selfly0ChapterInner {
+  max-width: 940px;
+  min-height: 480px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 54px;
+}
+
+.selfly0ChapterCopy {
+  display: grid;
+  grid-template-columns: 190px minmax(0, 760px);
+  align-items: center;
+  gap: 38px;
+}
+
+.selfly0ChapterIcon {
+  display: inline-block;
+  min-width: 0;
+  font-size: clamp(92px, 7vw, 128px);
+  line-height: 1;
+  text-align: center;
+}
+
+.selfly0ChapterIntro h2 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  margin: 0;
+  color: #1f9bff;
+  font-size: 16px;
+  line-height: 1.4;
+  letter-spacing: 0;
+  font-weight: 800;
+}
+
+.selfly0ChapterIntro p {
+  max-width: 760px;
+  margin-top: 0;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: clamp(30px, 3.1vw, 42px);
+  line-height: 1.42;
+  font-weight: 400;
+}
+
+.selfly0ChapterArrow {
+  color: #ff8b3d;
+  font-size: 82px;
+  line-height: 0.72;
+  font-weight: 300;
+}
+
+.featuredHero + .selfly0ChapterIntro {
+  margin-top: 72px;
+}
+
+.selfly0ChapterIntro + .selfly0CaseSection {
+  margin-top: 0;
+}
+
 .selfly0CaseSection:has(+ .selfly0SectionDivider) {
   margin-bottom: 0;
 }
@@ -450,6 +523,64 @@
 
 .selfly0ReflectionBody p + p {
   margin-top: 26px;
+}
+
+.selfly0ContactSection {
+  width: 100%;
+  max-width: none;
+  margin: 140px auto 200px;
+  padding: 0 24px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.selfly0ContactInner {
+  padding-top: 0;
+}
+
+.selfly0ContactSection h2 {
+  margin: 10px 0;
+  color: #1a1b1f;
+  font-size: 30px;
+  line-height: 46px;
+  letter-spacing: 0;
+  font-weight: 400;
+}
+
+.selfly0ContactSection p {
+  margin: 0 0 10px;
+  color: #171614;
+  opacity: 0.88;
+  font-size: 17px;
+  line-height: 1.85;
+  font-weight: 400;
+}
+
+.selfly0ContactLink {
+  display: inline-block;
+  width: fit-content;
+  margin-top: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 15px;
+  color: #1a1b1f;
+  font-size: 64px;
+  line-height: 88px;
+  font-weight: 400;
+  text-align: center;
+  text-decoration: none;
+  text-transform: none;
+  transition: opacity 0.2s;
+  white-space: nowrap;
+}
+
+.selfly0ContactLink:hover {
+  opacity: 0.8;
+  text-decoration: none;
+}
+
+.selfly0ContactLink:active {
+  opacity: 0.7;
 }
 
 .selfly0Body p {
@@ -1435,6 +1566,62 @@
   .beforeAfterGrid,
   .mergedStrategyGrid {
     grid-template-columns: 1fr;
+  }
+
+  .selfly0ChapterIntro {
+    margin-top: 48px;
+    margin-bottom: 48px;
+  }
+
+  .selfly0ChapterInner {
+    min-height: 340px;
+    padding: 0 20px;
+    gap: 34px;
+  }
+
+  .selfly0ChapterCopy {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 22px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .selfly0ChapterIntro h2 {
+    font-size: 14px;
+  }
+
+  .selfly0ChapterIntro p {
+    font-size: 25px;
+    line-height: 1.44;
+  }
+
+  .selfly0ChapterIcon {
+    min-width: 0;
+    padding-top: 0;
+    font-size: 66px;
+    text-align: center;
+  }
+
+  .selfly0ChapterArrow {
+    font-size: 62px;
+  }
+
+  .selfly0ContactSection {
+    width: 100%;
+    max-width: none;
+    margin-top: 120px;
+    margin-bottom: 120px;
+    padding: 0 20px;
+  }
+
+  .selfly0ContactInner {
+    padding-top: 0;
+  }
+
+  .selfly0ContactLink {
+    font-size: 36px;
+    line-height: 54px;
   }
 
   .mergedProjectHeader h2 {

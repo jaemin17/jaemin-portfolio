@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import { notFound } from "next/navigation";
 import { SiteHeader } from "@/components/SiteHeader";
 import { isLocale, type Locale } from "@/i18n/config";
@@ -8,6 +9,37 @@ const appDownloadUrl = "https://apps.apple.com/cn/app/selfly%E6%97%A5%E8%AE%B0/i
 type Selfly0PageProps = {
   params: Promise<{ locale: string }>;
 };
+
+function ChapterIntro({
+  id,
+  icon,
+  title,
+  children,
+}: {
+  id: string;
+  icon: string;
+  title: string;
+  children: ReactNode;
+}) {
+  return (
+    <section className={styles.selfly0ChapterIntro} aria-labelledby={`selfly0-chapter-${id}`}>
+      <div className={styles.selfly0ChapterInner}>
+        <div className={styles.selfly0ChapterCopy}>
+          <span className={styles.selfly0ChapterIcon} aria-hidden="true">
+            {icon}
+          </span>
+          <div>
+            <h2 id={`selfly0-chapter-${id}`}>{title}</h2>
+            <p>{children}</p>
+          </div>
+        </div>
+        <span className={styles.selfly0ChapterArrow} aria-hidden="true">
+          ↓
+        </span>
+      </div>
+    </section>
+  );
+}
 
 export default async function Selfly0Page({ params }: Selfly0PageProps) {
   const { locale: localeParam } = await params;
@@ -46,7 +78,9 @@ export default async function Selfly0Page({ params }: Selfly0PageProps) {
             </a>
           </div>
         </header>
-        <hr className={styles.selfly0SectionDivider} aria-hidden="true" />
+        <ChapterIntro id="positioning" icon="🧭" title="背景与定位">
+          Selfly 的核心转变，是从一次性的自我探索工具，变成一个可长期使用的低压力记录系统。
+        </ChapterIntro>
         <section className={`${styles.caseSection} ${styles.selfly0CaseSection}`}>
           <div className={styles.caseText}>
             <h2>产品定位</h2>
@@ -73,7 +107,9 @@ export default async function Selfly0Page({ params }: Selfly0PageProps) {
             </div>
           </div>
         </section>
-        <hr className={styles.selfly0SectionDivider} aria-hidden="true" />
+        <ChapterIntro id="framework" icon="🔁" title="体验框架">
+          我用 Today / Explore / Review 把“当下、记录、回看”组织成一个日常循环。
+        </ChapterIntro>
         <section className={`${styles.caseSection} ${styles.selfly0CaseSection}`}>
           <div className={styles.caseText}>
             <h2>产品结构</h2>
@@ -96,7 +132,9 @@ export default async function Selfly0Page({ params }: Selfly0PageProps) {
             </div>
           </div>
         </section>
-        <hr className={styles.selfly0SectionDivider} aria-hidden="true" />
+        <ChapterIntro id="today" icon="🎯" title="Today：降低任务压力">
+          今日页不是为了收集更多任务，而是帮助用户判断今天真正重要的事。
+        </ChapterIntro>
         <section className={`${styles.caseSection} ${styles.selfly0CaseSection}`}>
           <div className={styles.caseText}>
             <h2>Top 3 限制</h2>
@@ -149,7 +187,9 @@ export default async function Selfly0Page({ params }: Selfly0PageProps) {
             </div>
           </div>
         </section>
-        <hr className={styles.selfly0SectionDivider} aria-hidden="true" />
+        <ChapterIntro id="explore" icon="🧩" title="Explore：降低开始记录的成本">
+          记录系统不应该让用户先理解功能规则，而应该让用户按内容选择合适的记录方式。
+        </ChapterIntro>
         <section className={`${styles.caseSection} ${styles.selfly0CaseSection}`}>
           <div className={styles.caseText}>
             <h2>模块化记录</h2>
@@ -220,7 +260,9 @@ export default async function Selfly0Page({ params }: Selfly0PageProps) {
             </div>
           </div>
         </section>
-        <hr className={styles.selfly0SectionDivider} aria-hidden="true" />
+        <ChapterIntro id="review" icon="🕰️" title="Review：让旧内容重新出现">
+          回顾不是数据统计，而是把过去的记录轻量地带回用户面前。
+        </ChapterIntro>
         <section className={`${styles.caseSection} ${styles.selfly0CaseSection}`}>
           <div className={styles.caseText}>
             <h2>低压力回顾</h2>
@@ -259,7 +301,9 @@ export default async function Selfly0Page({ params }: Selfly0PageProps) {
             </div>
           </div>
         </section>
-        <hr className={styles.selfly0SectionDivider} aria-hidden="true" />
+        <ChapterIntro id="launch" icon="🚀" title="iOS 落地与上线">
+          这个项目不只停留在设计方案，我也把它实现为可下载、可使用、可订阅的 iOS 产品。
+        </ChapterIntro>
         <section className={`${styles.caseSection} ${styles.selfly0CaseSection}`}>
           <div className={styles.caseText}>
             <h2>产品化落地</h2>
@@ -319,7 +363,6 @@ export default async function Selfly0Page({ params }: Selfly0PageProps) {
             </div>
           </div>
         </section>
-        <hr className={styles.selfly0SectionDivider} aria-hidden="true" />
         <section className={`${styles.caseSection} ${styles.selfly0CaseSection}`}>
           <div className={styles.caseText}>
             <h2>项目反思</h2>
@@ -334,6 +377,15 @@ export default async function Selfly0Page({ params }: Selfly0PageProps) {
                 作为一个独立完成的产品项目，它也训练了我从产品约束、体验判断到真实上线之间建立闭环的能力：设计不只停留在方案层面，也需要在实现、审核和持续迭代中被验证。
               </p>
             </div>
+          </div>
+        </section>
+        <section className={styles.selfly0ContactSection} aria-labelledby="selfly0-contact-title">
+          <div className={styles.selfly0ContactInner}>
+            <h2 id="selfly0-contact-title">想了解更多细节？</h2>
+            <p>欢迎联系我聊聊这个项目。</p>
+            <a href="mailto:lijaemin1993@gmail.com?subject=Selfly%20project" className={styles.selfly0ContactLink}>
+              lijaemin1993@gmail.com
+            </a>
           </div>
         </section>
       </main>
