@@ -33,9 +33,7 @@ function ChapterIntro({
             <p>{children}</p>
           </div>
         </div>
-        <span className={styles.selfly0ChapterArrow} aria-hidden="true">
-          ↓
-        </span>
+
       </div>
     </section>
   );
@@ -113,7 +111,7 @@ export default async function Selfly0Page({ params }: Selfly0PageProps) {
         <section className={`${styles.caseSection} ${styles.selfly0CaseSection}`}>
           <div className={styles.caseText}>
             <h2>产品结构</h2>
-            <div>
+            <div className={styles.selfly0Body}>
               <h3>Today / Explore / Review —— 当下、记录与回看</h3>
               <p>
                 Selfly 用三个 Tab 建立「当下—记录—回看」的清晰节奏。
@@ -138,7 +136,7 @@ export default async function Selfly0Page({ params }: Selfly0PageProps) {
         <section className={`${styles.caseSection} ${styles.selfly0CaseSection}`}>
           <div className={styles.caseText}>
             <h2>Top 3 限制</h2>
-            <div>
+            <div className={styles.selfly0Body}>
               <h3>把今日页从任务收集器变成选择器</h3>
               <p>
                 我没有把首页设计成可以无限添加的任务列表，而是让用户每天只保留三件最重要的事。
@@ -163,7 +161,7 @@ export default async function Selfly0Page({ params }: Selfly0PageProps) {
         <section className={`${styles.caseSection} ${styles.selfly0CaseSection}`}>
           <div className={styles.caseText}>
             <h2>每日节奏</h2>
-            <div>
+            <div className={styles.selfly0Body}>
               <h3>用 Top 3、Tomorrow 和 Backlog 控制任务压力</h3>
               <p>
                 仅限制今日任务还不够，用户仍然需要处理那些暂时不属于今天、但仍需要保留的事项。
@@ -193,7 +191,7 @@ export default async function Selfly0Page({ params }: Selfly0PageProps) {
         <section className={`${styles.caseSection} ${styles.selfly0CaseSection}`}>
           <div className={styles.caseText}>
             <h2>模块化记录</h2>
-            <div>
+            <div className={styles.selfly0Body}>
               <h3>架构收敛：从功能名称到记录方式</h3>
               <p>
                 我对原有自我探索功能进行结构重组，把价值观、愿景板、成功日记、优势测试等独立入口，抽象成清单、计划、日记和图册四类记录容器。
@@ -230,7 +228,7 @@ export default async function Selfly0Page({ params }: Selfly0PageProps) {
         <section className={`${styles.caseSection} ${styles.selfly0CaseSection}`}>
           <div className={styles.caseText}>
             <h2>优化创建体验</h2>
-            <div>
+            <div className={styles.selfly0Body}>
               <h3>从空白配置到场景模板</h3>
               <p>
                 我发现高度自定义并不等于容易开始。新用户如果一开始就面对类型、名称、图标和设置，启动成本反而会被提前放大。
@@ -266,7 +264,7 @@ export default async function Selfly0Page({ params }: Selfly0PageProps) {
         <section className={`${styles.caseSection} ${styles.selfly0CaseSection}`}>
           <div className={styles.caseText}>
             <h2>低压力回顾</h2>
-            <div>
+            <div className={styles.selfly0Body}>
               <h3>回顾机制：把沉淀内容重新分发给用户</h3>
               <p>
                 如果记录只停留在各个模块里，用户很难主动回看。我把回顾设计成一个跨模块的内容再分发机制：
@@ -307,7 +305,7 @@ export default async function Selfly0Page({ params }: Selfly0PageProps) {
         <section className={`${styles.caseSection} ${styles.selfly0CaseSection}`}>
           <div className={styles.caseText}>
             <h2>产品化落地</h2>
-            <div>
+            <div className={styles.selfly0Body}>
               <h3>把设计方案推进到真实可用的 iOS 产品</h3>
               <p>
                 除了体验设计，我也独立完成了 Selfly 的 iOS 实现，包括 SwiftUI 界面、SwiftData
@@ -333,7 +331,7 @@ export default async function Selfly0Page({ params }: Selfly0PageProps) {
         <section className={`${styles.caseSection} ${styles.selfly0CaseSection}`}>
           <div className={styles.caseText}>
             <h2>App Store 上线</h2>
-            <div>
+            <div className={styles.selfly0Body}>
               <h3>从内部版本到可下载的公开产品</h3>
               <p>
                 我独立完成了 App Store Connect 配置、审核材料、隐私与订阅说明，以及提审反馈处理，让 Selfly
