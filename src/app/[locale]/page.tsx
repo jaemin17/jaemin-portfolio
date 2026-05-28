@@ -77,7 +77,7 @@ const decorationShapes = [
 
 const homeEntries = [
   {
-    path: "/projects/project-c",
+    path: "/projects/selfly0",
     title: "独立开发 App",
     subtitle: "Selfly：从产品设计、SwiftUI 开发到 App Store 上线的完整 0→1 案例。",
     tags: ["Selfly", "0→1", "iOS"],
