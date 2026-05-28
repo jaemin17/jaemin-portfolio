@@ -373,7 +373,7 @@
   max-width: 940px;
   min-height: 480px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -383,17 +383,18 @@
 
 .selfly0ChapterCopy {
   display: grid;
-  grid-template-columns: 190px minmax(0, 760px);
+  grid-template-columns: 132px minmax(0, 1fr);
   align-items: center;
-  gap: 38px;
+  gap: 28px;
+  width: 100%;
 }
 
 .selfly0ChapterIcon {
   display: inline-block;
   min-width: 0;
-  font-size: clamp(92px, 7vw, 128px);
+  font-size: 96px;
   line-height: 1;
-  text-align: center;
+  text-align: left;
 }
 
 .selfly0ChapterIntro h2 {
@@ -415,7 +416,7 @@
   max-width: 760px;
   margin-top: 0;
   color: rgba(255, 255, 255, 0.9);
-  font-size: clamp(30px, 3.1vw, 42px);
+  font-size: clamp(28px, 2.8vw, 38px);
   line-height: 1.42;
   font-weight: 400;
 }
@@ -440,6 +441,10 @@
 }
 
 .selfly0SectionDivider + .selfly0CaseSection {
+  margin-top: 0;
+}
+
+.selfly0SectionDivider + .selfly0ContactSection {
   margin-top: 0;
 }
 
@@ -1592,14 +1597,14 @@
   }
 
   .selfly0ChapterIntro p {
-    font-size: 25px;
+    font-size: 23px;
     line-height: 1.44;
   }
 
   .selfly0ChapterIcon {
     min-width: 0;
     padding-top: 0;
-    font-size: 66px;
+    font-size: 58px;
     text-align: center;
   }
 
