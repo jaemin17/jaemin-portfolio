@@ -125,10 +125,8 @@ export default async function Selfly0Page({ params }: Selfly0PageProps) {
                 <div className={styles.designPoints}>
                   <h4>结构划分</h4>
                   <ul>
-                    <li>
-                      <strong>Today：聚焦当下</strong> — 克制入口，不是无限待办
-                    </li>
-                    <li>Explore：承载不同记录方式 — 按内容选容器，而非统一结构</li>
+                    <li>Today：聚焦当下 — 克制入口，不是无限待办</li>
+                    <li>Explore：承载不同记录方式 — 按内容选容器</li>
                     <li>Review：把旧内容重新带回 — 回看自己，而非 KPI 统计</li>
                   </ul>
                 </div>
@@ -146,7 +144,7 @@ export default async function Selfly0Page({ params }: Selfly0PageProps) {
           <div className={styles.selfly0StructureSection}>
             <h2 className={styles.selfly0PositioningLabel}>Top 3 限制</h2>
             <div className={styles.caseText}>
-              <h3 className={styles.selfly0StructureHeading}><span className={styles.selfly0PositioningHeadingLight}>把今日页从任务收集器</span><span className={styles.selfly0PositioningHeadingDark}>变成选择器</span></h3>
+              <h3 className={styles.selfly0StructureHeading}><span className={styles.selfly0PositioningHeadingLight}>把今日页从任务收集器</span><span className={styles.selfly0PositioningHeadingDark}><em>变成选择器</em></span></h3>
               <div className={styles.selfly0Body}>
                 <p>
                   我没有把首页设计成可以无限添加的任务列表，而是让用户每天只保留三件最重要的事。
