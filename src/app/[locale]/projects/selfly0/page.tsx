@@ -119,8 +119,7 @@ export default async function Selfly0Page({ params }: Selfly0PageProps) {
               <h3 className={styles.selfly0StructureHeading}><span className={styles.selfly0PositioningHeadingLight}>把"当下、记录、回看"组织成</span><span className={styles.selfly0PositioningHeadingDark}>一个日常循环</span></h3>
               <div className={styles.selfly0Body}>
                 <p>
-                  Selfly 用三个 Tab 建立「当下—记录—回看」的清晰节奏。
-                  下文会先展开 Today 的每日节奏，再讲 Explore 的记录架构，最后讲 Review 的回顾机制。
+                  Selfly 用 Today / Explore / Review 三个 Tab 建立「当下—记录—回看」的清晰节奏。Today 聚焦每日重要的任务，Explore 负责记录更加长期的发现，Review 把旧内容重新带回。
                 </p>
                 <div className={styles.designPoints}>
                   <h4>结构划分</h4>
