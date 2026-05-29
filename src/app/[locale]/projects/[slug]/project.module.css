@@ -97,6 +97,12 @@
   background: color-mix(in oklab, var(--accentA) 14%, white);
 }
 
+.appPreviewImage {
+  width: min(100%, 940px);
+  height: auto;
+  border-radius: 8px;
+}
+
 .section {
   padding: 20px 0;
   border-bottom: 0;

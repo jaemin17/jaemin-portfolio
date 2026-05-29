@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { SiteHeader } from "@/components/SiteHeader";
 import { isLocale, type Locale } from "@/i18n/config";
@@ -58,7 +59,14 @@ export default async function Selfly0Page({ params }: Selfly0PageProps) {
           </h1>
           <p className={styles.subtitle}>帮助用户每日聚焦、自我记录与长期回看的 iOS 产品</p>
           <div className={styles.headerCta}>
-            <div className={styles.appPreviewPlaceholder} aria-hidden="true" />
+            <Image
+              src="/images/selfly0/hero.png"
+              alt="Selfly app preview showing Today, My Journal, and Review screens"
+              width={1500}
+              height={844}
+              className={styles.appPreviewImage}
+              priority
+            />
             <div className={styles.meta}>
               <span className={styles.metaItem}>2025–2026</span>
               <span className={styles.metaDot} aria-hidden="true">
@@ -105,6 +113,9 @@ export default async function Selfly0Page({ params }: Selfly0PageProps) {
             </div>
           </div>
         </section>
+        <section className={`${styles.caseSection} ${styles.selfly0CaseSection}`}>
+          <div className={styles.appPreviewPlaceholder} aria-hidden="true" />
+        </section>
         <ChapterIntro id="framework" icon="🔁" title="体验框架">
           我用 Today / Explore / Review 把“当下、记录、回看”组织成一个日常循环。
         </ChapterIntro>
@@ -129,6 +140,9 @@ export default async function Selfly0Page({ params }: Selfly0PageProps) {
               </div>
             </div>
           </div>
+        </section>
+        <section className={`${styles.caseSection} ${styles.selfly0CaseSection}`}>
+          <div className={styles.appPreviewPlaceholder} aria-hidden="true" />
         </section>
         <ChapterIntro id="today" icon="🎯" title="Today：降低任务压力">
           今日页不是为了收集更多任务，而是帮助用户判断今天真正重要的事。
@@ -159,6 +173,9 @@ export default async function Selfly0Page({ params }: Selfly0PageProps) {
           </div>
         </section>
         <section className={`${styles.caseSection} ${styles.selfly0CaseSection}`}>
+          <div className={styles.appPreviewPlaceholder} aria-hidden="true" />
+        </section>
+        <section className={`${styles.caseSection} ${styles.selfly0CaseSection}`}>
           <div className={styles.caseText}>
             <h2>每日节奏</h2>
             <div className={styles.selfly0Body}>
@@ -184,6 +201,9 @@ export default async function Selfly0Page({ params }: Selfly0PageProps) {
               </div>
             </div>
           </div>
+        </section>
+        <section className={`${styles.caseSection} ${styles.selfly0CaseSection}`}>
+          <div className={styles.appPreviewPlaceholder} aria-hidden="true" />
         </section>
         <ChapterIntro id="explore" icon="🧩" title="Explore：降低开始记录的成本">
           记录系统不应该让用户先理解功能规则，而应该让用户按内容选择合适的记录方式。
@@ -226,6 +246,9 @@ export default async function Selfly0Page({ params }: Selfly0PageProps) {
           </div>
         </section>
         <section className={`${styles.caseSection} ${styles.selfly0CaseSection}`}>
+          <div className={styles.appPreviewPlaceholder} aria-hidden="true" />
+        </section>
+        <section className={`${styles.caseSection} ${styles.selfly0CaseSection}`}>
           <div className={styles.caseText}>
             <h2>优化创建体验</h2>
             <div className={styles.selfly0Body}>
@@ -257,6 +280,9 @@ export default async function Selfly0Page({ params }: Selfly0PageProps) {
               </div>
             </div>
           </div>
+        </section>
+        <section className={`${styles.caseSection} ${styles.selfly0CaseSection}`}>
+          <div className={styles.appPreviewPlaceholder} aria-hidden="true" />
         </section>
         <ChapterIntro id="review" icon="🕰️" title="Review：让旧内容重新出现">
           回顾不是数据统计，而是把过去的记录轻量地带回用户面前。
@@ -299,6 +325,9 @@ export default async function Selfly0Page({ params }: Selfly0PageProps) {
             </div>
           </div>
         </section>
+        <section className={`${styles.caseSection} ${styles.selfly0CaseSection}`}>
+          <div className={styles.appPreviewPlaceholder} aria-hidden="true" />
+        </section>
         <ChapterIntro id="launch" icon="🚀" title="iOS 落地与上线">
           这个项目不只停留在设计方案，我也把它实现为可下载、可使用、可订阅的 iOS 产品。
         </ChapterIntro>
@@ -327,6 +356,9 @@ export default async function Selfly0Page({ params }: Selfly0PageProps) {
               </div>
             </div>
           </div>
+        </section>
+        <section className={`${styles.caseSection} ${styles.selfly0CaseSection}`}>
+          <div className={styles.appPreviewPlaceholder} aria-hidden="true" />
         </section>
         <section className={`${styles.caseSection} ${styles.selfly0CaseSection}`}>
           <div className={styles.caseText}>
@@ -360,6 +392,9 @@ export default async function Selfly0Page({ params }: Selfly0PageProps) {
               </p>
             </div>
           </div>
+        </section>
+        <section className={`${styles.caseSection} ${styles.selfly0CaseSection}`}>
+          <div className={styles.appPreviewPlaceholder} aria-hidden="true" />
         </section>
         <section className={`${styles.caseSection} ${styles.selfly0CaseSection}`}>
           <div className={styles.caseText}>
