@@ -4,7 +4,7 @@
 }
 
 .main {
-  max-width: 940px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 28px 20px 64px;
   width: 100%;
@@ -104,6 +104,10 @@
   border: 3px solid #f0b860;
 }
 
+.featuredHero .appPreviewImage {
+  width: min(100%, 1200px);
+}
+
 .section {
   padding: 20px 0;
   border-bottom: 0;
@@ -140,7 +144,7 @@
 .featuredHero {
   position: relative;
   overflow: hidden;
-  max-width: 940px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 42px 0 28px;
   text-align: center;
@@ -378,7 +382,7 @@
 }
 
 .selfly0ChapterInner {
-  max-width: 940px;
+  max-width: 1200px;
   min-height: 480px;
   margin: 0 auto;
   padding: 0 20px;
@@ -395,6 +399,7 @@
   align-items: center;
   gap: 28px;
   width: 100%;
+  max-width: 940px;
 }
 
 .selfly0ChapterIcon {
@@ -1871,10 +1876,10 @@
   padding: 0 var(--v2-gutter);
 }
 
-/* Cover image — nearly full viewport, capped at 1440px like yuha.work */
+/* Cover image — nearly full viewport, capped at 1200px like yuha.work */
 .v2FullImage:first-child {
   width: calc(100vw - 60px);
-  max-width: 1440px;
+  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
   padding: 0;
