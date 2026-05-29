@@ -116,7 +116,7 @@ export default async function Selfly0Page({ params }: Selfly0PageProps) {
           <div className={styles.selfly0StructureSection}>
             <h2 className={styles.selfly0PositioningLabel}>产品结构</h2>
             <div className={styles.caseText}>
-              <h3 className={styles.selfly0StructureHeading}><span className={styles.selfly0PositioningHeadingLight}>我用 Today / Explore / Review 把"当下、记录、回看"组织成</span><span className={styles.selfly0PositioningHeadingDark}>一个日常循环</span></h3>
+              <h3 className={styles.selfly0StructureHeading}><span className={styles.selfly0PositioningHeadingLight}>把"当下、记录、回看"组织成</span><span className={styles.selfly0PositioningHeadingDark}>一个日常循环</span></h3>
               <div className={styles.selfly0Body}>
                 <p>
                   Selfly 用三个 Tab 建立「当下—记录—回看」的清晰节奏。
