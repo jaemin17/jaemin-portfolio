@@ -84,9 +84,6 @@ export default async function Selfly0Page({ params }: Selfly0PageProps) {
             </a>
           </div>
         </header>
-        <ChapterIntro id="positioning" icon="🧐" title="背景与定位">
-          Selfly 的核心转变，是从一次性的自我探索工具，变成一个可长期使用的低压力记录系统。
-        </ChapterIntro>
         <section className={`${styles.caseSection} ${styles.selfly0CaseSection}`}>
           <div className={styles.caseText}>
             <h2>产品定位</h2>
