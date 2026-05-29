@@ -1805,3 +1805,236 @@
     align-items: flex-start;
   }
 }
+
+/* ========================================================================
+   Selfly0 V2 — yuha-inspired layout
+   ======================================================================== */
+
+.selfly0V2 {
+  --v2-max: 960px;
+  --v2-gutter: 30px;
+  color: #1a1a1a;
+}
+
+/* Hero */
+.v2Hero {
+  width: calc(100vw - 60px);
+  max-width: 1440px;
+  margin: 48px auto 0;
+  padding: 0;
+  text-align: left;
+  /* break out of parent max-width, same as cover */
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.v2HeroTitle {
+  font-size: clamp(32px, 5vw, 52px);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.v2HeroTitle em {
+  font-style: italic;
+  text-decoration: underline;
+  text-decoration-color: var(--accentA, #e8613c);
+  text-underline-offset: 4px;
+  text-decoration-thickness: 3px;
+}
+
+.v2HeroSubtitle {
+  font-size: 18px;
+  color: #666;
+  margin: 16px 0 0;
+  line-height: 1.6;
+}
+
+.v2HeroMeta {
+  display: flex;
+  gap: 8px;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #999;
+}
+
+.v2MetaDot {
+  color: #ccc;
+}
+
+/* Full-width image section */
+.v2FullImage {
+  max-width: var(--v2-max);
+  margin: 0 auto;
+  padding: 0 var(--v2-gutter);
+}
+
+/* Cover image — nearly full viewport, capped at 1440px like yuha.work */
+.v2FullImage:first-child {
+  width: calc(100vw - 60px);
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+  /* break out of parent max-width */
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.v2CoverImg {
+  width: 100%;
+  height: auto;
+  border-radius: 0;
+  margin-top: 40px;
+  display: block;
+}
+
+/* Content sections */
+.v2Section {
+  max-width: var(--v2-max);
+  margin: 0 auto;
+  padding: 80px var(--v2-gutter) 0;
+}
+
+.v2Section + .v2Section {
+  border-top: 1px solid #eee;
+}
+
+/* Section label (like yuha's "Context", "Research") */
+.v2Label {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accentA, #e8613c);
+  margin-bottom: 24px;
+}
+
+/* Two-column grid: heading left, body right */
+.v2Grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 32px;
+  align-items: start;
+}
+
+.v2Grid + .v2Grid {
+  margin-top: 32px;
+  padding-top: 32px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.v2Heading {
+  font-size: clamp(22px, 3vw, 28px);
+  font-weight: 700;
+  line-height: 1.35;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.v2SubLabel {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.v2Body {
+  font-size: 16px;
+  line-height: 1.75;
+  color: #444;
+}
+
+.v2Body p + p {
+  margin-top: 16px;
+}
+
+.v2Body strong {
+  color: #1a1a1a;
+  font-weight: 650;
+}
+
+.v2List {
+  font-size: 16px;
+  line-height: 1.75;
+  color: #444;
+  padding-left: 20px;
+  margin: 0;
+}
+
+.v2List li + li {
+  margin-top: 6px;
+}
+
+.v2List strong {
+  color: #1a1a1a;
+  font-weight: 650;
+}
+
+/* Image placeholders inside v2 sections */
+.v2Section .appPreviewPlaceholder {
+  margin-top: 40px;
+  width: 100%;
+}
+
+.v2Section .v2FullImage {
+  padding: 0;
+  margin-top: 40px;
+}
+
+/* Contact */
+.v2Contact {
+  max-width: var(--v2-max);
+  margin: 0 auto;
+  padding: 80px var(--v2-gutter);
+  text-align: center;
+  border-top: 1px solid #eee;
+}
+
+.v2Contact h2 {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 0 8px;
+}
+
+.v2Contact p {
+  font-size: 16px;
+  color: #666;
+  margin: 0 0 20px;
+}
+
+.v2ContactLink {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--accentA, #e8613c);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s;
+}
+
+.v2ContactLink:hover {
+  border-bottom-color: var(--accentA, #e8613c);
+}
+
+/* Responsive */
+@media (max-width: 720px) {
+  .v2Hero {
+    margin-top: 48px;
+  }
+
+  .v2Grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .v2Section {
+    padding-top: 48px;
+  }
+
+  .v2CoverImg {
+    border-radius: 12px;
+    margin-top: 32px;
+  }
+}
