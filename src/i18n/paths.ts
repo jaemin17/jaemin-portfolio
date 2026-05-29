@@ -7,7 +7,8 @@ function basePathPrefix(): string {
 /** Home URL for the default locale (`/zh/`, or `/{repo}/zh/` on GitHub Pages). */
 export function defaultLocaleHome(): string {
   const base = basePathPrefix();
-  return `${base}/${defaultLocale}/`;
+  // TEMP: redirect root to selfly0 for preview
+  return `${base}/${defaultLocale}/projects/selfly0/`;
 }
 
 /** Prefix an app path with `/{locale}` (e.g. `/about` → `/zh/about`). */

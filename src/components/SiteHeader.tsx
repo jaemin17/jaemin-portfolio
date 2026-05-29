@@ -17,6 +17,7 @@ export function SiteHeader({ locale, surface = "default", active }: SiteHeaderPr
   const testHref = localePath(locale, "/test");
   const selflyTestLinks = [
     { label: "selfly0", href: localePath(locale, "/projects/selfly0") },
+    { label: "selfly改版", href: localePath(locale, "/projects/selfly-v2") },
     { label: "selfly样式调整", href: localePath(locale, "/projects/selfly-style") },
   ];
 

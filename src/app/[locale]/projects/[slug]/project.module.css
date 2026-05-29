@@ -594,6 +594,45 @@
   opacity: 0.7;
 }
 
+.selfly0PositioningSection {
+  width: 100%;
+  padding: 0 20px;
+}
+
+.selfly0PositioningLabel {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accentA, #c0392b);
+  margin-bottom: 24px;
+}
+
+.selfly0PositioningGrid {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.selfly0PositioningHeading {
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.selfly0PositioningBody {
+  line-height: 1.8;
+}
+
+.selfly0PositioningBody p:first-child {
+  margin-top: 0;
+}
+
+.selfly0PositioningBody p {
+  margin-bottom: 28px;
+}
+
 .selfly0Body p {
   margin-top: 22px;
   margin-bottom: 22px;
