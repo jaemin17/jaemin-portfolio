@@ -533,6 +533,11 @@
   max-width: none;
 }
 
+.caseText:has(.selfly0ReflectionBody) {
+  display: block;
+  padding-bottom: 120px;
+}
+
 .selfly0ReflectionBody p + p {
   margin-top: 26px;
 }
@@ -658,6 +663,10 @@
   line-height: 2;
 }
 
+.selfly0Body p:first-child {
+  margin-top: 0;
+}
+
 .selfly0PositioningText {
   grid-template-columns: minmax(220px, 340px) minmax(0, 1fr);
 }
@@ -773,6 +782,27 @@
   font-size: 13px;
   line-height: 1.4;
   margin-bottom: 8px;
+}
+
+.selfly0StructureSection {
+  width: 100%;
+  padding-top: 80px;
+}
+
+.selfly0StructureHeading,
+.caseText .selfly0StructureHeading {
+  font-size: 26px;
+  font-weight: 500;
+  line-height: 1.65;
+  letter-spacing: normal;
+  color: unset;
+  margin-bottom: 0;
+  padding-top: 24px;
+}
+
+.selfly0Page .caseText {
+  grid-template-columns: 2.5fr 4fr;
+  gap: 100px;
 }
 
 .selfly0Page .designPoints h4 {
