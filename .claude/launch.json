@@ -5,6 +5,7 @@
       "name": "portfolio",
       "runtimeExecutable": "npm",
       "runtimeArgs": ["run", "dev"],
+      "cwd": "/Users/jaemin/Documents/portfolio/portfolio",
       "port": 3000
     }
   ]

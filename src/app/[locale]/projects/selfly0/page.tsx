@@ -88,21 +88,19 @@ export default async function Selfly0Page({ params }: Selfly0PageProps) {
           <div className={styles.selfly0PositioningSection}>
             <h2 className={styles.selfly0PositioningLabel}>产品定位</h2>
             <div className={styles.selfly0PositioningGrid}>
-              <h3 className={styles.selfly0PositioningHeading}>从独立功能集合，到可持续自我记录系统</h3>
+              <h3 className={styles.selfly0PositioningHeading}><span className={styles.selfly0PositioningHeadingLight}>从独立功能集合，</span><br /><span className={styles.selfly0PositioningHeadingDark}>到可持续自我记录系统</span></h3>
               <div className={styles.selfly0PositioningBody}>
                 <p className={styles.p}>
-                  Selfly 最初是一个帮助用户进行「自我探索」的工具，通过价值观、优势等练习，让人更清晰地认识自己。
-                  它来源于我的
-                  <strong className={styles.selfly0Emphasis}>个人真实需求</strong>。
+                  Selfly 最初是一个帮助用户进行「自我探索」的工具，通过价值观、优势等练习，让人更清晰地认识自己。它来源于我的<strong className={styles.selfly0Emphasis}>个人真实需求</strong>。
                 </p>
                 <p className={styles.p}>
                   在迭代过程中，我意识到，自我探索并不会在一次测试后结束。人在不同阶段会不断重新理解自己，真正需要的是
                   <strong className={styles.selfly0Emphasis}>长期记录、回看与反思</strong>。
                 </p>
                 <p className={styles.p}>
-                  基于这一洞察，Selfly 从一次性的自我探索工具，转向
+                  于是，Selfly 从一次性的自我探索工具，转向
                   <strong className={styles.selfly0Emphasis}>更长期的个人记录空间</strong>
-                  ——在体验上从预设练习调整为
+                  ——从预设练习调整为
                   <strong className={styles.selfly0Emphasis}>更自由的记录方式</strong>，并通过
                   <strong className={styles.selfly0Emphasis}>每日聚焦</strong>与
                   <strong className={styles.selfly0Emphasis}>回顾机制</strong>，让记录真正进入日常。

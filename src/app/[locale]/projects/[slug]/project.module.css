@@ -83,10 +83,11 @@
 
 .headerCta {
   margin-top: 16px;
+  margin-bottom: 96px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 12px;
+  gap: 28px;
 }
 
 .appPreviewPlaceholder {
@@ -348,9 +349,9 @@
 }
 
 .caseSection {
-  max-width: 940px;
-  margin: 0 auto 56px;
-  padding-bottom: 48px;
+  max-width: 840px;
+  margin: 0 auto 40px;
+  padding-bottom: 0px;
   border-bottom: 0;
 }
 
@@ -361,7 +362,7 @@
 }
 
 .selfly0CaseSection {
-  margin-top: 48px;
+  margin-top: 16px;
 }
 
 .selfly0SectionDivider {
@@ -596,33 +597,51 @@
 
 .selfly0PositioningSection {
   width: 100%;
-  padding: 0 20px;
+  padding: 0;
 }
 
 .selfly0PositioningLabel {
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--accentA, #c0392b);
-  margin-bottom: 24px;
+  margin-bottom: 12px;
 }
 
 .selfly0PositioningGrid {
   display: grid;
-  grid-template-columns: 2fr 3fr;
-  gap: 80px;
+  grid-template-columns: 2.5fr 4fr;
+  gap: 100px;
   align-items: start;
 }
 
 .selfly0PositioningHeading {
   font-size: 26px;
-  font-weight: 700;
-  line-height: 1.4;
+  font-weight: 500;
+  line-height: 1.65;
+  padding-top: 24px;
+}
+
+.selfly0PositioningHeadingLight {
+  color: #888;
+  font-weight: 400;
+}
+
+.selfly0PositioningHeadingDark {
+  color: #333;
 }
 
 .selfly0PositioningBody {
   line-height: 1.8;
+  color: #777;
+}
+
+.selfly0PositioningBody .selfly0Emphasis {
+  color: #333;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
 }
 
 .selfly0PositioningBody p:first-child {
