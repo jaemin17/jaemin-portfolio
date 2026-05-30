@@ -120,6 +120,10 @@
   pointer-events: auto;
 }
 
+.sideKeepsakes:has(:hover, :focus-within) {
+  z-index: 16;
+}
+
 .middleScatter {
   position: absolute;
   inset: 0;
@@ -378,10 +382,15 @@
 .hero {
   --hero-stack-offset: 20px;
   position: relative;
-  z-index: 8;
+  z-index: 14;
   max-width: 960px;
   margin: 0 auto;
   padding: 8px 0 72px;
+  pointer-events: none;
+}
+
+.hero > * {
+  pointer-events: auto;
 }
 
 .hero:has(.heroTag:hover, .heroTag:focus-within, .title:hover, .title:focus-within, .stickerSubWrap:hover, .stickerSubWrap:focus-within) {

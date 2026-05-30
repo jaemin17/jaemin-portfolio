@@ -39,6 +39,9 @@ export default function RootLayout({
     <html
       className={`${geistSans.variable} ${geistMono.variable} ${kalam.variable} ${montserrat.variable}`}
     >
+      <head>
+        <style dangerouslySetInnerHTML={{ __html: "a{text-decoration:none;color:inherit}" }} />
+      </head>
       <body>{children}</body>
     </html>
   );
