@@ -102,6 +102,7 @@ html:has([data-page="plain-white"]) .header {
   align-items: center;
   min-height: 32px;
   padding: 0 2px;
+  text-decoration: none;
   color: rgba(17, 18, 23, 0.44);
   font-size: 12px;
   font-weight: 600;

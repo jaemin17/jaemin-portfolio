@@ -88,7 +88,7 @@ export default async function Selfly0Page({ params }: Selfly0PageProps) {
           <div className={styles.selfly0PositioningSection}>
             <h2 className={styles.selfly0PositioningLabel}>产品定位</h2>
             <div className={styles.selfly0PositioningGrid}>
-              <h3 className={styles.selfly0PositioningHeading}><span className={styles.selfly0PositioningHeadingLight}>从独立功能集合，</span><span className={styles.selfly0PositioningHeadingDark}>到可持续自我记录系统</span></h3>
+              <h3 className={styles.selfly0PositioningHeading}><span className={styles.selfly0PositioningHeadingLight}>从独立功能集合，</span><br /><span className={styles.selfly0PositioningHeadingDark}>到可持续自我记录系统</span></h3>
               <div className={styles.selfly0PositioningBody}>
                 <p className={styles.p}>
                   Selfly 最初是一个帮助用户进行「自我探索」的工具，通过价值观、优势等练习，让人更清晰地认识自己。它来源于我的<strong className={styles.selfly0Emphasis}>个人真实需求</strong>。

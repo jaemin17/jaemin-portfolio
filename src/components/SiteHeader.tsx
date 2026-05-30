@@ -15,12 +15,6 @@ export function SiteHeader({ locale, surface = "default", active }: SiteHeaderPr
   const homeHref = localePath(locale, "/");
   const about2Href = localePath(locale, "/about2");
   const testHref = localePath(locale, "/test");
-  const selflyTestLinks = [
-    { label: "selfly0", href: localePath(locale, "/projects/selfly0") },
-    { label: "selfly改版", href: localePath(locale, "/projects/selfly-v2") },
-    { label: "selfly样式调整", href: localePath(locale, "/projects/selfly-style") },
-  ];
-
   return (
     <header
       className={`${styles.header} ${surface === "white" ? styles.headerWhite : ""}`}
@@ -51,11 +45,6 @@ export function SiteHeader({ locale, surface = "default", active }: SiteHeaderPr
           >
             Test
           </Link>
-          {selflyTestLinks.map((link) => (
-            <Link key={link.label} className={styles.navLink} href={link.href}>
-              {link.label}
-            </Link>
-          ))}
           <a className={styles.navLink} href={resumeDownloadUrl} target="_blank" rel="noreferrer">
             Resume
           </a>
