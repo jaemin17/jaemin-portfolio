@@ -8,13 +8,16 @@ import styles from "./SiteHeader.module.css";
 type SiteHeaderProps = {
   locale: Locale;
   surface?: "default" | "white";
-  active?: "home" | "about" | "about2" | "test";
+  active?: "home" | "about" | "about2" | "test" | "tools1" | "tools2" | "tools3";
 };
 
 export function SiteHeader({ locale, surface = "default", active }: SiteHeaderProps) {
   const homeHref = localePath(locale, "/");
   const about2Href = localePath(locale, "/about2");
   const testHref = localePath(locale, "/test");
+  const tools1Href = localePath(locale, "/test/tools");
+  const tools2Href = localePath(locale, "/test/tools2");
+  const tools3Href = localePath(locale, "/test/tools3");
   return (
     <header
       className={`${styles.header} ${surface === "white" ? styles.headerWhite : ""}`}
@@ -44,6 +47,24 @@ export function SiteHeader({ locale, surface = "default", active }: SiteHeaderPr
             href={testHref}
           >
             Test
+          </Link>
+          <Link
+            className={`${styles.navLink} ${active === "tools1" ? styles.navLinkActive : ""}`}
+            href={tools1Href}
+          >
+            工具1
+          </Link>
+          <Link
+            className={`${styles.navLink} ${active === "tools2" ? styles.navLinkActive : ""}`}
+            href={tools2Href}
+          >
+            工具2
+          </Link>
+          <Link
+            className={`${styles.navLink} ${active === "tools3" ? styles.navLinkActive : ""}`}
+            href={tools3Href}
+          >
+            工具3
           </Link>
           <a className={styles.navLink} href={resumeDownloadUrl} target="_blank" rel="noreferrer">
             Resume
