@@ -133,6 +133,10 @@
   pointer-events: none;
 }
 
+.middleScatter:has(.scatterHangzhou:hover) {
+  z-index: 30;
+}
+
 .middleScatter .polaroid {
   pointer-events: auto;
   z-index: 6;
@@ -235,6 +239,7 @@
   inset: 0;
   z-index: 0;
   pointer-events: none;
+  display: none;
 }
 
 .sparkle {
@@ -471,12 +476,25 @@
 
 .title {
   max-width: 960px;
-  margin-top: 48px;
   margin-left: auto;
   margin-right: auto;
   position: relative;
   z-index: 20;
   animation-delay: 160ms;
+}
+
+@media (min-width: 921px) {
+  .hero .heroTag {
+    margin-top: calc(34px + var(--hero-stack-offset));
+  }
+
+  .hero .title {
+    margin-top: 32px;
+  }
+
+  .hero .stickerSubWrap {
+    margin-top: 18px;
+  }
 }
 
 .bottomKeepsakes {
@@ -900,6 +918,14 @@
 .workItem:nth-child(1) .workTag {
   background: color-mix(in oklab, #f6682f 10%, white);
   color: color-mix(in oklab, #f6682f 80%, #111217);
+}
+
+.workItem:nth-child(1) .workNote {
+  background: linear-gradient(
+    180deg,
+    color-mix(in oklab, var(--note-accent) 86%, white) 0%,
+    color-mix(in oklab, var(--note-accent) 72%, white) 100%
+  );
 }
 
 .workItem:nth-child(2) {
@@ -1675,7 +1701,7 @@
     margin-bottom: 0;
   }
 
-  .title {
+  .hero .title {
     margin-top: 32px;
     margin-bottom: 8px;
   }
