@@ -71,9 +71,7 @@ html:has([data-page="plain-white"]) .header {
   font-size: 22px;
   font-weight: 700;
   color: #303239;
-  text-decoration: underline;
-  text-underline-offset: 4px;
-  text-decoration-thickness: 2px;
+  text-decoration: none;
 }
 
 .menuItem {
