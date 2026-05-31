@@ -1,9 +1,8 @@
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { SiteHeader } from "@/components/SiteHeader";
 import { isLocale, type Locale } from "@/i18n/config";
-import { localePath } from "@/i18n/paths";
-import styles from "../test.module.css";
+import { VisualCarousel } from "./VisualCarousel";
+import styles from "./visual.module.css";
 
 const visualProjects = [
   {
@@ -44,49 +43,18 @@ export default async function VisualPage({ params }: VisualPageProps) {
   const locale: Locale = localeParam;
 
   return (
-    <>
+    <div className={styles.page}>
       <SiteHeader locale={locale} active="test" />
       <main className={styles.main}>
-        <section className={styles.hero}>
-          <p className={styles.eyebrow}>Visual Collection</p>
-          <h1>视觉作品</h1>
-          <p>这里先作为 VR 教育视觉合集入口，后续每一个具体教育软件再进入独立详情页。</p>
-        </section>
-
-        <section className={styles.section} aria-label="视觉作品列表">
-          <div className={styles.grid}>
-            {visualProjects.map((project) => {
-              const cardContent = (
-                <>
-                  <span className={styles.cardLabel}>Visual</span>
-                  <h3>{project.title}</h3>
-                  <p>{project.body}</p>
-                  <div className={styles.tags}>
-                    {project.tags.map((tag) => (
-                      <span key={tag}>{tag}</span>
-                    ))}
-                  </div>
-                  {project.path ? <span className={styles.cardAction}>查看详情</span> : null}
-                </>
-              );
-
-              return project.path ? (
-                <Link key={project.title} className={styles.card} href={localePath(locale, project.path)}>
-                  {cardContent}
-                </Link>
-              ) : (
-                <article key={project.title} className={styles.card}>
-                  {cardContent}
-                </article>
-              );
-            })}
-          </div>
-        </section>
-
-        <Link className="buttonSticker buttonStickerOrange" href={localePath(locale, "/")}>
-          返回首页
-        </Link>
+        <div className={styles.headline}>
+          <h1>
+            Visual <strong>Works</strong>
+          </h1>
+          <span className={styles.annotation}>VR education showcase</span>
+        </div>
+        <VisualCarousel projects={visualProjects} locale={locale} />
+        <div className={styles.footer}>@JIAMIN&apos;S PORTFOLIO</div>
       </main>
-    </>
+    </div>
   );
 }
