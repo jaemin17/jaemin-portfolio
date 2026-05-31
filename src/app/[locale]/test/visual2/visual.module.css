@@ -1,29 +1,29 @@
 .page {
-  --bg: #0a0a0b;
-  --fg: #ffffff;
+  --bg: #fff8e1;
+  --fg: #111217;
   min-height: 100vh;
-  background: #0a0a0b;
-  color: #ffffff;
+  background: #fff8e1;
+  color: #111217;
   overflow: hidden;
 }
 
 .page :global(.siteHeader),
 .page > header {
-  border-bottom-color: rgba(255, 255, 255, 0.08);
+  border-bottom-color: rgba(17, 18, 23, 0.1);
 }
 
 .page :global(header) a,
 .page :global(header) span,
 .page :global(nav) a {
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(17, 18, 23, 0.5);
 }
 
 .page :global(nav) a:hover {
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(17, 18, 23, 0.85);
 }
 
 .page :global(nav) a[class*="Active"] {
-  color: rgba(255, 255, 255, 0.95);
+  color: rgba(17, 18, 23, 0.95);
 }
 
 .main {
@@ -48,20 +48,20 @@
   font-weight: 300;
   line-height: 1;
   letter-spacing: -0.02em;
-  color: #ffffff;
+  color: #111217;
   white-space: nowrap;
 }
 
 .headline h1 strong {
   font-weight: 300;
   font-style: italic;
-  color: #a855f7;
+  color: #f6682f;
 }
 
 .annotation {
   font-family: var(--font-kalam), cursive;
   font-size: clamp(18px, 2.5vw, 28px);
-  color: #a855f7;
+  color: #f6682f;
   transform: rotate(-4deg);
   white-space: nowrap;
 }
@@ -70,14 +70,14 @@
 
 .carouselSection {
   position: relative;
-  margin-top: clamp(40px, 6vw, 80px);
+  margin-top: clamp(8px, 1vw, 16px);
   padding-bottom: clamp(60px, 8vw, 120px);
 }
 
 .carouselViewport {
   position: relative;
   width: 100%;
-  height: clamp(380px, 50vw, 560px);
+  height: clamp(400px, 55vw, 640px);
   perspective: 1200px;
   display: flex;
   align-items: center;
@@ -97,58 +97,59 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  width: clamp(300px, 44vw, 560px);
+  width: clamp(320px, 48vw, 620px);
   transform: translate(-50%, -50%);
   border-radius: 16px;
   overflow: hidden;
-  background: #141416;
-  border: none;
+  background: #ffffff;
+  border: 2px solid #0b0b0b;
   padding: 0;
-  box-shadow: none;
+  box-shadow: 6px 7px 0 rgba(17, 18, 23, 0.12);
   transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1),
     opacity 600ms cubic-bezier(0.4, 0, 0.2, 1),
     background 600ms cubic-bezier(0.4, 0, 0.2, 1),
     padding 600ms cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
   user-select: none;
-  color: #ffffff;
+  color: #111217;
   text-decoration: none;
 }
 
 .cardActive {
   z-index: 10;
-  background: #a855f7;
+  background: #f6a310;
   padding: 14px;
   transform: translate(-50%, -50%) scale(1);
   opacity: 1;
+  box-shadow: 8px 10px 0 rgba(17, 18, 23, 0.18);
 }
 
 .cardPrev {
   z-index: 5;
   transform: translate(-50%, -50%) translateX(-72%) rotateY(18deg) scale(0.82);
   opacity: 0.6;
-  filter: brightness(0.6);
+  filter: brightness(0.8);
 }
 
 .cardNext {
   z-index: 5;
   transform: translate(-50%, -50%) translateX(72%) rotateY(-18deg) scale(0.82);
   opacity: 0.6;
-  filter: brightness(0.6);
+  filter: brightness(0.8);
 }
 
 .cardFarPrev {
   z-index: 2;
   transform: translate(-50%, -50%) translateX(-130%) rotateY(28deg) scale(0.65);
   opacity: 0.3;
-  filter: brightness(0.4);
+  filter: brightness(0.6);
 }
 
 .cardFarNext {
   z-index: 2;
   transform: translate(-50%, -50%) translateX(130%) rotateY(-28deg) scale(0.65);
   opacity: 0.3;
-  filter: brightness(0.4);
+  filter: brightness(0.6);
 }
 
 .cardHidden {
@@ -168,26 +169,20 @@
   flex-direction: column;
   justify-content: flex-end;
   padding: clamp(24px, 3vw, 40px);
-  border-radius: 8px;
-  background: linear-gradient(160deg, #1e1e22 0%, #141416 100%);
+  border-radius: 0;
+  background: linear-gradient(160deg, #ffffff 0%, #fef9ef 100%);
   overflow: hidden;
 }
 
-.cardBody::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(
-    ellipse at 30% 20%,
-    rgba(168, 85, 247, 0.08) 0%,
-    transparent 60%
-  );
-  pointer-events: none;
-}
+.card:nth-child(1) .cardBody { background: linear-gradient(160deg, #fce4ec 0%, #f8bbd0 100%); }
+.card:nth-child(2) .cardBody { background: linear-gradient(160deg, #e3f2fd 0%, #bbdefb 100%); }
+.card:nth-child(3) .cardBody { background: linear-gradient(160deg, #e8f5e9 0%, #c8e6c9 100%); }
+.card:nth-child(4) .cardBody { background: linear-gradient(160deg, #fff3e0 0%, #ffe0b2 100%); }
+.card:nth-child(5) .cardBody { background: linear-gradient(160deg, #ede7f6 0%, #d1c4e9 100%); }
 
 .cardBodyVideo {
   padding: 0;
-  background: none;
+  background: none !important;
 }
 
 .cardBodyVideo::before {
@@ -199,7 +194,6 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 8px;
   pointer-events: none;
 }
 
@@ -208,7 +202,7 @@
   font-weight: 800;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #a855f7;
+  color: #f6682f;
   margin-bottom: 12px;
 }
 
@@ -217,7 +211,7 @@
   font-weight: 700;
   line-height: 1.15;
   letter-spacing: -0.01em;
-  color: #ffffff;
+  color: #111217;
   margin: 0;
 }
 
@@ -225,7 +219,7 @@
   margin-top: 10px;
   font-size: clamp(12px, 1.2vw, 14px);
   line-height: 1.7;
-  color: rgba(255, 255, 255, 0.55);
+  color: rgba(17, 18, 23, 0.55);
 }
 
 .cardTags {
@@ -240,11 +234,11 @@
   align-items: center;
   padding: 4px 10px;
   border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(17, 18, 23, 0.14);
+  background: #fff5e4;
   font-size: 11px;
   font-weight: 700;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(17, 18, 23, 0.65);
   letter-spacing: 0.02em;
 }
 
@@ -290,7 +284,7 @@
   height: 24px;
   border-radius: 50%;
   background: #0a0a0b;
-  color: #a855f7;
+  color: #f6a310;
   font-size: 14px;
   font-weight: 900;
   line-height: 1;
@@ -312,18 +306,20 @@
   justify-content: center;
   width: 48px;
   height: 48px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 2px solid #0b0b0b;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.04);
-  color: #ffffff;
+  background: #ffffff;
+  color: #111217;
   font-size: 20px;
   cursor: pointer;
-  transition: background 200ms ease, border-color 200ms ease;
+  box-shadow: 3px 4px 0 rgba(17, 18, 23, 0.12);
+  transition: background 200ms ease, transform 150ms ease, box-shadow 150ms ease;
 }
 
 .controlBtn:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.3);
+  background: #f4c20d;
+  transform: translate3d(0, -2px, 0);
+  box-shadow: 5px 6px 0 rgba(17, 18, 23, 0.16);
 }
 
 .dots {
@@ -336,7 +332,7 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(17, 18, 23, 0.18);
   border: none;
   padding: 0;
   cursor: pointer;
@@ -344,7 +340,7 @@
 }
 
 .dotActive {
-  background: #a855f7;
+  background: #f6682f;
   transform: scale(1.4);
 }
 
@@ -355,7 +351,7 @@
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(17, 18, 23, 0.3);
 }
 
 /* ---- responsive ---- */
@@ -383,6 +379,10 @@
 
   .card {
     width: clamp(260px, 70vw, 420px);
+  }
+
+  .cardBody {
+    padding: clamp(18px, 3vw, 28px);
   }
 
   .cardPrev {

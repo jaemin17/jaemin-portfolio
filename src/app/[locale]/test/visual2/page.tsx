@@ -27,7 +27,7 @@ const visualProjects = [
     title: "智能制造 VR",
     body: "变速器、工业机器人、注塑模具等工业设备实训画面和教学操作界面。",
     tags: ["Manufacturing", "Industry", "Simulation"],
-    path: "/test/visual/smart-manufacturing",
+    path: "/test/visual2/smart-manufacturing",
   },
   {
     title: "汽车实训 VR",
@@ -47,7 +47,7 @@ export default async function VisualPage({ params }: VisualPageProps) {
 
   return (
     <div className={styles.page}>
-      <SiteHeader locale={locale} active="visual1" />
+      <SiteHeader locale={locale} active="visual2" />
       <main className={styles.main}>
         <div className={styles.headline}>
           <h1>
