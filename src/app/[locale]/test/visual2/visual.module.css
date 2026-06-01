@@ -208,13 +208,14 @@
 .cardMedia {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 16 / 9;
   overflow: hidden;
   border-radius: 8px;
   background: transparent;
 }
 
-.cardMedia video {
+.cardMedia video,
+.cardMedia img {
   display: block;
   width: 100%;
   height: 100%;

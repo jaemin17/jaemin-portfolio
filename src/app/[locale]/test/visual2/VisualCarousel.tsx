@@ -9,7 +9,8 @@ type VisualProject = {
   body: string;
   tags: string[];
   path?: string;
-  video: string;
+  video?: string;
+  image?: string;
 };
 
 type Props = {
@@ -72,14 +73,21 @@ export function VisualCarousel({ projects, locale }: Props) {
             const inner = (
               <>
                 <div className={styles.cardMedia}>
-                  <video
-                    src={project.video}
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    preload="metadata"
-                  />
+                  {project.image ? (
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                    />
+                  ) : (
+                    <video
+                      src={project.video}
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      preload="metadata"
+                    />
+                  )}
                 </div>
                 <div className={styles.cardFooter}>
                   <span className={styles.cardName}>{project.title}</span>
