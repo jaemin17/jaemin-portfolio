@@ -44,6 +44,22 @@ html:has([data-page="plain-white"]) body {
   background: #ffffff;
 }
 
+html:has([data-page="tools4"]) {
+  background: #eef1f5;
+}
+
+html:has([data-page="tools4"]) body {
+  background: #eef1f5;
+}
+
+html:has([data-page="visual2"]) {
+  background: #0a0a0b;
+}
+
+html:has([data-page="visual2"]) body {
+  background: #0a0a0b;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;

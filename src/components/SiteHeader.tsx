@@ -8,18 +8,15 @@ import styles from "./SiteHeader.module.css";
 type SiteHeaderProps = {
   locale: Locale;
   surface?: "default" | "white";
-  active?: "home" | "about" | "about2" | "test" | "visual1" | "visual2" | "tools1" | "tools2" | "tools3" | "tools4";
+  active?: "home" | "about" | "about2" | "test" | "visual1" | "visual2" | "visual3" | "tools1" | "tools2" | "tools3" | "tools4";
 };
 
 export function SiteHeader({ locale, surface = "default", active }: SiteHeaderProps) {
   const homeHref = localePath(locale, "/");
   const about2Href = localePath(locale, "/about2");
   const testHref = localePath(locale, "/test");
-  const visual1Href = localePath(locale, "/test/visual");
   const visual2Href = localePath(locale, "/test/visual2");
-  const tools1Href = localePath(locale, "/test/tools");
-  const tools2Href = localePath(locale, "/test/tools2");
-  const tools3Href = localePath(locale, "/test/tools3");
+  const visual3Href = localePath(locale, "/test/visual3");
   const tools4Href = localePath(locale, "/test/tools4");
   return (
     <header
@@ -52,34 +49,10 @@ export function SiteHeader({ locale, surface = "default", active }: SiteHeaderPr
             Test
           </Link>
           <Link
-            className={`${styles.navLink} ${active === "visual1" ? styles.navLinkActive : ""}`}
-            href={visual1Href}
-          >
-            视觉1
-          </Link>
-          <Link
             className={`${styles.navLink} ${active === "visual2" ? styles.navLinkActive : ""}`}
             href={visual2Href}
           >
             视觉2
-          </Link>
-          <Link
-            className={`${styles.navLink} ${active === "tools1" ? styles.navLinkActive : ""}`}
-            href={tools1Href}
-          >
-            工具1
-          </Link>
-          <Link
-            className={`${styles.navLink} ${active === "tools2" ? styles.navLinkActive : ""}`}
-            href={tools2Href}
-          >
-            工具2
-          </Link>
-          <Link
-            className={`${styles.navLink} ${active === "tools3" ? styles.navLinkActive : ""}`}
-            href={tools3Href}
-          >
-            工具3
           </Link>
           <Link
             className={`${styles.navLink} ${active === "tools4" ? styles.navLinkActive : ""}`}

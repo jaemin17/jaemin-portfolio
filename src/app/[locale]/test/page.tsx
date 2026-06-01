@@ -63,6 +63,60 @@ export default async function TestPage({ params }: TestPageProps) {
                 <span>Archived page</span>
               </div>
             </Link>
+            <Link className={styles.card} href={localePath(locale, "/test/visual2")}>
+              <span className={styles.cardLabel}>Archive</span>
+              <h3>视觉2</h3>
+              <p>从导航栏移除的视觉合集版本，当前作为测试备份入口保留。</p>
+              <div className={styles.tags}>
+                <span>Visual backup</span>
+                <span>VR Education</span>
+              </div>
+            </Link>
+            <Link className={styles.card} href={localePath(locale, "/test/visual3")}>
+              <span className={styles.cardLabel}>Archive</span>
+              <h3>视觉3</h3>
+              <p>从导航栏移除的视觉合集版本，当前作为测试备份入口保留。</p>
+              <div className={styles.tags}>
+                <span>Visual backup</span>
+                <span>VR Education</span>
+              </div>
+            </Link>
+            <Link className={styles.card} href={localePath(locale, "/test/visual")}>
+              <span className={styles.cardLabel}>Archive</span>
+              <h3>视觉1</h3>
+              <p>从导航栏移除的旧视觉合集版本，当前作为测试备份入口保留。</p>
+              <div className={styles.tags}>
+                <span>Visual backup</span>
+                <span>Layout 01</span>
+              </div>
+            </Link>
+            <Link className={styles.card} href={localePath(locale, "/test/tools")}>
+              <span className={styles.cardLabel}>Archive</span>
+              <h3>工具1</h3>
+              <p>从导航栏移除的工具类页面版本，当前作为测试备份入口保留。</p>
+              <div className={styles.tags}>
+                <span>Tools backup</span>
+                <span>Layout 01</span>
+              </div>
+            </Link>
+            <Link className={styles.card} href={localePath(locale, "/test/tools2")}>
+              <span className={styles.cardLabel}>Archive</span>
+              <h3>工具2</h3>
+              <p>从导航栏移除的工具类页面版本，当前作为测试备份入口保留。</p>
+              <div className={styles.tags}>
+                <span>Tools backup</span>
+                <span>Layout 02</span>
+              </div>
+            </Link>
+            <Link className={styles.card} href={localePath(locale, "/test/tools3")}>
+              <span className={styles.cardLabel}>Archive</span>
+              <h3>工具3</h3>
+              <p>从导航栏移除的工具类页面版本，当前作为测试备份入口保留。</p>
+              <div className={styles.tags}>
+                <span>Tools backup</span>
+                <span>Layout 03</span>
+              </div>
+            </Link>
           </div>
         </section>
 

@@ -26,11 +26,12 @@
   color: rgb(0 0 0 / 0.85);
 }
 
+.switcher .optionActive,
 .optionActive {
   background: rgb(0 0 0 / 0.88);
-  color: #fff;
+  color: #fff !important;
 }
 
 .optionActive:hover {
-  color: #fff;
+  color: #fff !important;
 }

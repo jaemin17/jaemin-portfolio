@@ -27,7 +27,7 @@ const visualProjects = [
     title: "智能制造 VR",
     body: "变速器、工业机器人、注塑模具等工业设备实训画面和教学操作界面。",
     tags: ["Manufacturing", "Industry", "Simulation"],
-    path: "/test/visual2/smart-manufacturing",
+    path: "/test/visual3/smart-manufacturing",
     video: "/videos/visual/immersive.mp4",
   },
   {
@@ -48,8 +48,8 @@ export default async function VisualPage({ params }: VisualPageProps) {
   const locale: Locale = localeParam;
 
   return (
-    <div className={styles.page} data-page="visual2">
-      <SiteHeader locale={locale} active="visual2" />
+    <div className={styles.page}>
+      <SiteHeader locale={locale} active="visual3" />
       <main className={styles.main}>
         <div className={styles.headline}>
           <h1>
