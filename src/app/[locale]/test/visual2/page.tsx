@@ -9,18 +9,21 @@ const visualProjects = [
     title: "VR 教育软件合集",
     body: "把多套 VR 教育软件作为视觉亮点集中展示，突出 3D 场景、模型和沉浸式教学界面。",
     tags: ["VR", "Education", "Gallery"],
+    path: "/test/visual2/vr-education",
     video: "/videos/visual/immersive.mp4",
   },
   {
     title: "医学 VR",
     body: "老年医学基础、人体模型、生理病理原理、手术操作等医学教学软件视觉。",
     tags: ["Medical", "Anatomy", "Training"],
+    path: "/test/visual2/medical-vr",
     video: "/videos/visual/highmodes.mp4",
   },
   {
     title: "动物 / 解剖 VR",
     body: "动物模型、解剖训练、手术步骤和课程资源相关的 VR 教育软件界面。",
     tags: ["Animal", "Surgery", "3D"],
+    path: "/test/visual2/animal-vr",
     video: "/videos/visual/homepage.mp4",
   },
   {
@@ -34,6 +37,7 @@ const visualProjects = [
     title: "汽车实训 VR",
     body: "纯电动汽车拆装、动力总成、电池相关训练软件和产品物料视觉。",
     tags: ["Automotive", "Training", "Visual"],
+    path: "/test/visual2/automotive-vr",
     video: "/videos/visual/highmodes.mp4",
   },
   {
