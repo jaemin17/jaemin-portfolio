@@ -8,6 +8,10 @@ export const smartManufacturingShots = [
     title: "变速器结构说明",
     subtitle: "信息面板",
     src: "/images/visual/smart-manufacturing/transmission-detail.png",
+    carousel: [
+      { type: "image" as const, src: "/images/visual/smart-manufacturing/transmission-detail.png" },
+      { type: "video" as const, src: "/images/visual/smart-manufacturing/transmission-home.mp4" },
+    ],
   },
   {
     title: "变速器爆炸演示",

@@ -6,6 +6,7 @@ import { isLocale, type Locale } from "@/i18n/config";
 import { localePath } from "@/i18n/paths";
 import styles from "../../test.module.css";
 import { smartManufacturingShots } from "../smartManufacturingData";
+import { AutoCarousel } from "./HoverImage";
 
 type SmartManufacturingPageProps = {
   params: Promise<{ locale: string }>;
@@ -55,7 +56,16 @@ export default async function SmartManufacturingVisualPage({ params }: SmartManu
                 <p className={styles.caseScenarioTitle}>{shot.subtitle}</p>
                 <figure>
                   <div className={styles.caseImageFrame}>
-                    <Image src={shot.src} width={1920} height={1080} alt={`智能制造 VR ${shot.title} ${shot.subtitle}`} />
+                    {"carousel" in shot && shot.carousel ? (
+                      <AutoCarousel
+                        items={shot.carousel}
+                        width={1920}
+                        height={1080}
+                        alt={`智能制造 VR ${shot.title} ${shot.subtitle}`}
+                      />
+                    ) : (
+                      <Image src={shot.src} width={1920} height={1080} alt={`智能制造 VR ${shot.title} ${shot.subtitle}`} />
+                    )}
                   </div>
                 </figure>
               </article>
