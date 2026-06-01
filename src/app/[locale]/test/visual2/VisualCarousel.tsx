@@ -9,7 +9,7 @@ type VisualProject = {
   body: string;
   tags: string[];
   path?: string;
-  video?: string;
+  video: string;
 };
 
 type Props = {
@@ -48,11 +48,21 @@ export function VisualCarousel({ projects, locale }: Props) {
     return () => window.removeEventListener("keydown", handleKey);
   }, [next, prev]);
 
-  const activeProject = projects[active];
   const prefix = locale === "en" ? "/en" : `/${locale}`;
 
   return (
     <div className={styles.carouselSection}>
+      <nav className={styles.projectNav}>
+        {projects.map((project, i) => (
+          <button
+            key={project.title}
+            className={`${styles.projectNavBtn} ${i === active ? styles.projectNavBtnActive : ""}`}
+            onClick={() => setActive(i)}
+          >
+            {project.title}
+          </button>
+        ))}
+      </nav>
       <div className={styles.carouselViewport}>
         <div className={styles.carouselTrack}>
           {projects.map((project, i) => {
@@ -61,41 +71,27 @@ export function VisualCarousel({ projects, locale }: Props) {
 
             const inner = (
               <>
-                <div className={`${styles.cardBody} ${project.video ? styles.cardBodyVideo : ""}`}>
-                  {project.video ? (
-                    <video
-                      className={styles.cardVideo}
-                      src={project.video}
-                      autoPlay
-                      loop
-                      muted
-                      playsInline
-                      preload="metadata"
-                    />
-                  ) : (
-                    <>
-                      <span className={styles.cardLabel}>Visual</span>
-                      <h3 className={styles.cardTitle}>{project.title}</h3>
-                      <p className={styles.cardDesc}>{project.body}</p>
-                      <div className={styles.cardTags}>
-                        {project.tags.map((tag) => (
-                          <span key={tag}>{tag}</span>
-                        ))}
-                      </div>
-                    </>
-                  )}
+                <div className={styles.cardMedia}>
+                  <video
+                    src={project.video}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    preload="metadata"
+                  />
                 </div>
                 <div className={styles.cardFooter}>
                   <span className={styles.cardName}>{project.title}</span>
                   {project.path ? (
-                    <span className={styles.cardAction}>
-                      查看详情
-                      <span className={styles.cardActionBadge}>→</span>
+                    <span className={styles.cardMeta}>
+                      <span>查看详情</span>
+                      <span className={styles.cardMetaBadge}>→</span>
                     </span>
                   ) : (
-                    <span className={styles.cardAction}>
-                      即将开放
-                      <span className={styles.cardActionBadge}>+</span>
+                    <span className={styles.cardMeta}>
+                      <span>即将开放</span>
+                      <span className={styles.cardMetaBadge}>+</span>
                     </span>
                   )}
                 </div>
@@ -128,20 +124,40 @@ export function VisualCarousel({ projects, locale }: Props) {
       </div>
 
       <div className={styles.controls}>
-        <button className={styles.controlBtn} onClick={prev} aria-label="上一个">
+        <button
+          type="button"
+          className={styles.controlBtn}
+          onClick={(event) => {
+            event.stopPropagation();
+            prev();
+          }}
+          aria-label="上一个"
+        >
           ←
         </button>
         <div className={styles.dots}>
           {projects.map((_, i) => (
             <button
+              type="button"
               key={i}
               className={`${styles.dot} ${i === active ? styles.dotActive : ""}`}
-              onClick={() => setActive(i)}
+              onClick={(event) => {
+                event.stopPropagation();
+                setActive(i);
+              }}
               aria-label={`切换到第 ${i + 1} 个`}
             />
           ))}
         </div>
-        <button className={styles.controlBtn} onClick={next} aria-label="下一个">
+        <button
+          type="button"
+          className={styles.controlBtn}
+          onClick={(event) => {
+            event.stopPropagation();
+            next();
+          }}
+          aria-label="下一个"
+        >
           →
         </button>
       </div>
