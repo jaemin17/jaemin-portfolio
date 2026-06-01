@@ -83,13 +83,13 @@ const homeEntries = [
     tags: ["Selfly", "0→1", "iOS"],
   },
   {
-    path: "/test/tools",
+    path: "/test/tools4",
     title: "工具类产品 UI/UX",
     subtitle: "XR / 3D / 多端协同工具：3D说明书、模型编辑器、Sync Space、VT-PPT 等。",
     tags: ["XR Tools", "3D", "B2B"],
   },
   {
-    path: "/test/visual",
+    path: "/test/visual2",
     title: "视觉作品",
     subtitle: "VR 教育软件、医学、动物、智能制造、汽车实训等 3D 视觉项目合集。",
     tags: ["VR Education", "Visual", "3D"],
@@ -264,7 +264,7 @@ export default async function Home({ params }: HomePageProps) {
                 <Link className={styles.lifeNote} href={localePath(locale, "/life")}>
                   <HoverPolaroid caption="life" placement="left" tone="mint" focusable={false}>
                     <span className={styles.workIndex}>B1</span>
-                    <span className={styles.infoTitle}>非设计小事</span>
+                    <span className={styles.infoTitle}>不做设计的时候</span>
                     <span className={styles.infoBody}>手绳 / 钢琴 / 猫 / 旅行</span>
                   </HoverPolaroid>
                 </Link>

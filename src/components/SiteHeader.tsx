@@ -15,9 +15,6 @@ export function SiteHeader({ locale, surface = "default", active }: SiteHeaderPr
   const homeHref = localePath(locale, "/");
   const about2Href = localePath(locale, "/about2");
   const testHref = localePath(locale, "/test");
-  const visual2Href = localePath(locale, "/test/visual2");
-  const visual3Href = localePath(locale, "/test/visual3");
-  const tools4Href = localePath(locale, "/test/tools4");
   return (
     <header
       className={`${styles.header} ${surface === "white" ? styles.headerWhite : ""}`}
@@ -47,18 +44,6 @@ export function SiteHeader({ locale, surface = "default", active }: SiteHeaderPr
             href={testHref}
           >
             Test
-          </Link>
-          <Link
-            className={`${styles.navLink} ${active === "visual2" ? styles.navLinkActive : ""}`}
-            href={visual2Href}
-          >
-            视觉2
-          </Link>
-          <Link
-            className={`${styles.navLink} ${active === "tools4" ? styles.navLinkActive : ""}`}
-            href={tools4Href}
-          >
-            工具4
           </Link>
           <a className={styles.navLink} href={resumeDownloadUrl} target="_blank" rel="noreferrer">
             Resume

@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { SiteHeader } from "@/components/SiteHeader";
-import { getTestProjects } from "@/content";
 import { isLocale, type Locale } from "@/i18n/config";
 import { localePath } from "@/i18n/paths";
 import styles from "./test.module.css";
@@ -32,8 +31,6 @@ export default async function TestPage({ params }: TestPageProps) {
   const { locale: localeParam } = await params;
   if (!isLocale(localeParam)) notFound();
   const locale: Locale = localeParam;
-  const testProjects = getTestProjects(locale);
-
   return (
     <>
       <SiteHeader locale={locale} active="test" />
@@ -61,15 +58,6 @@ export default async function TestPage({ params }: TestPageProps) {
               <div className={styles.tags}>
                 <span>About backup</span>
                 <span>Archived page</span>
-              </div>
-            </Link>
-            <Link className={styles.card} href={localePath(locale, "/test/visual2")}>
-              <span className={styles.cardLabel}>Archive</span>
-              <h3>视觉2</h3>
-              <p>从导航栏移除的视觉合集版本，当前作为测试备份入口保留。</p>
-              <div className={styles.tags}>
-                <span>Visual backup</span>
-                <span>VR Education</span>
               </div>
             </Link>
             <Link className={styles.card} href={localePath(locale, "/test/visual3")}>
@@ -120,31 +108,6 @@ export default async function TestPage({ params }: TestPageProps) {
           </div>
         </section>
 
-        <section className={styles.section} aria-labelledby="selfly-test-title">
-          <div className={styles.sectionHeader}>
-            <p className={styles.sectionKicker}>Current project variants</p>
-            <h2 id="selfly-test-title">Selfly 测试版本</h2>
-            <p>首页只保留一个正式版本，另外两个候选版本先留在这里，后续可以继续比较文案和叙事结构。</p>
-          </div>
-          <div className={styles.grid}>
-            {testProjects.map((project) => (
-              <Link
-                key={project.slug}
-                className={styles.card}
-                href={localePath(locale, `/projects/${project.slug}`)}
-              >
-                <span className={styles.cardLabel}>{project.timeframe}</span>
-                <h3>{project.cardTitle ?? project.title}</h3>
-                <p>{project.cardSubtitle ?? project.subtitle}</p>
-                <div className={styles.tags}>
-                  {project.tags.slice(0, 3).map((tag) => (
-                    <span key={tag}>{tag}</span>
-                  ))}
-                </div>
-              </Link>
-            ))}
-          </div>
-        </section>
 
         <section className={styles.section} aria-labelledby="xr-draft-title">
           <div className={styles.sectionHeader}>

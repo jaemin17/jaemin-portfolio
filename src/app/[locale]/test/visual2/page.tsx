@@ -66,7 +66,7 @@ export default async function VisualPage({ params }: VisualPageProps) {
           <h1>
             Visual <strong>Works</strong>
           </h1>
-          <span className={styles.annotation}>VR education showcase</span>
+          <span className={styles.annotation}>every detail, intentional</span>
         </div>
         <VisualCarousel projects={visualProjects} locale={locale} />
         <div className={styles.footer}>@JIAMIN&apos;S PORTFOLIO</div>

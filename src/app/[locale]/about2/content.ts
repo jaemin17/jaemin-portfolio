@@ -74,7 +74,7 @@ const about2CopyZh = {
   label: "你好！",
   heroTitle: "我是谁？",
   introBio:
-    "我是一个专注于 UI/UX 与产品体验的独立开发者，喜欢从真实问题出发，打造更自然融入日常的产品。我关注的不只是界面本身，也在意什么样的体验才能被长期使用。目前正在独立打磨自己的产品 Selfly，并持续探索设计、产品与技术之间更平衡的表达方式。",
+    "我是一个专注于 UI/UX 与长期产品体验的独立开发者，习惯从真实感受与日常问题出发，设计更自然、低压力的使用体验。我关注的不只是界面本身，也在意什么样的产品能够真正长期陪伴用户。目前正在独立打磨自我记录产品 Selfly，并持续探索设计、产品与技术之间更平衡的表达方式。",
   introCtaPrefix: "想了解更详细的自我介绍？",
   pdfLinkLabel: "也许这份 PDF 能帮到你 ✰",
   skillsLeft: ["产品体验设计", "UI / UX 设计", "交互与产品结构"],
@@ -95,19 +95,19 @@ const about2CopyZh = {
   ],
   jobs: [
     {
-      company: "Xiyiweireality",
+      company: "深圳希夷微象科技",
       role: "产品体验设计师",
     },
     {
-      company: "KMAX-ShenZhen",
+      company: "KMAX 科骏-深圳",
       role: "UI/UX 设计师",
     },
     {
-      company: "VIA-Guangzhou",
+      company: "VIA 广州威纳",
       role: "UI 设计师",
     },
     {
-      company: "ISAR-Beijing",
+      company: "ISAR 伊飒尔-广州",
       role: "视觉与 UX 设计师",
     },
   ],

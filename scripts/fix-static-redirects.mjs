@@ -65,6 +65,8 @@ const legacyPaths = [
   "test/tools",
   "test/visual",
   "test/visual/smart-manufacturing",
+  "test/visual3",
+  "test/visual3/smart-manufacturing",
 ];
 
 for (const segment of legacyPaths) {

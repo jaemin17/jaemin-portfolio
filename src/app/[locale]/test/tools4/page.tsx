@@ -42,9 +42,9 @@ export default async function Tools4Page({ params }: Props) {
       <main className={styles.main}>
         <div className={styles.headline}>
           <h1>
-            Made <strong>with</strong> Tools
+            Designed <strong>to Use</strong>
           </h1>
-          <span className={styles.annotation}>these projects are interactive</span>
+          <span className={styles.annotation}>how it works, not just looks</span>
         </div>
         <Carousel projects={projects} />
         <div className={styles.footer}>@JIAMIN&apos;S PORTFOLIO</div>
