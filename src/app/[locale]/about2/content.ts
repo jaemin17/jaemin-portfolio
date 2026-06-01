@@ -47,18 +47,22 @@ const about2CopyEn = {
     {
       company: "Xiyiweireality",
       role: "Product Experience Designer",
+      period: "2023 – 2025",
     },
     {
       company: "KMAX-ShenZhen",
       role: "UI/UX Designer",
+      period: "2019 – 2023",
     },
     {
       company: "VIA-Guangzhou",
       role: "UI Designer",
+      period: "2017 – 2019",
     },
     {
       company: "ISAR-Beijing",
       role: "Visual and UX Designer",
+      period: "2016 – 2017",
     },
   ],
   sectionWhatIDo: "What I do",
@@ -97,18 +101,22 @@ const about2CopyZh = {
     {
       company: "深圳希夷微象科技",
       role: "产品体验设计师",
+      period: "2023 – 2025",
     },
     {
       company: "KMAX 科骏-深圳",
-      role: "UI/UX 设计师",
+      role: "产品体验设计师",
+      period: "2019 – 2023",
     },
     {
       company: "VIA 广州威纳",
       role: "UI 设计师",
+      period: "2017 – 2019",
     },
     {
       company: "ISAR 伊飒尔-广州",
-      role: "视觉与 UX 设计师",
+      role: "UIUE 实验室设计师",
+      period: "2016 – 2017",
     },
   ],
   sectionWhatIDo: "我做什么",

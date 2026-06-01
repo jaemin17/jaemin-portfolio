@@ -100,7 +100,7 @@ export default async function About2Page({ params }: About2PageProps) {
                   {about2Copy.jobs.map((job) => (
                     <article key={job.company} className={styles.card}>
                       <div className={styles.cardTitle}>{job.company}</div>
-                      <p className={styles.cardText}>{job.role}</p>
+                      <p className={styles.cardText}>{job.role} · {job.period}</p>
                     </article>
                   ))}
                 </div>
