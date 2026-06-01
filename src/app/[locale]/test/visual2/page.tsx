@@ -24,7 +24,7 @@ const visualProjects = [
     body: "动物模型、解剖训练、手术步骤和课程资源相关的 VR 教育软件界面。",
     tags: ["Animal", "Surgery", "3D"],
     path: "/test/visual2/animal-vr",
-    video: "/videos/visual/homepage.mp4",
+    video: "/videos/visual/highmodes.mp4",
   },
   {
     title: "智能制造 VR",

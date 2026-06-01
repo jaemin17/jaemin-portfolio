@@ -50,9 +50,9 @@ export default async function AnimalVrVisualPage({ params }: PageProps) {
 
         <section className={styles.caseGallery} aria-label="动物解剖 VR 截图">
           <div className={styles.caseGalleryInner}>
-            {scenarioShots.map((shot, i) => (
+            {scenarioShots.map((shot) => (
               <article key={shot.src} className={styles.caseScenario}>
-                <p className={styles.caseScenarioTitle}>Scenario {i + 1}</p>
+                <p className={styles.caseScenarioTitle}>{shot.title} — {shot.subtitle}</p>
                 <figure>
                   <div className={styles.caseImageFrame}>
                     <Image src={shot.src} width={1920} height={1080} alt={`动物解剖 VR ${shot.title} ${shot.subtitle}`} />
