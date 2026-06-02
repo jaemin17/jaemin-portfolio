@@ -112,7 +112,7 @@
 .sideKeepsakes {
   position: absolute;
   inset: 0;
-  z-index: 4;
+  z-index: 15;
   pointer-events: none;
 }
 
@@ -1201,7 +1201,7 @@
   --pin-color: #f6682f;
   top: 64px;
   right: calc(clamp(-42px, -3vw, -26px) + var(--right-cluster-offset));
-  z-index: 7;
+  z-index: 30;
   width: clamp(178px, 13vw, 206px);
   transform: rotate(var(--note-rotation));
   animation-delay: 900ms;
@@ -1210,6 +1210,20 @@
 .sideKeepsakes .sideContactEntry .infoNote {
   min-height: 96px;
   padding: 12px;
+  cursor: pointer;
+  position: relative;
+  z-index: 20;
+  background: linear-gradient(
+    180deg,
+    var(--note-accent) 0%,
+    color-mix(in oklab, var(--note-accent) 80%, white) 100%
+  );
+  border: 1px solid rgba(17, 18, 23, 0.12);
+  border-radius: 12px;
+  box-shadow: 0 14px 26px rgba(17, 18, 23, 0.12);
+  font-family: inherit;
+  text-align: left;
+  width: 100%;
 }
 
 .sideKeepsakes .sideContactEntry .infoTitle {
@@ -1262,6 +1276,11 @@
   letter-spacing: -0.01em;
   text-decoration: none;
   transition: color 160ms ease;
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: inherit;
+  cursor: pointer;
 }
 
 .bottomContactLink:hover {

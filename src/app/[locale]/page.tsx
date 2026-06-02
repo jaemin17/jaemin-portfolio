@@ -8,6 +8,7 @@ import { localePath } from "@/i18n/paths";
 import { StickerTitle } from "@/components/StickerTitle";
 import { CursorSparkles } from "./CursorSparkles";
 import { TodayStamp } from "./TodayStamp";
+import { CopyEmail } from "./CopyEmail";
 import styles from "./page.module.css";
 
 /**
@@ -261,21 +262,21 @@ export default async function Home({ params }: HomePageProps) {
               </article>
               <article className={`${styles.lifeEntry} ${styles.sideLifeEntry}`}>
                 <span className={styles.pin} aria-hidden="true" />
-                <Link className={styles.lifeNote} href={localePath(locale, "/life")}>
+                <span className={styles.lifeNote}>
                   <HoverPolaroid caption="life" placement="left" tone="mint" focusable={false}>
                     <span className={styles.workIndex}>B1</span>
                     <span className={styles.infoTitle}>不做设计的时候</span>
-                    <span className={styles.infoBody}>手绳 / 钢琴 / 猫 / 旅行</span>
+                    <span className={styles.infoBody}>撸猫 / 缝纫 / 编织 / 电子琴</span>
                   </HoverPolaroid>
-                </Link>
+                </span>
               </article>
               <article className={`${styles.infoItem} ${styles.sideContactEntry}`}>
                 <span className={styles.pin} aria-hidden="true" />
-                <a className={styles.infoNote} href={`mailto:${contactEmail}`}>
+                <CopyEmail email={contactEmail} className={styles.infoNote}>
                   <span className={styles.workIndex}>{contactNote.index}</span>
                   <span className={styles.infoTitle}>{contactNote.title}</span>
                   <span className={styles.infoBody}>{contactNote.body}</span>
-                </a>
+                </CopyEmail>
               </article>
             </aside>
             <header className={styles.hero}>
@@ -398,9 +399,9 @@ export default async function Home({ params }: HomePageProps) {
           <div className={styles.bottomKeepsakes} aria-label="底部信息">
             <div id={contactNote.id} className={styles.bottomContact}>
               <p className={styles.bottomContactGreeting}>I&apos;d love to meet you :) ✰.</p>
-              <a className={styles.bottomContactLink} href={`mailto:${contactEmail}`}>
+              <CopyEmail email={contactEmail} className={styles.bottomContactLink}>
                 → Email
-              </a>
+              </CopyEmail>
             </div>
           </div>
         </section>
