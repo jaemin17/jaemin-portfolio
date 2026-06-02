@@ -111,6 +111,156 @@
   border-radius: 16px;
 }
 
+/* Positioning Diagram (coded replacement for positioning.png) */
+.positioningDiagram {
+  width: 100%;
+  background: #000000;
+  border-radius: 24px;
+  padding: 56px 60px 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.positioningDiagramLabel {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: #d4956a;
+  margin-bottom: 14px;
+}
+
+.positioningDiagramTitle {
+  font-size: clamp(22px, 2.6vw, 30px);
+  font-weight: 600;
+  line-height: 1.5;
+  color: #e8e8ec;
+  margin: 0 0 48px;
+  letter-spacing: -0.01em;
+}
+
+.positioningDiagramTitle em {
+  font-style: normal;
+  color: #d4956a;
+}
+
+.positioningDiagramFlow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+.positioningDiagramCol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.positioningDiagramPhase {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #d4956a;
+}
+
+.positioningDiagramCaption {
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  line-height: 1.5;
+}
+
+.positioningPhoneFrame {
+  position: relative;
+  width: 100%;
+  max-width: 220px;
+  max-height: 392px;
+  border-radius: 32px;
+  overflow: hidden;
+  background: #000;
+  border: 6px solid #2a2a2a;
+  border-bottom: none;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.positioningDynamicIsland {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 72px;
+  height: 22px;
+  background: #000;
+  border-radius: 20px;
+  z-index: 2;
+}
+
+.positioningHomeIndicator {
+  position: absolute;
+  bottom: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 4px;
+  z-index: 2;
+}
+
+.positioningDiagramPhone {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.positioningDiagramArrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: 0 8px;
+  margin-top: 32px;
+}
+
+.positioningDiagramArrow svg {
+  width: 80px;
+  height: auto;
+  flex-shrink: 0;
+}
+
+@media (max-width: 760px) {
+  .positioningDiagram {
+    padding: 36px 24px 40px;
+  }
+
+  .positioningDiagramTitle {
+    font-size: 20px;
+    margin-bottom: 32px;
+  }
+
+  .positioningDiagramFlow {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .positioningDiagramArrow {
+    margin-top: 0;
+    padding: 0;
+  }
+
+  .positioningDiagramArrow svg {
+    transform: rotate(90deg);
+    width: 48px;
+  }
+
+  .positioningDiagramPhone {
+    max-width: 140px;
+  }
+}
+
 .featuredHero .appPreviewImage {
   width: min(100%, 1200px);
 }
