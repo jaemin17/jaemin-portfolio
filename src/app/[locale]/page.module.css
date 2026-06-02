@@ -127,14 +127,9 @@
 .middleScatter {
   position: absolute;
   inset: 0;
-  z-index: 12;
   max-width: min(1200px, 100%);
   margin: 0 auto;
   pointer-events: none;
-}
-
-.middleScatter:has(.scatterHangzhou:hover) {
-  z-index: 30;
 }
 
 .middleScatter .polaroid {
@@ -1201,7 +1196,7 @@
   --pin-color: #f6682f;
   top: 64px;
   right: calc(clamp(-42px, -3vw, -26px) + var(--right-cluster-offset));
-  z-index: 30;
+  z-index: 1;
   width: clamp(178px, 13vw, 206px);
   transform: rotate(var(--note-rotation));
   animation-delay: 900ms;
@@ -1337,7 +1332,8 @@
   transform: translateY(-5px) rotate(calc(var(--note-rotation) * var(--note-hover-rotation-factor)));
 }
 
-.middleScatter .infoItem:hover {
+.middleScatter .infoItem:hover,
+.middleScatter .scatterNote:hover {
   z-index: 30;
 }
 
