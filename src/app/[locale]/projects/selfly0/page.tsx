@@ -110,7 +110,14 @@ export default async function Selfly0Page({ params }: Selfly0PageProps) {
           </div>
         </section>
         <section className={`${styles.caseSection} ${styles.selfly0CaseSection}`}>
-          <div className={styles.appPreviewPlaceholder} aria-hidden="true" />
+          <Image
+            src="/images/selfly0/positioning.png"
+            alt="Selfly 产品定位：从一次性自我探索工具转向更长期的个人记录空间"
+            width={1880}
+            height={920}
+            className={styles.caseFullImage}
+            unoptimized
+          />
         </section>
         <section className={`${styles.caseSection} ${styles.selfly0CaseSection}`}>
           <div className={styles.selfly0StructureSection}>

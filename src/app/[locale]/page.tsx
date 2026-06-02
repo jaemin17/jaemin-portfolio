@@ -398,7 +398,12 @@ export default async function Home({ params }: HomePageProps) {
 
           <div className={styles.bottomKeepsakes} aria-label="底部信息">
             <div id={contactNote.id} className={styles.bottomContact}>
-              <p className={styles.bottomContactGreeting}>I&apos;d love to meet you :) ✰.</p>
+              <p className={styles.bottomContactGreeting}>
+                I&apos;d love to meet you :) ✰.{" "}
+                <Link className={styles.bottomTestLink} href={localePath(locale, "/test")}>
+                  ♡
+                </Link>
+              </p>
               <CopyEmail email={contactEmail} className={styles.bottomContactLink}>
                 → Email
               </CopyEmail>

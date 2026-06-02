@@ -105,6 +105,12 @@
   border: 3px solid #f0b860;
 }
 
+.caseFullImage {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+}
+
 .featuredHero .appPreviewImage {
   width: min(100%, 1200px);
 }

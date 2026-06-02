@@ -14,7 +14,6 @@ type SiteHeaderProps = {
 export function SiteHeader({ locale, surface = "default", active }: SiteHeaderProps) {
   const homeHref = localePath(locale, "/");
   const about2Href = localePath(locale, "/about2");
-  const testHref = localePath(locale, "/test");
   return (
     <header
       className={`${styles.header} ${surface === "white" ? styles.headerWhite : ""}`}
@@ -38,12 +37,6 @@ export function SiteHeader({ locale, surface = "default", active }: SiteHeaderPr
             href={about2Href}
           >
             About
-          </Link>
-          <Link
-            className={`${styles.navLink} ${active === "test" ? styles.navLinkActive : ""}`}
-            href={testHref}
-          >
-            Test
           </Link>
           <a className={styles.navLink} href={resumeDownloadUrl} target="_blank" rel="noreferrer">
             Resume
