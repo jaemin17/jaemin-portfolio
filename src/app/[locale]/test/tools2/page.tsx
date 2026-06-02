@@ -17,7 +17,7 @@ const screenProjects = [
     caption: "3D 内容播放与课件演示",
     video: "/videos/tools/ppt.mp4",
     className: styles.screenTiltCenter,
-    path: "/projects/selfly-style",
+    path: "/projects/vr-lesson-creator",
   },
   {
     title: "Model Editor",

@@ -38,14 +38,29 @@ html:has([data-page="about2"]) body {
 
 html:has([data-page="plain-white"]) {
   background: #ffffff;
+  overscroll-behavior: none;
 }
 
 html:has([data-page="plain-white"]) body {
   background: #ffffff;
 }
 
+html:has([data-page="selfly-style"]) {
+  background: #ffffff;
+  overscroll-behavior: none;
+}
+
+html:has([data-page="selfly-style"]) body {
+  background: #ffffff;
+}
+
+[data-page="selfly-style"] > main {
+  overflow: hidden;
+}
+
 html:has([data-page="tools4"]) {
   background: #eef1f5;
+  overscroll-behavior: none;
 }
 
 html:has([data-page="tools4"]) body {

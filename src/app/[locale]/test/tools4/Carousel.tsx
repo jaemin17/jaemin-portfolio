@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useCallback, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import styles from "./tools4.module.css";
 
 type Project = {
@@ -8,10 +9,12 @@ type Project = {
   caption: string;
   video: string;
   tags?: string[];
+  href?: string;
 };
 
 type CarouselProps = {
   projects: Project[];
+  locale: string;
 };
 
 function getCardClass(index: number, active: number, total: number) {
@@ -24,9 +27,10 @@ function getCardClass(index: number, active: number, total: number) {
   return styles.cardHidden;
 }
 
-export function Carousel({ projects }: CarouselProps) {
+export function Carousel({ projects, locale }: CarouselProps) {
   const [active, setActive] = useState(0);
   const total = projects.length;
+  const router = useRouter();
 
   const next = useCallback(() => {
     setActive((prev) => (prev + 1) % total);
@@ -64,7 +68,13 @@ export function Carousel({ projects }: CarouselProps) {
             <article
               key={project.title}
               className={`${styles.card} ${getCardClass(i, active, total)}`}
-              onClick={() => setActive(i)}
+              onClick={() => {
+                if (i === active && project.href) {
+                  router.push(`/${locale}${project.href}`);
+                } else {
+                  setActive(i);
+                }
+              }}
             >
               <div className={styles.cardMedia}>
                 <video

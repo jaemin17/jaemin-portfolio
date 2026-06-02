@@ -50,7 +50,7 @@ const toolProjects = [
     tone: "blue",
     preview: "ppt",
     video: "/videos/tools/ppt.mp4",
-    path: "/projects/selfly-style",
+    path: "/projects/vr-lesson-creator",
   },
 ];
 

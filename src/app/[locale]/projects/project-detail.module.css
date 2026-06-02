@@ -1,0 +1,277 @@
+.page {
+  background: #fff;
+  min-height: 100vh;
+}
+
+.cover {
+  width: 100%;
+  max-width: 100%;
+  display: block;
+}
+
+.coverPlaceholder {
+  width: 100%;
+  aspect-ratio: 16 / 7;
+  background: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #bbb;
+  font-size: 1rem;
+}
+
+.titleSection {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 60px 30px 40px;
+}
+
+.titleSection h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 400;
+  margin: 0 0 8px;
+  color: #1a1a1a;
+}
+
+.titleSection .subtitle {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Overview Section - content aligned to right side */
+.section {
+  padding: 60px 30px 80px;
+}
+
+.sectionInner {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+.overviewContent {
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.overviewLabel {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #3b82f6;
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+.overviewHeadline {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #1a1a1a;
+  line-height: 1.4;
+  margin-bottom: 24px;
+}
+
+.overviewBody {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.8;
+  margin-bottom: 48px;
+}
+
+.roleBlock {
+  margin-bottom: 32px;
+}
+
+.roleLabel {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+}
+
+.roleText {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.8;
+}
+
+/* Research / Insights sections - two column */
+.sectionLabel {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #3b82f6;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 24px;
+}
+
+.gridLeftRight {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 40px;
+  margin-bottom: 32px;
+}
+
+.gridLeftRight .lrHeadline {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #1a1a1a;
+  line-height: 1.4;
+}
+
+.gridLeftRight .lrText {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.8;
+}
+
+.highlight {
+  color: #3b82f6;
+}
+
+.detailImage {
+  width: 100%;
+  border-radius: 8px;
+  margin-top: 16px;
+}
+
+.imagePlaceholder {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #f5f5f5;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #bbb;
+  font-size: 0.875rem;
+  border: 1px dashed #ddd;
+  margin-top: 16px;
+}
+
+.imageGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.imageGridItem {
+  aspect-ratio: 4 / 3;
+  background: #f5f5f5;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #bbb;
+  font-size: 0.8rem;
+  border: 1px dashed #ddd;
+}
+
+.imageGridCaption {
+  font-size: 0.85rem;
+  color: #666;
+  text-align: center;
+  margin-top: 8px;
+}
+
+/* Dark divider with design goals */
+.divider {
+  background: #1a1a1a;
+  padding: 80px 30px;
+  text-align: center;
+}
+
+.dividerInner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.dividerTitle {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #3b82f6;
+  margin-bottom: 24px;
+}
+
+.dividerGoals {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.dividerGoals p {
+  font-size: 1.125rem;
+  color: #fff;
+  line-height: 1.5;
+}
+
+/* Concept / Solution sections */
+.conceptSection {
+  padding: 60px 30px 80px;
+}
+
+.conceptInner {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+.conceptLabel {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #3b82f6;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.conceptHeadline {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #1a1a1a;
+  margin-bottom: 16px;
+  line-height: 1.4;
+}
+
+/* Contact */
+.contact {
+  padding: 100px 30px;
+  text-align: center;
+}
+
+.contact h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.contact p {
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.contact a {
+  color: #3b82f6;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.contact a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .gridLeftRight {
+    grid-template-columns: 1fr;
+  }
+
+  .imageGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .dividerGoals {
+    grid-template-columns: 1fr;
+  }
+
+  .overviewContent {
+    max-width: 100%;
+  }
+}
