@@ -4,6 +4,14 @@ import { notFound } from "next/navigation";
 import { SiteHeader } from "@/components/SiteHeader";
 import { isLocale, type Locale } from "@/i18n/config";
 import styles from "../[slug]/project.module.css";
+import { TabStructureDiagram } from "./TabStructureDiagram";
+import { ExploreModulesCompare } from "./ExploreModulesCompare";
+import { ExploreTemplatesSwitcher } from "./ExploreTemplatesSwitcher";
+import { ReviewRedistribution } from "./ReviewRedistribution";
+import { ProductLaunchEvidence } from "./ProductLaunchEvidence";
+import { AppStoreShowcase } from "./AppStoreShowcase";
+import { TodayRhythmAnnotated } from "./TodayRhythmAnnotated";
+import { TodayTop3States } from "./TodayTop3States";
 
 const appDownloadUrl = "https://apps.apple.com/cn/app/selfly%E6%97%A5%E8%AE%B0/id6762545235";
 
@@ -170,7 +178,7 @@ export default async function Selfly0Page({ params }: Selfly0PageProps) {
           </div>
         </section>
         <section className={`${styles.caseSection} ${styles.selfly0CaseSection}`}>
-          <div className={styles.appPreviewPlaceholder} aria-hidden="true" />
+          <TabStructureDiagram />
         </section>
         <ChapterIntro id="today" icon="🎯" title="Today：降低任务压力">
           今日页不是为了收集更多任务，而是帮助用户判断今天真正重要的事。
@@ -183,7 +191,8 @@ export default async function Selfly0Page({ params }: Selfly0PageProps) {
               <div className={styles.selfly0Body}>
                 <p>
                   我没有把首页设计成可以无限添加的任务列表，而是让用户每天只保留三件最重要的事。
-                  这个限制不是功能缺失，而是刻意把”收集更多任务”转成”判断今天真正重要的事”。
+                  这个限制不是功能缺失，而是刻意把”收集更多任务”转成
+                  <strong className={styles.selfly0Emphasis}>判断今天真正重要的事</strong>。
                 </p>
                 <p>
                   如果今日页同时承载大量待办、计划和快速记录，它很快会变成另一个任务管理器。
@@ -203,7 +212,7 @@ export default async function Selfly0Page({ params }: Selfly0PageProps) {
           </div>
         </section>
         <section className={`${styles.caseSection} ${styles.selfly0CaseSection}`}>
-          <div className={styles.appPreviewPlaceholder} aria-hidden="true" />
+          <TodayTop3States />
         </section>
         <section className={`${styles.caseSection} ${styles.selfly0CaseSection}`}>
           <div className={styles.selfly0StructureSection}>
@@ -233,7 +242,7 @@ export default async function Selfly0Page({ params }: Selfly0PageProps) {
           </div>
         </section>
         <section className={`${styles.caseSection} ${styles.selfly0CaseSection}`}>
-          <div className={styles.appPreviewPlaceholder} aria-hidden="true" />
+          <TodayRhythmAnnotated />
         </section>
         <ChapterIntro id="explore" icon="🧩" title="Explore：降低开始记录的成本">
           记录系统不应该让用户先理解功能规则，而应该让用户按内容选择合适的记录方式。
@@ -276,7 +285,7 @@ export default async function Selfly0Page({ params }: Selfly0PageProps) {
           </div>
         </section>
         <section className={`${styles.caseSection} ${styles.selfly0CaseSection}`}>
-          <div className={styles.appPreviewPlaceholder} aria-hidden="true" />
+          <ExploreModulesCompare />
         </section>
         <section className={`${styles.caseSection} ${styles.selfly0CaseSection}`}>
           <div className={styles.selfly0StructureSection}>
@@ -312,7 +321,7 @@ export default async function Selfly0Page({ params }: Selfly0PageProps) {
           </div>
         </section>
         <section className={`${styles.caseSection} ${styles.selfly0CaseSection}`}>
-          <div className={styles.appPreviewPlaceholder} aria-hidden="true" />
+          <ExploreTemplatesSwitcher />
         </section>
         <ChapterIntro id="review" icon="🕰️" title="Review：让旧内容重新出现">
           回顾不是数据统计，而是把过去的记录轻量地带回用户面前。
@@ -356,7 +365,7 @@ export default async function Selfly0Page({ params }: Selfly0PageProps) {
           </div>
         </section>
         <section className={`${styles.caseSection} ${styles.selfly0CaseSection}`}>
-          <div className={styles.appPreviewPlaceholder} aria-hidden="true" />
+          <ReviewRedistribution />
         </section>
         <ChapterIntro id="launch" icon="🚀" title="iOS 落地与上线">
           这个项目不只停留在设计方案，我也把它实现为可下载、可使用、可订阅的 iOS 产品。
@@ -388,7 +397,7 @@ export default async function Selfly0Page({ params }: Selfly0PageProps) {
           </div>
         </section>
         <section className={`${styles.caseSection} ${styles.selfly0CaseSection}`}>
-          <div className={styles.appPreviewPlaceholder} aria-hidden="true" />
+          <ProductLaunchEvidence />
         </section>
         <section className={`${styles.caseSection} ${styles.selfly0CaseSection}`}>
           <div className={styles.selfly0StructureSection}>
@@ -424,7 +433,7 @@ export default async function Selfly0Page({ params }: Selfly0PageProps) {
           </div>
         </section>
         <section className={`${styles.caseSection} ${styles.selfly0CaseSection}`}>
-          <div className={styles.appPreviewPlaceholder} aria-hidden="true" />
+          <AppStoreShowcase />
         </section>
         <section className={`${styles.caseSection} ${styles.selfly0CaseSection}`}>
           <div className={styles.selfly0StructureSection}>

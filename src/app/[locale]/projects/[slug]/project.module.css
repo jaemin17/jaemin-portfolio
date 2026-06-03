@@ -115,6 +115,7 @@
 .positioningDiagram {
   width: 100%;
   background: #000000;
+  border: 3px solid #ffbc6e;
   border-radius: 24px;
   padding: 56px 60px 0;
   box-sizing: border-box;
@@ -954,6 +955,771 @@
 .selfly0StructureSection {
   width: 100%;
   padding-top: 80px;
+}
+
+/* Selfly0 — Tab structure cycle (light flow layout) */
+.tabStructureDiagram {
+  width: 100%;
+  margin: 0;
+  padding: 32px 24px 28px;
+  text-align: center;
+  background: linear-gradient(180deg, #ffffff 0%, #fffaf5 100%);
+  border: 1px solid color-mix(in oklab, #ffa84a 28%, #ebe6df);
+  border-radius: 24px;
+  box-shadow: 0 12px 40px rgba(26, 26, 26, 0.04);
+  box-sizing: border-box;
+}
+
+.tabStructureLabel {
+  margin: 0 0 28px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #f45f24;
+}
+
+.tabStructureTrack {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr);
+  column-gap: 6px;
+  align-items: start;
+}
+
+.tabStructureStep {
+  display: contents;
+}
+
+.tabStructureNode {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+  min-width: 0;
+  padding: 0 6px;
+}
+
+.tabStructureRole {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #f45f24;
+  line-height: 1;
+}
+
+.tabStructureIconWrap {
+  width: 64px;
+  height: 64px;
+  border-radius: 20px;
+  background: #f3f0ea;
+  border: 1px solid rgba(26, 26, 26, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.tabStructureIcon {
+  width: 26px;
+  height: 26px;
+  display: block;
+  object-fit: contain;
+}
+
+.tabStructureName {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 650;
+  letter-spacing: 0.01em;
+  color: #1a1a1a;
+  line-height: 1.2;
+}
+
+.tabStructureGoal {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.45;
+  color: rgba(26, 26, 26, 0.62);
+  max-width: 168px;
+}
+
+.tabStructureConnector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  padding-top: 28px;
+  color: #ffa84a;
+}
+
+.tabStructureFlowArrow {
+  display: block;
+  width: 28px;
+  height: auto;
+}
+
+.tabStructureLoopArc {
+  display: block;
+  width: min(92%, 520px);
+  height: 40px;
+  margin: 8px auto 0;
+  color: color-mix(in oklab, #ffa84a 70%, #d4cfc6);
+}
+
+.tabStructureFooter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin: 20px 0 0;
+  padding-top: 20px;
+  border-top: 1px dashed rgba(26, 26, 26, 0.1);
+}
+
+.tabStructureCycle {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px 14px;
+  margin: 0;
+}
+
+.tabStructureCycleLabel {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #c98a5e;
+}
+
+.tabStructureCyclePath {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1a1a1a;
+  letter-spacing: 0.02em;
+}
+
+/* Selfly0 — Today Top 3 (reuses positioning diagram, three columns) */
+.todayTop3Flow {
+  flex-wrap: nowrap;
+  gap: 28px;
+}
+
+/* Selfly0 — Today rhythm single screenshot with entry annotations */
+.todayRhythmAnnotated {
+  width: 100%;
+  margin: 0;
+  padding: 28px 28px 24px;
+  background: linear-gradient(180deg, #ffffff 0%, #fffaf5 100%);
+  border: 1px solid color-mix(in oklab, #ffa84a 28%, #ebe6df);
+  border-radius: 24px;
+  box-shadow: 0 12px 40px rgba(26, 26, 26, 0.04);
+  box-sizing: border-box;
+}
+
+.todayRhythmAnnotatedInner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(168px, 220px);
+  gap: 28px;
+  align-items: center;
+}
+
+.todayRhythmPhoneStage {
+  display: flex;
+  justify-content: center;
+}
+
+.todayRhythmPhoneShell {
+  position: relative;
+  width: min(100%, 280px);
+  border-radius: 32px;
+  overflow: hidden;
+  background: #000;
+  border: 6px solid #2a2a2a;
+  box-shadow: 0 14px 36px rgba(26, 26, 26, 0.12);
+}
+
+.todayRhythmPhoneShell .positioningDynamicIsland {
+  z-index: 3;
+}
+
+.todayRhythmScreenshot {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.todayRhythmHotspot {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.todayRhythmHotspot_tomorrow,
+.todayRhythmHotspot_backlog {
+  /* position modifiers via nested label rules */
+}
+
+.exploreModulesAfterPending {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 320px;
+  padding: 24px 16px;
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.72);
+  text-align: center;
+}
+
+.exploreModulesAfterPending span {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.exploreModulesAfterPending code {
+  font-family: "Roboto Mono", "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
+    monospace;
+  font-size: 10px;
+  line-height: 1.45;
+  color: #d4956a;
+  word-break: break-all;
+}
+
+/* Selfly0 — Explore template picker (4-tab image switcher) */
+.exploreTemplatesSwitcher {
+  width: 100%;
+  margin: 0;
+  padding: 28px 28px 24px;
+  background: linear-gradient(180deg, #ffffff 0%, #fffaf5 100%);
+  border: 1px solid color-mix(in oklab, #ffa84a 28%, #ebe6df);
+  border-radius: 24px;
+  box-shadow: 0 12px 40px rgba(26, 26, 26, 0.04);
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.exploreTemplatesSwitcherTitle {
+  margin: 0 0 16px;
+  font-size: 15px;
+  font-weight: 650;
+  letter-spacing: 0.02em;
+  color: #1a1a1a;
+}
+
+.exploreTemplatesTabs {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 20px;
+  padding: 4px;
+  border-radius: 999px;
+  background: #f0eeea;
+}
+
+.exploreTemplatesTab {
+  border: 0;
+  border-radius: 999px;
+  padding: 8px 18px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1;
+  color: rgba(26, 26, 26, 0.55);
+  background: transparent;
+  cursor: pointer;
+  transition:
+    background 0.15s ease,
+    color 0.15s ease;
+}
+
+.exploreTemplatesTab:hover {
+  color: #1a1a1a;
+}
+
+.exploreTemplatesTabActive {
+  background: #1a1a1a;
+  color: #ffffff;
+}
+
+.exploreTemplatesTab:focus-visible {
+  outline: 2px solid #ffa84a;
+  outline-offset: 2px;
+}
+
+.exploreTemplatesPhoneStage {
+  display: flex;
+  justify-content: center;
+}
+
+.exploreTemplatesPhoneShell {
+  position: relative;
+  width: min(100%, 300px);
+  border-radius: 32px;
+  overflow: hidden;
+  background: #000;
+  border: 6px solid #2a2a2a;
+  box-shadow: 0 14px 36px rgba(26, 26, 26, 0.12);
+}
+
+.exploreTemplatesPhoneShell .positioningDynamicIsland {
+  z-index: 3;
+}
+
+.exploreTemplatesScreenshot {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.exploreTemplatesCaption {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px 12px;
+  margin: 16px 0 0;
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(26, 26, 26, 0.62);
+}
+
+.exploreTemplatesCaptionLabel {
+  font-weight: 700;
+  color: #f45f24;
+  letter-spacing: 0.03em;
+}
+
+/* Selfly0 — shared evidence blocks (diagram + optional screenshot slot) */
+.selfly0EvidenceCard {
+  width: 100%;
+  margin: 0;
+  padding: 28px 28px 24px;
+  background: linear-gradient(180deg, #ffffff 0%, #fffaf5 100%);
+  border: 1px solid color-mix(in oklab, #ffa84a 28%, #ebe6df);
+  border-radius: 24px;
+  box-shadow: 0 12px 40px rgba(26, 26, 26, 0.04);
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.selfly0EvidenceTitle {
+  margin: 0 0 20px;
+  font-size: 15px;
+  font-weight: 650;
+  letter-spacing: 0.02em;
+  color: #1a1a1a;
+}
+
+.selfly0EvidenceCaption {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px 12px;
+  margin: 16px 0 0;
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(26, 26, 26, 0.62);
+}
+
+.selfly0EvidenceCaptionAccent {
+  font-weight: 700;
+  color: #f45f24;
+  letter-spacing: 0.03em;
+}
+
+.selfly0PhoneSlotStage {
+  display: flex;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.selfly0PhoneSlotShell {
+  position: relative;
+  width: min(100%, 300px);
+  border-radius: 32px;
+  overflow: hidden;
+  background: #000;
+  border: 6px solid #2a2a2a;
+  box-shadow: 0 14px 36px rgba(26, 26, 26, 0.12);
+}
+
+.selfly0PhoneSlotShell .positioningDynamicIsland {
+  z-index: 3;
+}
+
+.selfly0PhoneSlotImage {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.selfly0ImagePendingPhone,
+.selfly0ImagePendingWide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-align: center;
+  color: rgba(26, 26, 26, 0.72);
+}
+
+.selfly0ImagePendingPhone {
+  min-height: 420px;
+  padding: 28px 18px;
+  background: linear-gradient(180deg, #f7f5f2 0%, #efeae4 100%);
+}
+
+.selfly0ImagePendingWide {
+  min-height: 280px;
+  padding: 32px 24px;
+  background: linear-gradient(180deg, #f7f5f2 0%, #efeae4 100%);
+  border-radius: 16px;
+}
+
+.selfly0ImagePendingPhone span,
+.selfly0ImagePendingWide span {
+  font-size: 13px;
+  font-weight: 650;
+  letter-spacing: 0.04em;
+  color: #1a1a1a;
+}
+
+.selfly0ImagePendingPhone p,
+.selfly0ImagePendingWide p {
+  margin: 0;
+  max-width: 26em;
+  font-size: 12px;
+  line-height: 1.5;
+  color: rgba(26, 26, 26, 0.58);
+}
+
+.selfly0ImagePendingPhone code,
+.selfly0ImagePendingWide code {
+  font-family: "Roboto Mono", "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
+    monospace;
+  font-size: 10px;
+  line-height: 1.45;
+  color: #d4956a;
+  word-break: break-all;
+}
+
+.selfly0WideSlot {
+  width: min(100%, 880px);
+  margin: 8px auto 0;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid #e8e4de;
+  box-shadow: 0 10px 32px rgba(26, 26, 26, 0.06);
+}
+
+.selfly0WideSlotImage {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Review — redistribution diagram */
+.reviewRedistributionDiagram {
+  max-width: 640px;
+  margin: 0 auto 24px;
+  padding: 20px 18px 18px;
+  border-radius: 18px;
+  background: #faf8f5;
+  border: 1px solid #ebe6df;
+  text-align: center;
+}
+
+.reviewRedistributionSources {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.reviewRedistributionSource {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 6px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 650;
+  color: #1a1a1a;
+}
+
+.reviewRedistributionSource svg {
+  color: #f45f24;
+  transform: rotate(90deg);
+}
+
+.reviewRedistributionHub {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin: 0 auto 16px;
+  padding: 14px 16px;
+  max-width: 360px;
+  border-radius: 16px;
+  background: #1a1a1a;
+  color: #fff;
+  text-align: left;
+}
+
+.reviewRedistributionHub strong {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.reviewRedistributionHub p {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.reviewRedistributionHubIcon {
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.reviewRedistributionHubIconImg {
+  filter: brightness(0) invert(1);
+}
+
+.reviewRedistributionScopes {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.reviewRedistributionScopePill {
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #1a1a1a;
+  background: #fff;
+  border: 1px solid #e0dbd4;
+}
+
+.reviewRedistributionAvoided {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px 10px;
+  margin: 0;
+  font-size: 12px;
+  color: rgba(26, 26, 26, 0.5);
+}
+
+.reviewRedistributionAvoidedLabel {
+  font-weight: 650;
+  color: rgba(26, 26, 26, 0.62);
+}
+
+.reviewRedistributionAvoidedItem {
+  text-decoration: line-through;
+  text-decoration-color: rgba(244, 95, 36, 0.55);
+}
+
+/* Product launch — capability grid */
+.productLaunchGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  max-width: 720px;
+  margin: 0 auto 24px;
+  padding: 0;
+  list-style: none;
+  text-align: left;
+}
+
+.productLaunchCard {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 14px 14px 12px;
+  border-radius: 14px;
+  background: #faf8f5;
+  border: 1px solid #ebe6df;
+}
+
+.productLaunchCard strong {
+  font-size: 13px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.productLaunchCard span {
+  font-size: 11px;
+  line-height: 1.4;
+  color: rgba(26, 26, 26, 0.58);
+}
+
+/* App Store — release pipeline */
+.appStorePipeline {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  max-width: 820px;
+  margin: 0 auto 24px;
+  padding: 0;
+  list-style: none;
+  text-align: left;
+}
+
+.appStorePipelineStep {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 14px 12px;
+  border-radius: 14px;
+  background: #faf8f5;
+  border: 1px solid #ebe6df;
+}
+
+.appStorePipelineIndex {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #fff;
+  background: #1a1a1a;
+}
+
+.appStorePipelineStep strong {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  color: #1a1a1a;
+  line-height: 1.3;
+}
+
+.appStorePipelineStep p {
+  margin: 4px 0 0;
+  font-size: 11px;
+  line-height: 1.4;
+  color: rgba(26, 26, 26, 0.58);
+}
+
+.todayRhythmHotspotRing {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 2.5px solid #ffa84a;
+  border-radius: 999px;
+  box-shadow:
+    0 0 0 3px rgba(255, 168, 74, 0.18),
+    0 0 20px rgba(255, 168, 74, 0.22);
+  background: rgba(255, 168, 74, 0.06);
+}
+
+.todayRhythmHotspotLabel {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 8px);
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  background: rgba(10, 10, 11, 0.88);
+  color: #fff;
+  white-space: nowrap;
+  font-size: 11px;
+  line-height: 1.25;
+}
+
+.todayRhythmHotspotLabel strong {
+  font-weight: 700;
+  color: #ffb35c;
+  letter-spacing: 0.02em;
+}
+
+.todayRhythmHotspotLabel em {
+  font-style: normal;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 10px;
+}
+
+.todayRhythmHotspot_backlog .todayRhythmHotspotLabel {
+  bottom: auto;
+  top: calc(100% + 8px);
+}
+
+.todayRhythmHotspot_tomorrow .todayRhythmHotspotLabel {
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  top: calc(100% + 8px);
+  transform: translateX(-50%);
+}
+
+.todayRhythmLegend {
+  margin: 0;
+}
+
+.todayRhythmLegendTitle {
+  margin: 0 0 14px;
+  font-size: 14px;
+  font-weight: 650;
+  line-height: 1.45;
+  color: #1a1a1a;
+}
+
+.todayRhythmLegend ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.todayRhythmLegend li {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 12px;
+  line-height: 1.45;
+  color: rgba(26, 26, 26, 0.62);
+}
+
+.todayRhythmLegendName {
+  font-size: 13px;
+  font-weight: 700;
+  color: #f45f24;
+  letter-spacing: 0.03em;
 }
 
 .selfly0StructureHeading,
@@ -1912,6 +2678,106 @@
   .selfly0ContactLink {
     font-size: 36px;
     line-height: 54px;
+  }
+
+  .tabStructureDiagram {
+    padding: 28px 18px 24px;
+  }
+
+  .tabStructureTrack {
+    grid-template-columns: 1fr;
+    row-gap: 0;
+    justify-items: center;
+  }
+
+  .tabStructureConnector {
+    padding: 6px 0 10px;
+    transform: rotate(90deg);
+  }
+
+  .tabStructureIconWrap {
+    width: 60px;
+    height: 60px;
+  }
+
+  .tabStructureGoal {
+    max-width: 280px;
+  }
+
+  .tabStructureLoopArc {
+    width: 72%;
+    height: 32px;
+    margin-top: 4px;
+  }
+
+  .todayTop3Flow {
+    gap: 12px;
+  }
+
+  .todayTop3Flow .positioningPhoneFrame {
+    max-width: 120px;
+    max-height: 220px;
+  }
+
+  .todayRhythmAnnotated {
+    padding: 22px 18px 20px;
+  }
+
+  .todayRhythmAnnotatedInner {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .todayRhythmPhoneShell {
+    width: min(72vw, 260px);
+  }
+
+  .todayRhythmHotspot_tomorrow .todayRhythmHotspotLabel {
+    top: calc(100% + 6px);
+    font-size: 10px;
+  }
+
+  .todayRhythmHotspotLabel {
+    font-size: 10px;
+    padding: 4px 8px;
+  }
+
+  .exploreTemplatesSwitcher {
+    padding: 22px 16px 20px;
+  }
+
+  .exploreTemplatesPhoneShell {
+    width: min(72vw, 260px);
+  }
+
+  .exploreTemplatesTab {
+    padding: 7px 14px;
+    font-size: 12px;
+  }
+
+  .selfly0EvidenceCard {
+    padding: 22px 16px 20px;
+  }
+
+  .selfly0PhoneSlotShell {
+    width: min(72vw, 260px);
+  }
+
+  .reviewRedistributionSources {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .reviewRedistributionHub {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .productLaunchGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .appStorePipeline {
+    grid-template-columns: 1fr;
   }
 
   .mergedProjectHeader h2 {
