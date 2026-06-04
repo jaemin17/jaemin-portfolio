@@ -1,5 +1,6 @@
+import Image from "next/image";
 import styles from "../[slug]/project.module.css";
-import { Selfly0ImageSlot } from "./Selfly0ImageSlot";
+import { Selfly0PhoneVideoSlot } from "./Selfly0PhoneVideoSlot";
 
 const capabilities = [
   {
@@ -34,10 +35,25 @@ const capabilities = [
   },
 ] as const;
 
+const supplements = [
+  {
+    id: "xcode",
+    src: "/images/selfly0/launch-xcode-project.png",
+    alt: "Selfly Xcode 工程：SwiftUI 视图与数据模块文件结构",
+    caption: "SwiftUI 工程 · 按模块拆分视图与数据层",
+  },
+  {
+    id: "symbols",
+    src: "/images/selfly0/launch-custom-symbols.png",
+    alt: "Selfly 自定义 SF Symbol 图标集",
+    caption: "自定义 Symbol · 与 Tab / 模块入口语义一致",
+  },
+] as const;
+
 export function ProductLaunchEvidence() {
   return (
     <figure
-      className={styles.selfly0EvidenceCard}
+      className={`${styles.selfly0EvidenceCard} ${styles.selfly0EvidenceCard_launch}`}
       aria-label="Selfly iOS 产品化落地能力"
     >
       <p className={styles.selfly0EvidenceTitle}>从设计到可运行产品</p>
@@ -51,16 +67,36 @@ export function ProductLaunchEvidence() {
         ))}
       </ul>
 
-      <Selfly0ImageSlot
-        src="/images/selfly0/launch-implementation.png"
-        alt="Selfly iOS 实现界面：复杂交互或数据能力示例"
-        brief="任选一张能体现「真实可用」的界面：长文编辑、同步/订阅、或多语言"
-      />
+      <div className={styles.productLaunchLayout}>
+        <div className={styles.productLaunchSupplements} aria-label="工程与设计资产佐证">
+          {supplements.map((item) => (
+            <figure key={item.id} className={styles.productLaunchSupplement}>
+              <div className={styles.productLaunchSupplementFrame}>
+                <Image
+                  src={item.src}
+                  alt={item.alt}
+                  width={1200}
+                  height={800}
+                  className={styles.productLaunchSupplementImage}
+                  sizes="(max-width: 760px) 92vw, 380px"
+                />
+              </div>
+              <figcaption className={styles.productLaunchSupplementCaption}>{item.caption}</figcaption>
+            </figure>
+          ))}
+        </div>
 
-      <figcaption className={styles.selfly0EvidenceCaption}>
-        <span className={styles.selfly0EvidenceCaptionAccent}>产品化落地</span>
-        <span>设计方案在 SwiftUI 与系统能力中验证</span>
-      </figcaption>
+        <div className={styles.productLaunchDemo}>
+          <Selfly0PhoneVideoSlot
+            src="/videos/selfly0/launch-implementation.mp4"
+            ariaLabel="Selfly 设置页：订阅、iCloud 同步与多语言切换演示"
+          />
+          <figcaption className={styles.selfly0EvidenceCaption}>
+            <span className={styles.selfly0EvidenceCaptionAccent}>产品化落地</span>
+            <span>订阅、同步与多语言在真机设置中可用</span>
+          </figcaption>
+        </div>
+      </div>
     </figure>
   );
 }

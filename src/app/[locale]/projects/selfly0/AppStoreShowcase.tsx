@@ -28,15 +28,15 @@ export function AppStoreShowcase() {
       </ol>
 
       <Selfly0ImageSlot
-        src="/images/selfly0/app-store-listing.png"
-        alt="Selfly 在 App Store 的产品页"
-        brief="App Store 产品页截图（手机端或网页端均可，建议含名称与下载按钮）"
+        src="/images/selfly0/app-store-connect.png"
+        alt="App Store Connect 中 Selfly Journal 1.0.8 版本的 iPhone 预览与截屏配置"
+        brief="App Store Connect 预览与截屏配置页"
         variant="wide"
       />
 
       <figcaption className={styles.selfly0EvidenceCaption}>
         <span className={styles.selfly0EvidenceCaptionAccent}>App Store 上线</span>
-        <span>从内部版本到可公开下载</span>
+        <span>在 App Store Connect 完成 1.0.8 版本截屏与预览配置</span>
       </figcaption>
     </figure>
   );
