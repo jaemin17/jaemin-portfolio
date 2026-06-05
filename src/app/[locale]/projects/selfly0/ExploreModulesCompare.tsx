@@ -1,11 +1,9 @@
 import Image from "next/image";
 import fs from "node:fs";
 import path from "node:path";
+import type { Locale } from "@/i18n/config";
 import styles from "../[slug]/project.module.css";
-
-const beforeSrc = "/images/selfly0/positioning-phone-1.png";
-const afterSrc = "/images/selfly0/explore-modules-after.png";
-const afterFilePath = path.join(process.cwd(), "public/images/selfly0/explore-modules-after.png");
+import { resolveSelfly0Screenshot, selfly0Screenshots } from "./selfly0Screenshots";
 
 const positioningArrow = (
   <svg width="101" height="24" viewBox="0 0 101 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -18,8 +16,24 @@ const positioningArrow = (
   </svg>
 );
 
-export function ExploreModulesCompare() {
+type ExploreModulesCompareProps = {
+  locale?: Locale;
+};
+
+export function ExploreModulesCompare({ locale = "zh" }: ExploreModulesCompareProps) {
+  const beforeSrc = resolveSelfly0Screenshot(selfly0Screenshots.exploreModules.before, locale);
+  const afterSrc = resolveSelfly0Screenshot(selfly0Screenshots.exploreModules.after, locale);
+  const afterFilePath = path.join(process.cwd(), "public", afterSrc.replace(/^\//, ""));
   const hasAfterImage = fs.existsSync(afterFilePath);
+
+  const beforeAlt =
+    locale === "en"
+      ? "Before: separate feature entries such as values and strengths"
+      : "改造前：价值观、优势测试等独立功能入口";
+  const afterAlt =
+    locale === "en"
+      ? "After: List, Plan, Board, and Journal record containers with scenario templates"
+      : "改造后：清单、计划、图册、日记四种记录容器与场景模板";
 
   return (
     <figure
@@ -34,7 +48,7 @@ export function ExploreModulesCompare() {
             <span className={styles.positioningDynamicIsland} aria-hidden="true" />
             <Image
               src={beforeSrc}
-              alt="改造前：价值观、优势测试等独立功能入口"
+              alt={beforeAlt}
               width={360}
               height={780}
               className={styles.positioningDiagramPhone}
@@ -52,7 +66,7 @@ export function ExploreModulesCompare() {
             {hasAfterImage ? (
               <Image
                 src={afterSrc}
-                alt="改造后：List、Plan、Board、Journal 四种记录容器与场景模板"
+                alt={afterAlt}
                 width={360}
                 height={780}
                 className={styles.positioningDiagramPhone}
@@ -60,7 +74,7 @@ export function ExploreModulesCompare() {
             ) : (
               <div className={styles.exploreModulesAfterPending} aria-hidden="true">
                 <span>待替换截图</span>
-                <code>public/images/selfly0/explore-modules-after.png</code>
+                <code>public{afterSrc}</code>
               </div>
             )}
           </div>

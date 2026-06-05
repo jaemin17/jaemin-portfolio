@@ -1726,10 +1726,11 @@
 }
 
 .reviewRedistributionLayout {
+  --review-phone-size: min(100%, 260px);
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(220px, 280px);
-  gap: 20px 28px;
-  align-items: center;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 20px 24px;
+  align-items: start;
   max-width: 900px;
   margin: 0 auto;
 }
@@ -1750,120 +1751,109 @@
   margin-right: auto;
 }
 
-.reviewRedistributionDiagram {
-  margin: 0;
-  padding: 16px 14px 14px;
-  border-radius: 16px;
-  background: #faf8f5;
-  border: 1px solid #ebe6df;
-  text-align: center;
-}
-
-.reviewRedistributionSources {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 8px;
-  margin-bottom: 12px;
-}
-
-.reviewRedistributionSource {
+.reviewSettingsCarousel {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4px;
-  padding: 8px 4px;
-  border-radius: 10px;
-  font-size: 11px;
-  font-weight: 650;
-  color: #1a1a1a;
+  min-width: 0;
 }
 
-.reviewRedistributionSource svg {
-  color: #f45f24;
-  transform: rotate(90deg);
-}
-
-.reviewRedistributionHub {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 12px;
-  margin: 0 0 12px;
-  padding: 12px 14px;
+.reviewSettingsCarousel .selfly0PhoneSlotStage {
+  margin-top: 0;
   width: 100%;
-  border-radius: 14px;
-  background: #1a1a1a;
-  color: #fff;
-  text-align: left;
+}
+
+.reviewRedistributionLayout .reviewSettingsPhoneShell,
+.reviewRedistributionLayout .selfly0PhoneSlotShell {
+  position: relative;
+  width: var(--review-phone-size);
+  max-width: var(--review-phone-size);
+  margin-inline: auto;
+  aspect-ratio: 470 / 1024;
+  border-radius: 32px;
+  overflow: hidden;
+  background: #f3ebda;
+  border: 6px solid #2a2a2a;
+  box-shadow: 0 14px 36px rgba(26, 26, 26, 0.12);
   box-sizing: border-box;
 }
 
-.reviewRedistributionHub strong {
-  display: block;
-  font-size: 13px;
-  font-weight: 700;
-  margin-bottom: 2px;
+.reviewRedistributionLayout .selfly0PhoneSlotVideo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
 }
 
-.reviewRedistributionHub p {
-  margin: 0;
-  font-size: 11px;
-  line-height: 1.4;
-  color: rgba(255, 255, 255, 0.78);
+.reviewSettingsPhoneShell {
+  position: relative;
+  width: min(100%, 300px);
+  margin: 0 auto;
+  aspect-ratio: 470 / 1024;
+  border-radius: 32px;
+  overflow: hidden;
+  background: #f3ebda;
+  border: 6px solid #2a2a2a;
+  box-shadow: 0 14px 36px rgba(26, 26, 26, 0.12);
 }
 
-.reviewRedistributionHubIcon {
-  flex-shrink: 0;
-  display: grid;
-  place-items: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.12);
+.reviewSettingsPhoneScreen {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
 }
 
-.reviewRedistributionHubIconImg {
-  filter: brightness(0) invert(1);
+.reviewSettingsCarouselImage {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  opacity: 0;
+  transition: opacity 0.55s ease;
+  z-index: 0;
 }
 
-.reviewRedistributionScopes {
+.reviewSettingsCarouselImageActive {
+  opacity: 1;
+  z-index: 1;
+}
+
+.reviewSettingsCarouselDots {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   gap: 6px;
-  margin-bottom: 10px;
+  margin-top: 12px;
 }
 
-.reviewRedistributionScopePill {
-  padding: 5px 12px;
-  border-radius: 999px;
-  font-size: 11px;
-  font-weight: 600;
-  color: #1a1a1a;
-  background: #fff;
-  border: 1px solid #e0dbd4;
+.reviewSettingsCarouselDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(26, 26, 26, 0.18);
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease;
 }
 
-.reviewRedistributionAvoided {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 6px 8px;
-  margin: 0;
-  font-size: 11px;
-  line-height: 1.4;
-  color: rgba(26, 26, 26, 0.5);
+.reviewSettingsCarouselDotActive {
+  background: #f45f24;
+  transform: scale(1.2);
 }
 
-.reviewRedistributionAvoidedLabel {
-  font-weight: 650;
-  color: rgba(26, 26, 26, 0.62);
-}
-
-.reviewRedistributionAvoidedItem {
-  text-decoration: line-through;
-  text-decoration-color: rgba(244, 95, 36, 0.55);
+.reviewSettingsCarouselLive {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 /* Product launch — capabilities + demo + evidence */
@@ -3134,6 +3124,7 @@
   }
 
   .reviewRedistributionLayout {
+    --review-phone-size: min(72vw, 260px);
     grid-template-columns: 1fr;
     gap: 18px;
     max-width: none;
@@ -3141,15 +3132,6 @@
 
   .reviewRedistributionDemo {
     order: -1;
-  }
-
-  .reviewRedistributionSources {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .reviewRedistributionHub {
-    flex-direction: row;
-    text-align: left;
   }
 
   .productLaunchLayout {

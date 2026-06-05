@@ -285,7 +285,7 @@ export default async function Selfly0Page({ params }: Selfly0PageProps) {
           </div>
         </section>
         <section className={`${styles.caseSection} ${styles.selfly0CaseSection}`}>
-          <ExploreModulesCompare />
+          <ExploreModulesCompare locale={locale} />
         </section>
         <section className={`${styles.caseSection} ${styles.selfly0CaseSection}`}>
           <div className={styles.selfly0StructureSection}>
@@ -321,7 +321,7 @@ export default async function Selfly0Page({ params }: Selfly0PageProps) {
           </div>
         </section>
         <section className={`${styles.caseSection} ${styles.selfly0CaseSection}`}>
-          <ExploreTemplatesSwitcher />
+          <ExploreTemplatesSwitcher locale={locale} />
         </section>
         <ChapterIntro id="review" icon="🕰️" title="Review：让旧内容重新出现">
           回顾不是数据统计，而是把过去的记录轻量地带回用户面前。
