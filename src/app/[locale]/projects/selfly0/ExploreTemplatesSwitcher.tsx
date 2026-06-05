@@ -45,7 +45,6 @@ export function ExploreTemplatesSwitcher({ locale = "zh" }: ExploreTemplatesSwit
           <span className={styles.positioningDiagramPhase}>改造前</span>
           <span className={styles.positioningDiagramCaption}>空白配置表单</span>
           <div className={styles.positioningPhoneFrame}>
-            <span className={styles.positioningDynamicIsland} aria-hidden="true" />
             {hasBeforeImage ? (
               <Image
                 src={beforeSrc}
@@ -69,7 +68,6 @@ export function ExploreTemplatesSwitcher({ locale = "zh" }: ExploreTemplatesSwit
           <span className={styles.positioningDiagramPhase}>改造后</span>
           <span className={styles.positioningDiagramCaption}>类型选择 + 场景模板</span>
           <div className={styles.positioningPhoneFrame}>
-            <span className={styles.positioningDynamicIsland} aria-hidden="true" />
             <Image
               src={afterSrc}
               alt={afterAlt}

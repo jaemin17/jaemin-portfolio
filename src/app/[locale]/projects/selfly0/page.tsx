@@ -9,7 +9,14 @@ import { ExploreModulesCompare } from "./ExploreModulesCompare";
 import { ExploreTemplatesSwitcher } from "./ExploreTemplatesSwitcher";
 import { ReviewRedistribution } from "./ReviewRedistribution";
 import { ProductLaunchEvidence } from "./ProductLaunchEvidence";
+import {
+  DiaryEmojiCategoryPicker,
+  DiaryEmojiInputPolish,
+  DiaryEmojiPickerCompare,
+  DiaryEmojiQuickEdit,
+} from "./DiaryEmojiInputShowcase";
 import { AppStoreShowcase } from "./AppStoreShowcase";
+import { AppIconDesignShowcase } from "./AppIconDesignShowcase";
 import { TodayRhythmAnnotated } from "./TodayRhythmAnnotated";
 import { TodayTop3States } from "./TodayTop3States";
 
@@ -323,6 +330,162 @@ export default async function Selfly0Page({ params }: Selfly0PageProps) {
         <section className={`${styles.caseSection} ${styles.selfly0CaseSection}`}>
           <ExploreTemplatesSwitcher locale={locale} />
         </section>
+        <section className={`${styles.caseSection} ${styles.selfly0CaseSection}`}>
+          <div className={styles.selfly0StructureSection}>
+            <h2 className={styles.selfly0PositioningLabel}>日记输入体验</h2>
+            <div className={styles.caseText}>
+              <h3 className={styles.selfly0StructureHeading}>
+                <span className={styles.selfly0PositioningHeadingLight}>让「选情绪 + 写文字」</span>
+                <span className={styles.selfly0PositioningHeadingDark}>成为一条连贯路径</span>
+              </h3>
+              <div className={styles.selfly0Body}>
+                <p>
+                  日记记录同时包含情绪与文字：用户用 emoji 标记当下状态，再补充具体感受。
+                  从 2025 年底到 2026 年 4 月，表情输入经历了多轮迭代——我把它收敛成三次架构级决策，外加一轮体验抛光。
+                </p>
+                <p>
+                  核心目标始终一致：<strong className={styles.selfly0Emphasis}>降低记录摩擦</strong>，让选表情不成为写字的障碍，也不打断已经写下的内容。
+                </p>
+                <div className={styles.designPoints}>
+                  <h4>章节结构</h4>
+                  <ul>
+                    <li><strong>决策 01</strong> — 选择器范式：内联条 → Sheet 网格</li>
+                    <li><strong>决策 02</strong> — 选项分类：扁平网格 → 分组 IA</li>
+                    <li><strong>决策 03</strong> — 稳定目录：撤销 MRU，支持快捷改 mood</li>
+                    <li><strong>体验抛光</strong> — 选完表情后自动聚焦文本输入</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section className={`${styles.caseSection} ${styles.selfly0CaseSection}`}>
+          <div className={styles.selfly0StructureSection}>
+            <h2 className={styles.selfly0PositioningLabel}>决策 01 · 选择器范式</h2>
+            <div className={styles.caseText}>
+              <h3 className={styles.selfly0StructureHeading}>
+                <span className={styles.selfly0PositioningHeadingLight}>从内联展开条，</span>
+                <span className={styles.selfly0PositioningHeadingDark}>到 Sheet 网格</span>
+              </h3>
+              <div className={styles.selfly0Body}>
+                <p>
+                  最早的表情选择是在输入框上方展开一条横向滚动条——轻量、不打断输入流，适合选项较少的阶段。
+                  但随着候选 emoji 增加，内联条与键盘、底部遮罩容易叠加，横向扫完所有选项也不现实。
+                </p>
+                <p>
+                  我把选择器改成<strong className={styles.selfly0Emphasis}>半屏 Sheet + 网格布局</strong>，并与模块图标选择对齐：先收起键盘，再打开独立选择层，用「完成」按钮明确结束选择。
+                </p>
+                <div className={styles.beforeAfterGrid} aria-label="改造前后对比">
+                  <div className={styles.beforeAfterCard}>
+                    <span>改造前</span>
+                    <p>输入框上方内联横向条，与键盘/遮罩共存，选项变多后难以扫完。</p>
+                  </div>
+                  <div className={styles.beforeAfterCard}>
+                    <span>改造后</span>
+                    <p>半屏 Sheet 网格，与模块 emoji 选择交互一致，层级更清晰。</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section className={`${styles.caseSection} ${styles.selfly0CaseSection}`}>
+          <DiaryEmojiPickerCompare />
+        </section>
+        <section className={`${styles.caseSection} ${styles.selfly0CaseSection}`}>
+          <div className={styles.selfly0StructureSection}>
+            <h2 className={styles.selfly0PositioningLabel}>决策 02 · 选项分类</h2>
+            <div className={styles.caseText}>
+              <h3 className={styles.selfly0StructureHeading}>
+                <span className={styles.selfly0PositioningHeadingLight}>选项变多后，</span>
+                <span className={styles.selfly0PositioningHeadingDark}>需要可扫描的结构</span>
+              </h3>
+              <div className={styles.selfly0Body}>
+                <p>
+                  emoji palette 从最初约 11 个扩到 40+ 后，扁平网格失去了「一眼扫完」的优势。
+                  我把 Sheet 改成<strong className={styles.selfly0Emphasis}>分组信息架构</strong>：表情、爱心、天气、自然等类别，让用户按语义找 mood，而不是在一屏里盲扫。
+                </p>
+                <div className={styles.designPoints}>
+                  <h4>设计动机</h4>
+                  <ul>
+                    <li>选项规模超过「一行扫完」阈值</li>
+                    <li>分组让新增 emoji 有明确归属</li>
+                    <li>与模块 emoji catalog 的分组逻辑保持一致</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section className={`${styles.caseSection} ${styles.selfly0CaseSection}`}>
+          <DiaryEmojiCategoryPicker />
+        </section>
+        <section className={`${styles.caseSection} ${styles.selfly0CaseSection}`}>
+          <div className={styles.selfly0StructureSection}>
+            <h2 className={styles.selfly0PositioningLabel}>决策 03 · 稳定目录</h2>
+            <div className={styles.caseText}>
+              <h3 className={styles.selfly0StructureHeading}>
+                <span className={styles.selfly0PositioningHeadingLight}>撤销 MRU，</span>
+                <span className={styles.selfly0PositioningHeadingDark}>换稳定预期</span>
+              </h3>
+              <div className={styles.selfly0Body}>
+                <p>
+                  中间版本尝试过 MRU（最近使用排前）和「默认跟随最新条目 emoji」——理论上能减少重复点击。
+                  实际使用里，picker 顺序随每次选择变化，用户难以形成肌肉记忆；动态排序带来的「智能感」不如稳定位置可靠。
+                </p>
+                <p>
+                  我撤销了 picker 内的 MRU，改为<strong className={styles.selfly0Emphasis}>固定 catalog 顺序 + 记住上次选择</strong>作为默认值。
+                  同时让已发布条目左侧的 emoji 可点击修改——从「选 emoji」延伸到「改 mood」，无需进入完整编辑页。
+                </p>
+                <div className={styles.beforeAfterGrid} aria-label="改造前后对比">
+                  <div className={styles.beforeAfterCard}>
+                    <span>尝试过</span>
+                    <p>MRU 动态排序：每次打开 picker，emoji 位置可能不同。</p>
+                  </div>
+                  <div className={styles.beforeAfterCard}>
+                    <span>最终方案</span>
+                    <p>固定分组顺序 + 记住上次 + 条目 emoji 快捷修改。</p>
+                  </div>
+                </div>
+                <div className={styles.designPoints}>
+                  <h4>设计取舍</h4>
+                  <ul>
+                    <li><strong>稳定预期 &gt; 动态排序</strong></li>
+                    <li>默认值个性化，picker 布局不随每次选择漂移</li>
+                    <li>已发布内容支持轻量 mood 修改</li>
+                    <li>日记与模块共用 ModuleEmojiCatalog 设计系统</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section className={`${styles.caseSection} ${styles.selfly0CaseSection}`}>
+          <DiaryEmojiQuickEdit />
+        </section>
+        <section className={`${styles.caseSection} ${styles.selfly0CaseSection}`}>
+          <div className={styles.selfly0StructureSection}>
+            <h2 className={styles.selfly0PositioningLabel}>体验抛光</h2>
+            <div className={styles.caseText}>
+              <h3 className={styles.selfly0StructureHeading}>
+                <span className={styles.selfly0PositioningHeadingLight}>选完表情后，</span>
+                <span className={styles.selfly0PositioningHeadingDark}>输入不应被打断</span>
+              </h3>
+              <div className={styles.selfly0Body}>
+                <p>
+                  架构稳定后，我注意到一个细节：选完表情关闭 Sheet 时，键盘会收起，用户必须再次点击输入框才能继续写字。
+                  但发送按钮始终在文本输入栏上——无论是否选表情，最终都要回到文字输入才能完成发布。
+                </p>
+                <p>
+                  因此我把流程改成<strong className={styles.selfly0Emphasis}>选完表情后自动聚焦文本输入</strong>，让「选情绪 → 写文字 → 发送」在同一次输入会话里连贯完成。
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section className={`${styles.caseSection} ${styles.selfly0CaseSection}`}>
+          <DiaryEmojiInputPolish />
+        </section>
         <ChapterIntro id="review" icon="🕰️" title="Review：让旧内容重新出现">
           回顾不是数据统计，而是把过去的记录轻量地带回用户面前。
         </ChapterIntro>
@@ -366,6 +529,41 @@ export default async function Selfly0Page({ params }: Selfly0PageProps) {
         </section>
         <section className={`${styles.caseSection} ${styles.selfly0CaseSection}`}>
           <ReviewRedistribution />
+        </section>
+        <ChapterIntro id="brand" icon="✨" title="应用图标：记录与成长的视觉隐喻">
+          图标需要在极小尺寸下讲清楚产品气质——我围绕「书」与「蝴蝶」做了多轮迭代，最终收敛为开放边框与渐变配色。
+        </ChapterIntro>
+        <section className={`${styles.caseSection} ${styles.selfly0CaseSection}`}>
+          <div className={styles.selfly0StructureSection}>
+            <h2 className={styles.selfly0PositioningLabel}>应用图标</h2>
+            <div className={styles.caseText}>
+              <h3 className={styles.selfly0StructureHeading}>
+                <span className={styles.selfly0PositioningHeadingLight}>从书本隐喻到</span>
+                <span className={styles.selfly0PositioningHeadingDark}>开放边框</span>
+              </h3>
+              <div className={styles.selfly0Body}>
+                <p>
+                  Selfly 的核心是「记录自己、看见变化」。我在图标设计里用<strong className={styles.selfly0Emphasis}>打开的书</strong>表达记录容器，用<strong className={styles.selfly0Emphasis}>蝴蝶</strong>表达成长与蜕变——两者叠加，传达「在记录中持续变化」的产品叙事。
+                </p>
+                <p>
+                  早期方案保留了完整的书本轮廓，但在小尺寸下细节容易糊掉。后来我把它抽象成<strong className={styles.selfly0Emphasis}>不闭合的橙色边框</strong>：框代表记录的空间，蝴蝶飞出边界，暗示记录不是封闭容器，而是持续展开的过程。
+                </p>
+                <div className={styles.designPoints}>
+                  <h4>设计决策</h4>
+                  <ul>
+                    <li><strong>保留橙 × 紫的品牌色对比</strong></li>
+                    <li>小尺寸优先：减少线条与细节</li>
+                    <li>双色蝴蝶作为视觉锚点，连接两种主色</li>
+                    <li>最终提供浅色扁平版与渐变深色版两个方向</li>
+                    <li>浅色扁平版用于 App Store 上架，渐变版用于品牌延展</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section className={`${styles.caseSection} ${styles.selfly0CaseSection}`}>
+          <AppIconDesignShowcase />
         </section>
         <ChapterIntro id="launch" icon="🚀" title="iOS 落地与上线">
           这个项目不只停留在设计方案，我也把它实现为可下载、可使用、可订阅的 iOS 产品。

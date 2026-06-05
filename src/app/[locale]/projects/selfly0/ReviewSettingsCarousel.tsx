@@ -60,6 +60,8 @@ export function ReviewSettingsCarousel() {
               />
             ))}
           </div>
+          <span className={styles.positioningDynamicIsland} aria-hidden="true" />
+          <span className={styles.selfly0PhoneHomeIndicator} aria-hidden="true" />
         </div>
       </div>
 
