@@ -2460,15 +2460,17 @@
 }
 
 .iconDesignEvolutionSection {
-  padding-top: 18px;
+  padding-top: 28px;
   border-top: 1px solid rgba(255, 188, 110, 0.22);
 }
 
 .iconDesignEvolutionBoard {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1.5fr) auto minmax(0, 1fr);
+  grid-template-columns: minmax(0, 0.65fr) auto minmax(0, 1.5fr) auto minmax(0, 0.65fr);
+  grid-template-rows: auto auto;
   align-items: center;
-  gap: 12px;
+  row-gap: 20px;
+  column-gap: 12px;
   margin: 0;
   padding: 0;
 }
@@ -2495,14 +2497,14 @@
 
 .iconDesignEvolutionSketch {
   display: flex;
-  justify-content: center;
   margin: 0;
 }
 
 .iconDesignEvolutionIcon {
   display: block;
-  width: min(10vw, 84px);
+  width: 62%;
   height: auto;
+  margin: auto;
   border-radius: 22%;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.24);
 }
@@ -2517,17 +2519,14 @@
 }
 
 .iconDesignEvolutionNote {
-  position: absolute;
-  bottom: 8px;
-  left: 0;
-  right: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  gap: 3px;
-  min-height: 33px;
+  gap: 10px;
+  align-self: start;
   text-align: center;
+  padding-top: 4px;
 }
 
 .iconDesignExplorationWall {
@@ -2538,7 +2537,7 @@
 
 .iconDesignExplorationWallImage {
   display: block;
-  width: min(100%, 380px);
+  width: min(100%, 660px);
   height: auto;
   margin-inline: auto;
   border-radius: 8px;
@@ -2654,12 +2653,9 @@
 }
 
 .iconDesignFinalDual {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 24px;
+  display: flex;
+  justify-content: space-evenly;
   padding: 24px 24px;
-  border-radius: 16px;
-  background: rgba(255, 255, 255, 0.022);
 }
 
 .iconDesignFinalCardTitle {
@@ -4015,43 +4011,30 @@
 
   .iconDesignEvolutionBoard {
     grid-template-columns: 1fr;
-    gap: 14px;
+    grid-template-rows: none;
+    row-gap: 10px;
+    column-gap: 0;
   }
 
-  .iconDesignEvolutionPhase {
-    position: static;
-    gap: 20px;
-    padding: 8px 4px;
-  }
+  /* Reorder mobile: interleave images with their labels, hide empty fillers */
+  /* DOM order: img01(1) →(2) img02(3) →(4) img03(5) note01(6) _(7) note02(8) _(9) note03(10) */
+  .iconDesignEvolutionBoard > *:nth-child(1) { order: 1; }   /* img01 */
+  .iconDesignEvolutionBoard > *:nth-child(2) { order: 3; justify-self: center; transform: rotate(90deg); } /* → */
+  .iconDesignEvolutionBoard > *:nth-child(3) { order: 5; }   /* img02 */
+  .iconDesignEvolutionBoard > *:nth-child(4) { order: 7; justify-self: center; transform: rotate(90deg); } /* → */
+  .iconDesignEvolutionBoard > *:nth-child(5) { order: 9; }   /* img03 */
+  .iconDesignEvolutionBoard > *:nth-child(6) { order: 2; }   /* note01 */
+  .iconDesignEvolutionBoard > *:nth-child(7) { display: none; }  /* empty filler */
+  .iconDesignEvolutionBoard > *:nth-child(8) { order: 6; }   /* note02 */
+  .iconDesignEvolutionBoard > *:nth-child(9) { display: none; }  /* empty filler */
+  .iconDesignEvolutionBoard > *:nth-child(10) { order: 10; } /* note03 */
 
   .iconDesignEvolutionNote {
-    position: static;
-    bottom: auto;
-    left: auto;
-    right: auto;
-  }
-
-  .iconDesignEvolutionPhase + .iconDesignEvolutionPhase {
-    gap: 12px;
-  }
-
-  .iconDesignEvolutionArrow {
-    justify-self: center;
-    transform: rotate(90deg);
+    padding-top: 0;
   }
 
   .iconDesignExplorationWallImage {
     width: min(100%, 220px);
-  }
-
-  .iconDesignEvolutionPhase:first-child {
-    justify-items: center;
-    text-align: center;
-    gap: 12px;
-  }
-
-  .iconDesignEvolutionPhase:first-child .iconDesignEvolutionNote {
-    text-align: center;
   }
 
   .iconDesignEvolutionIcon {
