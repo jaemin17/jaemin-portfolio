@@ -11,6 +11,13 @@ const steps = [
 export function AppStoreShowcase() {
   return (
     <figure className={styles.selfly0EvidenceCard} aria-label="Selfly App Store 上线流程">
+      <Selfly0ImageSlot
+        src="/images/selfly0/app-store-connect.png"
+        alt="App Store Connect 中 Selfly Journal 1.0.8 版本的 iPhone 预览与截屏配置"
+        brief="App Store Connect 预览与截屏配置页"
+        variant="wide"
+      />
+
       <p className={styles.selfly0EvidenceTitle}>上架路径</p>
 
       <ol className={styles.appStorePipeline}>
@@ -26,13 +33,6 @@ export function AppStoreShowcase() {
           </li>
         ))}
       </ol>
-
-      <Selfly0ImageSlot
-        src="/images/selfly0/app-store-connect.png"
-        alt="App Store Connect 中 Selfly Journal 1.0.8 版本的 iPhone 预览与截屏配置"
-        brief="App Store Connect 预览与截屏配置页"
-        variant="wide"
-      />
 
       <figcaption className={styles.selfly0EvidenceCaption}>
         <span className={styles.selfly0EvidenceCaptionAccent}>App Store 上线</span>

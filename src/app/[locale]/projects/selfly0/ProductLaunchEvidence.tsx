@@ -35,21 +35,6 @@ const capabilities = [
   },
 ] as const;
 
-const supplements = [
-  {
-    id: "xcode",
-    src: "/images/selfly0/launch-xcode-project.png",
-    alt: "Selfly Xcode 工程：SwiftUI 视图与数据模块文件结构",
-    caption: "SwiftUI 工程 · 按模块拆分视图与数据层",
-  },
-  {
-    id: "symbols",
-    src: "/images/selfly0/launch-custom-symbols.png",
-    alt: "Selfly 自定义 SF Symbol 图标集",
-    caption: "自定义 Symbol · 与 Tab / 模块入口语义一致",
-  },
-] as const;
-
 export function ProductLaunchEvidence() {
   return (
     <figure
@@ -68,23 +53,21 @@ export function ProductLaunchEvidence() {
       </ul>
 
       <div className={styles.productLaunchLayout}>
-        <div className={styles.productLaunchSupplements} aria-label="工程与设计资产佐证">
-          {supplements.map((item) => (
-            <figure key={item.id} className={styles.productLaunchSupplement}>
-              <div className={styles.productLaunchSupplementFrame}>
-                <Image
-                  src={item.src}
-                  alt={item.alt}
-                  width={1200}
-                  height={800}
-                  className={styles.productLaunchSupplementImage}
-                  sizes="(max-width: 760px) 92vw, 380px"
-                />
-              </div>
-              <figcaption className={styles.productLaunchSupplementCaption}>{item.caption}</figcaption>
-            </figure>
-          ))}
-        </div>
+        <figure className={styles.productLaunchSupplement}>
+          <div className={styles.productLaunchSupplementFrame}>
+            <Image
+              src="/images/selfly0/launch-custom-symbols.png"
+              alt="Selfly 自定义 SF Symbol 图标集"
+              width={1200}
+              height={800}
+              className={styles.productLaunchSupplementImage}
+              sizes="(max-width: 760px) 92vw, 420px"
+            />
+          </div>
+          <figcaption className={styles.productLaunchSupplementCaption}>
+            自定义 Symbol · 与 Tab / 模块入口语义一致
+          </figcaption>
+        </figure>
 
         <div className={styles.productLaunchDemo}>
           <Selfly0PhoneVideoSlot

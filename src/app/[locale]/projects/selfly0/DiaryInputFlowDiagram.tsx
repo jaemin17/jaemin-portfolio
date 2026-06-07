@@ -167,17 +167,6 @@ export function DiaryInputFlowDiagram({ demoVideo }: DiaryInputFlowDiagramProps 
         .join(" ")}
       aria-label="日记输入流程：三步与优化跳转"
     >
-      <div className={styles.diaryFlowLegend}>
-        <span className={styles.diaryFlowLegendItem}>
-          <span className={styles.diaryFlowLegendDot} data-tone="before" aria-hidden="true" />
-          改造前路径
-        </span>
-        <span className={styles.diaryFlowLegendItem}>
-          <span className={styles.diaryFlowLegendDot} data-tone="after" aria-hidden="true" />
-          改造后：① 直接到 ③
-        </span>
-      </div>
-
       <div className={styles.diaryFlowRowWrap}>
         <SkipOverStepTwoArrow fourColumn={hasDemo} />
         <div className={styles.diaryFlowRow}>

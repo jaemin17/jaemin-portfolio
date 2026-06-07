@@ -9,7 +9,6 @@ export function Selfly0PhoneVideoSlot({ src, ariaLabel }: Selfly0PhoneVideoSlotP
   return (
     <div className={styles.selfly0PhoneSlotStage}>
       <div className={styles.selfly0PhoneSlotShell}>
-        <span className={styles.positioningDynamicIsland} aria-hidden="true" />
         <video
           className={styles.selfly0PhoneSlotVideo}
           src={src}
