@@ -43,6 +43,11 @@ export function ProductLaunchEvidence() {
     >
       <p className={styles.selfly0EvidenceTitle}>从设计到可运行产品</p>
 
+      <figcaption className={styles.selfly0EvidenceCaption}>
+        <span className={styles.selfly0EvidenceCaptionAccent}>产品化落地</span>
+        <span>订阅、同步与多语言在真机设置中可用</span>
+      </figcaption>
+
       <ul className={styles.productLaunchGrid}>
         {capabilities.map((item) => (
           <li key={item.id} className={styles.productLaunchCard}>
@@ -74,10 +79,6 @@ export function ProductLaunchEvidence() {
             src="/videos/selfly0/launch-implementation.mp4"
             ariaLabel="Selfly 设置页：订阅、iCloud 同步与多语言切换演示"
           />
-          <figcaption className={styles.selfly0EvidenceCaption}>
-            <span className={styles.selfly0EvidenceCaptionAccent}>产品化落地</span>
-            <span>订阅、同步与多语言在真机设置中可用</span>
-          </figcaption>
         </div>
       </div>
     </figure>

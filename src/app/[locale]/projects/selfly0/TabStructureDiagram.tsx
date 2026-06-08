@@ -53,34 +53,6 @@ function FlowArrow({ className }: { className?: string }) {
   );
 }
 
-function LoopArc() {
-  return (
-    <svg
-      className={styles.tabStructureLoopArc}
-      viewBox="0 0 640 56"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden="true"
-      preserveAspectRatio="none"
-    >
-      <path
-        d="M48 12C120 44 520 44 592 12"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeDasharray="5 7"
-      />
-      <path
-        d="M584 10L592 12L586 18"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-
 export function TabStructureDiagram() {
   return (
     <figure
@@ -89,13 +61,12 @@ export function TabStructureDiagram() {
       aria-describedby="selfly0-tab-structure-cycle"
     >
       <p id="selfly0-tab-structure-label" className={styles.tabStructureLabel}>
-        三个 Tab
+        三个 Tab 建立日常循环
       </p>
       <div className={styles.tabStructureTrack}>
         {tabs.map((tab, index) => (
           <div key={tab.id} className={styles.tabStructureStep}>
             <article className={styles.tabStructureNode}>
-              <span className={styles.tabStructureRole}>{tab.role}</span>
               <div className={styles.tabStructureIconWrap}>
                 <Image
                   src={tab.icon}
@@ -105,8 +76,16 @@ export function TabStructureDiagram() {
                   className={styles.tabStructureIcon}
                 />
               </div>
-              <h4 className={styles.tabStructureName}>{tab.name}</h4>
-              <p className={styles.tabStructureGoal}>{tab.goal}</p>
+              <div className={styles.tabStructureCopy}>
+                <h4 className={styles.tabStructureTitle}>
+                  <span className={styles.tabStructureRole}>{tab.role}</span>
+                  <span aria-hidden="true" className={styles.tabStructureTitleSep}>
+                    ·
+                  </span>
+                  <span className={styles.tabStructureName}>{tab.name}</span>
+                </h4>
+                <p className={styles.tabStructureGoal}>{tab.goal}</p>
+              </div>
             </article>
             {index < tabs.length - 1 ? (
               <div className={styles.tabStructureConnector}>
@@ -117,14 +96,6 @@ export function TabStructureDiagram() {
         ))}
       </div>
 
-      <LoopArc />
-
-      <figcaption className={styles.tabStructureFooter}>
-        <p id="selfly0-tab-structure-cycle" className={styles.tabStructureCycle}>
-          <span className={styles.tabStructureCycleLabel}>日常循环</span>
-          <span className={styles.tabStructureCyclePath}>当下 → 记录 → 回看</span>
-        </p>
-      </figcaption>
     </figure>
   );
 }

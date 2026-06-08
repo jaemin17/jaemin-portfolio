@@ -84,7 +84,7 @@ function SkipOverStepTwoArrow({ fourColumn = false }: { fourColumn?: boolean }) 
         </marker>
       </defs>
       <path
-        d={`M${step1X} 88 Q${step2X} -4 ${step3X} 88`}
+        d={`M${step1X} 8 Q${step2X} 100 ${step3X} 8`}
         stroke="#FFBC6E"
         strokeWidth="3"
         strokeLinecap="round"
@@ -93,7 +93,7 @@ function SkipOverStepTwoArrow({ fourColumn = false }: { fourColumn?: boolean }) 
       />
       <text
         x={step2X}
-        y="20"
+        y="76"
         textAnchor="middle"
         fill="#FFBC6E"
         fontSize="13"
@@ -210,7 +210,6 @@ export function DiaryInputFlowDiagram({ demoVideo }: DiaryInputFlowDiagramProps 
         </div>
       </div>
 
-      <p className={styles.diaryFlowJumpLabel}>改造后：① 选完表情 → 自动聚焦 → 直接进入 ③</p>
     </div>
   );
 }

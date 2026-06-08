@@ -1599,7 +1599,7 @@
 }
 
 .selfly0EvidenceTitle {
-  margin: 0 0 20px;
+  margin: 0 0 6px;
   font-size: 15px;
   font-weight: 650;
   letter-spacing: 0.04em;
@@ -1612,7 +1612,7 @@
   align-items: center;
   justify-content: center;
   gap: 8px 12px;
-  margin: 16px 0 0;
+  margin: 0 0 20px;
   font-size: 13px;
   font-weight: 500;
   color: rgba(255, 255, 255, 0.72);
@@ -1725,7 +1725,7 @@
 
 .selfly0EvidenceCard_review .selfly0EvidenceCaption {
   max-width: 900px;
-  margin-top: 14px;
+  margin-bottom: 20px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -1923,6 +1923,7 @@
   font-weight: 650;
   letter-spacing: 0.04em;
   color: #e8e8ec;
+  text-align: center;
 }
 
 .diaryEmojiEvidence .selfly0EvidenceCaption {
@@ -1935,6 +1936,21 @@
 
 .diaryEmojiEvidence .selfly0PhoneSlotShell {
   max-width: 260px;
+}
+
+.diaryEmojiEvidence .designPoints {
+  margin-top: 32px;
+  padding: 0 60px 4px;
+}
+
+.diaryEmojiEvidence .designPoints ul {
+  color: rgba(232, 232, 236, 0.8);
+  font-weight: 500;
+}
+
+.diaryEmojiEvidence .designPoints strong {
+  color: #e8e8ec;
+  font-weight: 700;
 }
 
 .diaryInputFlowDiagram {
@@ -1995,7 +2011,7 @@
   justify-content: center;
   gap: 0;
   overflow-x: auto;
-  padding-top: 10px;
+  padding-top: 24px;
   padding-bottom: 4px;
 }
 
@@ -2133,13 +2149,13 @@
 
 .diaryFlowRowWrap {
   position: relative;
-  padding-top: 72px;
+  padding-bottom: 72px;
   margin-bottom: 4px;
 }
 
 .diaryFlowSkipArc {
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 50%;
   transform: translateX(-50%);
   width: min(100%, 820px);
@@ -2169,10 +2185,7 @@
 .diaryFlowJumpLabel {
   margin: 12px auto 0;
   max-width: 520px;
-  padding: 10px 16px;
-  border-radius: 999px;
-  background: rgba(255, 188, 110, 0.12);
-  border: 1px solid rgba(255, 188, 110, 0.32);
+  padding: 4px 0;
   font-size: 13px;
   font-weight: 650;
   line-height: 1.45;
@@ -2456,7 +2469,14 @@
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.06em;
-  color: rgba(255, 255, 255, 0.38);
+  color: rgba(255, 188, 110, 0.7);
+}
+
+.iconDesignEvolutionLabelArrow {
+  font-size: 18px;
+  font-weight: 700;
+  vertical-align: middle;
+  line-height: 1;
 }
 
 .iconDesignEvolutionSection {

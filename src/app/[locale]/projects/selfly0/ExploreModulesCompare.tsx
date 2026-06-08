@@ -20,35 +20,60 @@ type ExploreModulesCompareProps = {
   locale?: Locale;
 };
 
+const compareCopy = {
+  zh: {
+    ariaLabel: "Explore 模块化记录：从功能名称入口到四种记录容器",
+    before: {
+      phase: "改造前",
+      caption: "功能名称入口",
+      description: "价值观、愿景板等并列出现，需逐个理解用途与规则",
+      alt: "改造前：价值观、优势测试等独立功能入口",
+    },
+    after: {
+      phase: "改造后",
+      caption: "四种记录容器",
+      description: "按内容选清单 / 计划 / 日记 / 图册，场景模板一键进入",
+      alt: "改造后：清单、计划、图册、日记四种记录容器与场景模板",
+    },
+  },
+  en: {
+    ariaLabel: "Explore modular recording: from feature names to four record containers",
+    before: {
+      phase: "Before",
+      caption: "Feature-name entries",
+      description: "Values, Vision Board, and more — each with its own rules to learn",
+      alt: "Before: separate feature entries such as values and strengths",
+    },
+    after: {
+      phase: "After",
+      caption: "Four record containers",
+      description: "Pick List, Plan, Journal, or Board — then start from a scenario template",
+      alt: "After: List, Plan, Board, and Journal record containers with scenario templates",
+    },
+  },
+} as const;
+
 export function ExploreModulesCompare({ locale = "zh" }: ExploreModulesCompareProps) {
   const beforeSrc = resolveSelfly0Screenshot(selfly0Screenshots.exploreModules.before, locale);
   const afterSrc = resolveSelfly0Screenshot(selfly0Screenshots.exploreModules.after, locale);
   const afterFilePath = path.join(process.cwd(), "public", afterSrc.replace(/^\//, ""));
   const hasAfterImage = fs.existsSync(afterFilePath);
-
-  const beforeAlt =
-    locale === "en"
-      ? "Before: separate feature entries such as values and strengths"
-      : "改造前：价值观、优势测试等独立功能入口";
-  const afterAlt =
-    locale === "en"
-      ? "After: List, Plan, Board, and Journal record containers with scenario templates"
-      : "改造后：清单、计划、图册、日记四种记录容器与场景模板";
+  const copy = compareCopy[locale];
 
   return (
-    <figure
-      className={styles.positioningDiagram}
-      aria-label="Explore 模块化记录：从功能名称入口到四种记录容器"
-    >
+    <figure className={styles.positioningDiagram} aria-label={copy.ariaLabel}>
       <div className={styles.positioningDiagramFlow}>
         <div className={styles.positioningDiagramCol}>
-          <span className={styles.positioningDiagramPhase}>改造前</span>
-          <span className={styles.positioningDiagramCaption}>一组功能名称入口</span>
+          <span className={styles.positioningDiagramPhase}>{copy.before.phase}</span>
+          <div className={styles.positioningDiagramCopy}>
+            <p className={styles.positioningDiagramCaption}>{copy.before.caption}</p>
+            <p className={styles.positioningDiagramDescription}>{copy.before.description}</p>
+          </div>
           <div className={styles.positioningPhoneFrame}>
             <span className={styles.positioningDynamicIsland} aria-hidden="true" />
             <Image
               src={beforeSrc}
-              alt={beforeAlt}
+              alt={copy.before.alt}
               width={360}
               height={780}
               className={styles.positioningDiagramPhone}
@@ -59,14 +84,17 @@ export function ExploreModulesCompare({ locale = "zh" }: ExploreModulesComparePr
           {positioningArrow}
         </div>
         <div className={styles.positioningDiagramCol}>
-          <span className={styles.positioningDiagramPhase}>改造后</span>
-          <span className={styles.positioningDiagramCaption}>四种记录容器</span>
+          <span className={styles.positioningDiagramPhase}>{copy.after.phase}</span>
+          <div className={styles.positioningDiagramCopy}>
+            <p className={styles.positioningDiagramCaption}>{copy.after.caption}</p>
+            <p className={styles.positioningDiagramDescription}>{copy.after.description}</p>
+          </div>
           <div className={styles.positioningPhoneFrame}>
             <span className={styles.positioningDynamicIsland} aria-hidden="true" />
             {hasAfterImage ? (
               <Image
                 src={afterSrc}
-                alt={afterAlt}
+                alt={copy.after.alt}
                 width={360}
                 height={780}
                 className={styles.positioningDiagramPhone}

@@ -1,5 +1,6 @@
 import styles from "../[slug]/project.module.css";
 import { Selfly0ImageSlot } from "./Selfly0ImageSlot";
+import { Selfly0PhoneVideoSlot } from "./Selfly0PhoneVideoSlot";
 import { DiaryInputFlowDiagram } from "./DiaryInputFlowDiagram";
 
 const positioningArrow = (
@@ -19,15 +20,14 @@ export function DiaryEmojiPickerCompare() {
       className={`${styles.positioningDiagram} ${styles.diaryEmojiEvidence}`}
       aria-label="日记表情选择：内联展开条与 Sheet 网格对比"
     >
-      <p className={styles.selfly0EvidenceTitle}>选择器范式</p>
       <div className={styles.positioningDiagramFlow}>
         <div className={styles.positioningDiagramCol}>
           <span className={styles.positioningDiagramPhase}>改造前</span>
           <span className={styles.positioningDiagramCaption}>内联横向展开条</span>
-          <Selfly0ImageSlot
-            src="/images/selfly0/diary-emoji-01-inline-strip.png"
-            alt="旧版日记输入：点击 emoji 后在输入框上方展开横向滚动条"
-            brief="内联横向 emoji 条：输入框上方展开，与键盘/遮罩易叠加"
+          <span className={styles.positioningDiagramDescription}>输入框上方展开，选项变多后难以扫完</span>
+          <Selfly0PhoneVideoSlot
+            src="/videos/selfly0/diary-emoji-01-inline-strip.mp4"
+            ariaLabel="旧版日记输入：点击 emoji 后在输入框上方展开横向滚动条"
           />
         </div>
         <div className={styles.positioningDiagramArrow} aria-hidden="true">
@@ -36,17 +36,13 @@ export function DiaryEmojiPickerCompare() {
         <div className={styles.positioningDiagramCol}>
           <span className={styles.positioningDiagramPhase}>改造后</span>
           <span className={styles.positioningDiagramCaption}>半屏 Sheet 网格</span>
-          <Selfly0ImageSlot
-            src="/images/selfly0/diary-emoji-02-sheet-grid.png"
-            alt="新版日记输入：半屏 Sheet 网格选择器"
-            brief="半屏 Sheet 网格：与模块图标选择交互对齐，避免键盘层叠"
+          <span className={styles.positioningDiagramDescription}>与模块 emoji 选择交互一致，层级更清晰</span>
+          <Selfly0PhoneVideoSlot
+            src="/videos/selfly0/diary-emoji-02-sheet-grid.mp4"
+            ariaLabel="新版日记输入：半屏 Sheet 网格选择器"
           />
         </div>
       </div>
-      <figcaption className={styles.selfly0EvidenceCaption}>
-        <span className={styles.selfly0EvidenceCaptionAccent}>决策 01</span>
-        <span>从内联条切换到 Sheet，解决层叠问题并统一选择交互</span>
-      </figcaption>
     </figure>
   );
 }
@@ -58,15 +54,15 @@ export function DiaryEmojiCategoryPicker() {
       aria-label="日记表情选择：分类信息架构"
     >
       <p className={styles.selfly0EvidenceTitle}>选项分类</p>
+      <figcaption className={styles.selfly0EvidenceCaption}>
+        <span className={styles.selfly0EvidenceCaptionAccent}>决策 02</span>
+        <span>palette 规模化后，用分组 IA 替代扁平网格</span>
+      </figcaption>
       <Selfly0ImageSlot
         src="/images/selfly0/diary-emoji-03-sheet-categories.png"
         alt="表情 Sheet 分组：表情、爱心、天气、自然等分类"
         brief="分类 Sheet：选项扩至 40+ 后，按表情/爱心/天气/自然等分组展示"
       />
-      <figcaption className={styles.selfly0EvidenceCaption}>
-        <span className={styles.selfly0EvidenceCaptionAccent}>决策 02</span>
-        <span>palette 规模化后，用分组 IA 替代扁平网格</span>
-      </figcaption>
     </figure>
   );
 }
@@ -78,15 +74,15 @@ export function DiaryEmojiQuickEdit() {
       aria-label="日记条目 emoji 快捷修改"
     >
       <p className={styles.selfly0EvidenceTitle}>快捷改 mood</p>
+      <figcaption className={styles.selfly0EvidenceCaption}>
+        <span className={styles.selfly0EvidenceCaptionAccent}>决策 03</span>
+        <span>从「选 emoji」延伸到「改 mood」，无需进入完整编辑页</span>
+      </figcaption>
       <Selfly0ImageSlot
         src="/images/selfly0/diary-emoji-04-quick-edit.png"
         alt="点击已发布日记条目左侧 emoji，无需进入编辑页即可更换"
         brief="快捷改 mood：点击列表条目左侧 emoji，轻量更换已发布内容的情绪标记"
       />
-      <figcaption className={styles.selfly0EvidenceCaption}>
-        <span className={styles.selfly0EvidenceCaptionAccent}>决策 03</span>
-        <span>从「选 emoji」延伸到「改 mood」，无需进入完整编辑页</span>
-      </figcaption>
     </figure>
   );
 }
@@ -98,6 +94,7 @@ export function DiaryEmojiInputPolish() {
       aria-label="日记输入：选完表情后自动聚焦文本输入"
     >
       <p className={styles.selfly0EvidenceTitle}>输入连贯性</p>
+      <p className={styles.diaryFlowJumpLabel}>改造后：① 选完表情 → 自动聚焦 → 直接进入 ③</p>
 
       <div className={styles.diaryInputPolishLayout}>
         <DiaryInputFlowDiagram
@@ -107,11 +104,6 @@ export function DiaryEmojiInputPolish() {
           }}
         />
       </div>
-
-      <figcaption className={styles.selfly0EvidenceCaption}>
-        <span className={styles.selfly0EvidenceCaptionAccent}>体验抛光</span>
-        <span>四屏并排：② 是改造前多出来的一步，右侧为改造后实机演示</span>
-      </figcaption>
     </figure>
   );
 }
