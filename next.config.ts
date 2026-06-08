@@ -8,6 +8,7 @@ const basePath = isGitHubPages && repositoryName && !isUserOrOrgPagesSite ? `/${
 const nextConfig: NextConfig = {
   output: "export",
   trailingSlash: true,
+  allowedDevOrigins: ["127.0.0.1"],
   images: {
     unoptimized: true,
   },

@@ -15,8 +15,8 @@ import {
 } from "./DiaryEmojiInputShowcase";
 import { AppStoreShowcase } from "./AppStoreShowcase";
 import { AppIconDesignShowcase } from "./AppIconDesignShowcase";
-import { TodayRhythmAnnotated } from "./TodayRhythmAnnotated";
-import { TodayTop3States } from "./TodayTop3States";
+import { TodayRhythmSystem } from "./TodayRhythmSystem";
+import { TodayTaskCardInteraction } from "./TodayTaskCardInteraction";
 
 const appDownloadUrl = "https://apps.apple.com/cn/app/selfly%E6%97%A5%E8%AE%B0/id6762545235";
 
@@ -169,7 +169,7 @@ export default async function Selfly0Page({ params }: Selfly0PageProps) {
           <div className={styles.selfly0StructureSection}>
             <h2 className={styles.selfly0PositioningLabel}>产品结构</h2>
             <div className={styles.caseText}>
-              <h3 className={styles.selfly0StructureHeading}><span className={styles.selfly0PositioningHeadingLight}>把"当下、记录、回看"组织成</span><span className={styles.selfly0PositioningHeadingDark}>一个日常循环</span></h3>
+              <h3 className={styles.selfly0StructureHeading}><span className={styles.selfly0PositioningHeadingLight}>把「当下、记录、回看」组织成</span><span className={styles.selfly0PositioningHeadingDark}>一个日常循环</span></h3>
               <div className={styles.selfly0Body}>
                 <p>
                   Selfly 用 Today / Explore / Review 三个 Tab 建立「当下—记录—回看」的清晰节奏。Today 聚焦每日重要的任务，Explore 负责记录更加长期的发现，Review 把旧内容重新带回。
@@ -194,26 +194,30 @@ export default async function Selfly0Page({ params }: Selfly0PageProps) {
         </ChapterIntro>
         <section className={`${styles.caseSection} ${styles.selfly0CaseSection}`}>
           <div className={styles.selfly0StructureSection}>
-            <h2 className={styles.selfly0PositioningLabel}>Top 3 限制</h2>
+            <h2 className={styles.selfly0PositioningLabel}>每日任务节奏</h2>
             <div className={styles.caseText}>
-              <h3 className={styles.selfly0StructureHeading}><span className={styles.selfly0PositioningHeadingLight}>把今日页从任务收集器</span><span className={styles.selfly0PositioningHeadingDark}><em>变成选择器</em></span></h3>
+              <h3 className={styles.selfly0StructureHeading}>
+                <span className={styles.selfly0PositioningHeadingLight}>用 Top 3、Tomorrow 和 Backlog</span>
+                <span className={styles.selfly0PositioningHeadingDark}>控制任务压力</span>
+              </h3>
               <div className={styles.selfly0Body}>
                 <p>
                   我没有把首页设计成可以无限添加的任务列表，而是让用户每天只保留三件最重要的事。
-                  这个限制不是功能缺失，而是刻意把”收集更多任务”转成
+                  这个限制不是功能缺失，而是刻意把「收集更多任务」转成
                   <strong className={styles.selfly0Emphasis}>判断今天真正重要的事</strong>。
                 </p>
                 <p>
-                  如果今日页同时承载大量待办、计划和快速记录，它很快会变成另一个任务管理器。
-                  Top 3 的作用是压低信息密度，保留完成反馈，让首页始终服务于聚焦，而不是制造新的压力。
+                  仅限制今日任务还不够，用户仍然需要处理那些暂时不属于今天、但仍需要保留的事项。
+                  因此我把今日页拆成 Today / Tomorrow / Backlog：今天要做的进入 Top 3，提前想好的进入 Tomorrow，暂不处理的进入 Backlog。
+                  这个结构让今日页保持轻量，同时给未来事项一个明确去处。
                 </p>
                 <div className={styles.designPoints}>
                   <h4>设计取舍</h4>
                   <ul>
-                    <li>减少任务堆积</li>
-                    <li>迫使用户做选择</li>
-                    <li>保留完成反馈</li>
-                    <li>降低首页信息密度</li>
+                    <li><strong>Top 3</strong>：限制今日容量，迫使用户做选择</li>
+                    <li><strong>Tomorrow</strong>：提前准备明日重点，降低第二天启动成本</li>
+                    <li><strong>Backlog</strong>：承接暂不处理的事项，避免挤占今日注意力</li>
+                    <li><strong>完成反馈</strong>：保留成就感，但不制造无限待办压力</li>
                   </ul>
                 </div>
               </div>
@@ -221,29 +225,32 @@ export default async function Selfly0Page({ params }: Selfly0PageProps) {
           </div>
         </section>
         <section className={`${styles.caseSection} ${styles.selfly0CaseSection}`}>
-          <TodayTop3States />
+          <TodayRhythmSystem />
         </section>
         <section className={`${styles.caseSection} ${styles.selfly0CaseSection}`}>
           <div className={styles.selfly0StructureSection}>
-            <h2 className={styles.selfly0PositioningLabel}>每日节奏</h2>
+            <h2 className={styles.selfly0PositioningLabel}>任务卡片交互</h2>
             <div className={styles.caseText}>
-              <h3 className={styles.selfly0StructureHeading}><span className={styles.selfly0PositioningHeadingLight}>用 Top 3、Tomorrow 和 Backlog</span><span className={styles.selfly0PositioningHeadingDark}>控制任务压力</span></h3>
+              <h3 className={styles.selfly0StructureHeading}>
+                <span className={styles.selfly0PositioningHeadingLight}>从「点击即完成」到</span>
+                <br />
+                <span className={styles.selfly0PositioningHeadingDark}>内容与状态分区</span>
+              </h3>
               <div className={styles.selfly0Body}>
                 <p>
-                  仅限制今日任务还不够，用户仍然需要处理那些暂时不属于今天、但仍需要保留的事项。
-                  因此我把今日页拆成三个状态：今天要做的进入 Top 3，暂时不处理的进入 Backlog，已经想好的明日事项进入 Tomorrow。
+                  早期版本中，任务卡片同时承载两个高频意图：修改内容和标记完成。
+                  整卡点击完成虽然高效，但当用户只是想调整任务文字时，容易把内容修改误触成状态完成。
                 </p>
                 <p>
-                  这个结构让今日页保持轻量，同时给未来事项一个明确去处。
-                  晚上提前写下的 Tomorrow 会在跨日后自动成为新的今日重点，减少第二天重新启动时的判断成本。
+                  我将卡片主体定义为「内容入口」，右侧完成方块定义为「状态操作」，并为其他待办加入延迟完成与撤销机制。
+                  任务卡片因此从一个含混的点击目标，变成语义稳定、可恢复的交互单元。
                 </p>
                 <div className={styles.designPoints}>
-                  <h4>行为模型</h4>
+                  <h4>设计决策</h4>
                   <ul>
-                    <li><strong>日常使用行为模型</strong></li>
-                    <li>分流非今日事项</li>
-                    <li>降低第二天启动成本</li>
-                    <li>让待办服务于记录节奏</li>
+                    <li><strong>动作分层</strong>：内容编辑与状态切换拆成两个操作区</li>
+                    <li><strong>误触控制</strong>：完成动作保留视觉反馈与反悔窗口</li>
+                    <li><strong>一致性</strong>：Top 3 与其他待办统一点击语义</li>
                   </ul>
                 </div>
               </div>
@@ -251,7 +258,7 @@ export default async function Selfly0Page({ params }: Selfly0PageProps) {
           </div>
         </section>
         <section className={`${styles.caseSection} ${styles.selfly0CaseSection}`}>
-          <TodayRhythmAnnotated />
+          <TodayTaskCardInteraction />
         </section>
         <ChapterIntro id="explore" icon="🧩" title="Explore：降低开始记录的成本">
           记录系统不应该让用户先理解功能规则，而应该让用户按内容选择合适的记录方式。
@@ -375,24 +382,14 @@ export default async function Selfly0Page({ params }: Selfly0PageProps) {
               <h3 className={styles.selfly0StructureHeading}><span className={styles.selfly0PositioningHeadingLight}>回顾机制：把沉淀内容</span><span className={styles.selfly0PositioningHeadingDark}>重新分发给用户</span></h3>
               <div className={styles.selfly0Body}>
                 <p>
-                  如果记录只停留在各个模块里，用户很难主动回看。我把回顾设计成一个跨模块的内容再分发机制：
+                  如果记录只停留在各个模块里，<u>内容分散在不同模块中，回顾依赖用户主动进入</u>。我把回顾设计成一个跨模块的内容再分发机制：
                   清单、计划、日记、图册里的内容都可以进入每日卡片流，用户也可以选择全部、指定模块或指定分类。
-                  这样回顾不再依赖用户主动寻找，而是让过去的记录自然重新出现。
+                  这样，<u>系统每天从真实记录中抽取卡片，让旧内容重新出现</u>，不再依赖用户主动寻找。
                 </p>
                 <p>
                   我没有把回顾页做成数据中心，而是刻意弱化连续打卡、完成统计和趋势分析带来的焦虑。
                   回顾更接近翻阅旧笔记：用户可以轻量浏览过去的记录，并重新理解当时在意的内容。
                 </p>
-                <div className={styles.beforeAfterGrid} aria-label="改造前后对比">
-                  <div className={styles.beforeAfterCard}>
-                    <span>改造前</span>
-                    <p>内容分散在不同模块中，回顾依赖用户主动进入。</p>
-                  </div>
-                  <div className={styles.beforeAfterCard}>
-                    <span>改造后</span>
-                    <p>系统每天从真实记录中抽取卡片，让旧内容重新出现。</p>
-                  </div>
-                </div>
                 <div className={styles.designPoints}>
                   <h4>机制设计</h4>
                   <ul>

@@ -1419,6 +1419,217 @@
   border: 0;
 }
 
+/* Selfly0 — Today rhythm system: two phone carousels in one evidence block */
+.todayRhythmSystemFigure {
+  width: 100%;
+  margin: 0;
+  padding: 38px 44px 34px;
+  background: #000000;
+  border: 3px solid #ffbc6e;
+  border-radius: 24px;
+  box-shadow: none;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.todayRhythmSystemPanelTitle,
+.todayRhythmSystemPanelDescription {
+  margin: 0;
+}
+
+.todayRhythmSystemGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 34px;
+  align-items: start;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.todayRhythmSystemPanel {
+  min-width: 0;
+  display: grid;
+  justify-items: center;
+  gap: 16px;
+}
+
+.todayRhythmSystemPanelCopy {
+  min-height: 70px;
+  display: grid;
+  align-content: start;
+  gap: 5px;
+  text-align: center;
+}
+
+.todayRhythmSystemPanelTitle {
+  color: #ffbc6e;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+.todayRhythmSystemPanelDescription {
+  max-width: 260px;
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.todayRhythmSystemPhoneStage {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  min-width: 0;
+}
+
+.todayRhythmSystemTabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.todayRhythmSystemTab {
+  min-width: 0;
+  padding: 8px 11px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.62);
+  font: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.todayRhythmSystemTab:hover {
+  border-color: rgba(255, 188, 110, 0.45);
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.todayRhythmSystemTabActive {
+  border-color: rgba(255, 188, 110, 0.8);
+  background: rgba(255, 188, 110, 0.16);
+  color: #ffbc6e;
+}
+
+/* Selfly0 — Today task card interaction semantics */
+.todayTaskSemanticFigure {
+  padding: 44px 48px 36px;
+}
+
+.todayTaskSemanticFigure .positioningDiagramFlow {
+  align-items: stretch;
+}
+
+.todayTaskSemanticFigure .positioningDiagramCol {
+  justify-content: flex-start;
+}
+
+.todayTaskSemanticPhone {
+  width: min(100%, 260px);
+  min-height: 208px;
+  margin-top: 8px;
+  padding: 20px 18px;
+  border-radius: 26px 26px 0 0;
+  background:
+    linear-gradient(180deg, rgba(255, 249, 232, 0.98), rgba(247, 229, 190, 0.98)),
+    #f7e7c4;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.34);
+  box-sizing: border-box;
+}
+
+.todayTaskSemanticPhoneTitle {
+  margin: 0 0 18px;
+  color: #8a5b2b;
+  font-size: 13px;
+  font-weight: 850;
+  letter-spacing: 0.06em;
+}
+
+.todayTaskSemanticOldCard,
+.todayTaskSemanticNewCard {
+  min-width: 0;
+  border: 1px solid rgba(143, 112, 70, 0.2);
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 10px 22px rgba(101, 75, 38, 0.12);
+}
+
+.todayTaskSemanticOldCard {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 14px;
+}
+
+.todayTaskSemanticNewCard {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(56px, auto);
+  gap: 12px;
+  align-items: stretch;
+  padding: 14px;
+}
+
+.todayTaskSemanticTaskText {
+  min-width: 0;
+  color: #1d1a15;
+  font-size: 15px;
+  font-weight: 850;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+.todayTaskSemanticCheckbox {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  flex: 0 0 auto;
+  border: 2px solid #b7a481;
+  border-radius: 7px;
+  background: #fffaf0;
+  box-sizing: border-box;
+}
+
+.todayTaskSemanticContentZone,
+.todayTaskSemanticCompleteZone {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+}
+
+.todayTaskSemanticContentZone {
+  align-items: flex-start;
+  padding-right: 12px;
+  border-right: 1px dashed rgba(138, 91, 43, 0.3);
+}
+
+.todayTaskSemanticCompleteZone {
+  align-items: center;
+}
+
+.todayTaskSemanticZoneLabel,
+.todayTaskSemanticIssue {
+  margin: 0;
+  color: #79674c;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.todayTaskSemanticIssue {
+  margin-top: 12px;
+}
+
 /* Selfly0 — Today rhythm: Today / Tomorrow / Backlog carousel */
 .todayRhythmAnnotated {
   width: 100%;
@@ -1783,7 +1994,7 @@
   );
   --diary-flow-arc-width: calc(var(--diary-flow-phone-size) * 3 + var(--diary-flow-arrow-size) * 2);
   max-width: none;
-  margin: 0 auto;
+  margin: 24px auto 0;
   overflow: visible;
 }
 
@@ -2948,7 +3159,7 @@
   gap: 10px;
   max-width: 820px;
   margin: 0 auto 24px;
-  padding: 0;
+  padding: 28px 0 0;
   list-style: none;
   text-align: left;
 }
@@ -3892,6 +4103,11 @@
     gap: 12px;
   }
 
+  .selfly0Page .caseText {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
   .beforeAfterGrid,
   .mergedStrategyGrid {
     grid-template-columns: 1fr;
@@ -3982,6 +4198,63 @@
   .todayTop3Flow .positioningPhoneFrame {
     max-width: 120px;
     max-height: 220px;
+  }
+
+  .todayRhythmSystemFigure {
+    padding: 30px 20px 24px;
+  }
+
+  .todayRhythmSystemGrid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    max-width: 320px;
+  }
+
+  .todayRhythmSystemPanelCopy {
+    min-height: auto;
+  }
+
+  .todayRhythmSystemPanelDescription {
+    max-width: 280px;
+  }
+
+  .todayRhythmSystemTabs {
+    gap: 7px;
+  }
+
+  .todayRhythmSystemTab {
+    padding: 8px 10px;
+    font-size: 11px;
+  }
+
+  .todayTaskSemanticFigure {
+    padding: 30px 20px 24px;
+  }
+
+  .todayTaskSemanticFigure .positioningDiagramFlow {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .todayTaskSemanticFigure .positioningDiagramArrow {
+    margin-top: 0;
+    transform: rotate(90deg);
+  }
+
+  .todayTaskSemanticPhone {
+    width: min(100%, 280px);
+    min-height: 188px;
+    padding: 18px 16px;
+  }
+
+  .todayTaskSemanticNewCard {
+    grid-template-columns: minmax(0, 1fr) minmax(52px, auto);
+    padding: 12px;
+  }
+
+  .todayTaskSemanticTaskText {
+    font-size: 14px;
   }
 
   .todayRhythmAnnotated {
