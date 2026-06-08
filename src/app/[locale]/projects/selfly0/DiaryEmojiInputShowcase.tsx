@@ -94,7 +94,7 @@ export function DiaryEmojiInputPolish() {
       aria-label="日记输入：选完表情后自动聚焦文本输入"
     >
       <p className={styles.selfly0EvidenceTitle}>输入连贯性</p>
-      <p className={styles.diaryFlowJumpLabel}>改造后：① 选完表情 → 自动聚焦 → 直接进入 ③</p>
+      <p className={styles.diaryFlowJumpLabel}>改造后：① 选完表情后自动聚焦 → 直接进入 ③</p>
 
       <div className={styles.diaryInputPolishLayout}>
         <DiaryInputFlowDiagram

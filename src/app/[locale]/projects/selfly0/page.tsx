@@ -174,14 +174,6 @@ export default async function Selfly0Page({ params }: Selfly0PageProps) {
                 <p>
                   Selfly 用 Today / Explore / Review 三个 Tab 建立「当下—记录—回看」的清晰节奏。Today 聚焦每日重要的任务，Explore 负责记录更加长期的发现，Review 把旧内容重新带回。
                 </p>
-                <div className={styles.designPoints}>
-                  <h4>结构划分</h4>
-                  <ul>
-                    <li>Today：聚焦当下 — 克制入口，不是无限待办</li>
-                    <li>Explore：承载不同记录方式 — 按内容选容器</li>
-                    <li>Review：把旧内容重新带回 — 回看自己，而非 KPI 统计</li>
-                  </ul>
-                </div>
               </div>
             </div>
           </div>
@@ -238,19 +230,19 @@ export default async function Selfly0Page({ params }: Selfly0PageProps) {
               </h3>
               <div className={styles.selfly0Body}>
                 <p>
-                  早期版本中，任务卡片同时承载两个高频意图：修改内容和标记完成。
-                  整卡点击完成虽然高效，但当用户只是想调整任务文字时，容易把内容修改误触成状态完成。
+                  早期版本中，我有意弱化完成控件，不希望 Today 页像传统待办列表一样，用明显的 checkbox 不断提醒用户「还有任务没完成」。
+                  因此我曾把点击任务卡片定义为完成任务，让界面更轻，也让任务更像「今日关注」而不是压力清单。
                 </p>
                 <p>
-                  我将卡片主体定义为「内容入口」，右侧完成方块定义为「状态操作」，并为其他待办加入延迟完成与撤销机制。
-                  任务卡片因此从一个含混的点击目标，变成语义稳定、可恢复的交互单元。
+                  但在真实使用反馈中，很多用户会在想修改任务文字时误触完成。于是我重新划分了任务卡片的点击语义：卡片主体作为「内容入口」，用于查看和编辑任务；右侧完成方块独立承担「状态操作」。
+                  同时，我刻意控制完成方块的视觉面积，让它足够可点击，但不成为卡片的视觉主角。
                 </p>
                 <div className={styles.designPoints}>
                   <h4>设计决策</h4>
                   <ul>
+                    <li><strong>低压力视觉</strong>：弱化未完成状态，不让 checkbox 主导任务卡片</li>
                     <li><strong>动作分层</strong>：内容编辑与状态切换拆成两个操作区</li>
-                    <li><strong>误触控制</strong>：完成动作保留视觉反馈与反悔窗口</li>
-                    <li><strong>一致性</strong>：Top 3 与其他待办统一点击语义</li>
+                    <li><strong>误触控制</strong>：完成动作保留独立区域与反悔空间</li>
                   </ul>
                 </div>
               </div>

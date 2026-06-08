@@ -96,7 +96,7 @@ function SkipOverStepTwoArrow({ fourColumn = false }: { fourColumn?: boolean }) 
         y="76"
         textAnchor="middle"
         fill="#FFBC6E"
-        fontSize="13"
+        fontSize="16"
         fontWeight="700"
         fontFamily="system-ui, -apple-system, sans-serif"
       >

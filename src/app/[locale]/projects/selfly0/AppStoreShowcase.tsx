@@ -26,15 +26,10 @@ export function AppStoreShowcase() {
       />
 
       <ol className={styles.appStorePipeline}>
-        {steps.map((step, index) => (
+        {steps.map((step) => (
           <li key={step.id} className={styles.appStorePipelineStep}>
-            <span className={styles.appStorePipelineIndex} aria-hidden="true">
-              {index + 1}
-            </span>
-            <div>
-              <strong>{step.label}</strong>
-              <p>{step.detail}</p>
-            </div>
+            <strong>{step.label}</strong>
+            <p>{step.detail}</p>
           </li>
         ))}
       </ol>
