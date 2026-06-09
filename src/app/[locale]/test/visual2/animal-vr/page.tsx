@@ -22,7 +22,7 @@ export default async function AnimalVrVisualPage({ params }: PageProps) {
       <SiteHeader locale={locale} active="test" />
       <main className={styles.caseStudyPage}>
         <section className={styles.caseIntro}>
-          <h1>动物 / 解剖 VR</h1>
+          <h1>生物医疗VR</h1>
 
           <figure className={styles.caseHeroImage}>
             <Image src={heroShot.src} width={1920} height={1080} alt="动物解剖 VR 首页视觉" priority />

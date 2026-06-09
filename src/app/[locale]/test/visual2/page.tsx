@@ -6,11 +6,25 @@ import styles from "./visual.module.css";
 
 const visualProjects = [
   {
-    title: "VR 教育软件合集",
-    body: "把多套 VR 教育软件作为视觉亮点集中展示，突出 3D 场景、模型和沉浸式教学界面。",
-    tags: ["VR", "Education", "Gallery"],
-    path: "/test/visual2/vr-education",
+    title: "智能制造 VR",
+    body: "变速器、工业机器人、注塑模具等工业设备实训画面和教学操作界面。",
+    tags: ["Manufacturing", "Industry", "Simulation"],
+    path: "/test/visual2/smart-manufacturing",
     video: "/videos/visual/immersive.mp4",
+  },
+  {
+    title: "生物医疗VR",
+    body: "动物模型、解剖训练、手术步骤和课程资源相关的 VR 教育软件界面。",
+    tags: ["Animal", "Surgery", "3D"],
+    path: "/test/visual2/animal-vr",
+    video: "/videos/visual/highmodes.mp4",
+  },
+  {
+    title: "Cosmic Blaze",
+    body: "VR/AR 桌面设备体验游戏的 UI 视觉设计。",
+    tags: ["VR/AR", "Game", "Visual"],
+    path: "/test/visual2/cosmic-blaze",
+    image: "/images/visual/cosmic-blaze/hero.png",
   },
   {
     title: "医学 VR",
@@ -20,32 +34,11 @@ const visualProjects = [
     video: "/videos/visual/highmodes.mp4",
   },
   {
-    title: "动物 / 解剖 VR",
-    body: "动物模型、解剖训练、手术步骤和课程资源相关的 VR 教育软件界面。",
-    tags: ["Animal", "Surgery", "3D"],
-    path: "/test/visual2/animal-vr",
-    video: "/videos/visual/highmodes.mp4",
-  },
-  {
-    title: "智能制造 VR",
-    body: "变速器、工业机器人、注塑模具等工业设备实训画面和教学操作界面。",
-    tags: ["Manufacturing", "Industry", "Simulation"],
-    path: "/test/visual2/smart-manufacturing",
-    video: "/videos/visual/immersive.mp4",
-  },
-  {
     title: "汽车实训 VR",
     body: "纯电动汽车拆装、动力总成、电池相关训练软件和产品物料视觉。",
     tags: ["Automotive", "Training", "Visual"],
     path: "/test/visual2/automotive-vr",
     video: "/videos/visual/highmodes.mp4",
-  },
-  {
-    title: "Cosmic Blaze",
-    body: "VR/AR 桌面设备体验游戏的 UI 视觉设计。",
-    tags: ["VR/AR", "Game", "Visual"],
-    path: "/test/visual2/cosmic-blaze",
-    image: "/images/visual/cosmic-blaze/hero.png",
   },
 ];
 
