@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import styles from "../[slug]/project.module.css";
 
 const arrow = (
@@ -11,33 +13,22 @@ const arrow = (
   </svg>
 );
 
-function OldTaskCard() {
-  return (
-    <div className={styles.todayTaskSemanticPhone}>
-      <p className={styles.todayTaskSemanticPhoneTitle}>Today</p>
-      <div className={styles.todayTaskSemanticOldCard}>
-        <span className={styles.todayTaskSemanticCheckbox} aria-hidden="true" />
-        <span className={styles.todayTaskSemanticTaskText}>写作品集结构</span>
-      </div>
-      <p className={styles.todayTaskSemanticIssue}>想修改文字时，也可能触发完成</p>
-    </div>
-  );
-}
+type TaskInteractionImageProps = {
+  alt: string;
+  src: string;
+};
 
-function NewTaskCard() {
+function TaskInteractionImage({ alt, src }: TaskInteractionImageProps) {
   return (
-    <div className={styles.todayTaskSemanticPhone}>
-      <p className={styles.todayTaskSemanticPhoneTitle}>Today</p>
-      <div className={styles.todayTaskSemanticNewCard}>
-        <span className={styles.todayTaskSemanticContentZone}>
-          <span className={styles.todayTaskSemanticTaskText}>写作品集结构</span>
-          <span className={styles.todayTaskSemanticZoneLabel}>内容区：进入编辑</span>
-        </span>
-        <span className={styles.todayTaskSemanticCompleteZone}>
-          <span className={styles.todayTaskSemanticCheckbox} aria-hidden="true" />
-          <span className={styles.todayTaskSemanticZoneLabel}>完成</span>
-        </span>
-      </div>
+    <div className={styles.todayTaskSemanticScreenshotFrame}>
+      <Image
+        className={styles.todayTaskSemanticScreenshot}
+        src={src}
+        alt={alt}
+        width={1206}
+        height={2622}
+        sizes="(max-width: 760px) 70vw, 220px"
+      />
     </div>
   );
 }
@@ -52,10 +43,12 @@ export function TodayTaskCardInteraction() {
         <div className={styles.positioningDiagramCol}>
           <span className={styles.positioningDiagramPhase}>改造前</span>
           <div className={styles.positioningDiagramCopy}>
-            <p className={styles.positioningDiagramCaption}>整卡点击 = 完成</p>
-            <p className={styles.positioningDiagramDescription}>一个卡片同时承载编辑和完成意图</p>
+            <p className={styles.positioningDiagramDescription}>低压力，但易误触、确认弱</p>
           </div>
-          <OldTaskCard />
+          <TaskInteractionImage
+            src="/images/selfly0/today-task-interaction-before.png"
+            alt="改造前的 Selfly Today Top 3 界面，完成控件被弱化，点击卡片可能完成任务"
+          />
         </div>
 
         <div className={styles.positioningDiagramArrow} aria-hidden="true">
@@ -65,10 +58,12 @@ export function TodayTaskCardInteraction() {
         <div className={styles.positioningDiagramCol}>
           <span className={styles.positioningDiagramPhase}>改造后</span>
           <div className={styles.positioningDiagramCopy}>
-            <p className={styles.positioningDiagramCaption}>主体编辑 / 方块完成</p>
-            <p className={styles.positioningDiagramDescription}>内容入口与状态操作拆成两个区域</p>
+            <p className={styles.positioningDiagramDescription}>完成感克制，内容仍可见</p>
           </div>
-          <NewTaskCard />
+          <TaskInteractionImage
+            src="/images/selfly0/today-task-interaction-after.png"
+            alt="改造后的 Selfly Today Top 3 界面，右侧方块承担完成操作，卡片主体保留内容入口"
+          />
         </div>
       </div>
     </figure>

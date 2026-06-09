@@ -224,25 +224,27 @@ export default async function Selfly0Page({ params }: Selfly0PageProps) {
             <h2 className={styles.selfly0PositioningLabel}>任务卡片交互</h2>
             <div className={styles.caseText}>
               <h3 className={styles.selfly0StructureHeading}>
-                <span className={styles.selfly0PositioningHeadingLight}>从「点击即完成」到</span>
+                <span className={styles.selfly0PositioningHeadingLight}>平衡低压力视觉与</span>
                 <br />
-                <span className={styles.selfly0PositioningHeadingDark}>内容与状态分区</span>
+                <span className={styles.selfly0PositioningHeadingDark}>明确操作</span>
               </h3>
               <div className={styles.selfly0Body}>
                 <p>
-                  早期版本中，我有意弱化完成控件，不希望 Today 页像传统待办列表一样，用明显的 checkbox 不断提醒用户「还有任务没完成」。
-                  因此我曾把点击任务卡片定义为完成任务，让界面更轻，也让任务更像「今日关注」而不是压力清单。
+                  早期版本中，我有意<strong className={styles.selfly0Emphasis}>弱化未完成状态</strong>，避免 Today 像传统待办列表一样，用醒目的 Checkbox 持续提醒用户「还有任务没完成」。
+                  我将完成操作隐藏在任务卡片中，让未完成任务更像<strong className={styles.selfly0Emphasis}>「今日关注」</strong>，而非压力清单。
                 </p>
                 <p>
-                  但在真实使用反馈中，很多用户会在想修改任务文字时误触完成。于是我重新划分了任务卡片的点击语义：卡片主体作为「内容入口」，用于查看和编辑任务；右侧完成方块独立承担「状态操作」。
-                  同时，我刻意控制完成方块的视觉面积，让它足够可点击，但不成为卡片的视觉主角。
+                  但在真实反馈中，用户编辑任务时容易<strong className={styles.selfly0Emphasis}>误触完成</strong>；完成结果被收起后，用户也更容易失去对「我今天已经完成了什么」的<strong className={styles.selfly0Emphasis}>确认感</strong>。
+                </p>
+                <p>
+                  最终，我重新引入了<strong className={styles.selfly0Emphasis}>用户熟悉的完成交互</strong>：卡片主体用于编辑，右侧完成方块负责状态操作。同时完成控件保持克制，只提供明确操作，<strong className={styles.selfly0Emphasis}>不成为视觉主角</strong>，在减少压力与保留完成反馈之间取得平衡。
                 </p>
                 <div className={styles.designPoints}>
                   <h4>设计决策</h4>
                   <ul>
-                    <li><strong>低压力视觉</strong>：弱化未完成状态，不让 checkbox 主导任务卡片</li>
-                    <li><strong>动作分层</strong>：内容编辑与状态切换拆成两个操作区</li>
-                    <li><strong>误触控制</strong>：完成动作保留独立区域与反悔空间</li>
+                    <li><strong>降低压力感</strong>：未完成状态不成为视觉主角</li>
+                    <li><strong>回到用户习惯</strong>：点击内容进入编辑，点击方块改变状态</li>
+                    <li><strong>保留确认感</strong>：完成结果可见，但不打断继续专注</li>
                   </ul>
                 </div>
               </div>
