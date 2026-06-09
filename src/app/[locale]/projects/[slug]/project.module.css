@@ -296,6 +296,36 @@
     width: 48px;
   }
 
+  .exploreRecordContainers {
+    padding: 30px 20px 24px;
+  }
+
+  .exploreRecordContainersHeader {
+    margin-bottom: 22px;
+  }
+
+  .exploreRecordContainersTitle {
+    font-size: 18px;
+  }
+
+  .exploreRecordContainersGrid {
+    display: flex;
+    gap: 16px;
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    scroll-snap-type: x mandatory;
+  }
+
+  .exploreRecordContainerItem {
+    flex: 0 0 150px;
+    scroll-snap-align: center;
+  }
+
+  .exploreRecordContainerPhone {
+    width: 150px;
+  }
+
   .todayTop3Carousel {
     grid-template-columns: 1fr;
     gap: 20px;
@@ -1609,6 +1639,105 @@
   word-break: break-all;
 }
 
+/* Selfly0 — Explore record container placeholders */
+.exploreRecordContainers {
+  width: 100%;
+  margin: 0;
+  padding: 42px 44px 34px;
+  border: 3px solid #ffbc6e;
+  border-radius: 24px;
+  background: #000000;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.exploreRecordContainersHeader {
+  max-width: 520px;
+  margin: 0 auto 28px;
+  text-align: center;
+}
+
+.exploreRecordContainersLabel {
+  margin: 0 0 8px;
+  color: #d4956a;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.exploreRecordContainersTitle {
+  margin: 0;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.exploreRecordContainersIntro {
+  margin: 10px 0 0;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.exploreRecordContainersGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  align-items: start;
+}
+
+.exploreRecordContainerItem {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.exploreRecordContainerCopy {
+  min-height: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 4px;
+  text-align: center;
+}
+
+.exploreRecordContainerName {
+  color: #ffbc6e;
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+.exploreRecordContainerDescription {
+  color: rgba(255, 255, 255, 0.74);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.exploreRecordContainerPhone {
+  position: relative;
+  width: min(100%, 150px);
+  aspect-ratio: 600 / 1299;
+  overflow: hidden;
+  border: 5px solid #2a2a2a;
+  border-radius: 26px;
+  background: #ffffff;
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.4);
+}
+
+.exploreRecordContainerImage {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
 /* Selfly0 — Explore template picker (4-tab image switcher) */
 .exploreTemplatesSwitcher {
   width: 100%;
@@ -2596,18 +2725,22 @@
 }
 
 .iconDesignEvolutionLabel {
-  margin: 20px 0 10px;
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  color: rgba(255, 188, 110, 0.7);
+  margin: 22px 0 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3px;
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #ffbc6e;
 }
 
 .iconDesignEvolutionLabelArrow {
-  font-size: 18px;
-  font-weight: 700;
-  vertical-align: middle;
+  font-size: 34px;
+  font-weight: 900;
   line-height: 1;
+  transform: translateY(-2px);
 }
 
 .iconDesignEvolutionSection {

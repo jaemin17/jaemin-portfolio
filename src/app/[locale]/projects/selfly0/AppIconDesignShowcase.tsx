@@ -49,7 +49,10 @@ export function AppIconDesignShowcase() {
     <figure className={styles.iconDesignShowcase} aria-label="Selfly 应用图标设计演变">
       <FinalVersionsShowcase />
 
-      <p className={styles.iconDesignEvolutionLabel}>设计演变 <span className={styles.iconDesignEvolutionLabelArrow}>↓</span></p>
+      <p className={styles.iconDesignEvolutionLabel}>
+        <span>设计演变</span>
+        <span className={styles.iconDesignEvolutionLabelArrow} aria-hidden="true">↓</span>
+      </p>
 
       <div className={styles.iconDesignEvolutionSection}>
         <div className={styles.iconDesignEvolutionBoard}>

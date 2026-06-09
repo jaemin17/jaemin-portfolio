@@ -6,6 +6,7 @@ import { isLocale, type Locale } from "@/i18n/config";
 import styles from "../[slug]/project.module.css";
 import { TabStructureDiagram } from "./TabStructureDiagram";
 import { ExploreModulesCompare } from "./ExploreModulesCompare";
+import { ExploreRecordContainers } from "./ExploreRecordContainers";
 import { ExploreTemplatesSwitcher } from "./ExploreTemplatesSwitcher";
 import { ReviewRedistribution } from "./ReviewRedistribution";
 import { ProductLaunchEvidence } from "./ProductLaunchEvidence";
@@ -240,7 +241,7 @@ export default async function Selfly0Page({ params }: Selfly0PageProps) {
                   最终，我重新引入了<strong className={styles.selfly0Emphasis}>用户熟悉的完成交互</strong>：卡片主体用于编辑，右侧完成方块负责状态操作。同时完成控件保持克制，只提供明确操作，<strong className={styles.selfly0Emphasis}>不成为视觉主角</strong>，在减少压力与保留完成反馈之间取得平衡。
                 </p>
                 <div className={styles.designPoints}>
-                  <h4>设计决策</h4>
+                  <h4>设计取舍</h4>
                   <ul>
                     <li><strong>降低压力感</strong>：未完成状态不成为视觉主角</li>
                     <li><strong>回到用户习惯</strong>：点击内容进入编辑，点击方块改变状态</li>
@@ -261,23 +262,24 @@ export default async function Selfly0Page({ params }: Selfly0PageProps) {
           <div className={styles.selfly0StructureSection}>
             <h2 className={styles.selfly0PositioningLabel}>模块化记录</h2>
             <div className={styles.caseText}>
-              <h3 className={styles.selfly0StructureHeading}><span className={styles.selfly0PositioningHeadingLight}>架构收敛：从功能名称到</span><span className={styles.selfly0PositioningHeadingDark}>记录方式</span></h3>
+              <h3 className={styles.selfly0StructureHeading}><span className={styles.selfly0PositioningHeadingLight}>从功能入口，收敛为</span><span className={styles.selfly0PositioningHeadingDark}>记录容器</span></h3>
               <div className={styles.selfly0Body}>
                 <p>
-                  我对原有自我探索功能进行结构重组，把价值观、愿景板、成功日记、优势测试等独立入口，抽象成清单、计划、日记和图册四类记录容器。
-                  这样用户理解的是记录方式，而不是一组彼此割裂的工具。
+                  我对原有自我探索功能进行结构重组，把价值观、愿景板、成功日记、优势测试等独立入口，抽象成
+                  <strong className={styles.selfly0Emphasis}>清单、计划、日记和图册四类记录容器</strong>。
+                  这样用户理解的是<strong className={styles.selfly0Emphasis}>记录方式</strong>，而不是一组彼此割裂的工具。
                 </p>
                 <p>
-                  真实生活中的记录内容形态并不相同：有些只是一句话，有些需要长文整理，有些更偏视觉表达。
-                  Selfly 通过清单、计划、日记、图册、灵感模板和自定义模块，让用户按内容本身选择记录方式。
+                  按功能进入会更容易预设用途，<strong className={styles.selfly0Emphasis}>按容器进入能承接自我发现</strong>，同时适配不同人的内容、习惯和状态。
+                  用户可以在归纳自己、记录感受、规划行动和想象未来之间，<strong className={styles.selfly0Emphasis}>选择合适的记录方式</strong>。
                 </p>
                 <div className={styles.designPoints}>
-                  <h4>设计决策</h4>
+                  <h4>结构调整</h4>
                   <ul>
                     <li><strong>把功能入口抽象为记录容器</strong></li>
                     <li>减少用户理解成本</li>
                     <li>按内容形态匹配记录方式</li>
-                    <li>统一不同记录模块的基础结构</li>
+                    <li>兼容不同用户的个别记录情况</li>
                   </ul>
                 </div>
               </div>
@@ -286,6 +288,9 @@ export default async function Selfly0Page({ params }: Selfly0PageProps) {
         </section>
         <section className={`${styles.caseSection} ${styles.selfly0CaseSection}`}>
           <ExploreModulesCompare locale={locale} />
+        </section>
+        <section className={`${styles.caseSection} ${styles.selfly0CaseSection}`}>
+          <ExploreRecordContainers />
         </section>
         <section className={`${styles.caseSection} ${styles.selfly0CaseSection}`}>
           <div className={styles.selfly0StructureSection}>
@@ -401,7 +406,7 @@ export default async function Selfly0Page({ params }: Selfly0PageProps) {
           <ReviewRedistribution />
         </section>
         <ChapterIntro id="brand" icon="✨" title="应用图标：记录与成长的视觉隐喻">
-          图标需要在极小尺寸下讲清楚产品气质——我围绕「书」与「蝴蝶」做了多轮迭代，最终收敛为开放边框与渐变配色。
+          图标需要在极小尺寸下讲清楚产品气质——我围绕「书」与「蝴蝶」做了多轮迭代，最终收敛为开放边框与双色蝴蝶。
         </ChapterIntro>
         <section className={`${styles.caseSection} ${styles.selfly0CaseSection}`}>
           <div className={styles.selfly0StructureSection}>
