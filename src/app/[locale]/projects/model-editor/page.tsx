@@ -85,7 +85,7 @@ export default async function ModelEditorPage({ params }: Props) {
               <h2 className={styles.positioningHeading}>
                 <span className={styles.positioningHeadingLight}>在有限空间内，</span>
                 <br />
-                <span className={styles.positioningHeadingDark}>让用户始终关注模型本身</span>
+                <span className={styles.positioningHeadingDark}>组织复杂编辑任务</span>
               </h2>
               <div className={styles.positioningBody}>
                 <p>
@@ -94,7 +94,7 @@ export default async function ModelEditorPage({ params }: Props) {
                 </p>
                 <p>
                   早期方案的问题不是功能缺失，而是功能之间缺少清晰归属：用户需要不断判断这个入口属于模型、文件还是属性，
-                  编辑路径被工具位置打断。我的核心任务，是把复杂编辑能力重新组织成一张稳定的信息地图。
+                  编辑路径被工具位置打断。我的核心目标：如何在有限空间内<strong className={styles.positioningEmphasis}>组织复杂编辑任务</strong>，让用户更高效地<strong className={styles.positioningEmphasis}>理解、调整和控制模型</strong>。
                 </p>
               </div>
             </div>
