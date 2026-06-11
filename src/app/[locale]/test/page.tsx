@@ -105,6 +105,15 @@ export default async function TestPage({ params }: TestPageProps) {
                 <span>Layout 03</span>
               </div>
             </Link>
+            <Link className={styles.card} href={localePath(locale, "/test/model-editor-backup")}>
+              <span className={styles.cardLabel}>Archive</span>
+              <h3>模型编辑器（备份）</h3>
+              <p>模型编辑器项目详情页的当前版本备份，修改前保留。</p>
+              <div className={styles.tags}>
+                <span>Model Editor backup</span>
+                <span>Project detail</span>
+              </div>
+            </Link>
           </div>
         </section>
 

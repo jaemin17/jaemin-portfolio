@@ -6,22 +6,22 @@ import styles from "./tools4.module.css";
 
 const projects = [
   {
-    title: "3D Model Browser",
-    caption: "模型资源浏览与预览",
+    title: "模型编辑器",
+    caption: "材质、颜色和模型结构编辑",
     video: "/videos/tools/model.mp4",
+    href: "/projects/model-editor",
+  },
+  {
+    title: "XR交互剧本设计引擎",
+    caption: "模型资源浏览与预览",
+    video: "/videos/tools/xr-script.mp4",
     href: "/projects/3d-model-browser",
   },
   {
-    title: "XR-PPT Player",
+    title: "XR课件",
     caption: "3D 内容播放与课件演示",
     video: "/videos/tools/ppt.mp4",
     href: "/projects/vr-lesson-creator",
-  },
-  {
-    title: "Model Editor",
-    caption: "材质、颜色和模型结构编辑",
-    video: "/videos/tools/model-editor.mp4",
-    href: "/projects/model-editor",
   },
   {
     title: "Sync Space",
