@@ -77,44 +77,15 @@ export default async function ModelEditorPage({ params }: Props) {
           </div>
         </div>
 
-        {/* Research and Analysis */}
-        <div className={styles.section}>
-          <div className={styles.sectionInner}>
-            <span className={styles.sectionLabel}>Research and Analysis</span>
-            <div className={styles.gridLeftRight}>
-              <p className={styles.lrHeadline}>
-                What is <span className={styles.highlight}>Model Editor</span>
-              </p>
-              <p className={styles.lrText}>
-                Model Editor
-                专注于模型的外观与结构编辑，包含材质库、颜色选择器、结构树视图和爆炸动画编辑器。用户可以在平板或桌面端对已有模型进行定制化修改，满足不同教学场景的展示需求。
-              </p>
-            </div>
-            <video
-              className={styles.video}
-              src="/videos/model-editor/overview.mp4"
-              autoPlay
-              loop
-              muted
-              playsInline
-              preload="auto"
-            />
-          </div>
-        </div>
-
         {/* ─── Core Challenge ──────────────────────────────── */}
         <div className={styles.challengeSection}>
           <div className={styles.challengeInner}>
-            <p className={styles.challengeLabel}>Design Challenge</p>
-            <h2 className={styles.challengeHeadline}>
-              在有限空间内组织复杂编辑任务，<br />让用户始终关注模型本身
-            </h2>
-            <p className={styles.challengeBody}>
-              3D 编辑器面临一个根本矛盾：用户需要大量控制选项，同时需要一直观察模型。
-              初版设计把工具、属性、参数和颜色堆叠在一起，用户在多个面板之间反复切换，
-              注意力不断离开模型。这个项目的核心任务是重新组织这些元素，
-              让「看模型」和「调参数」能够同时发生。
-            </p>
+            <div className={styles.challengeRow}>
+              <span className={styles.challengeIcon}>⚡</span>
+              <h2 className={styles.challengeHeadline}>
+                在有限空间内组织复杂编辑任务，<br />让用户始终关注模型本身
+              </h2>
+            </div>
           </div>
         </div>
 
