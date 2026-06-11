@@ -85,7 +85,7 @@ export default async function ModelEditorPage({ params }: Props) {
               <h2 className={styles.positioningHeading}>
                 <span className={styles.positioningHeadingLight}>在有限空间内，</span>
                 <br />
-                <span className={styles.positioningHeadingDark}>组织复杂编辑任务</span>
+                <span className={styles.positioningHeadingDark}>让用户始终关注模型本身</span>
               </h2>
               <div className={styles.positioningBody}>
                 <p>
