@@ -89,43 +89,58 @@ export default async function ModelEditorPage({ params }: Props) {
               <p className={`${styles.positioningLabel} ${styles.protoIntroLabel}`}>当前状态</p>
               <div className={styles.protoIntroRow}>
                 <h3 className={styles.protoIntroTitle}>
-                  <span className={styles.positioningHeadingLight}>先看清编辑关系，</span>
+                  <span className={styles.positioningHeadingLight}>先看清每个区域的职责，</span>
                   <br />
-                  <span className={styles.positioningHeadingDark}>再定义设计方向</span>
+                  <span className={styles.positioningHeadingDark}>再找到体验的改进点</span>
                 </h3>
                 <div>
                   <div className={styles.protoAreas}>
-                    <p>在课件制作流程中，中高职教师需要同时完成模型文件处理和模型编辑。最初原型把不同作用对象拆成了相对明确的区域：模型文件相关操作、编辑面板、模型预览空间和模型工具栏。</p>
-                    <ul>
-                      <li><strong>顶部</strong>：模型文件相关的全局功能入口。</li>
-                      <li><strong>左侧</strong>：当前全局功能下展开的编辑面板。</li>
-                      <li><strong>中间</strong>：模型的主要展示和交互空间。</li>
-                      <li><strong>右侧</strong>：直接作用于模型的交互工具栏。</li>
-                    </ul>
+                    <p>在课件制作流程中，中高职教师需要同时完成<strong className={styles.positioningEmphasis}>模型文件处理和模型编辑</strong>。最初原型把不同作用对象拆成了<strong className={styles.positioningEmphasis}>相对明确的区域</strong>：模型文件相关操作、编辑面板、模型预览空间和模型工具栏。</p>
                   </div>
                 </div>
               </div>
-              <Image
-                className={styles.protoEvidenceImage}
-                src="/images/model-editor/原型4.png"
-                alt="Model Editor 开发原型"
-                width={1440}
-                height={900}
-                style={{ width: "100%", height: "auto" }}
-              />
+              <div className={styles.protoEvidenceFrame}>
+                <div className={styles.protoEvidenceCanvas}>
+                  <Image
+                    className={styles.protoEvidenceImage}
+                    src="/images/model-editor/原型4.png"
+                    alt="Model Editor 开发原型"
+                    width={1440}
+                    height={900}
+                    style={{ width: "100%", height: "auto" }}
+                  />
+                  <div className={`${styles.protoAnnotation} ${styles.protoAnnotationTop}`}>
+                    <strong>顶部</strong>模型文件相关的全局功能入口
+                  </div>
+                  <div className={`${styles.protoAnnotation} ${styles.protoAnnotationLeft}`}>
+                    <strong>左侧</strong>当前全局功能下展开的编辑面板
+                  </div>
+                  <div className={`${styles.protoAnnotation} ${styles.protoAnnotationCenter}`}>
+                    <strong>中间</strong>模型的主要展示和交互空间
+                  </div>
+                  <div className={`${styles.protoAnnotation} ${styles.protoAnnotationRight}`}>
+                    <strong>右侧</strong>直接作用于模型的交互工具栏
+                  </div>
+                </div>
+                <p className={styles.protoEvidenceCaption}>早期原型</p>
+              </div>
+              <p className={`${styles.positioningLabel} ${styles.protoIntroLabel}`}>设计目的</p>
               <div className={styles.protoIntroRow}>
-                <div />
+                <h3 className={styles.protoIntroTitle}>
+                  <span className={styles.positioningHeadingLight}>面向课件的轻量处理，</span>
+                  <br />
+                  <span className={styles.positioningHeadingDark}>而不是专业建模</span>
+                </h3>
                 <div>
                   <div className={styles.protoAreas}>
-                    <h4>使用场景</h4>
-                    <p>在课件制作链路中，模型编辑器承担的是 3D 模型进入课件前的<strong className={styles.positioningEmphasis}>轻量处理任务</strong>，而不是完整的专业建模流程。因此，设计重点需要从"提供完整工具"转向"<strong className={styles.positioningEmphasis}>降低理解成本、缩短操作路径</strong>"，帮助教师更快完成模型整理。</p>
+                    <p>模型编辑器承担的是 3D 模型进入课件前的<strong className={styles.positioningEmphasis}>轻量处理任务</strong>，而不是完整的专业建模流程。因此，设计重点需要从"提供完整工具"转向"<strong className={styles.positioningEmphasis}>降低理解成本、缩短操作路径</strong>"，帮助教师更快完成模型整理。</p>
                   </div>
                 </div>
               </div>
               <div className={styles.directionPanel}>
                 <div className={styles.directionCards}>
                   <div className={styles.directionPanelHeader}>
-                    <p>设计目标</p>
+                    <p>三个原则</p>
                   </div>
                   <div className={styles.directionCard}>
                     <div className={`${styles.directionCardVisual} ${styles.directionCardVisualUnderstand}`}>

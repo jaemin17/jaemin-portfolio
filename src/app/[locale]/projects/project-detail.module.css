@@ -441,13 +441,80 @@
   letter-spacing: 0.08em;
   margin: 0 0 10px;
 }
+.protoEvidenceFrame {
+  margin-top: 48px;
+  padding: 56px 64px 32px;
+  border-radius: 22px;
+  border: 2px solid #2563eb;
+  background: #030303;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.protoEvidenceCaption {
+  margin: 20px 0 0;
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.55);
+  letter-spacing: 0.04em;
+  text-align: center;
+}
+.protoEvidenceCanvas {
+  position: relative;
+  width: 100%;
+}
 .protoEvidenceImage {
   width: 100%;
   border-radius: 8px;
-  border: 3px solid #93c5fd;
   display: block;
   box-sizing: border-box;
-  margin-top: 48px;
+}
+.protoAnnotation {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  background: rgba(3, 3, 3, 0.82);
+  border: 1px solid rgba(96, 165, 250, 0.55);
+  border-radius: 10px;
+  padding: 10px 14px;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 13px;
+  line-height: 1.5;
+  text-align: center;
+  max-width: 180px;
+  box-sizing: border-box;
+}
+.protoAnnotation strong {
+  color: #60a5fa;
+  font-size: 14px;
+  font-weight: 700;
+}
+.protoAnnotationTop {
+  top: 1.2%;
+  left: 50%;
+  transform: translateX(-50%);
+  flex-direction: row;
+  gap: 8px;
+  white-space: nowrap;
+  max-width: none;
+}
+.protoAnnotationLeft {
+  top: 50%;
+  left: 1.5%;
+  transform: translateY(-50%);
+  max-width: 150px;
+}
+.protoAnnotationCenter {
+  top: 74%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.protoAnnotationRight {
+  top: 50%;
+  right: 1%;
+  transform: translateY(-50%);
+  max-width: 150px;
 }
 .protoIntroLabel {
   margin: 64px 0 0;
