@@ -26,20 +26,6 @@ const visualProjects = [
     path: "/test/visual2/cosmic-blaze",
     image: "/images/visual/cosmic-blaze/hero.png",
   },
-  {
-    title: "医学 VR",
-    body: "老年医学基础、人体模型、生理病理原理、手术操作等医学教学软件视觉。",
-    tags: ["Medical", "Anatomy", "Training"],
-    path: "/test/visual2/medical-vr",
-    video: "/videos/visual/highmodes.mp4",
-  },
-  {
-    title: "汽车实训 VR",
-    body: "纯电动汽车拆装、动力总成、电池相关训练软件和产品物料视觉。",
-    tags: ["Automotive", "Training", "Visual"],
-    path: "/test/visual2/automotive-vr",
-    video: "/videos/visual/highmodes.mp4",
-  },
 ];
 
 type VisualPageProps = {

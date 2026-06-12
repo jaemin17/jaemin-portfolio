@@ -5,19 +5,13 @@ export const animalVrShots = [
     src: "/images/visual/animal-vr/hero.png",
   },
   {
-    title: "犬体概览",
-    subtitle: "整体模型",
-    src: "/images/visual/animal-vr/dog-overview.png",
-  },
-  {
-    title: "犬体肌肉",
-    subtitle: "肌肉层信息面板",
-    src: "/images/visual/animal-vr/dog-muscle-detail.png",
-  },
-  {
-    title: "犬体肌肉",
-    subtitle: "标注界面",
-    src: "/images/visual/animal-vr/dog-muscle.png",
+    title: "犬体结构",
+    subtitle: "骨骼 / 肌肉 / 外观",
+    src: "/images/visual/animal-vr/dog-layer-overview.png",
+    carousel: [
+      { type: "image", src: "/images/visual/animal-vr/dog-layer-overview.png" },
+      { type: "image", src: "/images/visual/animal-vr/dog-muscle-detail.png" },
+    ],
   },
   {
     title: "大脑的秘密",
@@ -28,16 +22,10 @@ export const animalVrShots = [
     title: "小脑结构",
     subtitle: "恢复 / 整体移动",
     src: "/images/visual/animal-vr/brain-detail-1.png",
-  },
-  {
-    title: "小脑结构",
-    subtitle: "爆炸 / 剖切",
-    src: "/images/visual/animal-vr/brain-detail-2.png",
-  },
-  {
-    title: "小脑结构",
-    subtitle: "还原",
-    src: "/images/visual/animal-vr/brain-detail-3.png",
+    carousel: [
+      { type: "image", src: "/images/visual/animal-vr/brain-detail-1.png" },
+      { type: "image", src: "/images/visual/animal-vr/brain-exploded-overview.png" },
+    ],
   },
   {
     title: "耳朵的结构",
@@ -50,13 +38,50 @@ export const animalVrShots = [
     src: "/images/visual/animal-vr/ear-detail-1.png",
   },
   {
-    title: "耳蜗",
-    subtitle: "返回 / 剖切",
-    src: "/images/visual/animal-vr/ear-detail-2.png",
+    title: "狗解剖",
+    subtitle: "结构教学 / 交互状态",
+    src: "/images/visual/animal-vr/dog-anatomy-scene-1.png",
+    carousel: [
+      { type: "image", src: "/images/visual/animal-vr/dog-anatomy-scene-1.png" },
+      { type: "image", src: "/images/visual/animal-vr/dog-anatomy-scene-3.png" },
+    ],
   },
   {
-    title: "耳蜗",
-    subtitle: "返回 / 还原",
-    src: "/images/visual/animal-vr/ear-detail-3.png",
+    title: "猪解剖",
+    subtitle: "交互状态",
+    src: "/images/visual/animal-vr/pig-scene-3.png",
+  },
+  {
+    title: "猪解剖",
+    subtitle: "结构教学 / 场景概览",
+    src: "/images/visual/animal-vr/pig-scene-2.png",
+    carousel: [
+      { type: "image", src: "/images/visual/animal-vr/pig-scene-2.png" },
+      { type: "image", src: "/images/visual/animal-vr/pig-scene-1.png" },
+    ],
+  },
+  {
+    title: "猪解剖",
+    subtitle: "课程列表 / 引导弹窗",
+    src: "/images/visual/animal-vr/pig-course-list.png",
+    carousel: [
+      { type: "image", src: "/images/visual/animal-vr/pig-course-list.png" },
+      { type: "image", src: "/images/visual/animal-vr/pig-guide-1.png" },
+      { type: "image", src: "/images/visual/animal-vr/pig-guide-2.png" },
+    ],
+  },
+  {
+    title: "牛解剖",
+    subtitle: "交互状态",
+    src: "/images/visual/animal-vr/cow-scene-2.png",
+  },
+  {
+    title: "牛解剖",
+    subtitle: "结构教学 / 新手指引",
+    src: "/images/visual/animal-vr/cow-scene-1.png",
+    carousel: [
+      { type: "image", src: "/images/visual/animal-vr/cow-scene-1.png" },
+      { type: "image", src: "/images/visual/animal-vr/cow-guide-1.png" },
+    ],
   },
 ] as const;

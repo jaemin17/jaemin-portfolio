@@ -14,11 +14,6 @@ export const smartManufacturingShots = [
     ],
   },
   {
-    title: "变速器爆炸演示",
-    subtitle: "交互状态",
-    src: "/images/visual/smart-manufacturing/transmission-exploded.png",
-  },
-  {
     title: "工业机器人",
     subtitle: "首页展示",
     src: "/images/visual/smart-manufacturing/robot-home.png",

@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 type CarouselItem = { type: "image"; src: string } | { type: "video"; src: string };
 
 type AutoCarouselProps = {
-  items: CarouselItem[];
+  items: readonly CarouselItem[];
   alt: string;
   width: number;
   height: number;
@@ -14,39 +14,20 @@ type AutoCarouselProps = {
 };
 
 export function AutoCarousel({ items, alt, width, height, interval = 3500 }: AutoCarouselProps) {
-  const [showOverlay, setShowOverlay] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
-    const id = setInterval(() => setShowOverlay((v) => !v), interval);
+    const id = setInterval(() => setActiveIndex((index) => (index + 1) % items.length), interval);
     return () => clearInterval(id);
-  }, [interval]);
-
-  const base = items[0];
-  const overlay = items[1];
+  }, [interval, items.length]);
 
   return (
     <div style={{ position: "relative", overflow: "hidden", aspectRatio: `${width}/${height}`, background: "#0f1117" }}>
-      {base.type === "video" ? (
-        <video
-          src={base.src}
-          autoPlay loop muted playsInline
-          style={{ display: "block", width: "100%", height: "100%", objectFit: "cover" }}
-        />
-      ) : (
-        <Image
-          src={base.src}
-          width={width}
-          height={height}
-          alt={alt}
-          loading="eager"
-          style={{ display: "block", width: "100%", height: "auto" }}
-        />
-      )}
-
-      {overlay && (
-        overlay.type === "video" ? (
+      {items.map((item, index) => (
+        item.type === "video" ? (
           <video
-            src={overlay.src}
+            key={item.src}
+            src={item.src}
             autoPlay loop muted playsInline
             style={{
               position: "absolute",
@@ -54,28 +35,29 @@ export function AutoCarousel({ items, alt, width, height, interval = 3500 }: Aut
               width: "100%",
               height: "100%",
               objectFit: "cover",
-              opacity: showOverlay ? 1 : 0,
+              opacity: activeIndex === index ? 1 : 0,
               transition: "opacity 1s ease",
             }}
           />
         ) : (
           <Image
-            src={overlay.src}
+            key={item.src}
+            src={item.src}
             width={width}
             height={height}
-            alt={`${alt} (2)`}
+            alt={index === 0 ? alt : `${alt} (${index + 1})`}
             loading="eager"
             style={{
               position: "absolute",
               inset: 0,
               width: "100%",
               height: "auto",
-              opacity: showOverlay ? 1 : 0,
+              opacity: activeIndex === index ? 1 : 0,
               transition: "opacity 1s ease",
             }}
           />
         )
-      )}
+      ))}
     </div>
   );
 }

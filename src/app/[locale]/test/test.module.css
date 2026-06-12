@@ -39,6 +39,11 @@
   letter-spacing: 0;
 }
 
+.caseSectionIntro {
+  padding-top: clamp(72px, 10vw, 126px);
+  padding-bottom: clamp(56px, 8vw, 96px);
+}
+
 .caseHeroImage {
   overflow: hidden;
   margin: 0;
