@@ -85,28 +85,17 @@ export default async function ModelEditorPage({ params }: Props) {
         {/* ─── Core Challenge ──────────────────────────────── */}
         <div className={`${styles.positioningSection} ${styles.positioningSectionLarge}`}>
           <div className={`${styles.positioningInner} ${styles.positioningInnerCentered}`}>
-            <h2 className={styles.conceptHeadline}>我们应该怎么<span className={styles.conceptHeadlineEmphasis}>改进模型编辑器的用户体验？</span></h2>
-
             <div className={styles.protoEvidence}>
-              <Image
-                className={styles.protoEvidenceImage}
-                src="/images/model-editor/原型.png"
-                alt="Model Editor 开发原型"
-                width={1440}
-                height={900}
-                style={{ width: "100%", height: "auto" }}
-              />
-              <p className={`${styles.positioningLabel} ${styles.protoIntroLabel}`}>设计方向</p>
+              <p className={`${styles.positioningLabel} ${styles.protoIntroLabel}`}>当前状态</p>
               <div className={styles.protoIntroRow}>
                 <h3 className={styles.protoIntroTitle}>
-                  <span className={styles.positioningHeadingLight}>从现有原型，</span>
+                  <span className={styles.positioningHeadingLight}>先看清编辑关系，</span>
                   <br />
-                  <span className={styles.positioningHeadingDark}>理解编辑关系</span>
+                  <span className={styles.positioningHeadingDark}>再定义设计方向</span>
                 </h3>
                 <div>
                   <div className={styles.protoAreas}>
-                    <h4>当前原型</h4>
-                    <p>页面当前由四类区域组成：模型文件的全局编辑、全局编辑面板、模型交互空间和模型工具。</p>
+                    <p>在课件制作流程中，中高职教师需要同时完成模型文件处理和模型编辑。最初原型把不同作用对象拆成了相对明确的区域：模型文件相关操作、编辑面板、模型预览空间和模型工具栏。</p>
                     <ul>
                       <li><strong>顶部</strong>：模型文件相关的全局功能入口。</li>
                       <li><strong>左侧</strong>：当前全局功能下展开的编辑面板。</li>
@@ -114,22 +103,34 @@ export default async function ModelEditorPage({ params }: Props) {
                       <li><strong>右侧</strong>：直接作用于模型的交互工具栏。</li>
                     </ul>
                   </div>
+                </div>
+              </div>
+              <Image
+                className={styles.protoEvidenceImage}
+                src="/images/model-editor/原型4.png"
+                alt="Model Editor 开发原型"
+                width={1440}
+                height={900}
+                style={{ width: "100%", height: "auto" }}
+              />
+              <div className={styles.protoIntroRow}>
+                <div />
+                <div>
                   <div className={styles.protoAreas}>
                     <h4>使用场景</h4>
-                    <p>在课件制作链路中，模型编辑器承担的是 3D 模型进入课件前的轻量处理任务，而不是完整的专业建模流程。因此，设计重点需要从”提供完整工具”转向”降低理解成本、缩短操作路径”，帮助教师更快完成模型整理。</p>
+                    <p>在课件制作链路中，模型编辑器承担的是 3D 模型进入课件前的<strong className={styles.positioningEmphasis}>轻量处理任务</strong>，而不是完整的专业建模流程。因此，设计重点需要从"提供完整工具"转向"<strong className={styles.positioningEmphasis}>降低理解成本、缩短操作路径</strong>"，帮助教师更快完成模型整理。</p>
                   </div>
                 </div>
               </div>
               <div className={styles.directionPanel}>
                 <div className={styles.directionCards}>
                   <div className={styles.directionPanelHeader}>
-                    <p>基于这个判断，我围绕”这些功能是否被放在符合编辑路径的位置”，明确了三个设计方向：</p>
+                    <p>设计目标</p>
                   </div>
                   <div className={styles.directionCard}>
                     <div className={`${styles.directionCardVisual} ${styles.directionCardVisualUnderstand}`}>
                       <svg className={styles.directionIcon} viewBox="0 0 64 64" aria-hidden="true">
-                        <path d="M32 8C20.4 8 11 17.4 11 29c0 7.7 4.1 14.4 10.3 18.1V54c0 1.1.9 2 2 2h17.4c1.1 0 2-.9 2-2v-6.9C48.9 43.4 53 36.7 53 29 53 17.4 43.6 8 32 8Zm-8 40h16" />
-                        <path d="M25 28c2-4 5-6 7-6s5 2 7 6" />
+                        <path d="M32 6a26 26 0 1 0 0 52 26 26 0 0 0 0-52Zm0 10a16 16 0 1 1 0 32 16 16 0 0 1 0-32Zm0 10a6 6 0 1 0 0 12 6 6 0 0 0 0-12Z" />
                       </svg>
                       <span>更容易理解</span>
                     </div>
@@ -138,8 +139,7 @@ export default async function ModelEditorPage({ params }: Props) {
                   <div className={styles.directionCard}>
                     <div className={`${styles.directionCardVisual} ${styles.directionCardVisualOperate}`}>
                       <svg className={styles.directionIcon} viewBox="0 0 64 64" aria-hidden="true">
-                        <path d="M19 12h26a7 7 0 0 1 7 7v26a7 7 0 0 1-7 7H19a7 7 0 0 1-7-7V19a7 7 0 0 1 7-7Z" />
-                        <path d="M24 32h16M32 24v16" />
+                        <path d="M19 7c-2.6-1.1-5.4.8-5.4 3.6v37.8c0 3.3 3.8 5.1 6.4 3.1l8.5-6.6 5.4 11.5c1.2 2.5 4.2 3.6 6.8 2.4l3.7-1.8c2.5-1.2 3.6-4.2 2.4-6.8l-5.1-10.8h10.9c3.7 0 5.2-4.8 2.2-6.9L19 7Z" />
                       </svg>
                       <span>更容易操作</span>
                     </div>
@@ -148,9 +148,7 @@ export default async function ModelEditorPage({ params }: Props) {
                   <div className={styles.directionCard}>
                     <div className={`${styles.directionCardVisual} ${styles.directionCardVisualFast}`}>
                       <svg className={styles.directionIcon} viewBox="0 0 64 64" aria-hidden="true">
-                        <path d="M10 32h34" />
-                        <path d="m34 18 14 14-14 14" />
-                        <path d="M12 18h10M12 46h10" />
+                        <path d="M32 6c14.4 0 26 11.6 26 26S46.4 58 32 58 6 46.4 6 32 17.6 6 32 6Zm13.7 19.3c1.6-1.6 1.6-4.1 0-5.7s-4.1-1.6-5.7 0L28.8 30.8l-4.6-4.6c-1.6-1.6-4.1-1.6-5.7 0s-1.6 4.1 0 5.7l7.4 7.4c1.6 1.6 4.1 1.6 5.7 0l14.1-14Z" />
                       </svg>
                       <span>更快完成编辑任务</span>
                     </div>
@@ -185,12 +183,12 @@ export default async function ModelEditorPage({ params }: Props) {
               <div className={styles.narrativeBody}>
                 <p>
                   在探索过程中，我尝试过把模型工具放在顶部、底部、右侧，也尝试过把编辑面板做成浮层或常驻侧栏。
-                  这些方案都能容纳功能，但用户仍然需要在多个区域之间判断：这是全局操作、模型操作，还是当前对象的属性？
+                  这些方案都能容纳功能，但用户仍然需要在多个区域之间判断：这是<strong className={styles.positioningEmphasis}>全局操作、模型操作，还是当前对象的属性</strong>？
                 </p>
                 <p>
-                  最终我没有继续寻找某一种“最佳工具栏位置”，而是重新定义页面区域：左侧负责编辑对象和模块入口，
+                  最终我没有继续寻找某一种"最佳工具栏位置"，而是<strong className={styles.positioningEmphasis}>重新定义页面区域</strong>：左侧负责编辑对象和模块入口，
                   中间保持完整模型视口，右侧承载模型操作与上下文参数，顶部只保留保存、预览、撤销等全局动作。
-                  操作路径也随之收敛为「选对象 → 调属性 → 立即看效果」。
+                  操作路径也随之收敛为<strong className={styles.positioningEmphasis}>「选对象 → 调属性 → 立即看效果」</strong>。
                 </p>
                 <div className={styles.narrativeDesignPoints}>
                   <h4>设计决策</h4>
@@ -251,12 +249,12 @@ export default async function ModelEditorPage({ params }: Props) {
               </h3>
               <div className={styles.narrativeBody}>
                 <p>
-                  “太多方案”的价值不在于证明我尝试了很多样式，而在于它暴露了复杂编辑器最核心的矛盾：
-                  工具越完整，越需要清晰的信息层级；否则用户会被功能位置牵着走，而不是围绕模型完成任务。
+                  "太多方案"的价值不在于证明我尝试了很多样式，而在于它暴露了复杂编辑器最核心的矛盾：
+                  工具越完整，越需要<strong className={styles.positioningEmphasis}>清晰的信息层级</strong>；否则用户会被功能位置牵着走，而不是<strong className={styles.positioningEmphasis}>围绕模型完成任务</strong>。
                 </p>
                 <p>
                   我把这些方案重新归纳为三类：顶部集中、底部工具栏和右侧工具列。
-                  它们分别解决了入口可见性、操作贴近模型、工具靠近参数的问题，但也各自带来层级混乱、视线跳转或按钮堆叠。
+                  它们分别解决了入口可见性、操作贴近模型、工具靠近参数的问题，但也各自带来<strong className={styles.positioningEmphasis}>层级混乱、视线跳转或按钮堆叠</strong>。
                 </p>
               </div>
             </div>
@@ -268,7 +266,7 @@ export default async function ModelEditorPage({ params }: Props) {
               </article>
               <article className={styles.explorationCard}>
                 <h4>底部工具栏型</h4>
-                <p>更贴近“看着模型操作”的直觉，但用户需要在左侧面板、右侧参数和底部工具之间形成三角跳转。</p>
+                <p>更贴近"看着模型操作"的直觉，但用户需要在左侧面板、右侧参数和底部工具之间形成三角跳转。</p>
               </article>
               <article className={styles.explorationCard}>
                 <h4>右侧工具列型</h4>
@@ -364,20 +362,20 @@ export default async function ModelEditorPage({ params }: Props) {
               <div className={styles.narrativeBody}>
                 <p>
                   初版颜色面板把色盘、RGB、透明度、亮度、对比度和预设色完整展示出来。
-                  它功能完整，但对用户来说过早暴露了参数系统：用户真正想做的通常不是“打开颜色工具”，
-                  而是“把当前选中的部件改成某种颜色”。
+                  它功能完整，但对用户来说<strong className={styles.positioningEmphasis}>过早暴露了参数系统</strong>：用户真正想做的通常不是"打开颜色工具"，
+                  而是<strong className={styles.positioningEmphasis}>"把当前选中的部件改成某种颜色"</strong>。
                 </p>
                 <p>
-                  因此颜色编辑不应该像一个独立漂浮的工具，而应该成为当前对象属性的一部分。
+                  因此颜色编辑不应该像一个独立漂浮的工具，而应该成为<strong className={styles.positioningEmphasis}>当前对象属性的一部分</strong>。
                   最终方案把颜色调整收进属性编辑体系，只在用户触达颜色属性时展示完整控制。
-                  逻辑从「颜色工具 → 找对象」变成「选中对象 → 对象属性 → 颜色」。
+                  逻辑从「颜色工具 → 找对象」变成<strong className={styles.positioningEmphasis}>「选中对象 → 对象属性 → 颜色」</strong>。
                 </p>
                 <div className={styles.narrativeDesignPoints}>
                   <h4>设计决策</h4>
                   <ul>
                     <li><strong>颜色从工具变成属性</strong>：颜色不再独立漂浮，而归属于当前选中的对象</li>
                     <li><strong>参数按需出现</strong>：只有进入颜色编辑时才展示完整控制</li>
-                    <li><strong>从功能入口转向对象上下文</strong>：用户路径变成“选中对象 → 编辑属性 → 调整颜色”</li>
+                    <li><strong>从功能入口转向对象上下文</strong>：用户路径变成"选中对象 → 编辑属性 → 调整颜色"</li>
                   </ul>
                 </div>
               </div>
@@ -470,14 +468,14 @@ export default async function ModelEditorPage({ params }: Props) {
               </h3>
               <div className={styles.narrativeBody}>
                 <p>
-                  3D 编辑器最大的矛盾：用户需要大量控制面板，但同时需要一直盯着模型。
+                  3D 编辑器最大的矛盾：用户需要大量控制面板，但同时需要<strong className={styles.positioningEmphasis}>一直盯着模型</strong>。
                   迭代过程中，右侧颜色面板与左侧属性面板同时存在，
-                  模型视口被压缩到中间的剩余空间，用户编辑时视觉重心被工具分散。
+                  模型视口被压缩到中间的剩余空间，用户编辑时<strong className={styles.positioningEmphasis}>视觉重心被工具分散</strong>。
                 </p>
                 <p>
-                  最终布局确立了「模型优先」原则：顶部只保留全局操作，
+                  最终布局确立了<strong className={styles.positioningEmphasis}>「模型优先」原则</strong>：顶部只保留全局操作，
                   左侧收窄为图标导航加折叠属性面板，右侧参数只在操作上下文中展开。
-                  模型视口始终占据最大比例，让「调参数」和「看效果」之间的距离消失。
+                  模型视口始终占据最大比例，让<strong className={styles.positioningEmphasis}>「调参数」和「看效果」之间的距离消失</strong>。
                 </p>
                 <div className={styles.narrativeDesignPoints}>
                   <h4>设计决策</h4>
@@ -641,11 +639,11 @@ export default async function ModelEditorPage({ params }: Props) {
               <div className={styles.narrativeBody}>
                 <p>
                   这个项目让我更明确地意识到，复杂工具的体验质量不取决于功能是否足够多，
-                  而取决于用户能否稳定理解当前对象、可用操作和反馈结果之间的关系。
+                  而取决于用户能否稳定理解<strong className={styles.positioningEmphasis}>当前对象、可用操作和反馈结果之间的关系</strong>。
                 </p>
                 <p>
-                  对非专业用户来说，最重要的不是一次性看到所有能力，而是知道“我现在正在编辑什么、这个对象能做什么、调整后会发生什么”。
-                  最终方案通过区域职责分离和上下文编辑，把专业 3D 工具转化为更接近教学任务的操作流程。
+                  对非专业用户来说，最重要的不是一次性看到所有能力，而是知道<strong className={styles.positioningEmphasis}>"我现在正在编辑什么、这个对象能做什么、调整后会发生什么"</strong>。
+                  最终方案通过区域职责分离和上下文编辑，把专业 3D 工具转化为<strong className={styles.positioningEmphasis}>更接近教学任务的操作流程</strong>。
                 </p>
                 <div className={styles.narrativeDesignPoints}>
                   <h4>项目反思</h4>
