@@ -96,7 +96,7 @@ export default async function ModelEditorPage({ params }: Props) {
                 height={900}
                 style={{ width: "100%", height: "auto" }}
               />
-              <p className={`${styles.positioningLabel} ${styles.protoIntroLabel}`}>原型分析</p>
+              <p className={`${styles.positioningLabel} ${styles.protoIntroLabel}`}>设计方向</p>
               <div className={styles.protoIntroRow}>
                 <h3 className={styles.protoIntroTitle}>
                   <span className={styles.positioningHeadingLight}>从现有原型，</span>
