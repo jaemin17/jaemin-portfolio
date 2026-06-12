@@ -41,7 +41,8 @@ export function SiteHeader({ locale, surface = "default", active }: SiteHeaderPr
           <a className={styles.navLink} href={resumeDownloadUrl} target="_blank" rel="noreferrer">
             Resume
           </a>
-          <LocaleSwitcher current={locale} />
+          {/* TODO: 英文版设计完成后取消注释 */}
+          {/* <LocaleSwitcher current={locale} /> */}
         </nav>
       </div>
     </header>
