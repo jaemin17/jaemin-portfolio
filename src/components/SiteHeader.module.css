@@ -16,7 +16,7 @@ html:has([data-page="about2"]) .header {
 }
 
 html:has([data-page="plain-white"]) .header {
-  background-color: #ffffff;
+  background-color: #fafbff;
 }
 
 html:has([data-page="tools4"]) .header {

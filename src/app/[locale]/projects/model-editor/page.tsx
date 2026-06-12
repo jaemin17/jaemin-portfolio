@@ -26,12 +26,12 @@ export default async function ModelEditorPage({ params }: Props) {
               <span className={styles.projectHeroTitleHighlight}>3D 模型编辑器</span>
             </h1>
             <p className={styles.projectHeroSubtitle}>
-              帮助非建模用户完成材质、结构、动画与标注预处理。
+              帮助非专业用户完成材质、结构、动画与标注预处理。
             </p>
             <div className={styles.projectHeroMedia}>
               <video
                 className={styles.projectHeroCoverVideo}
-                src="/videos/tools/model.mp4"
+                src="/videos/model-editor/overview.mp4"
                 autoPlay
                 loop
                 muted
@@ -59,15 +59,18 @@ export default async function ModelEditorPage({ params }: Props) {
               </h2>
               <div className={styles.positioningBody}>
                 <p>
-                  Model Editor 是一款面向 3D 课件制作的<strong className={styles.positioningEmphasis}>模型编辑工具</strong>，
-                  帮助中高职教师在模型导入 PPT / XR 课件前，
-                  完成材质调整、结构拆解、显隐控制等预处理操作。
+                  3D 模型进入课堂前，通常需要根据教学场景进行二次编辑，例如添加部件说明、调整模型结构、设置拆解展示或动画效果。
                 </p>
                 <p>
-                  作为体验设计负责人，我将早期抽象的功能需求转化为完整的编辑器体验方案，
+                  Model Editor 是一款面向 3D 课件制作的<strong className={styles.positioningEmphasis}>模型编辑工具</strong>，帮助中高职教师快速将模型整理为适合课堂讲解的互动素材。
+                </p>
+                <p className={styles.roleLabel}>我的角色</p>
+                <p>
+                  作为体验设计负责人，我将抽象的功能需求转化为完整的编辑器体验方案，
                   负责<strong className={styles.positioningEmphasis}>核心交互、界面布局与视觉设计</strong>。
                   通过梳理复杂的 3D 编辑流程，将材质、结构、动画等专业能力转化为更直观、易理解的操作方式。
                 </p>
+                <p className={styles.roleLabel}>项目成果</p>
                 <p>
                   项目降低了非专业用户使用 3D 内容的门槛，让教师无需建模经验，
                   也能快速制作<strong className={styles.positioningEmphasis}>适合课堂展示的互动模型</strong>。
@@ -77,25 +80,54 @@ export default async function ModelEditorPage({ params }: Props) {
           </div>
         </div>
 
+        <hr className={styles.sectionRule} />
+
         {/* ─── Core Challenge ──────────────────────────────── */}
-        <div className={styles.positioningSection}>
-          <div className={styles.positioningInner}>
-            <p className={styles.positioningLabel}>设计挑战</p>
-            <div className={styles.positioningGrid}>
-              <h2 className={styles.positioningHeading}>
-                <span className={styles.positioningHeadingLight}>在有限空间内，</span>
-                <br />
-                <span className={styles.positioningHeadingDark}>让用户始终关注模型本身</span>
-              </h2>
-              <div className={styles.positioningBody}>
-                <p>
-                  设计难点不在于把所有编辑能力放进页面，而在于让用户在不了解专业 3D 软件的前提下，
-                  仍然能理解<strong className={styles.positioningEmphasis}>正在编辑什么、可以调整什么、调整后会产生什么变化</strong>。
-                </p>
-                <p>
-                  早期方案的问题不是功能缺失，而是功能之间缺少清晰归属：用户需要不断判断这个入口属于模型、文件还是属性，
-                  编辑路径被工具位置打断。我的核心目标：如何在有限空间内<strong className={styles.positioningEmphasis}>组织复杂编辑任务</strong>，让用户更高效地<strong className={styles.positioningEmphasis}>理解、调整和控制模型</strong>。
-                </p>
+        <div className={`${styles.positioningSection} ${styles.positioningSectionLarge}`}>
+          <div className={`${styles.positioningInner} ${styles.positioningInnerCentered}`}>
+            <h2 className={styles.conceptHeadline}>我们应该怎么<span className={styles.conceptHeadlineEmphasis}>改进模型编辑器的用户体验？</span></h2>
+
+            <div className={styles.protoEvidence}>
+              <Image
+                className={styles.protoEvidenceImage}
+                src="/images/model-editor/原型.png"
+                alt="Model Editor 开发原型"
+                width={1440}
+                height={900}
+                style={{ width: "100%", height: "auto" }}
+              />
+              <p className={`${styles.positioningLabel} ${styles.protoIntroLabel}`}>原型分析</p>
+              <div className={styles.protoIntroRow}>
+                <h3 className={styles.protoIntroTitle}>
+                  <span className={styles.positioningHeadingLight}>从现有原型，</span>
+                  <br />
+                  <span className={styles.positioningHeadingDark}>理解编辑关系</span>
+                </h3>
+                <div>
+                  <div className={styles.protoAreas}>
+                    <h4>当前原型</h4>
+                    <p>页面当前由四类区域组成：模型文件的全局编辑、全局编辑面板、模型交互空间和模型工具。</p>
+                    <ul>
+                      <li><strong>顶部</strong>：模型文件相关的全局功能入口。</li>
+                      <li><strong>左侧</strong>：当前全局功能下展开的编辑面板。</li>
+                      <li><strong>中间</strong>：模型的主要展示和交互空间。</li>
+                      <li><strong>右侧</strong>：直接作用于模型的交互工具栏。</li>
+                    </ul>
+                  </div>
+                  <div className={styles.protoAreas}>
+                    <h4>使用场景</h4>
+                    <p>在课件制作链路中，模型编辑器承担的是 3D 模型进入课件前的轻量处理任务，而不是完整的专业建模流程。因此，设计重点需要从”提供完整工具”转向”降低理解成本、缩短操作路径”，帮助教师更快完成模型整理。</p>
+                  </div>
+                  <div className={styles.protoAreas}>
+                    <h4>设计方向</h4>
+                    <p>基于这个判断，我围绕”这些功能是否被放在符合编辑路径的位置”，明确了三个设计方向：</p>
+                    <ul>
+                      <li><strong>更容易理解</strong>：明确不同功能的作用范围，让用户知道当前在编辑什么、会影响哪里。</li>
+                      <li><strong>更容易操作</strong>：放大关键操作入口，减少专业参数和密集控件带来的使用负担。</li>
+                      <li><strong>更快完成编辑任务</strong>：围绕「选择 → 调整 → 预览」组织流程，让用户更快完成模型编辑。</li>
+                    </ul>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
