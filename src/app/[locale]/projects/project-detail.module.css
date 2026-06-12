@@ -542,6 +542,106 @@
   color: #333;
   font-weight: 700;
 }
+.directionPanel {
+  margin-top: 52px;
+  text-align: left;
+}
+.directionCards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 40px;
+  border: 2px solid #93c5fd;
+  border-radius: 18px;
+  background: #f3f0e8;
+  padding: 40px 48px 44px;
+  box-sizing: border-box;
+}
+.directionPanelHeader {
+  grid-column: 1 / -1;
+  padding: 0;
+}
+.directionPanelHeader h4 {
+  display: inline-block;
+  padding: 2px 8px;
+  border: 1px solid #3b82f6;
+  border-radius: 6px;
+  color: #3b82f6;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  line-height: 1.4;
+  margin: 0 0 16px;
+}
+.directionPanelHeader p {
+  max-width: 620px;
+  font-size: 17px;
+  color: #555;
+  line-height: 1.85;
+  margin: 0;
+}
+.directionCard {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.directionCard p {
+  color: #333;
+  font-size: 17px;
+  line-height: 1.65;
+  margin: 0;
+}
+.directionCardVisual {
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
+}
+.directionCardVisual::before {
+  content: "";
+  display: block;
+  height: 146px;
+  background: var(--direction-color);
+}
+.directionCardVisualUnderstand {
+  --direction-color: #ffd04a;
+}
+.directionCardVisualOperate {
+  --direction-color: #6dd39b;
+}
+.directionCardVisualFast {
+  --direction-color: #ff7d35;
+}
+.directionIcon {
+  position: absolute;
+  top: 35px;
+  left: 50%;
+  width: 76px;
+  height: 76px;
+  transform: translateX(-50%);
+  fill: none;
+  stroke: #202020;
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  z-index: 1;
+}
+.directionCardVisual {
+  position: relative;
+}
+.directionCardVisual span {
+  display: flex;
+  min-height: 62px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 12px;
+  color: #202020;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1.3;
+  text-align: center;
+}
 
 .goalCard {
   width: 100%;
@@ -987,5 +1087,9 @@
 
   .positioningBody {
     font-size: 0.9rem;
+  }
+
+  .directionCards {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }

@@ -118,14 +118,43 @@ export default async function ModelEditorPage({ params }: Props) {
                     <h4>使用场景</h4>
                     <p>在课件制作链路中，模型编辑器承担的是 3D 模型进入课件前的轻量处理任务，而不是完整的专业建模流程。因此，设计重点需要从”提供完整工具”转向”降低理解成本、缩短操作路径”，帮助教师更快完成模型整理。</p>
                   </div>
-                  <div className={styles.protoAreas}>
-                    <h4>设计方向</h4>
+                </div>
+              </div>
+              <div className={styles.directionPanel}>
+                <div className={styles.directionCards}>
+                  <div className={styles.directionPanelHeader}>
                     <p>基于这个判断，我围绕”这些功能是否被放在符合编辑路径的位置”，明确了三个设计方向：</p>
-                    <ul>
-                      <li><strong>更容易理解</strong>：明确不同功能的作用范围，让用户知道当前在编辑什么、会影响哪里。</li>
-                      <li><strong>更容易操作</strong>：放大关键操作入口，减少专业参数和密集控件带来的使用负担。</li>
-                      <li><strong>更快完成编辑任务</strong>：围绕「选择 → 调整 → 预览」组织流程，让用户更快完成模型编辑。</li>
-                    </ul>
+                  </div>
+                  <div className={styles.directionCard}>
+                    <div className={`${styles.directionCardVisual} ${styles.directionCardVisualUnderstand}`}>
+                      <svg className={styles.directionIcon} viewBox="0 0 64 64" aria-hidden="true">
+                        <path d="M32 8C20.4 8 11 17.4 11 29c0 7.7 4.1 14.4 10.3 18.1V54c0 1.1.9 2 2 2h17.4c1.1 0 2-.9 2-2v-6.9C48.9 43.4 53 36.7 53 29 53 17.4 43.6 8 32 8Zm-8 40h16" />
+                        <path d="M25 28c2-4 5-6 7-6s5 2 7 6" />
+                      </svg>
+                      <span>更容易理解</span>
+                    </div>
+                    <p>明确不同功能的作用范围，让用户知道当前在编辑什么、会影响哪里。</p>
+                  </div>
+                  <div className={styles.directionCard}>
+                    <div className={`${styles.directionCardVisual} ${styles.directionCardVisualOperate}`}>
+                      <svg className={styles.directionIcon} viewBox="0 0 64 64" aria-hidden="true">
+                        <path d="M19 12h26a7 7 0 0 1 7 7v26a7 7 0 0 1-7 7H19a7 7 0 0 1-7-7V19a7 7 0 0 1 7-7Z" />
+                        <path d="M24 32h16M32 24v16" />
+                      </svg>
+                      <span>更容易操作</span>
+                    </div>
+                    <p>放大关键操作入口，减少专业参数和密集控件带来的使用负担。</p>
+                  </div>
+                  <div className={styles.directionCard}>
+                    <div className={`${styles.directionCardVisual} ${styles.directionCardVisualFast}`}>
+                      <svg className={styles.directionIcon} viewBox="0 0 64 64" aria-hidden="true">
+                        <path d="M10 32h34" />
+                        <path d="m34 18 14 14-14 14" />
+                        <path d="M12 18h10M12 46h10" />
+                      </svg>
+                      <span>更快完成编辑任务</span>
+                    </div>
+                    <p>围绕「选择 → 调整 → 预览」组织流程，让用户更快完成模型编辑。</p>
                   </div>
                 </div>
               </div>
