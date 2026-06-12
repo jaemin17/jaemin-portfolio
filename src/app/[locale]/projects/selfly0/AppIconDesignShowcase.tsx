@@ -51,7 +51,6 @@ export function AppIconDesignShowcase() {
 
       <p className={styles.iconDesignEvolutionLabel}>
         <span>设计演变</span>
-        <span className={styles.iconDesignEvolutionLabelArrow} aria-hidden="true">↓</span>
       </p>
 
       <div className={styles.iconDesignEvolutionSection}>
