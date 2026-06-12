@@ -269,8 +269,8 @@
 }
 /* Contact */
 .contact {
-  margin: 140px auto 200px;
-  padding: 0 24px;
+  margin: 140px auto 0;
+  padding: 0 24px 200px;
   text-align: center;
   box-sizing: border-box;
 }

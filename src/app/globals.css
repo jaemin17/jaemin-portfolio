@@ -45,6 +45,15 @@ html:has([data-page="plain-white"]) body {
   background: #ffffff;
 }
 
+html:has([data-page="visual-white"]) {
+  background: #ffffff;
+  overscroll-behavior: none;
+}
+
+html:has([data-page="visual-white"]) body {
+  background: #ffffff;
+}
+
 html:has([data-page="selfly-style"]) {
   background: #ffffff;
   overscroll-behavior: none;

@@ -18,8 +18,8 @@ export default async function VrEducationVisualPage({ params }: PageProps) {
   const [heroShot, ...scenarioShots] = vrEducationShots;
 
   return (
-    <div className={styles.plainWhitePage} data-page="plain-white">
-      <SiteHeader locale={locale} active="test" />
+    <div className={styles.plainWhitePage} data-page="visual-white">
+      <SiteHeader locale={locale} surface="white" active="test" />
       <main className={styles.caseStudyPage}>
         <section className={styles.caseIntro}>
           <h1>VR 教育软件合集</h1>

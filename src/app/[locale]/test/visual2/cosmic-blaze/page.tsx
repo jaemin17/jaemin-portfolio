@@ -18,8 +18,8 @@ export default async function CosmicBlazeVisualPage({ params }: CosmicBlazePageP
   const [heroShot, ...scenarioShots] = cosmicBlazeShots;
 
   return (
-    <div className={styles.plainWhitePage} data-page="plain-white">
-      <SiteHeader locale={locale} active="test" />
+    <div className={styles.plainWhitePage} data-page="visual-white">
+      <SiteHeader locale={locale} surface="white" active="test" />
       <main className={styles.caseStudyPage}>
         <section className={styles.caseIntro}>
           <h1>Cosmic Blaze</h1>
