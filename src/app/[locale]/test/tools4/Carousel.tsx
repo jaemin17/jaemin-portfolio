@@ -1,5 +1,6 @@
 "use client";
 
+import { assetPath } from "@/i18n/assets";
 import { useState, useCallback, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import styles from "./tools4.module.css";
@@ -78,7 +79,7 @@ export function Carousel({ projects, locale }: CarouselProps) {
             >
               <div className={styles.cardMedia}>
                 <video
-                  src={project.video}
+                  src={assetPath(project.video)}
                   autoPlay
                   loop
                   muted
