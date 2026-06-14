@@ -5512,28 +5512,6 @@ figcaption {
   margin-bottom: 0;
 }
 
-[data-page="selfly-style"] .pico-store-link {
-  display: inline-flex;
-  align-items: center;
-  width: fit-content;
-  min-height: 36px;
-  margin-top: 22px;
-  padding: 0 16px;
-  border-radius: 999px;
-  background: #2f7bff;
-  color: #fff;
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 1;
-  text-decoration: none;
-  transition: transform 150ms ease, background 150ms ease;
-}
-
-[data-page="selfly-style"] .pico-store-link:hover {
-  background: #2468dc;
-  transform: translate3d(0, -2px, 0);
-}
-
 [data-page="selfly-style"] .lr30-t100-b200:nth-of-type(2) .max-w-1024 {
   max-width: 1024px;
   display: grid;

@@ -133,7 +133,7 @@ export default async function ModelEditorPage({ params }: Props) {
                 </h3>
                 <div>
                   <div className={styles.protoAreas}>
-                    <p>模型编辑器承担的是 3D 模型进入课件前的<strong className={styles.positioningEmphasis}>轻量处理任务</strong>，而不是完整的专业建模流程。因此，设计重点需要从"提供完整工具"转向"<strong className={styles.positioningEmphasis}>降低理解成本、缩短操作路径</strong>"，帮助教师更快完成模型整理。</p>
+                    <p>模型编辑器承担的是 3D 模型进入课件前的<strong className={styles.positioningEmphasis}>轻量处理任务</strong>，而不是完整的专业建模流程。因此，设计重点需要从「提供完整工具」转向「<strong className={styles.positioningEmphasis}>降低理解成本、缩短操作路径</strong>」，帮助教师更快完成模型整理。</p>
                   </div>
                 </div>
               </div>
@@ -201,7 +201,7 @@ export default async function ModelEditorPage({ params }: Props) {
                   这些方案都能容纳功能，但用户仍然需要在多个区域之间判断：这是<strong className={styles.positioningEmphasis}>全局操作、模型操作，还是当前对象的属性</strong>？
                 </p>
                 <p>
-                  最终我没有继续寻找某一种"最佳工具栏位置"，而是<strong className={styles.positioningEmphasis}>重新定义页面区域</strong>：左侧负责编辑对象和模块入口，
+                  最终我没有继续寻找某一种「最佳工具栏位置」，而是<strong className={styles.positioningEmphasis}>重新定义页面区域</strong>：左侧负责编辑对象和模块入口，
                   中间保持完整模型视口，右侧承载模型操作与上下文参数，顶部只保留保存、预览、撤销等全局动作。
                   操作路径也随之收敛为<strong className={styles.positioningEmphasis}>「选对象 → 调属性 → 立即看效果」</strong>。
                 </p>
@@ -264,7 +264,7 @@ export default async function ModelEditorPage({ params }: Props) {
               </h3>
               <div className={styles.narrativeBody}>
                 <p>
-                  "太多方案"的价值不在于证明我尝试了很多样式，而在于它暴露了复杂编辑器最核心的矛盾：
+                  「太多方案」的价值不在于证明我尝试了很多样式，而在于它暴露了复杂编辑器最核心的矛盾：
                   工具越完整，越需要<strong className={styles.positioningEmphasis}>清晰的信息层级</strong>；否则用户会被功能位置牵着走，而不是<strong className={styles.positioningEmphasis}>围绕模型完成任务</strong>。
                 </p>
                 <p>
@@ -281,7 +281,7 @@ export default async function ModelEditorPage({ params }: Props) {
               </article>
               <article className={styles.explorationCard}>
                 <h4>底部工具栏型</h4>
-                <p>更贴近"看着模型操作"的直觉，但用户需要在左侧面板、右侧参数和底部工具之间形成三角跳转。</p>
+                <p>更贴近「看着模型操作」的直觉，但用户需要在左侧面板、右侧参数和底部工具之间形成三角跳转。</p>
               </article>
               <article className={styles.explorationCard}>
                 <h4>右侧工具列型</h4>
@@ -377,8 +377,8 @@ export default async function ModelEditorPage({ params }: Props) {
               <div className={styles.narrativeBody}>
                 <p>
                   初版颜色面板把色盘、RGB、透明度、亮度、对比度和预设色完整展示出来。
-                  它功能完整，但对用户来说<strong className={styles.positioningEmphasis}>过早暴露了参数系统</strong>：用户真正想做的通常不是"打开颜色工具"，
-                  而是<strong className={styles.positioningEmphasis}>"把当前选中的部件改成某种颜色"</strong>。
+                  它功能完整，但对用户来说<strong className={styles.positioningEmphasis}>过早暴露了参数系统</strong>：用户真正想做的通常不是「打开颜色工具」，
+                  而是<strong className={styles.positioningEmphasis}>「把当前选中的部件改成某种颜色」</strong>。
                 </p>
                 <p>
                   因此颜色编辑不应该像一个独立漂浮的工具，而应该成为<strong className={styles.positioningEmphasis}>当前对象属性的一部分</strong>。
@@ -390,7 +390,7 @@ export default async function ModelEditorPage({ params }: Props) {
                   <ul>
                     <li><strong>颜色从工具变成属性</strong>：颜色不再独立漂浮，而归属于当前选中的对象</li>
                     <li><strong>参数按需出现</strong>：只有进入颜色编辑时才展示完整控制</li>
-                    <li><strong>从功能入口转向对象上下文</strong>：用户路径变成"选中对象 → 编辑属性 → 调整颜色"</li>
+                    <li><strong>从功能入口转向对象上下文</strong>：用户路径变成「选中对象 → 编辑属性 → 调整颜色」</li>
                   </ul>
                 </div>
               </div>
@@ -657,7 +657,7 @@ export default async function ModelEditorPage({ params }: Props) {
                   而取决于用户能否稳定理解<strong className={styles.positioningEmphasis}>当前对象、可用操作和反馈结果之间的关系</strong>。
                 </p>
                 <p>
-                  对非专业用户来说，最重要的不是一次性看到所有能力，而是知道<strong className={styles.positioningEmphasis}>"我现在正在编辑什么、这个对象能做什么、调整后会发生什么"</strong>。
+                  对非专业用户来说，最重要的不是一次性看到所有能力，而是知道<strong className={styles.positioningEmphasis}>「我现在正在编辑什么、这个对象能做什么、调整后会发生什么」</strong>。
                   最终方案通过区域职责分离和上下文编辑，把专业 3D 工具转化为<strong className={styles.positioningEmphasis}>更接近教学任务的操作流程</strong>。
                 </p>
                 <div className={styles.narrativeDesignPoints}>

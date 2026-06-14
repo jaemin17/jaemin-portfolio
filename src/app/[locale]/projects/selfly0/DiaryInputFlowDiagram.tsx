@@ -113,11 +113,13 @@ function FlowStepCard({
   step: (typeof steps)[number] | { id: number; title: string; caption: string; breakpoint?: boolean; demo?: ReactNode };
   hideBadge?: boolean;
 }) {
+  const isBreakpoint = "breakpoint" in step && step.breakpoint;
+
   return (
     <div
       className={[
         styles.diaryFlowStepCard,
-        step.breakpoint ? styles.diaryFlowStepCardBreakpoint : "",
+        isBreakpoint ? styles.diaryFlowStepCardBreakpoint : "",
       ]
         .filter(Boolean)
         .join(" ")}
@@ -126,7 +128,7 @@ function FlowStepCard({
         <span
           className={[
             styles.diaryFlowStepBadge,
-            step.breakpoint ? styles.diaryFlowStepBadgeBreakpoint : "",
+            isBreakpoint ? styles.diaryFlowStepBadgeBreakpoint : "",
           ]
             .filter(Boolean)
             .join(" ")}
