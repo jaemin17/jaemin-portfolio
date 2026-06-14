@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { SiteHeader } from "@/components/SiteHeader";
 import { isLocale, type Locale } from "@/i18n/config";
+import { assetPath } from "@/i18n/assets";
 import { localePath } from "@/i18n/paths";
 import styles from "../../test.module.css";
 import { vrEducationShots } from "../vrEducationData";
@@ -25,7 +26,7 @@ export default async function VrEducationVisualPage({ params }: PageProps) {
           <h1>VR 教育软件合集</h1>
 
           <figure className={styles.caseHeroImage}>
-            <Image src={heroShot.src} width={1920} height={1080} alt="VR 教育软件合集首页视觉" priority />
+            <Image src={assetPath(heroShot.src)} width={1920} height={1080} alt="VR 教育软件合集首页视觉" priority />
           </figure>
 
           <div className={styles.caseMetaGrid} aria-label="项目概览">
@@ -55,7 +56,7 @@ export default async function VrEducationVisualPage({ params }: PageProps) {
                 <p className={styles.caseScenarioTitle}>Scenario {i + 1}</p>
                 <figure>
                   <div className={styles.caseImageFrame}>
-                    <Image src={shot.src} width={1920} height={1080} alt={`VR 教育 ${shot.title} ${shot.subtitle}`} />
+                    <Image src={assetPath(shot.src)} width={1920} height={1080} alt={`VR 教育 ${shot.title} ${shot.subtitle}`} />
                   </div>
                 </figure>
               </article>

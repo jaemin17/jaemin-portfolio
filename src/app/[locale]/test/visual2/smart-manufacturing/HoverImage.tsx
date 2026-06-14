@@ -1,5 +1,6 @@
 "use client";
 
+import { assetPath } from "@/i18n/assets";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
@@ -27,7 +28,7 @@ export function AutoCarousel({ items, alt, width, height, interval = 3500 }: Aut
         item.type === "video" ? (
           <video
             key={item.src}
-            src={item.src}
+            src={assetPath(item.src)}
             autoPlay loop muted playsInline
             style={{
               position: "absolute",
@@ -42,7 +43,7 @@ export function AutoCarousel({ items, alt, width, height, interval = 3500 }: Aut
         ) : (
           <Image
             key={item.src}
-            src={item.src}
+            src={assetPath(item.src)}
             width={width}
             height={height}
             alt={index === 0 ? alt : `${alt} (${index + 1})`}

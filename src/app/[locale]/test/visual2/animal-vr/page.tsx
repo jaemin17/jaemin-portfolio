@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { SiteHeader } from "@/components/SiteHeader";
 import { isLocale, type Locale } from "@/i18n/config";
+import { assetPath } from "@/i18n/assets";
 import { localePath } from "@/i18n/paths";
 import styles from "../../test.module.css";
 import { animalVrShots } from "../animalVrData";
@@ -28,7 +29,7 @@ export default async function AnimalVrVisualPage({ params }: PageProps) {
           <h1>生物医疗VR</h1>
 
           <figure className={styles.caseHeroImage}>
-            <Image src={heroShot.src} width={1920} height={1080} alt="动物解剖 VR 首页视觉" priority />
+            <Image src={assetPath(heroShot.src)} width={1920} height={1080} alt="动物解剖 VR 首页视觉" priority />
           </figure>
 
           <div className={styles.caseMetaGrid} aria-label="项目概览">
@@ -61,7 +62,7 @@ export default async function AnimalVrVisualPage({ params }: PageProps) {
                     {"carousel" in shot ? (
                       <AutoCarousel items={shot.carousel} width={1920} height={1080} alt={`动物解剖 VR ${shot.title} ${shot.subtitle}`} />
                     ) : (
-                      <Image src={shot.src} width={1920} height={1080} alt={`动物解剖 VR ${shot.title} ${shot.subtitle}`} />
+                      <Image src={assetPath(shot.src)} width={1920} height={1080} alt={`动物解剖 VR ${shot.title} ${shot.subtitle}`} />
                     )}
                   </div>
                 </figure>
@@ -74,7 +75,7 @@ export default async function AnimalVrVisualPage({ params }: PageProps) {
           <h1>动物解剖VR</h1>
 
           <figure className={styles.caseHeroImage}>
-            <Image src="/images/visual/animal-vr/dog-anatomy-scene-2.png" width={1920} height={1080} alt="动物解剖 VR 首页视觉" />
+            <Image src={assetPath("/images/visual/animal-vr/dog-anatomy-scene-2.png")} width={1920} height={1080} alt="动物解剖 VR 首页视觉" />
           </figure>
 
           <div className={styles.caseMetaGrid} aria-label="动物解剖项目概览">
@@ -107,7 +108,7 @@ export default async function AnimalVrVisualPage({ params }: PageProps) {
                     {"carousel" in shot ? (
                       <AutoCarousel items={shot.carousel} width={1920} height={1080} alt={`动物解剖 VR ${shot.title} ${shot.subtitle}`} />
                     ) : (
-                      <Image src={shot.src} width={1920} height={1080} alt={`动物解剖 VR ${shot.title} ${shot.subtitle}`} />
+                      <Image src={assetPath(shot.src)} width={1920} height={1080} alt={`动物解剖 VR ${shot.title} ${shot.subtitle}`} />
                     )}
                   </div>
                 </figure>

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { SiteHeader } from "@/components/SiteHeader";
 import { isLocale, type Locale } from "@/i18n/config";
+import { assetPath } from "@/i18n/assets";
 import { localePath } from "@/i18n/paths";
 import styles from "../../test.module.css";
 import { smartManufacturingShots } from "../smartManufacturingData";
@@ -26,7 +27,7 @@ export default async function SmartManufacturingVisualPage({ params }: SmartManu
           <h1>智能制造 VR</h1>
 
           <figure className={styles.caseHeroImage}>
-            <Image src={heroShot.src} width={1920} height={1080} alt="智能制造 VR 液力自动变速器首页视觉" priority />
+            <Image src={assetPath(heroShot.src)} width={1920} height={1080} alt="智能制造 VR 液力自动变速器首页视觉" priority />
           </figure>
 
           <div className={styles.caseMetaGrid} aria-label="项目概览">
@@ -64,7 +65,7 @@ export default async function SmartManufacturingVisualPage({ params }: SmartManu
                         alt={`智能制造 VR ${shot.title} ${shot.subtitle}`}
                       />
                     ) : (
-                      <Image src={shot.src} width={1920} height={1080} alt={`智能制造 VR ${shot.title} ${shot.subtitle}`} />
+                      <Image src={assetPath(shot.src)} width={1920} height={1080} alt={`智能制造 VR ${shot.title} ${shot.subtitle}`} />
                     )}
                   </div>
                 </figure>

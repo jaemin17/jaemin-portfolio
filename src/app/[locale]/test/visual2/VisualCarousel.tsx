@@ -1,5 +1,6 @@
 "use client";
 
+import { assetPath } from "@/i18n/assets";
 import { useState, useCallback, useEffect } from "react";
 import Link from "next/link";
 import styles from "./visual.module.css";
@@ -75,12 +76,12 @@ export function VisualCarousel({ projects, locale }: Props) {
                 <div className={styles.cardMedia}>
                   {project.image ? (
                     <img
-                      src={project.image}
+                      src={assetPath(project.image)}
                       alt={project.title}
                     />
                   ) : (
                     <video
-                      src={project.video}
+                      src={project.video ? assetPath(project.video) : undefined}
                       autoPlay
                       loop
                       muted
