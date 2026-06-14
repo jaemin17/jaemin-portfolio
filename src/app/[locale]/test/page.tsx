@@ -5,24 +5,6 @@ import { isLocale, type Locale } from "@/i18n/config";
 import { localePath } from "@/i18n/paths";
 import styles from "./test.module.css";
 
-const draftDirections = [
-  {
-    title: "XR 内容创作与协同平台",
-    body: "把 3D说明书、模型编辑器、VT-PPT、XR资源库和课件工厂收进同一条产品主线。",
-    tags: ["XR Platform", "3D Tools", "B2B"],
-  },
-  {
-    title: "Sync Space 多人协同培训平台",
-    body: "围绕老师在平板端管理 VR 学生的课堂场景，测试多端协同案例结构。",
-    tags: ["Multi-device", "Education", "VR"],
-  },
-  {
-    title: "VR 教育软件视觉合集",
-    body: "集中展示医学、动物、智能制造和汽车方向的 VR 教育画面，作为视觉亮点测试。",
-    tags: ["Visual", "VR Education", "3D"],
-  },
-];
-
 type TestPageProps = {
   params: Promise<{ locale: string }>;
 };
@@ -35,21 +17,7 @@ export default async function TestPage({ params }: TestPageProps) {
     <>
       <SiteHeader locale={locale} active="test" />
       <main className={styles.main}>
-        <section className={styles.hero}>
-          <p className={styles.eyebrow}>Portfolio Lab</p>
-          <h1>测试区</h1>
-          <p>
-            这里专门放还没决定是否进入正式首页的版本和新项目组织方式。正式首页保持克制，新的 XR /
-            3D 内容先在这里试。
-          </p>
-        </section>
-
-        <section className={styles.section} aria-labelledby="backup-title">
-          <div className={styles.sectionHeader}>
-            <p className={styles.sectionKicker}>Backups</p>
-            <h2 id="backup-title">旧页面备份</h2>
-            <p>从导航移除的旧版本先保留在这里，方便需要时回看和比较。</p>
-          </div>
+        <section className={styles.section}>
           <div className={styles.grid}>
             <Link className={styles.card} href={localePath(locale, "/about")}>
               <span className={styles.cardLabel}>Archive</span>
@@ -69,15 +37,6 @@ export default async function TestPage({ params }: TestPageProps) {
                 <span>VR Education</span>
               </div>
             </Link>
-            <Link className={styles.card} href={localePath(locale, "/test/visual")}>
-              <span className={styles.cardLabel}>Archive</span>
-              <h3>视觉1</h3>
-              <p>从导航栏移除的旧视觉合集版本，当前作为测试备份入口保留。</p>
-              <div className={styles.tags}>
-                <span>Visual backup</span>
-                <span>Layout 01</span>
-              </div>
-            </Link>
             <Link className={styles.card} href={localePath(locale, "/test/tools")}>
               <span className={styles.cardLabel}>Archive</span>
               <h3>工具1</h3>
@@ -85,24 +44,6 @@ export default async function TestPage({ params }: TestPageProps) {
               <div className={styles.tags}>
                 <span>Tools backup</span>
                 <span>Layout 01</span>
-              </div>
-            </Link>
-            <Link className={styles.card} href={localePath(locale, "/test/tools2")}>
-              <span className={styles.cardLabel}>Archive</span>
-              <h3>工具2</h3>
-              <p>从导航栏移除的工具类页面版本，当前作为测试备份入口保留。</p>
-              <div className={styles.tags}>
-                <span>Tools backup</span>
-                <span>Layout 02</span>
-              </div>
-            </Link>
-            <Link className={styles.card} href={localePath(locale, "/test/tools3")}>
-              <span className={styles.cardLabel}>Archive</span>
-              <h3>工具3</h3>
-              <p>从导航栏移除的工具类页面版本，当前作为测试备份入口保留。</p>
-              <div className={styles.tags}>
-                <span>Tools backup</span>
-                <span>Layout 03</span>
               </div>
             </Link>
             <Link className={styles.card} href={localePath(locale, "/test/model-editor-backup")}>
@@ -114,29 +55,6 @@ export default async function TestPage({ params }: TestPageProps) {
                 <span>Project detail</span>
               </div>
             </Link>
-          </div>
-        </section>
-
-
-        <section className={styles.section} aria-labelledby="xr-draft-title">
-          <div className={styles.sectionHeader}>
-            <p className={styles.sectionKicker}>Next experiments</p>
-            <h2 id="xr-draft-title">XR / 3D 项目尝试方向</h2>
-            <p>这些先作为内容架构草稿，不影响正式首页。等方向确定后，再补截图、案例页和真实文案。</p>
-          </div>
-          <div className={styles.grid}>
-            {draftDirections.map((item) => (
-              <article key={item.title} className={styles.card}>
-                <span className={styles.cardLabel}>Draft</span>
-                <h3>{item.title}</h3>
-                <p>{item.body}</p>
-                <div className={styles.tags}>
-                  {item.tags.map((tag) => (
-                    <span key={tag}>{tag}</span>
-                  ))}
-                </div>
-              </article>
-            ))}
           </div>
         </section>
       </main>

@@ -81,56 +81,16 @@ export default async function ModelEditorPage({ params }: Props) {
           </div>
         </div>
 
-        <hr className={styles.sectionRule} />
-
-        {/* ─── Core Challenge ──────────────────────────────── */}
-        <div className={`${styles.positioningSection} ${styles.positioningSectionLarge}`}>
+        {/* ─── Design Goals (设计目的) ─── */}
+        <div className={`${styles.positioningSection} ${styles.stackedSection}`}>
           <div className={`${styles.positioningInner} ${styles.positioningInnerCentered}`}>
             <div className={styles.protoEvidence}>
-              <p className={`${styles.positioningLabel} ${styles.protoIntroLabel}`}>当前状态</p>
-              <div className={styles.protoIntroRow}>
-                <h3 className={styles.protoIntroTitle}>
-                  <span className={styles.positioningHeadingLight}>先看清每个区域的职责，</span>
-                  <br />
-                  <span className={styles.positioningHeadingDark}>再找到体验的改进点</span>
-                </h3>
-                <div>
-                  <div className={styles.protoAreas}>
-                    <p>在课件制作流程中，中高职教师需要同时完成<strong className={styles.positioningEmphasis}>模型文件处理和模型编辑</strong>。最初原型把不同作用对象拆成了<strong className={styles.positioningEmphasis}>相对明确的区域</strong>：模型文件相关操作、编辑面板、模型预览空间和模型工具栏。</p>
-                  </div>
-                </div>
-              </div>
-              <div className={styles.protoEvidenceFrame}>
-                <div className={styles.protoEvidenceCanvas}>
-                  <Image
-                    className={styles.protoEvidenceImage}
-                    src={assetPath("/images/model-editor/原型4.png")}
-                    alt="Model Editor 开发原型"
-                    width={1440}
-                    height={900}
-                    style={{ width: "100%", height: "auto" }}
-                  />
-                  <div className={`${styles.protoAnnotation} ${styles.protoAnnotationTop}`}>
-                    <strong>顶部</strong>模型文件相关的全局功能入口
-                  </div>
-                  <div className={`${styles.protoAnnotation} ${styles.protoAnnotationLeft}`}>
-                    <strong>左侧</strong>当前全局功能下展开的编辑面板
-                  </div>
-                  <div className={`${styles.protoAnnotation} ${styles.protoAnnotationCenter}`}>
-                    <strong>中间</strong>模型的主要展示和交互空间
-                  </div>
-                  <div className={`${styles.protoAnnotation} ${styles.protoAnnotationRight}`}>
-                    <strong>右侧</strong>直接作用于模型的交互工具栏
-                  </div>
-                </div>
-                <p className={styles.protoEvidenceCaption}>早期原型</p>
-              </div>
               <p className={`${styles.positioningLabel} ${styles.protoIntroLabel}`}>设计目的</p>
               <div className={styles.protoIntroRow}>
                 <h3 className={styles.protoIntroTitle}>
-                  <span className={styles.positioningHeadingLight}>面向课件的轻量处理，</span>
+                  <span className={styles.positioningHeadingDark}>面向课件的轻量处理，</span>
                   <br />
-                  <span className={styles.positioningHeadingDark}>而不是专业建模</span>
+                  <span className={styles.positioningHeadingLight}>而不是专业建模</span>
                 </h3>
                 <div>
                   <div className={styles.protoAreas}>
@@ -176,13 +136,59 @@ export default async function ModelEditorPage({ params }: Props) {
           </div>
         </div>
 
+        {/* ─── Core Challenge ──────────────────────────────── */}
+        <div className={`${styles.positioningSection} ${styles.stackedSection}`}>
+          <div className={`${styles.positioningInner} ${styles.positioningInnerCentered}`}>
+            <div className={styles.protoEvidence}>
+              <p className={`${styles.positioningLabel} ${styles.protoIntroLabel}`}>当前状态</p>
+              <div className={styles.protoIntroRow}>
+                <h3 className={styles.protoIntroTitle}>
+                  <span className={styles.positioningHeadingLight}>先看清每个区域的职责，</span>
+                  <br />
+                  <span className={styles.positioningHeadingDark}>再找到体验的改进点</span>
+                </h3>
+                <div>
+                  <div className={styles.protoAreas}>
+                    <p>最初原型把不同作用对象拆成了<strong className={styles.positioningEmphasis}>相对明确的区域</strong>：模型文件相关操作、编辑面板、模型预览空间和模型工具栏。</p>
+                  </div>
+                </div>
+              </div>
+              <div className={styles.protoEvidenceFrame}>
+                <div className={styles.protoEvidenceCanvas}>
+                  <Image
+                    className={styles.protoEvidenceImage}
+                    src={assetPath("/images/model-editor/原型4.png")}
+                    alt="Model Editor 开发原型"
+                    width={1440}
+                    height={900}
+                    style={{ width: "100%", height: "auto" }}
+                  />
+                  <div className={`${styles.protoAnnotation} ${styles.protoAnnotationTop}`}>
+                    <strong>顶部</strong>模型文件相关的全局功能入口
+                  </div>
+                  <div className={`${styles.protoAnnotation} ${styles.protoAnnotationLeft}`}>
+                    <strong>左侧</strong>当前全局功能下展开的编辑面板
+                  </div>
+                  <div className={`${styles.protoAnnotation} ${styles.protoAnnotationCenter}`}>
+                    <strong>中间</strong>模型的主要展示和交互空间
+                  </div>
+                  <div className={`${styles.protoAnnotation} ${styles.protoAnnotationRight}`}>
+                    <strong>右侧</strong>直接作用于模型的交互工具栏
+                  </div>
+                </div>
+                <p className={styles.protoEvidenceCaption}>早期原型</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* ─── Chapter 1: 区域职责分离 ───────────────────── */}
         <div className={styles.chapterIntro}>
           <div className={styles.chapterIntroInner}>
             <div className={styles.chapterCopy}>
-              <span className={styles.chapterIcon}>🗂️</span>
+              <span className={styles.chapterIcon}>🤔</span>
               <p className={styles.chapterDesc}>
-                从反复寻找工具位置，转向定义每个区域的职责，降低用户在工具、参数和模型之间来回判断的成本。
+                这些功能是否被放在符合编辑路径的位置？
               </p>
             </div>
           </div>

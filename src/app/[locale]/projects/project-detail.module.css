@@ -193,12 +193,6 @@
   margin-top: 8px;
 }
 
-.sectionRule {
-  border: none;
-  border-top: 1px solid #e5e7eb;
-  margin: 0 30px;
-}
-
 /* Dark divider with design goals */
 .divider {
   background: #1a1a1a;
@@ -379,8 +373,15 @@
 .positioningSection {
   padding: 60px 30px 80px;
 }
-.positioningSectionLarge {
-  padding-top: 88px;
+/* Sections stacked directly under another block (no divider above) — collapse the large top spacing */
+.stackedSection {
+  padding-top: 0;
+}
+.stackedSection .protoEvidence {
+  margin-top: 0;
+}
+.stackedSection .protoIntroLabel {
+  margin-top: 0;
 }
 .positioningInner {
   max-width: 840px;
@@ -865,8 +866,8 @@
 }
 .chapterDesc {
   color: rgba(255, 255, 255, 0.9);
-  font-size: clamp(22px, 2.4vw, 32px);
-  line-height: 1.5;
+  font-size: clamp(28px, 2.8vw, 38px);
+  line-height: 1.42;
   font-weight: 400;
   margin: 0;
   max-width: 760px;
@@ -877,7 +878,7 @@
   padding: 60px 30px 80px;
 }
 .narrativeInner {
-  max-width: 1024px;
+  max-width: 840px;
   margin: 0 auto;
 }
 .narrativeGrid {
@@ -968,8 +969,8 @@
 /* ─── Before / After ───────────────────────────────────── */
 .beforeAfter {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  grid-template-columns: 1fr;
+  gap: 28px;
 }
 .beforeAfterLabel {
   font-size: 0.75rem;
@@ -1108,10 +1109,6 @@
     grid-template-columns: 1fr;
   }
 
-  .beforeAfter {
-    grid-template-columns: 1fr;
-  }
-
   .iterationGrid {
     grid-template-columns: 1fr 1fr;
   }
@@ -1134,7 +1131,12 @@
   }
 
   .chapterIcon {
-    font-size: 56px;
+    font-size: 58px;
+  }
+
+  .chapterDesc {
+    font-size: 23px;
+    line-height: 1.44;
   }
 
   .projectHeroTitle {
