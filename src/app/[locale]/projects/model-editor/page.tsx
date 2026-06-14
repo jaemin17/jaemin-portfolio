@@ -140,6 +140,14 @@ export default async function ModelEditorPage({ params }: Props) {
                 <div>
                   <div className={styles.protoAreas}>
                     <p>最初原型把不同作用对象拆成了<strong className={styles.positioningEmphasis}>相对明确的区域</strong>：模型文件相关操作、编辑面板、模型预览空间和模型工具栏。</p>
+                  <div className={styles.narrativeDesignPoints}>
+                    <h4>设计挑战</h4>
+                    <ul>
+                      <li>放大模型预览</li>
+                      <li>功能分区清晰易理解</li>
+                      <li>交互易操作</li>
+                    </ul>
+                  </div>
                   </div>
                 </div>
               </div>
