@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { SiteHeader } from "@/components/SiteHeader";
+import { assetPath } from "@/i18n/assets";
 import { isLocale, type Locale } from "@/i18n/config";
 import { about2Email, about2PdfUrl, getAbout2Copy } from "./content";
 import styles from "./about.module.css";
@@ -39,7 +40,7 @@ export default async function About2Page({ params }: About2PageProps) {
                 </div>
                 <Image
                   className={styles.illustration}
-                  src="/images/aboutme.svg"
+                  src={assetPath("/images/aboutme.svg")}
                   alt=""
                   width={420}
                   height={420}
