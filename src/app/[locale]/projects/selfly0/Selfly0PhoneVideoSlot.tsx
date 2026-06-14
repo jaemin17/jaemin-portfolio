@@ -1,3 +1,4 @@
+import { assetPath } from "@/i18n/assets";
 import styles from "../[slug]/project.module.css";
 
 type Selfly0PhoneVideoSlotProps = {
@@ -11,7 +12,7 @@ export function Selfly0PhoneVideoSlot({ src, ariaLabel }: Selfly0PhoneVideoSlotP
       <div className={styles.selfly0PhoneSlotShell}>
         <video
           className={styles.selfly0PhoneSlotVideo}
-          src={src}
+          src={assetPath(src)}
           autoPlay
           loop
           muted

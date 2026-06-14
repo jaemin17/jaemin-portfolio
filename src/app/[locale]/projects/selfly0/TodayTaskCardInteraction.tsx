@@ -1,3 +1,4 @@
+import { assetPath } from "@/i18n/assets";
 import Image from "next/image";
 
 import styles from "../[slug]/project.module.css";
@@ -23,7 +24,7 @@ function TaskInteractionImage({ alt, src }: TaskInteractionImageProps) {
     <div className={styles.todayTaskSemanticScreenshotFrame}>
       <Image
         className={styles.todayTaskSemanticScreenshot}
-        src={src}
+        src={assetPath(src)}
         alt={alt}
         width={1206}
         height={2622}
@@ -46,7 +47,7 @@ export function TodayTaskCardInteraction() {
             <p className={styles.positioningDiagramDescription}>低压力，但易误触、确认弱</p>
           </div>
           <TaskInteractionImage
-            src="/images/selfly0/today-task-interaction-before.png"
+            src={assetPath("/images/selfly0/today-task-interaction-before.png")}
             alt="改造前的 Selfly Today Top 3 界面，完成控件被弱化，点击卡片可能完成任务"
           />
         </div>
@@ -61,7 +62,7 @@ export function TodayTaskCardInteraction() {
             <p className={styles.positioningDiagramDescription}>完成感克制，内容仍可见</p>
           </div>
           <TaskInteractionImage
-            src="/images/selfly0/today-task-interaction-after.png"
+            src={assetPath("/images/selfly0/today-task-interaction-after.png")}
             alt="改造后的 Selfly Today Top 3 界面，右侧方块承担完成操作，卡片主体保留内容入口"
           />
         </div>

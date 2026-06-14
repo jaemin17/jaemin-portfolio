@@ -1,5 +1,6 @@
 "use client";
 
+import { assetPath } from "@/i18n/assets";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import styles from "../[slug]/project.module.css";
@@ -7,13 +8,13 @@ import styles from "../[slug]/project.module.css";
 const slides = [
   {
     id: "module",
-    src: "/images/selfly0/review-settings-module-zh.png",
+    src: assetPath("/images/selfly0/review-settings-module-zh.png"),
     label: "自选模块",
     alt: "回顾设置：自选模块，勾选成功日记、愿景板等具体模块",
   },
   {
     id: "category",
-    src: "/images/selfly0/review-settings-category-zh.png",
+    src: assetPath("/images/selfly0/review-settings-category-zh.png"),
     label: "自选分类",
     alt: "回顾设置：自选分类，按清单、图册等记录类型筛选回顾范围",
   },

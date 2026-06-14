@@ -1,3 +1,4 @@
+import { assetPath } from "@/i18n/assets";
 import Image from "next/image";
 import styles from "../[slug]/project.module.css";
 
@@ -7,7 +8,7 @@ const tabs = [
     role: "当下",
     name: "Today",
     goal: "聚焦当下",
-    icon: "/images/selfly0/jinri.svg",
+    icon: assetPath("/images/selfly0/jinri.svg"),
     width: 20,
     height: 19,
   },
@@ -16,7 +17,7 @@ const tabs = [
     role: "记录",
     name: "Explore",
     goal: "按内容选容器",
-    icon: "/images/selfly0/tansuo.svg",
+    icon: assetPath("/images/selfly0/tansuo.svg"),
     width: 23,
     height: 25,
   },
@@ -25,7 +26,7 @@ const tabs = [
     role: "回看",
     name: "Review",
     goal: "把旧内容带回",
-    icon: "/images/selfly0/huigu.fill.svg",
+    icon: assetPath("/images/selfly0/huigu.fill.svg"),
     width: 23,
     height: 23,
   },

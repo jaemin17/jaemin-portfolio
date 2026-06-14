@@ -1,3 +1,4 @@
+import { assetPath } from "@/i18n/assets";
 import Image from "next/image";
 import fs from "node:fs";
 import path from "node:path";
@@ -47,7 +48,7 @@ export function ExploreTemplatesSwitcher({ locale = "zh" }: ExploreTemplatesSwit
           <div className={styles.positioningPhoneFrame}>
             {hasBeforeImage ? (
               <Image
-                src={beforeSrc}
+                src={assetPath(beforeSrc)}
                 alt={beforeAlt}
                 width={470}
                 height={1024}
@@ -69,7 +70,7 @@ export function ExploreTemplatesSwitcher({ locale = "zh" }: ExploreTemplatesSwit
           <span className={styles.positioningDiagramCaption}>类型选择 + 场景模板</span>
           <div className={styles.positioningPhoneFrame}>
             <Image
-              src={afterSrc}
+              src={assetPath(afterSrc)}
               alt={afterAlt}
               width={470}
               height={1024}

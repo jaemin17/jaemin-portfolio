@@ -1,3 +1,4 @@
+import { assetPath } from "@/i18n/assets";
 import type { ReactNode } from "react";
 import Image from "next/image";
 import { notFound } from "next/navigation";
@@ -78,7 +79,7 @@ export default async function Selfly0Page({ params }: Selfly0PageProps) {
           <p className={styles.subtitle}>帮助用户每日聚焦、自我记录与长期回看的 iOS 产品</p>
           <div className={styles.headerCta}>
             <Image
-              src="/images/selfly0/hero.png"
+              src={assetPath("/images/selfly0/hero.png")}
               alt="Selfly app preview showing Today, My Journal, and Review screens"
               width={1500}
               height={844}
@@ -136,7 +137,7 @@ export default async function Selfly0Page({ params }: Selfly0PageProps) {
                 <div className={styles.positioningPhoneFrame}>
                   <span className={styles.positioningDynamicIsland} aria-hidden="true" />
                   <Image
-                    src="/images/selfly0/positioning-phone-1.png"
+                    src={assetPath("/images/selfly0/positioning-phone-1.png")}
                     alt="前期：固定内容入口"
                     width={360}
                     height={780}
@@ -155,7 +156,7 @@ export default async function Selfly0Page({ params }: Selfly0PageProps) {
                 <div className={styles.positioningPhoneFrame}>
                   <span className={styles.positioningDynamicIsland} aria-hidden="true" />
                   <Image
-                    src="/images/selfly0/positioning-phone-3.png"
+                    src={assetPath("/images/selfly0/positioning-phone-3.png")}
                     alt="后期：个人记录空间"
                     width={360}
                     height={780}

@@ -1,17 +1,18 @@
+import { assetPath } from "@/i18n/assets";
 import Image from "next/image";
 import styles from "../[slug]/project.module.css";
 
 const finalVersions = [
   {
     id: "flat",
-    src: "/images/selfly0/icon-design/final-flat.png",
+    src: assetPath("/images/selfly0/icon-design/final-flat.png"),
     title: "浅色扁平版",
     detail: "白底高对比，适合 App Store 展示",
     alt: "Selfly 最终图标：浅色扁平版",
   },
   {
     id: "gradient",
-    src: "/images/selfly0/icon-design/final-gradient.png",
+    src: assetPath("/images/selfly0/icon-design/final-gradient.png"),
     title: "暗黑模式版",
     detail: "深色底高对比，适配暗黑模式",
     alt: "Selfly 最终图标：暗黑模式版",
@@ -58,7 +59,7 @@ export function AppIconDesignShowcase() {
           {/* Row 1 — images + arrows */}
           <figure className={styles.iconDesignEvolutionSketch}>
             <Image
-              src="/images/selfly0/icon-design/draft-01-sketch.png"
+              src={assetPath("/images/selfly0/icon-design/draft-01-sketch.png")}
               alt="Selfly 图标草图：橙色手绘书本与紫色蝴蝶"
               width={200}
               height={200}
@@ -73,7 +74,7 @@ export function AppIconDesignShowcase() {
             aria-label="精稿阶段同期探索：多种书本与蝴蝶组合方案"
           >
             <Image
-              src="/images/selfly0/icon-design/exploration-wall.png"
+              src={assetPath("/images/selfly0/icon-design/exploration-wall.png")}
               alt="Selfly 图标精稿探索墙：书本比例、蝴蝶位置与开放框等多方案并列"
               width={1024}
               height={341}
@@ -85,7 +86,7 @@ export function AppIconDesignShowcase() {
 
           <figure className={styles.iconDesignEvolutionSketch}>
             <Image
-              src="/images/selfly0/icon-design/final-flat.png"
+              src={assetPath("/images/selfly0/icon-design/final-flat.png")}
               alt="Selfly 最终图标：不闭合橙色边框与双色蝴蝶"
               width={200}
               height={200}

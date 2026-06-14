@@ -1,5 +1,6 @@
 "use client";
 
+import { assetPath } from "@/i18n/assets";
 import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
 import styles from "../[slug]/project.module.css";
@@ -7,21 +8,21 @@ import styles from "../[slug]/project.module.css";
 const slides = [
   {
     id: "today",
-    src: "/images/selfly0/today-rhythm-today-zh.png",
+    src: assetPath("/images/selfly0/today-rhythm-today-zh.png"),
     alt: "Selfly 今日重要 Top 3：从这里分流非今日事项",
     phase: "今日聚焦",
     caption: "从这里分流非今日事项",
   },
   {
     id: "tomorrow",
-    src: "/images/selfly0/today-rhythm-tomorrow-zh.png",
+    src: assetPath("/images/selfly0/today-rhythm-tomorrow-zh.png"),
     alt: "Selfly 明日重要 Top 3：提前写好明日草稿",
     phase: "明日草稿",
     caption: "跨日后进入今日 Top 3",
   },
   {
     id: "backlog",
-    src: "/images/selfly0/today-rhythm-backlog-zh.png",
+    src: assetPath("/images/selfly0/today-rhythm-backlog-zh.png"),
     alt: "Selfly 其他待办：Backlog 保留暂不处理的事项",
     phase: "其他待办",
     caption: "Backlog · 暂不处理",

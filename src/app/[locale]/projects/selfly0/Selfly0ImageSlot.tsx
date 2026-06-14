@@ -1,3 +1,4 @@
+import { assetPath } from "@/i18n/assets";
 import Image from "next/image";
 import fs from "node:fs";
 import path from "node:path";
@@ -33,7 +34,7 @@ export function Selfly0ImageSlot({
       <div className={styles.selfly0WideSlot}>
         {hasImage ? (
           <Image
-            src={src}
+            src={assetPath(src)}
             alt={alt}
             width={1200}
             height={675}
@@ -57,7 +58,7 @@ export function Selfly0ImageSlot({
         <span className={styles.positioningDynamicIsland} aria-hidden="true" />
         {hasImage ? (
           <Image
-            src={src}
+            src={assetPath(src)}
             alt={alt}
             width={width}
             height={height}

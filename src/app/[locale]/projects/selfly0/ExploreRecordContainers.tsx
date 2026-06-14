@@ -1,3 +1,4 @@
+import { assetPath } from "@/i18n/assets";
 import Image from "next/image";
 import styles from "../[slug]/project.module.css";
 
@@ -44,7 +45,7 @@ export function ExploreRecordContainers() {
             </div>
             <div className={styles.exploreRecordContainerPhone} aria-label={`${container.name}界面占位`}>
               <Image
-                src={container.image}
+                src={assetPath(container.image)}
                 alt={container.alt}
                 width={600}
                 height={1299}

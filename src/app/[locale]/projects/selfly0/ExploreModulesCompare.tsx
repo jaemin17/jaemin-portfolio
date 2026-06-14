@@ -1,3 +1,4 @@
+import { assetPath } from "@/i18n/assets";
 import Image from "next/image";
 import fs from "node:fs";
 import path from "node:path";
@@ -72,7 +73,7 @@ export function ExploreModulesCompare({ locale = "zh" }: ExploreModulesComparePr
           <div className={styles.positioningPhoneFrame}>
             <span className={styles.positioningDynamicIsland} aria-hidden="true" />
             <Image
-              src={beforeSrc}
+              src={assetPath(beforeSrc)}
               alt={copy.before.alt}
               width={360}
               height={780}
@@ -93,7 +94,7 @@ export function ExploreModulesCompare({ locale = "zh" }: ExploreModulesComparePr
             <span className={styles.positioningDynamicIsland} aria-hidden="true" />
             {hasAfterImage ? (
               <Image
-                src={afterSrc}
+                src={assetPath(afterSrc)}
                 alt={copy.after.alt}
                 width={360}
                 height={780}

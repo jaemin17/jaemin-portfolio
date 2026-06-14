@@ -1,5 +1,6 @@
 "use client";
 
+import { assetPath } from "@/i18n/assets";
 import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
 import styles from "../[slug]/project.module.css";
@@ -7,21 +8,21 @@ import styles from "../[slug]/project.module.css";
 const states = [
   {
     id: "empty",
-    src: "/images/selfly0/today-empty.png",
+    src: assetPath("/images/selfly0/today-empty.png"),
     alt: "Selfly Today 空态：三个待添加任务槽位",
     phase: "空态",
     caption: "3 个槽位，克制入口",
   },
   {
     id: "active",
-    src: "/images/selfly0/today-active.png",
+    src: assetPath("/images/selfly0/today-active.png"),
     alt: "Selfly Today 进行中：Top 3 展示三项聚焦任务，一项已完成",
     phase: "进行中",
     caption: "每日只盯少数几件",
   },
   {
     id: "done",
-    src: "/images/selfly0/today-done.png",
+    src: assetPath("/images/selfly0/today-done.png"),
     alt: "Selfly Today 已完成：Top 3 全部完成并显示祝贺反馈",
     phase: "已完成",
     caption: "完成有反馈",

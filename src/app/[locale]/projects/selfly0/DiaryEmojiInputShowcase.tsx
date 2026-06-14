@@ -1,3 +1,4 @@
+import { assetPath } from "@/i18n/assets";
 import styles from "../[slug]/project.module.css";
 import { Selfly0ImageSlot } from "./Selfly0ImageSlot";
 import { Selfly0PhoneVideoSlot } from "./Selfly0PhoneVideoSlot";
@@ -26,7 +27,7 @@ export function DiaryEmojiPickerCompare() {
           <span className={styles.positioningDiagramCaption}>内联横向展开条</span>
           <span className={styles.positioningDiagramDescription}>输入框上方展开，选项变多后难以扫完</span>
           <Selfly0PhoneVideoSlot
-            src="/videos/selfly0/diary-emoji-01-inline-strip.mp4"
+            src={assetPath("/videos/selfly0/diary-emoji-01-inline-strip.mp4")}
             ariaLabel="旧版日记输入：点击 emoji 后在输入框上方展开横向滚动条"
           />
         </div>
@@ -38,7 +39,7 @@ export function DiaryEmojiPickerCompare() {
           <span className={styles.positioningDiagramCaption}>半屏 Sheet 网格</span>
           <span className={styles.positioningDiagramDescription}>与模块 emoji 选择交互一致，层级更清晰</span>
           <Selfly0PhoneVideoSlot
-            src="/videos/selfly0/diary-emoji-02-sheet-grid.mp4"
+            src={assetPath("/videos/selfly0/diary-emoji-02-sheet-grid.mp4")}
             ariaLabel="新版日记输入：半屏 Sheet 网格选择器"
           />
         </div>
@@ -99,7 +100,7 @@ export function DiaryEmojiInputPolish() {
       <div className={styles.diaryInputPolishLayout}>
         <DiaryInputFlowDiagram
           demoVideo={{
-            src: "/videos/selfly0/diary-input-focus.mp4",
+            src: assetPath("/videos/selfly0/diary-input-focus.mp4"),
             ariaLabel: "日记输入：选完表情后自动聚焦文本输入演示",
           }}
         />

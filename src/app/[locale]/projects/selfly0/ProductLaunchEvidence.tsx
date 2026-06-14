@@ -1,3 +1,4 @@
+import { assetPath } from "@/i18n/assets";
 import Image from "next/image";
 import styles from "../[slug]/project.module.css";
 import { Selfly0PhoneVideoSlot } from "./Selfly0PhoneVideoSlot";
@@ -61,7 +62,7 @@ export function ProductLaunchEvidence() {
         <figure className={styles.productLaunchSupplement}>
           <div className={styles.productLaunchSupplementFrame}>
             <Image
-              src="/images/selfly0/launch-custom-symbols.png"
+              src={assetPath("/images/selfly0/launch-custom-symbols.png")}
               alt="Selfly 自定义 SF Symbol 图标集"
               width={1200}
               height={800}
@@ -76,7 +77,7 @@ export function ProductLaunchEvidence() {
 
         <div className={styles.productLaunchDemo}>
           <Selfly0PhoneVideoSlot
-            src="/videos/selfly0/launch-implementation.mp4"
+            src={assetPath("/videos/selfly0/launch-implementation.mp4")}
             ariaLabel="Selfly 设置页：订阅、iCloud 同步与多语言切换演示"
           />
         </div>
