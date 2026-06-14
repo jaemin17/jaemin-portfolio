@@ -524,7 +524,7 @@
 .protoIntroRow {
   display: grid;
   grid-template-columns: 2.5fr 4fr;
-  gap: 60px;
+  gap: 100px;
   align-items: start;
   margin: 12px 0 8px;
   text-align: left;
@@ -998,8 +998,8 @@
 
 /* ─── Iteration Grid ───────────────────────────────────── */
 .iterationGrid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-direction: column;
   gap: 20px;
 }
 .iterationImage {
