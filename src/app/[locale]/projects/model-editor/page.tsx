@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { SiteHeader } from "@/components/SiteHeader";
+import { assetPath } from "@/i18n/assets";
 import { isLocale, type Locale } from "@/i18n/config";
 import styles from "../project-detail.module.css";
 
@@ -31,7 +32,7 @@ export default async function ModelEditorPage({ params }: Props) {
             <div className={styles.projectHeroMedia}>
               <video
                 className={styles.projectHeroCoverVideo}
-                src="/videos/model-editor/overview.mp4"
+                src={assetPath("/videos/model-editor/overview.mp4")}
                 autoPlay
                 loop
                 muted
@@ -103,7 +104,7 @@ export default async function ModelEditorPage({ params }: Props) {
                 <div className={styles.protoEvidenceCanvas}>
                   <Image
                     className={styles.protoEvidenceImage}
-                    src="/images/model-editor/原型4.png"
+                    src={assetPath("/images/model-editor/原型4.png")}
                     alt="Model Editor 开发原型"
                     width={1440}
                     height={900}
@@ -221,7 +222,7 @@ export default async function ModelEditorPage({ params }: Props) {
               <div>
                 <p className={styles.beforeAfterLabel}>早期方案：功能可见，但区域归属不清</p>
                 <Image
-                  src="/images/model-editor/%E6%97%A7%E7%9A%84%E6%96%B9%E6%A1%88%E4%BB%AC/%E6%96%B9%E6%A1%881.png"
+                  src={assetPath("/images/model-editor/%E6%97%A7%E7%9A%84%E6%96%B9%E6%A1%88%E4%BB%AC/%E6%96%B9%E6%A1%881.png")}
                   alt="初始版本界面布局"
                   width={960}
                   height={600}
@@ -231,7 +232,7 @@ export default async function ModelEditorPage({ params }: Props) {
               <div>
                 <p className={styles.afterLabel}>最终方案：四个区域职责明确</p>
                 <Image
-                  src="/images/model-editor/%E6%97%A7%E7%9A%84%E6%96%B9%E6%A1%88%E4%BB%AC/%E6%9C%80%E5%90%8E%E6%96%B9%E6%A1%88.png"
+                  src={assetPath("/images/model-editor/%E6%97%A7%E7%9A%84%E6%96%B9%E6%A1%88%E4%BB%AC/%E6%9C%80%E5%90%8E%E6%96%B9%E6%A1%88.png")}
                   alt="最终方案界面布局"
                   width={960}
                   height={600}
@@ -292,7 +293,7 @@ export default async function ModelEditorPage({ params }: Props) {
             <div className={styles.iterationGrid}>
               <div>
                 <Image
-                  src="/images/model-editor/旧的方案们/太多方案了/颜色方案-10.png"
+                  src={assetPath("/images/model-editor/旧的方案们/太多方案了/颜色方案-10.png")}
                   alt="顶部集中型探索方案"
                   width={600}
                   height={375}
@@ -302,7 +303,7 @@ export default async function ModelEditorPage({ params }: Props) {
               </div>
               <div>
                 <Image
-                  src="/images/model-editor/旧的方案们/太多方案了/颜色方案-1.png"
+                  src={assetPath("/images/model-editor/旧的方案们/太多方案了/颜色方案-1.png")}
                   alt="底部工具栏探索方案"
                   width={600}
                   height={375}
@@ -312,7 +313,7 @@ export default async function ModelEditorPage({ params }: Props) {
               </div>
               <div>
                 <Image
-                  src="/images/model-editor/旧的方案们/太多方案了/颜色方案-2.png"
+                  src={assetPath("/images/model-editor/旧的方案们/太多方案了/颜色方案-2.png")}
                   alt="右侧工具列探索方案"
                   width={600}
                   height={375}
@@ -322,7 +323,7 @@ export default async function ModelEditorPage({ params }: Props) {
               </div>
               <div>
                 <Image
-                  src="/images/model-editor/旧的方案们/太多方案了/颜色方案-6.png"
+                  src={assetPath("/images/model-editor/旧的方案们/太多方案了/颜色方案-6.png")}
                   alt="居中导航与右侧工具组合方案"
                   width={600}
                   height={375}
@@ -332,7 +333,7 @@ export default async function ModelEditorPage({ params }: Props) {
               </div>
               <div>
                 <Image
-                  src="/images/model-editor/旧的方案们/太多方案了/颜色方案-8.png"
+                  src={assetPath("/images/model-editor/旧的方案们/太多方案了/颜色方案-8.png")}
                   alt="顶部按钮组与右侧工具组合方案"
                   width={600}
                   height={375}
@@ -342,7 +343,7 @@ export default async function ModelEditorPage({ params }: Props) {
               </div>
               <div>
                 <Image
-                  src="/images/model-editor/%E6%97%A7%E7%9A%84%E6%96%B9%E6%A1%88%E4%BB%AC/%E6%9C%80%E5%90%8E%E6%96%B9%E6%A1%88.png"
+                  src={assetPath("/images/model-editor/%E6%97%A7%E7%9A%84%E6%96%B9%E6%A1%88%E4%BB%AC/%E6%9C%80%E5%90%8E%E6%96%B9%E6%A1%88.png")}
                   alt="最终收敛方案"
                   width={600}
                   height={375}
@@ -399,7 +400,7 @@ export default async function ModelEditorPage({ params }: Props) {
             <div className={styles.iterationGrid}>
               <div>
                 <Image
-                  src="/images/model-editor/%E6%97%A7%E7%9A%84%E6%96%B9%E6%A1%88%E4%BB%AC/%E6%96%B9%E6%A1%881.png"
+                  src={assetPath("/images/model-editor/%E6%97%A7%E7%9A%84%E6%96%B9%E6%A1%88%E4%BB%AC/%E6%96%B9%E6%A1%881.png")}
                   alt="旧方案：右侧独立浮层"
                   width={600}
                   height={375}
@@ -409,7 +410,7 @@ export default async function ModelEditorPage({ params }: Props) {
               </div>
               <div>
                 <Image
-                  src="/images/model-editor/%E6%97%A7%E7%9A%84%E6%96%B9%E6%A1%88%E4%BB%AC/%E6%96%B9%E6%A1%882.png"
+                  src={assetPath("/images/model-editor/%E6%97%A7%E7%9A%84%E6%96%B9%E6%A1%88%E4%BB%AC/%E6%96%B9%E6%A1%882.png")}
                   alt="方案2：去掉顶部信息，按钮放中间"
                   width={600}
                   height={375}
@@ -419,7 +420,7 @@ export default async function ModelEditorPage({ params }: Props) {
               </div>
               <div>
                 <Image
-                  src="/images/model-editor/%E6%97%A7%E7%9A%84%E6%96%B9%E6%A1%88%E4%BB%AC/%E6%96%B9%E6%A1%883.png"
+                  src={assetPath("/images/model-editor/%E6%97%A7%E7%9A%84%E6%96%B9%E6%A1%88%E4%BB%AC/%E6%96%B9%E6%A1%883.png")}
                   alt="方案3：全部放在顶部"
                   width={600}
                   height={375}
@@ -429,7 +430,7 @@ export default async function ModelEditorPage({ params }: Props) {
               </div>
               <div>
                 <Image
-                  src="/images/model-editor/%E6%97%A7%E7%9A%84%E6%96%B9%E6%A1%88%E4%BB%AC/%E6%96%B9%E6%A1%884.png"
+                  src={assetPath("/images/model-editor/%E6%97%A7%E7%9A%84%E6%96%B9%E6%A1%88%E4%BB%AC/%E6%96%B9%E6%A1%884.png")}
                   alt="方案4：顶部导航改成按钮组"
                   width={600}
                   height={375}
@@ -439,7 +440,7 @@ export default async function ModelEditorPage({ params }: Props) {
               </div>
               <div>
                 <Image
-                  src="/images/model-editor/%E6%97%A7%E7%9A%84%E6%96%B9%E6%A1%88%E4%BB%AC/%E6%96%B9%E6%A1%885.png"
+                  src={assetPath("/images/model-editor/%E6%97%A7%E7%9A%84%E6%96%B9%E6%A1%88%E4%BB%AC/%E6%96%B9%E6%A1%885.png")}
                   alt="方案5：侧边+顶部导航"
                   width={600}
                   height={375}
@@ -449,7 +450,7 @@ export default async function ModelEditorPage({ params }: Props) {
               </div>
               <div>
                 <Image
-                  src="/images/model-editor/%E6%97%A7%E7%9A%84%E6%96%B9%E6%A1%88%E4%BB%AC/%E6%9C%80%E5%90%8E%E6%96%B9%E6%A1%88.png"
+                  src={assetPath("/images/model-editor/%E6%97%A7%E7%9A%84%E6%96%B9%E6%A1%88%E4%BB%AC/%E6%9C%80%E5%90%8E%E6%96%B9%E6%A1%88.png")}
                   alt="最终方案：收进属性体系"
                   width={600}
                   height={375}
@@ -505,7 +506,7 @@ export default async function ModelEditorPage({ params }: Props) {
 
             <div className={styles.finalLayoutEvidence}>
               <Image
-                src="/images/model-editor/%E6%97%A7%E7%9A%84%E6%96%B9%E6%A1%88%E4%BB%AC/%E6%9C%80%E5%90%8E%E6%96%B9%E6%A1%88.png"
+                src={assetPath("/images/model-editor/%E6%97%A7%E7%9A%84%E6%96%B9%E6%A1%88%E4%BB%AC/%E6%9C%80%E5%90%8E%E6%96%B9%E6%A1%88.png")}
                 alt="最终方案中的左侧导航、中间模型视口和右侧上下文工具"
                 width={1440}
                 height={810}
@@ -545,7 +546,7 @@ export default async function ModelEditorPage({ params }: Props) {
             </p>
             <video
               className={styles.video}
-              src="/videos/model-editor/material-library.mp4"
+              src={assetPath("/videos/model-editor/material-library.mp4")}
               autoPlay
               loop
               muted
@@ -567,7 +568,7 @@ export default async function ModelEditorPage({ params }: Props) {
             </p>
             <video
               className={styles.video}
-              src="/videos/model-editor/explode-view.mp4"
+              src={assetPath("/videos/model-editor/explode-view.mp4")}
               autoPlay
               loop
               muted
@@ -589,7 +590,7 @@ export default async function ModelEditorPage({ params }: Props) {
             </p>
             <video
               className={styles.video}
-              src="/videos/model-editor/transparency-visibility.mp4"
+              src={assetPath("/videos/model-editor/transparency-visibility.mp4")}
               autoPlay
               loop
               muted
@@ -611,7 +612,7 @@ export default async function ModelEditorPage({ params }: Props) {
             </p>
             <video
               className={styles.video}
-              src="/videos/model-editor/animation.mp4"
+              src={assetPath("/videos/model-editor/animation.mp4")}
               autoPlay
               loop
               muted
@@ -633,7 +634,7 @@ export default async function ModelEditorPage({ params }: Props) {
             </p>
             <video
               className={styles.video}
-              src="/videos/model-editor/overview.mp4"
+              src={assetPath("/videos/model-editor/overview.mp4")}
               autoPlay
               loop
               muted
