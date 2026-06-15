@@ -16,18 +16,21 @@ const projects = [
     caption: "模型资源浏览与预览",
     video: "/videos/tools/xr-script.mp4",
     href: "/projects/3d-model-browser",
+    coming: true,
   },
   {
     title: "XR课件",
     caption: "3D 内容播放与课件演示",
     video: "/videos/tools/ppt.mp4",
     href: "/projects/vr-lesson-creator",
+    coming: true,
   },
   {
     title: "Sync Space",
     caption: "多端课堂协同与设备管理",
     video: "/videos/tools/sync-space.mp4",
     href: "/projects/sync-space",
+    coming: true,
   },
 ];
 

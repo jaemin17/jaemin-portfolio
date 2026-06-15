@@ -11,6 +11,7 @@ type Project = {
   video: string;
   tags?: string[];
   href?: string;
+  coming?: boolean;
 };
 
 type CarouselProps = {
@@ -68,8 +69,9 @@ export function Carousel({ projects, locale }: CarouselProps) {
           {projects.map((project, i) => (
             <article
               key={project.title}
-              className={`${styles.card} ${getCardClass(i, active, total)}`}
+              className={`${styles.card} ${getCardClass(i, active, total)} ${project.coming ? styles.cardComing : ""}`}
               onClick={() => {
+                if (project.coming) return;
                 if (i === active && project.href) {
                   router.push(`/${locale}${project.href}`);
                 } else {
@@ -91,7 +93,9 @@ export function Carousel({ projects, locale }: CarouselProps) {
                 <span className={styles.cardName}>{project.title}</span>
                 <div className={styles.cardMeta}>
                   <span>{project.caption}</span>
-                  <span className={styles.cardMetaBadge}>+</span>
+                  <span className={styles.cardMetaBadge}>
+                    {project.coming ? "暂不开放" : "+"}
+                  </span>
                 </div>
               </div>
             </article>

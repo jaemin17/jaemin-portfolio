@@ -55,6 +55,33 @@ export default async function TestPage({ params }: TestPageProps) {
                 <span>Project detail</span>
               </div>
             </Link>
+            <Link className={styles.card} href={localePath(locale, "/projects/sync-space")}>
+              <span className={styles.cardLabel}>WIP</span>
+              <h3>Sync Space</h3>
+              <p>多端课堂协同与设备管理项目详情页，正在完善中，主页入口暂不开放。</p>
+              <div className={styles.tags}>
+                <span>Sync Space</span>
+                <span>In progress</span>
+              </div>
+            </Link>
+            <Link className={styles.card} href={localePath(locale, "/projects/3d-model-browser")}>
+              <span className={styles.cardLabel}>WIP</span>
+              <h3>XR交互剧本设计引擎</h3>
+              <p>XR 剧本设计引擎项目详情页，正在完善中，主页入口暂不开放。</p>
+              <div className={styles.tags}>
+                <span>XR Script Engine</span>
+                <span>In progress</span>
+              </div>
+            </Link>
+            <Link className={styles.card} href={localePath(locale, "/projects/vr-lesson-creator")}>
+              <span className={styles.cardLabel}>WIP</span>
+              <h3>XR课件</h3>
+              <p>XR 课件项目详情页，正在完善中，主页入口暂不开放。</p>
+              <div className={styles.tags}>
+                <span>VR Lesson Creator</span>
+                <span>In progress</span>
+              </div>
+            </Link>
           </div>
         </section>
       </main>
