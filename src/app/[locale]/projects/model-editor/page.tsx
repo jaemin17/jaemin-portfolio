@@ -67,7 +67,7 @@ export default async function ModelEditorPage({ params }: Props) {
                 </p>
                 <p className={styles.roleLabel}>我的角色</p>
                 <p>
-                  基于功能需求，将其落地为完整的编辑器界面设计。
+                  在已有功能框架上继续推进体验设计，围绕编辑器的操作流程、界面层级与视觉一致性完善全量界面，并与开发对接推动方案落地上线。
                 </p>
               </div>
             </div>
@@ -78,7 +78,7 @@ export default async function ModelEditorPage({ params }: Props) {
         <div className={`${styles.positioningSection} ${styles.stackedSection}`}>
           <div className={`${styles.positioningInner} ${styles.positioningInnerCentered}`}>
             <div className={styles.protoEvidence}>
-              <p className={`${styles.positioningLabel} ${styles.protoIntroLabel}`}>问题定义</p>
+              <p className={`${styles.positioningLabel} ${styles.protoIntroLabel}`}>设计目标</p>
               <div className={styles.protoIntroRow}>
                 <h3 className={styles.protoIntroTitle}>
                   <span className={styles.positioningHeadingDark}>面向课件的轻量处理，</span>
@@ -139,13 +139,14 @@ export default async function ModelEditorPage({ params }: Props) {
                 </h3>
                 <div>
                   <div className={styles.protoAreas}>
-                    <p>最初原型把不同作用对象拆成了<strong className={styles.positioningEmphasis}>相对明确的区域</strong>：模型文件相关操作、编辑面板、模型预览空间和模型工具栏。</p>
+                    <p>早期原型已经给出了<strong className={styles.positioningEmphasis}>基本功能分区</strong>：顶部承载编辑模块入口、过程控制和全局结果操作，左侧为编辑面板，中间为模型预览区，右侧为模型工具与参数调整区。但不同功能的<strong className={styles.positioningEmphasis}>操作性质、视觉层级和影响范围</strong>仍需要进一步区分。</p>
+                    <p>同时，如果各区域都按原型展开，<strong className={styles.positioningEmphasis}>模型预览区会被挤压</strong>；而 3D 编辑器最关键的操作反馈来自模型本身，因此后续设计需要在明确功能层级的基础上，重新平衡<strong className={styles.positioningEmphasis}>「工具密度」与「预览空间」</strong>。</p>
                   <div className={styles.narrativeDesignPoints}>
-                    <h4>设计挑战</h4>
+                    <h4>体验设计方向</h4>
                     <ul>
-                      <li>放大模型预览</li>
-                      <li>功能分区清晰易理解</li>
-                      <li>交互易操作</li>
+                      <li>为模型预览释放更多空间</li>
+                      <li>不同操作更易识别</li>
+                      <li>工具调整更轻量可控</li>
                     </ul>
                   </div>
                   </div>
@@ -168,10 +169,10 @@ export default async function ModelEditorPage({ params }: Props) {
                     <strong>左侧</strong>当前全局功能下展开的编辑面板
                   </div>
                   <div className={`${styles.protoAnnotation} ${styles.protoAnnotationCenter}`}>
-                    <strong>中间</strong>模型的主要展示和交互空间
+                    <strong>中间</strong>模型的展示和交互空间
                   </div>
                   <div className={`${styles.protoAnnotation} ${styles.protoAnnotationRight}`}>
-                    <strong>右侧</strong>直接作用于模型的交互工具栏
+                    <strong>右侧</strong>模型工具与参数调整区
                   </div>
                 </div>
                 <p className={styles.protoEvidenceCaption}>早期原型</p>
@@ -186,7 +187,7 @@ export default async function ModelEditorPage({ params }: Props) {
             <div className={styles.chapterCopy}>
               <span className={styles.chapterIcon}>👁️</span>
               <p className={styles.chapterDesc}>
-                围绕模型预览区域重新分配界面空间，在有限的空间内让用户始终关注模型本身。
+                围绕模型预览区域重新分配界面空间，在有限空间内最大化模型的可视区域。
               </p>
             </div>
           </div>
@@ -194,22 +195,21 @@ export default async function ModelEditorPage({ params }: Props) {
 
         <div className={styles.narrativeSection}>
           <div className={styles.narrativeInner}>
-            <p className={styles.positioningLabel}>让模型成为视觉中心</p>
+            <p className={styles.positioningLabel}>模型预览最大化</p>
             <div className={styles.narrativeGrid}>
               <h3 className={styles.narrativeHeadline}>
                 <span className={styles.narrativeHeadlineLight}>从「面板包围模型」</span><br />
-                <span className={styles.narrativeHeadlineDark}>到「模型始终居中」</span>
+                <span className={styles.narrativeHeadlineDark}>到「模型获得主要空间」</span>
               </h3>
               <div className={styles.narrativeBody}>
                 <p>
-                  3D 编辑器最大的矛盾：用户需要大量控制面板，但同时需要<strong className={styles.positioningEmphasis}>一直盯着模型</strong>。
-                  迭代过程中，右侧颜色面板与左侧属性面板同时存在，
-                  模型视口被压缩到中间的剩余空间，用户编辑时<strong className={styles.positioningEmphasis}>视觉重心被工具分散</strong>。
+                  在浏览器界面中，3D 模型预览区的尺寸同时受到宽度和高度的限制，由于需要保持固定比例，实际可视区域通常会受到<strong className={styles.positioningEmphasis}>较短一侧的约束</strong>。
                 </p>
                 <p>
-                  最终布局确立了<strong className={styles.positioningEmphasis}>「模型优先」原则</strong>：顶部只保留全局操作，
-                  左侧收窄为图标导航加折叠属性面板，右侧参数只在操作上下文中展开。
-                  模型视口始终占据最大比例，让<strong className={styles.positioningEmphasis}>「调参数」和「看效果」之间的距离消失</strong>。
+                  在网页布局中，<strong className={styles.positioningEmphasis}>高度空间相对更为紧张</strong>，因此模型上下的固定区域都会影响预览区域的有效高度，使模型显示尺寸被压缩。
+                </p>
+                <p>
+                  因此，我将顶部的固定全局编辑入口移动到左侧，以减少垂直空间的占用，并将其转移到<strong className={styles.positioningEmphasis}>更充裕的横向空间</strong>，从而为模型预览区释放更多高度。
                 </p>
                 <div className={styles.narrativeDesignPoints}>
                   <h4>设计决策</h4>
