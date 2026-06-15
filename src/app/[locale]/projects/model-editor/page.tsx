@@ -247,13 +247,13 @@ export default async function ModelEditorPage({ params }: Props) {
           </div>
         </div>
 
-        {/* ─── Chapter 1: 区域职责分离 ───────────────────── */}
+        {/* ─── REFINED Chapter 2: 操作与模型的关系 ───────────────────── */}
         <div className={styles.chapterIntro}>
           <div className={styles.chapterIntroInner}>
             <div className={styles.chapterCopy}>
-              <span className={styles.chapterIcon}>🤔</span>
+              <span className={styles.chapterIcon}>🔗</span>
               <p className={styles.chapterDesc}>
-                这些功能是否被放在符合编辑路径的位置？
+                不同性质的操作放在一起，反而更难被识别。
               </p>
             </div>
           </div>
@@ -261,66 +261,51 @@ export default async function ModelEditorPage({ params }: Props) {
 
         <div className={styles.narrativeSection}>
           <div className={styles.narrativeInner}>
-            <p className={styles.positioningLabel}>区域职责分离</p>
+            <p className={styles.positioningLabel}>操作归属</p>
             <div className={styles.narrativeGrid}>
               <h3 className={styles.narrativeHeadline}>
-                <span className={styles.narrativeHeadlineLight}>从「放工具」</span><br />
-                <span className={styles.narrativeHeadlineDark}>到「定义区域职责」</span>
+                <span className={styles.narrativeHeadlineLight}>操作性质不同，</span><br />
+                <span className={styles.narrativeHeadlineDark}>位置与视觉样式由此而定</span>
               </h3>
               <div className={styles.narrativeBody}>
                 <p>
-                  在探索过程中，我尝试过把模型工具放在顶部、底部、右侧，也尝试过把编辑面板做成浮层或常驻侧栏。
-                  这些方案都能容纳功能，但用户仍然需要在多个区域之间判断：这是<strong className={styles.positioningEmphasis}>全局操作、模型操作，还是当前对象的属性</strong>？
-                </p>
-                <p>
-                  最终我没有继续寻找某一种「最佳工具栏位置」，而是<strong className={styles.positioningEmphasis}>重新定义页面区域</strong>：左侧负责编辑对象和模块入口，
-                  中间保持完整模型视口，右侧承载模型操作与上下文参数，顶部只保留保存、预览、撤销等全局动作。
-                  操作路径也随之收敛为<strong className={styles.positioningEmphasis}>「选对象 → 调属性 → 立即看效果」</strong>。
+                  顶部功能并非同一类型：编辑模块入口需要展开内容面板，模型工具需要实时观察反馈，<strong className={styles.positioningEmphasis}>保存、预览等高频全局动作则依循使用惯例置于右上角</strong>——性质不同，归属各有依据。
                 </p>
                 <div className={styles.narrativeDesignPoints}>
                   <h4>设计决策</h4>
                   <ul>
-                    <li><strong>左侧导航</strong>：承载文件、信息、属性、结构、爆炸、动画等编辑类型，让入口稳定存在</li>
-                    <li><strong>中间视口</strong>：保留最大模型预览区域，让用户随时确认编辑结果</li>
-                    <li><strong>右侧工具</strong>：靠近模型与参数面板，承载旋转、移动、颜色、显隐等上下文操作</li>
-                    <li><strong>顶部操作</strong>：只保留撤销、预览、全屏、保存等全局动作，避免和具体编辑工具混层</li>
+                    <li><strong>左侧固定面板</strong>：内容多，部分操作不依赖模型视口</li>
+                    <li><strong>右侧浮动工具</strong>：需实时观察反馈，浮动保持视口完整</li>
+                    <li><strong>顶部全局动作</strong>：高频操作，右上角符合使用惯例</li>
+                    <li><strong>顶部过程控制</strong>：辅助性操作，轻量图标降低视觉权重</li>
                   </ul>
                 </div>
               </div>
             </div>
 
-            <div className={styles.beforeAfter}>
-              <div>
-                <p className={styles.beforeAfterLabel}>早期方案：功能可见，但区域归属不清</p>
-                <Image
-                  src={assetPath("/images/model-editor/%E6%97%A7%E7%9A%84%E6%96%B9%E6%A1%88%E4%BB%AC/%E6%96%B9%E6%A1%881.png")}
-                  alt="初始版本界面布局"
-                  width={960}
-                  height={600}
-                  className={styles.schemeImage}
-                />
-              </div>
-              <div>
-                <p className={styles.afterLabel}>最终方案：四个区域职责明确</p>
-                <Image
-                  src={assetPath("/images/model-editor/%E6%97%A7%E7%9A%84%E6%96%B9%E6%A1%88%E4%BB%AC/%E6%9C%80%E5%90%8E%E6%96%B9%E6%A1%88.png")}
-                  alt="最终方案界面布局"
-                  width={960}
-                  height={600}
-                  className={styles.schemeImage}
+            <div className={styles.protoEvidenceFrame}>
+              <div className={styles.protoEvidenceCanvas}>
+                <video
+                  className={styles.protoEvidenceImage}
+                  src={assetPath("/videos/model-editor/模型编辑器章节操作归属-视频.mp4")}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  preload="auto"
                 />
               </div>
             </div>
           </div>
         </div>
 
-        {/* ─── Chapter 2: 方案探索归纳 ───────────────────── */}
+        {/* ─── Chapter 3: 工具操作轻量化 ───────────────────── */}
         <div className={styles.chapterIntro}>
           <div className={styles.chapterIntroInner}>
             <div className={styles.chapterCopy}>
-              <span className={styles.chapterIcon}>🧭</span>
+              <span className={styles.chapterIcon}>🎛️</span>
               <p className={styles.chapterDesc}>
-                将多轮布局尝试归纳成三类问题，说明最终方案不是样式选择，而是信息架构收敛。
+                放大操作入口、弱化视觉噪声，让教师更容易识别和点击工具。
               </p>
             </div>
           </div>
@@ -328,74 +313,64 @@ export default async function ModelEditorPage({ params }: Props) {
 
         <div className={styles.narrativeSection}>
           <div className={styles.narrativeInner}>
-            <p className={styles.positioningLabel}>方案探索归纳</p>
+            <p className={styles.positioningLabel}>工具操作轻量化</p>
             <div className={styles.narrativeGrid}>
               <h3 className={styles.narrativeHeadline}>
-                <span className={styles.narrativeHeadlineLight}>从「反复换位置」</span><br />
-                <span className={styles.narrativeHeadlineDark}>到「归纳布局原则」</span>
+                <span className={styles.narrativeHeadlineLight}>从「密集工具控件」</span><br />
+                <span className={styles.narrativeHeadlineDark}>到「轻量可识别操作」</span>
               </h3>
               <div className={styles.narrativeBody}>
                 <p>
-                  「太多方案」的价值不在于证明我尝试了很多样式，而在于它暴露了复杂编辑器最核心的矛盾：
-                  工具越完整，越需要<strong className={styles.positioningEmphasis}>清晰的信息层级</strong>；否则用户会被功能位置牵着走，而不是<strong className={styles.positioningEmphasis}>围绕模型完成任务</strong>。
+                  面向教师的编辑器不能依赖密集小控件来传达专业能力。因此，我将按钮、工具入口和参数控件做得更大，并强化选中状态，让用户能快速判断<strong className={styles.positioningEmphasis}>当前正在使用哪个工具</strong>。
                 </p>
                 <p>
-                  我把这些方案重新归纳为三类：顶部集中、底部工具栏和右侧工具列。
-                  它们分别解决了入口可见性、操作贴近模型、工具靠近参数的问题，但也各自带来<strong className={styles.positioningEmphasis}>层级混乱、视线跳转或按钮堆叠</strong>。
+                  右侧工具默认使用简洁的线性图标，降低工具列的视觉重量；hover 时再出现明确的功能文字提示，补足图标理解成本。整体按钮和控件使用轻量投影与浅色样式，保持可点击感，同时不抢走模型预览的注意力。
+                </p>
+                <div className={styles.narrativeDesignPoints}>
+                  <h4>设计决策</h4>
+                  <ul>
+                    <li><strong>放大点击目标</strong>：按钮和控件保持足够尺寸，降低点击门槛</li>
+                    <li><strong>强化选中状态</strong>：当前工具和模块有明确反馈，减少状态迷失</li>
+                    <li><strong>使用线性图标</strong>：降低视觉重量，减少工具区的界面占用</li>
+                    <li><strong>hover 补充文字</strong>：默认轻量展示，悬停时说明具体功能</li>
+                    <li><strong>统一轻量按钮和控件样式</strong>：用浅色与柔和投影表达可操作，不干扰模型预览</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div className={styles.controlExploration}>
+              <div className={styles.controlExplorationHeader}>
+                <span>测试稿对比</span>
+                <p>
+                  在工具数量较多的情况下，我对不同按钮重量与识别方式进行比较，最终选择更轻量、点击目标更明确的控件样式。
                 </p>
               </div>
-            </div>
-
-            <div className={styles.explorationCards}>
-              <article className={styles.explorationCard}>
-                <h4>顶部集中型</h4>
-                <p>入口集中、容易发现，但模块导航、模型工具和保存预览混在同一层级，顶部变成过载区域。</p>
-              </article>
-              <article className={styles.explorationCard}>
-                <h4>底部工具栏型</h4>
-                <p>更贴近「看着模型操作」的直觉，但用户需要在左侧面板、右侧参数和底部工具之间形成三角跳转。</p>
-              </article>
-              <article className={styles.explorationCard}>
-                <h4>右侧工具列型</h4>
-                <p>靠近属性面板和模型操作，但按钮列过长，工具和具体参数之间仍需要用户自己建立关系。</p>
-              </article>
-            </div>
-
-            <div className={styles.iterationGrid}>
-              <div>
-                <Image
-                  src={assetPath("/images/model-editor/旧的方案们/太多方案了/颜色方案-10.png")}
-                  alt="顶部集中型探索方案"
-                  width={600}
-                  height={375}
-                  className={styles.iterationImage}
-                />
-                <p className={styles.iterationCaption}>顶部集中：路径短，但层级容易变平</p>
-              </div>
-              <div>
-                <Image
-                  src={assetPath("/images/model-editor/旧的方案们/太多方案了/颜色方案-1.png")}
-                  alt="底部工具栏探索方案"
-                  width={600}
-                  height={375}
-                  className={styles.iterationImage}
-                />
-                <p className={styles.iterationCaption}>底部工具栏：贴近模型，但形成上下跳转</p>
-              </div>
-              <div>
-                <Image
-                  src={assetPath("/images/model-editor/%E6%97%A7%E7%9A%84%E6%96%B9%E6%A1%88%E4%BB%AC/%E6%9C%80%E5%90%8E%E6%96%B9%E6%A1%88.png")}
-                  alt="最终收敛方案"
-                  width={600}
-                  height={375}
-                  className={styles.iterationImage}
-                />
-                <p className={styles.iterationFinalCaption}>→ 最终：按区域职责收敛</p>
+              <div className={styles.controlExplorationGrid}>
+                <div className={styles.controlExplorationCard}>
+                  <div className={`${styles.controlExplorationPlaceholder} ${styles.controlExplorationPlaceholderDark}`}>
+                    <span>黑色版本占位</span>
+                  </div>
+                  <h4>黑色高对比版本</h4>
+                  <p>视觉聚焦更强，但工具区存在感偏高，容易抢走模型预览的注意力。</p>
+                </div>
+                <div className={styles.controlExplorationCard}>
+                  <div className={styles.controlExplorationPlaceholder}>
+                    <span>小按钮版本占位</span>
+                  </div>
+                  <h4>小按钮版本</h4>
+                  <p>界面更轻，但点击目标和选中反馈偏弱，教师操作时识别成本更高。</p>
+                </div>
+                <div className={styles.controlExplorationCard}>
+                  <div className={styles.controlExplorationPlaceholder}>
+                    <span>最终版本占位</span>
+                  </div>
+                  <h4>最终轻量版本</h4>
+                  <p>保留足够点击面积，用线性图标、hover 提示和轻量控件平衡易用性与界面重量。</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
-
 
         {/* ─── Design Goals ────────────────────────────────── */}
         <div className={styles.divider}>
