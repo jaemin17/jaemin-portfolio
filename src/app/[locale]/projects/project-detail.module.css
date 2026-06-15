@@ -444,7 +444,7 @@
 }
 .protoEvidenceFrame {
   margin-top: 48px;
-  padding: 56px 64px 32px;
+  padding: 16px 16px 0;
   border-radius: 22px;
   border: 2px solid #2563eb;
   background: #030303;
@@ -453,7 +453,7 @@
   align-items: center;
 }
 .protoEvidenceCaption {
-  margin: 20px 0 0;
+  margin: 20px 0 24px;
   font-size: 0.78rem;
   color: rgba(255, 255, 255, 0.55);
   letter-spacing: 0.04em;
@@ -465,7 +465,7 @@
 }
 .protoEvidenceImage {
   width: 100%;
-  border-radius: 8px;
+  border-radius: 6px;
   display: block;
   box-sizing: border-box;
 }
@@ -1060,6 +1060,54 @@
   border-radius: 8px;
   border: 1px solid #e8e8e8;
   display: block;
+}
+.finalLayoutCarousel {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  aspect-ratio: 1440 / 778;
+  border-radius: 8px;
+  border: 1px solid #e8e8e8;
+  background: #eef3f7;
+}
+.finalLayoutCarouselImage {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  animation: finalLayoutCarouselFade 9s infinite;
+}
+.finalLayoutCarouselImageOne {
+  animation-delay: 0s;
+}
+.finalLayoutCarouselImageTwo {
+  animation-delay: 3s;
+}
+.finalLayoutCarouselImageThree {
+  animation-delay: 6s;
+}
+
+@keyframes finalLayoutCarouselFade {
+  0%,
+  30% {
+    opacity: 1;
+  }
+  36%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .finalLayoutCarouselImage {
+    animation: none;
+  }
+
+  .finalLayoutCarouselImageOne {
+    opacity: 1;
+  }
 }
 
 .layoutPrinciples {

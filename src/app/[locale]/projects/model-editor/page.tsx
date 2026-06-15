@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { SiteHeader } from "@/components/SiteHeader";
+import { FinalLayoutCarousel } from "@/components/FinalLayoutCarousel";
 import { assetPath } from "@/i18n/assets";
 import { isLocale, type Locale } from "@/i18n/config";
 import styles from "../project-detail.module.css";
@@ -214,28 +215,34 @@ export default async function ModelEditorPage({ params }: Props) {
                 <div className={styles.narrativeDesignPoints}>
                   <h4>设计决策</h4>
                   <ul>
-                    <li><strong>减少常驻面板</strong>：左侧收为图标导航，属性按需展开</li>
-                    <li><strong>顶部操作精简</strong>：只保留撤销、保存等全局功能</li>
-                    <li><strong>右侧按需出现</strong>：颜色等细节参数随选中上下文浮现，不占常驻空间</li>
+                    <li><strong>固定入口占高度</strong> → 移到左侧</li>
+                    <li><strong>面板占空间</strong> → 按需展开、利用横向空间</li>
+                    <li><strong>右侧参数浮层</strong> → 不挤压模型画布</li>
                   </ul>
                 </div>
               </div>
             </div>
 
             <div className={styles.finalLayoutEvidence}>
-              <Image
-                src={assetPath("/images/model-editor/%E6%97%A7%E7%9A%84%E6%96%B9%E6%A1%88%E4%BB%AC/%E6%9C%80%E5%90%8E%E6%96%B9%E6%A1%88.png")}
-                alt="最终方案中的左侧导航、中间模型视口和右侧上下文工具"
-                width={1440}
-                height={810}
-                className={styles.finalLayoutImage}
+              <FinalLayoutCarousel
+                slides={[
+                  {
+                    src: assetPath("/images/model-editor/3D教学工坊-模型编辑器 1.png"),
+                    alt: "3D 教学工坊模型编辑器界面 1",
+                    label: "最大化预览",
+                  },
+                  {
+                    src: assetPath("/images/model-editor/3D教学工坊-模型编辑器 2.png"),
+                    alt: "3D 教学工坊模型编辑器界面 2",
+                    label: "全局编辑面板",
+                  },
+                  {
+                    src: assetPath("/images/model-editor/3D教学工坊-模型编辑器3.png"),
+                    alt: "3D 教学工坊模型编辑器界面 3",
+                    label: "参数浮层",
+                  },
+                ]}
               />
-              <div className={styles.layoutPrinciples}>
-                <p><strong>左侧</strong>编辑对象与模块入口</p>
-                <p><strong>中间</strong>最大化模型预览</p>
-                <p><strong>右侧</strong>上下文工具与参数</p>
-                <p><strong>顶部</strong>保存、预览等全局动作</p>
-              </div>
             </div>
           </div>
         </div>
