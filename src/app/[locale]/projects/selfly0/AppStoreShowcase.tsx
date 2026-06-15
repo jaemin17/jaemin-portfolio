@@ -1,4 +1,4 @@
-import styles from "../[slug]/project.module.css";
+import styles from "./selfly0.module.css";
 import { Selfly0ImageSlot } from "./Selfly0ImageSlot";
 
 const steps = [

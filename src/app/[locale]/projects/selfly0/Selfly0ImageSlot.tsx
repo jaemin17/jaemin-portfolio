@@ -2,7 +2,7 @@ import { assetPath } from "@/i18n/assets";
 import Image from "next/image";
 import fs from "node:fs";
 import path from "node:path";
-import styles from "../[slug]/project.module.css";
+import styles from "./selfly0.module.css";
 
 type Selfly0ImageSlotProps = {
   src: string;

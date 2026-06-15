@@ -1,7 +1,7 @@
 import { assetPath } from "@/i18n/assets";
 import Image from "next/image";
 
-import styles from "../[slug]/project.module.css";
+import styles from "./selfly0.module.css";
 
 const arrow = (
   <svg width="101" height="24" viewBox="0 0 101 24" fill="none" xmlns="http://www.w3.org/2000/svg">

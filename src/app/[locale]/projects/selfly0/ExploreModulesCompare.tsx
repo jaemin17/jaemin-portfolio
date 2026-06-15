@@ -3,7 +3,7 @@ import Image from "next/image";
 import fs from "node:fs";
 import path from "node:path";
 import type { Locale } from "@/i18n/config";
-import styles from "../[slug]/project.module.css";
+import styles from "./selfly0.module.css";
 import { resolveSelfly0Screenshot, selfly0Screenshots } from "./selfly0Screenshots";
 
 const positioningArrow = (

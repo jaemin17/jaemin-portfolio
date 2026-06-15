@@ -1,7 +1,7 @@
 import { assetPath } from "@/i18n/assets";
 import Image from "next/image";
 import type { ReactNode } from "react";
-import styles from "../[slug]/project.module.css";
+import styles from "./selfly0.module.css";
 
 type DiaryInputFlowDiagramProps = {
   demoVideo?: {

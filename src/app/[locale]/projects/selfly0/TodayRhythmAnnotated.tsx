@@ -3,7 +3,7 @@
 import { assetPath } from "@/i18n/assets";
 import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
-import styles from "../[slug]/project.module.css";
+import styles from "./selfly0.module.css";
 
 const slides = [
   {

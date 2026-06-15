@@ -1,4 +1,4 @@
-import styles from "../[slug]/project.module.css";
+import styles from "./selfly0.module.css";
 import { ReviewSettingsCarousel } from "./ReviewSettingsCarousel";
 import { Selfly0PhoneVideoSlot } from "./Selfly0PhoneVideoSlot";
 

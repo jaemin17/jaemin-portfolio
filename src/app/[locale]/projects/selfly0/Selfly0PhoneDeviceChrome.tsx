@@ -1,4 +1,4 @@
-import styles from "../[slug]/project.module.css";
+import styles from "./selfly0.module.css";
 
 type Selfly0PhoneDeviceChromeProps = {
   time: string;

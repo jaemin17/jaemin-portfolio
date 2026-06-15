@@ -4,7 +4,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { SiteHeader } from "@/components/SiteHeader";
 import { isLocale, type Locale } from "@/i18n/config";
-import styles from "../[slug]/project.module.css";
+import styles from "./selfly0.module.css";
 import { TabStructureDiagram } from "./TabStructureDiagram";
 import { ExploreModulesCompare } from "./ExploreModulesCompare";
 import { ExploreRecordContainers } from "./ExploreRecordContainers";

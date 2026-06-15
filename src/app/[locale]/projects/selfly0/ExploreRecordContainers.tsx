@@ -1,6 +1,6 @@
 import { assetPath } from "@/i18n/assets";
 import Image from "next/image";
-import styles from "../[slug]/project.module.css";
+import styles from "./selfly0.module.css";
 
 const containers = [
   {

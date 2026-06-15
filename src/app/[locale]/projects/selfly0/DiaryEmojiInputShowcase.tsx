@@ -1,5 +1,5 @@
 import { assetPath } from "@/i18n/assets";
-import styles from "../[slug]/project.module.css";
+import styles from "./selfly0.module.css";
 import { Selfly0ImageSlot } from "./Selfly0ImageSlot";
 import { Selfly0PhoneVideoSlot } from "./Selfly0PhoneVideoSlot";
 import { DiaryInputFlowDiagram } from "./DiaryInputFlowDiagram";

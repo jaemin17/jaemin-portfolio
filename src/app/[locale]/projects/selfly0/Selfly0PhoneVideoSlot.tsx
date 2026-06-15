@@ -1,5 +1,5 @@
 import { assetPath } from "@/i18n/assets";
-import styles from "../[slug]/project.module.css";
+import styles from "./selfly0.module.css";
 
 type Selfly0PhoneVideoSlotProps = {
   src: string;
