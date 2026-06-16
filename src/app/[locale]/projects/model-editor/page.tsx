@@ -375,6 +375,19 @@ export default async function ModelEditorPage({ params }: Props) {
                       </div>
                     ),
                   },
+                  {
+                    label: "线性图标",
+                    content: (
+                      <div style={{ width: "100%", height: "100%", background: "#16181c", display: "flex", alignItems: "center", justifyContent: "center", padding: "1px" }}>
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                          src={assetPath("/images/model-editor/快捷键.png")}
+                          alt="线性图标与快捷键设计"
+                          style={{ maxWidth: "100%", maxHeight: "100%", objectFit: "contain" }}
+                        />
+                      </div>
+                    ),
+                  },
                 ]}
               />
             </div>
