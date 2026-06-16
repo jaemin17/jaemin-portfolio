@@ -352,12 +352,12 @@ export default async function ModelEditorPage({ params }: Props) {
                   {
                     label: "放大点击目标",
                     content: (
-                      <div style={{ width: "100%", height: "100%", background: "#16181c", display: "flex", alignItems: "center", justifyContent: "center", padding: "1px" }}>
+                      <div style={{ width: "100%", height: "100%", background: "#000", display: "flex", alignItems: "center", justifyContent: "center", padding: "1px" }}>
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img
                           src={assetPath("/images/model-editor/放大按钮.webp")}
                           alt="放大点击目标控件样式"
-                          style={{ maxWidth: "100%", maxHeight: "100%", objectFit: "contain" }}
+                          style={{ maxWidth: "100%", maxHeight: "100%", objectFit: "contain", borderRadius: "8px" }}
                         />
                       </div>
                     ),
@@ -365,12 +365,12 @@ export default async function ModelEditorPage({ params }: Props) {
                   {
                     label: "使用轻量的配色",
                     content: (
-                      <div style={{ width: "100%", height: "100%", background: "#111", display: "flex", alignItems: "center", justifyContent: "center", padding: "1px" }}>
+                      <div style={{ width: "100%", height: "100%", background: "#000", display: "flex", alignItems: "center", justifyContent: "center", padding: "1px" }}>
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img
                           src={assetPath("/images/model-editor/黑色和白色对比.webp")}
                           alt="黑色与白色版本对比"
-                          style={{ maxWidth: "100%", maxHeight: "100%", objectFit: "contain" }}
+                          style={{ maxWidth: "100%", maxHeight: "100%", objectFit: "contain", borderRadius: "8px" }}
                         />
                       </div>
                     ),
@@ -378,12 +378,12 @@ export default async function ModelEditorPage({ params }: Props) {
                   {
                     label: "线性图标",
                     content: (
-                      <div style={{ width: "100%", height: "100%", background: "#16181c", display: "flex", alignItems: "center", justifyContent: "center", padding: "1px" }}>
+                      <div style={{ width: "100%", height: "100%", background: "#000", display: "flex", alignItems: "center", justifyContent: "center", padding: "1px" }}>
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img
                           src={assetPath("/images/model-editor/快捷键.png")}
                           alt="线性图标与快捷键设计"
-                          style={{ maxWidth: "100%", maxHeight: "100%", objectFit: "contain" }}
+                          style={{ maxWidth: "100%", maxHeight: "100%", objectFit: "contain", borderRadius: "8px" }}
                         />
                       </div>
                     ),
