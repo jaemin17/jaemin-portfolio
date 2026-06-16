@@ -33,8 +33,7 @@ export function ExploreRecordContainers() {
   return (
     <figure className={styles.exploreRecordContainers} aria-label="Selfly Explore 四种记录容器界面占位">
       <div className={styles.exploreRecordContainersHeader}>
-        <p className={styles.exploreRecordContainersLabel}>RECORD CONTAINERS</p>
-        <h4 className={styles.exploreRecordContainersTitle}>四种容器，承接四种自我发现方式</h4>
+<h4 className={styles.exploreRecordContainersTitle}>四种容器，承接四种自我发现方式</h4>
       </div>
       <div className={styles.exploreRecordContainersGrid}>
         {containers.map((container) => (
