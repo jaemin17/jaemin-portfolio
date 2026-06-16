@@ -4,6 +4,8 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { SiteHeader } from "@/components/SiteHeader";
 import { isLocale, type Locale } from "@/i18n/config";
+import Link from "next/link";
+import { localePath } from "@/i18n/paths";
 import styles from "./selfly0.module.css";
 import { TabStructureDiagram } from "./TabStructureDiagram";
 import { ExploreModulesCompare } from "./ExploreModulesCompare";
@@ -534,6 +536,9 @@ export default async function Selfly0Page({ params }: Selfly0PageProps) {
             <a href="mailto:lijaemin1993@gmail.com?subject=Selfly%20project" className={styles.selfly0ContactLink}>
               lijaemin1993@gmail.com
             </a>
+            <Link className="buttonSticker buttonStickerOrange" href={localePath(locale, "/")}>
+              返回首页
+            </Link>
           </div>
         </section>
       </main>
