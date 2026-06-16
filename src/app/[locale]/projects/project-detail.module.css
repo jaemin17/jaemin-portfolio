@@ -318,7 +318,7 @@
 }
 
 .contact :global(.buttonSticker) {
-  display: block;
+  display: flex;
   width: fit-content;
   margin: 8px auto 0;
 }
