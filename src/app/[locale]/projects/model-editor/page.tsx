@@ -363,7 +363,7 @@ export default async function ModelEditorPage({ params }: Props) {
                     ),
                   },
                   {
-                    label: "放弃深色模式",
+                    label: "对比深色模式",
                     content: (
                       <div style={{ width: "100%", height: "100%", background: "#000", display: "flex", alignItems: "center", justifyContent: "center", padding: "1px" }}>
                         {/* eslint-disable-next-line @next/next/no-img-element */}
