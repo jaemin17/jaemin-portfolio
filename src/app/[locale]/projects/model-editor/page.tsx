@@ -384,16 +384,16 @@ export default async function ModelEditorPage({ params }: Props) {
         {/* ─── Material Library ────────────────────────────── */}
         <div className={styles.conceptSection}>
           <div className={styles.conceptInner}>
-            <div className={styles.conceptLabel}>Material Library</div>
+            <div className={styles.conceptLabel}>功能演示</div>
             <p className={styles.conceptHeadline}>
               预设材质一键应用，支持金属、木纹、塑料等常见材质切换
             </p>
             <p className={styles.conceptValue}>
-              设计价值：用可感知的材质预设替代专业参数理解，让教师通过试选就能快速接近课堂需要的视觉效果。
+              用可感知的材质预设替代专业参数理解，让教师通过试选就能快速接近课堂需要的视觉效果。
             </p>
             <video
               className={styles.video}
-              src={assetPath("/videos/model-editor/material-library.mp4")}
+              src={assetPath("/videos/tools/model.mp4")}
               autoPlay
               loop
               muted
@@ -406,12 +406,12 @@ export default async function ModelEditorPage({ params }: Props) {
         {/* ─── Structure View ──────────────────────────────── */}
         <div className={styles.conceptSection}>
           <div className={styles.conceptInner}>
-            <div className={styles.conceptLabel}>Structure View</div>
+            <div className={styles.conceptLabel}>功能演示</div>
             <p className={styles.conceptHeadline}>
-              树状结构视图与爆炸动画，清晰展示模型层级关系
+              爆炸设置：清晰展示模型层级关系
             </p>
             <p className={styles.conceptValue}>
-              设计价值：把复杂模型拆成可讲解的结构层级，帮助教师在课堂中说明部件关系和装配逻辑。
+              把复杂模型拆成可讲解的结构层级，帮助教师在课堂中说明部件关系和装配逻辑。
             </p>
             <video
               className={styles.video}
@@ -428,12 +428,12 @@ export default async function ModelEditorPage({ params }: Props) {
         {/* ─── Transparency & Visibility ───────────────────── */}
         <div className={styles.conceptSection}>
           <div className={styles.conceptInner}>
-            <div className={styles.conceptLabel}>Transparency &amp; Visibility</div>
+            <div className={styles.conceptLabel}>功能演示</div>
             <p className={styles.conceptHeadline}>
               透视模式与显隐控制，快速聚焦目标部件
             </p>
             <p className={styles.conceptValue}>
-              设计价值：让用户不需要反复移动视角，也能快速隔离关键部件，降低课堂演示中的信息干扰。
+              让用户不需要反复移动视角，也能快速隔离关键部件，降低课堂演示中的信息干扰。
             </p>
             <video
               className={styles.video}
@@ -450,12 +450,12 @@ export default async function ModelEditorPage({ params }: Props) {
         {/* ─── Animation ───────────────────────────────────── */}
         <div className={styles.conceptSection}>
           <div className={styles.conceptInner}>
-            <div className={styles.conceptLabel}>Animation</div>
+            <div className={styles.conceptLabel}>功能演示</div>
             <p className={styles.conceptHeadline}>
-              自定义动画时间轴，精准控制每个部件的运动节奏
+              通过动画时间轴，预览模型的运动与拆解过程
             </p>
             <p className={styles.conceptValue}>
-              设计价值：把静态模型转化为可演示的运动过程，让结构变化、操作步骤和部件关系更容易被学生理解。
+              把静态模型转化为可演示的运动过程，让结构变化、操作步骤和部件关系更容易被学生理解。
             </p>
             <video
               className={styles.video}
@@ -472,12 +472,12 @@ export default async function ModelEditorPage({ params }: Props) {
         {/* ─── Labels ──────────────────────────────────────── */}
         <div className={styles.conceptSection}>
           <div className={styles.conceptInner}>
-            <div className={styles.conceptLabel}>Labels</div>
+            <div className={styles.conceptLabel}>功能演示</div>
             <p className={styles.conceptHeadline}>
               为模型部件添加标注，清晰传达结构与功能信息
             </p>
             <p className={styles.conceptValue}>
-              设计价值：把模型说明直接叠加到演示对象上，减少教师在模型、文字说明和口头讲解之间切换的负担。
+              把模型说明直接叠加到演示对象上，减少教师在模型、文字说明和口头讲解之间切换的负担。
             </p>
             <video
               className={styles.video}
