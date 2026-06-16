@@ -325,7 +325,7 @@ export default async function ModelEditorPage({ params }: Props) {
             <div className={styles.narrativeGrid}>
               <h3 className={styles.narrativeHeadline}>
                 <span className={styles.narrativeHeadlineLight}>从「专业工具范式」</span><br />
-                <span className={styles.narrativeHeadlineDark}>切换到「高频轻量可识别」</span>
+                <span className={styles.narrativeHeadlineDark}>切换到「低密度轻量可识别」</span>
               </h3>
               <div className={styles.narrativeBody}>
                 <p>
