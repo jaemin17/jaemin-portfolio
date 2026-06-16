@@ -329,7 +329,7 @@ export default async function ModelEditorPage({ params }: Props) {
               </h3>
               <div className={styles.narrativeBody}>
                 <p>
-                  面向教师的编辑器不能依赖密集小控件来传达专业能力。因此，我将按钮、工具入口和参数控件做得更大，并强化选中状态，让用户能快速判断<strong className={styles.positioningEmphasis}>当前正在使用哪个工具</strong>。
+                  面向非专业教师用户，编辑器放弃传统专业工具的高密度小控件范式，转向以"识别优先 + 决策减负"为目标的操作界面设计，通过扩大核心交互目标尺寸，降低视觉扫描成本与误操作风险，使工具选择更接近<strong className={styles.positioningEmphasis}>直觉式触发而非精确定位</strong>。
                 </p>
                 <p>
                   右侧工具默认使用简洁的线性图标，降低工具列的视觉重量；hover 时再出现明确的功能文字提示，补足图标理解成本。整体按钮和控件使用轻量投影与浅色样式，保持可点击感，同时不抢走模型预览的注意力。
