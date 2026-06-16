@@ -536,9 +536,11 @@ export default async function Selfly0Page({ params }: Selfly0PageProps) {
             <a href="mailto:lijaemin1993@gmail.com?subject=Selfly%20project" className={styles.selfly0ContactLink}>
               lijaemin1993@gmail.com
             </a>
-            <Link className="buttonSticker buttonStickerOrange" href={localePath(locale, "/")}>
-              返回首页
-            </Link>
+            <div style={{ marginTop: "24px" }}>
+              <Link className="buttonSticker buttonStickerOrange" href={localePath(locale, "/")}>
+                返回首页
+              </Link>
+            </div>
           </div>
         </section>
       </main>
