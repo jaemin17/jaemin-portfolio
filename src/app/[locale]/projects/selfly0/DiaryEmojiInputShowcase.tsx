@@ -60,7 +60,7 @@ export function DiaryEmojiCategoryPicker() {
         <span>palette 规模化后，用分组 IA 替代扁平网格</span>
       </figcaption>
       <Selfly0ImageSlot
-        src="/images/selfly0/diary-emoji-03-sheet-categories.png"
+        src="/images/selfly0/diary-emoji-03-sheet-categories.webp"
         alt="表情 Sheet 分组：表情、爱心、天气、自然等分类"
         brief="分类 Sheet：选项扩至 40+ 后，按表情/爱心/天气/自然等分组展示"
       />
@@ -80,7 +80,7 @@ export function DiaryEmojiQuickEdit() {
         <span>从「选 emoji」延伸到「改 mood」，无需进入完整编辑页</span>
       </figcaption>
       <Selfly0ImageSlot
-        src="/images/selfly0/diary-emoji-04-quick-edit.png"
+        src="/images/selfly0/diary-emoji-04-quick-edit.webp"
         alt="点击已发布日记条目左侧 emoji，无需进入编辑页即可更换"
         brief="快捷改 mood：点击列表条目左侧 emoji，轻量更换已发布内容的情绪标记"
       />

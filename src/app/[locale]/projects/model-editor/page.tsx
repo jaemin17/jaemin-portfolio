@@ -159,7 +159,7 @@ export default async function ModelEditorPage({ params }: Props) {
                 <div className={styles.protoEvidenceCanvas}>
                   <Image
                     className={styles.protoEvidenceImage}
-                    src={assetPath("/images/model-editor/原型5.png")}
+                    src={assetPath("/images/model-editor/原型5.webp")}
                     alt="Model Editor 开发原型"
                     width={1440}
                     height={900}
@@ -240,12 +240,12 @@ export default async function ModelEditorPage({ params }: Props) {
                     ),
                   },
                   {
-                    src: assetPath("/images/model-editor/3D教学工坊-模型编辑器 1.png"),
+                    src: assetPath("/images/model-editor/3D教学工坊-模型编辑器 1.webp"),
                     alt: "3D 教学工坊模型编辑器界面 1",
                     label: "最大化预览",
                   },
                   {
-                    src: assetPath("/images/model-editor/3D教学工坊-模型编辑器3.png"),
+                    src: assetPath("/images/model-editor/3D教学工坊-模型编辑器3.webp"),
                     alt: "3D 教学工坊模型编辑器界面 3",
                     label: "参数浮层",
                   },
@@ -355,7 +355,7 @@ export default async function ModelEditorPage({ params }: Props) {
                       <div style={{ width: "100%", height: "100%", background: "#16181c", display: "flex", alignItems: "center", justifyContent: "center", padding: "1px" }}>
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img
-                          src={assetPath("/images/model-editor/放大按钮.png")}
+                          src={assetPath("/images/model-editor/放大按钮.webp")}
                           alt="放大点击目标控件样式"
                           style={{ maxWidth: "100%", maxHeight: "100%", objectFit: "contain" }}
                         />
@@ -368,7 +368,7 @@ export default async function ModelEditorPage({ params }: Props) {
                       <div style={{ width: "100%", height: "100%", background: "#111", display: "flex", alignItems: "center", justifyContent: "center", padding: "1px" }}>
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img
-                          src={assetPath("/images/model-editor/黑色和白色对比.png")}
+                          src={assetPath("/images/model-editor/黑色和白色对比.webp")}
                           alt="黑色与白色版本对比"
                           style={{ maxWidth: "100%", maxHeight: "100%", objectFit: "contain" }}
                         />

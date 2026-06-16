@@ -6,25 +6,25 @@ const containers = [
   {
     name: "清单",
     description: "适合归纳和持续补充",
-    image: "/images/selfly0/record-container-list.jpg",
+    image: "/images/selfly0/record-container-list.webp",
     alt: "Selfly 清单容器界面，展示我的喜好列表",
   },
   {
     name: "日记",
     description: "适合记录感受和反思",
-    image: "/images/selfly0/record-container-journal.jpg",
+    image: "/images/selfly0/record-container-journal.webp",
     alt: "Selfly 日记容器界面，展示成功日记记录",
   },
   {
     name: "计划",
     description: "适合承接目标与行动",
-    image: "/images/selfly0/record-container-plan.jpg",
+    image: "/images/selfly0/record-container-plan.webp",
     alt: "Selfly 计划容器界面，展示年度目标列表",
   },
   {
     name: "图册",
     description: "适合表达愿景与想象",
-    image: "/images/selfly0/record-container-board.jpg",
+    image: "/images/selfly0/record-container-board.webp",
     alt: "Selfly 图册容器界面，展示愿景板图片拼贴",
   },
 ] as const;

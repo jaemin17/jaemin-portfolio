@@ -19,7 +19,7 @@ export function AppStoreShowcase() {
       </figcaption>
 
       <Selfly0ImageSlot
-        src="/images/selfly0/app-store-connect.png"
+        src="/images/selfly0/app-store-connect.webp"
         alt="App Store Connect 中 Selfly Journal 1.0.8 版本的 iPhone 预览与截屏配置"
         brief="App Store Connect 预览与截屏配置页"
         variant="wide"

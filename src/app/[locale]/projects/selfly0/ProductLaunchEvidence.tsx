@@ -62,7 +62,7 @@ export function ProductLaunchEvidence() {
         <figure className={styles.productLaunchSupplement}>
           <div className={styles.productLaunchSupplementFrame}>
             <Image
-              src={assetPath("/images/selfly0/launch-custom-symbols.png")}
+              src={assetPath("/images/selfly0/launch-custom-symbols.webp")}
               alt="Selfly 自定义 SF Symbol 图标集"
               width={1200}
               height={800}

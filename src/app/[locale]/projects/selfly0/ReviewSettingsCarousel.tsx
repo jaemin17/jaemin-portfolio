@@ -8,13 +8,13 @@ import styles from "./selfly0.module.css";
 const slides = [
   {
     id: "module",
-    src: assetPath("/images/selfly0/review-settings-module-zh.png"),
+    src: assetPath("/images/selfly0/review-settings-module-zh.webp"),
     label: "自选模块",
     alt: "回顾设置：自选模块，勾选成功日记、愿景板等具体模块",
   },
   {
     id: "category",
-    src: assetPath("/images/selfly0/review-settings-category-zh.png"),
+    src: assetPath("/images/selfly0/review-settings-category-zh.webp"),
     label: "自选分类",
     alt: "回顾设置：自选分类，按清单、图册等记录类型筛选回顾范围",
   },

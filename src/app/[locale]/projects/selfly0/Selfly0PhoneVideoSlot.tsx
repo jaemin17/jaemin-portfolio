@@ -1,4 +1,5 @@
 import { assetPath } from "@/i18n/assets";
+import { LazyAutoVideo } from "@/components/LazyAutoVideo";
 import styles from "./selfly0.module.css";
 
 type Selfly0PhoneVideoSlotProps = {
@@ -10,14 +11,9 @@ export function Selfly0PhoneVideoSlot({ src, ariaLabel }: Selfly0PhoneVideoSlotP
   return (
     <div className={styles.selfly0PhoneSlotStage}>
       <div className={styles.selfly0PhoneSlotShell}>
-        <video
-          className={styles.selfly0PhoneSlotVideo}
+        <LazyAutoVideo
           src={assetPath(src)}
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="auto"
+          className={styles.selfly0PhoneSlotVideo}
           aria-label={ariaLabel}
         />
       </div>

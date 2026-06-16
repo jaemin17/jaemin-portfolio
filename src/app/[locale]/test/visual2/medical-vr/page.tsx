@@ -65,10 +65,10 @@ export default async function MedicalVrVisualPage({ params }: PageProps) {
         </section>
 
         <section className={styles.caseContact}>
-          <p>Curious for more details?</p>
-          <span>Reach out and let us chat.</span>
+          <p>想了解更多细节？</p>
+          <span>欢迎联系我聊聊这个项目。</span>
           <a href="mailto:lijiaemin1993@gmail.com">lijiaemin1993@gmail.com</a>
-          <Link className="buttonSticker buttonStickerOrange" href={localePath(locale, "/test/visual2")}>
+          <Link className="buttonSticker buttonStickerPurple" href={localePath(locale, "/test/visual2")}>
             返回视觉作品
           </Link>
         </section>

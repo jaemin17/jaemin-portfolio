@@ -184,7 +184,7 @@ function HoverPolaroid({
           {photo === "me" ? (
             <Image
               className={styles.polaroidPhoto}
-              src={asset("/images/profile-polaroid.jpg")}
+              src={asset("/images/profile-polaroid.webp")}
               alt=""
               fill
               sizes="96px"
@@ -193,7 +193,7 @@ function HoverPolaroid({
           ) : photo === "cat" ? (
             <Image
               className={styles.polaroidPhoto}
-              src={asset("/images/cat-polaroid.jpg")}
+              src={asset("/images/cat-polaroid.webp")}
               alt=""
               fill
               sizes="96px"
@@ -202,7 +202,7 @@ function HoverPolaroid({
           ) : photo === "hangzhou" ? (
             <Image
               className={styles.polaroidPhoto}
-              src={asset("/images/hangzhou-hover.png")}
+              src={asset("/images/hangzhou-hover.webp")}
               alt=""
               fill
               sizes="96px"

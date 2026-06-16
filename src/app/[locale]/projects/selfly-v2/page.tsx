@@ -23,7 +23,7 @@ export default async function Selfly0Page({ params }: Selfly0PageProps) {
         {/* ── Cover Image ── */}
         <section className={styles.v2FullImage}>
           <Image
-            src={assetPath("/images/selfly0/hero.png")}
+            src={assetPath("/images/selfly0/hero.webp")}
             alt="Selfly app preview showing Today, My Journal, and Review screens"
             width={1500}
             height={844}

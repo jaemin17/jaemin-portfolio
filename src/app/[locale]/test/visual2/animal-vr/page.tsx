@@ -75,7 +75,7 @@ export default async function AnimalVrVisualPage({ params }: PageProps) {
           <h1>动物解剖VR</h1>
 
           <figure className={styles.caseHeroImage}>
-            <Image src={assetPath("/images/visual/animal-vr/dog-anatomy-scene-2.png")} width={1920} height={1080} alt="动物解剖 VR 首页视觉" />
+            <Image src={assetPath("/images/visual/animal-vr/dog-anatomy-scene-2.webp")} width={1920} height={1080} alt="动物解剖 VR 首页视觉" />
           </figure>
 
           <div className={styles.caseMetaGrid} aria-label="动物解剖项目概览">
@@ -118,10 +118,10 @@ export default async function AnimalVrVisualPage({ params }: PageProps) {
         </section>
 
         <section className={styles.caseContact}>
-          <p>Curious for more details?</p>
-          <span>Reach out and let us chat.</span>
+          <p>想了解更多细节？</p>
+          <span>欢迎联系我聊聊这个项目。</span>
           <a href="mailto:lijiaemin1993@gmail.com">lijiaemin1993@gmail.com</a>
-          <Link className="buttonSticker buttonStickerOrange" href={localePath(locale, "/test/visual2")}>
+          <Link className="buttonSticker buttonStickerPurple" href={localePath(locale, "/test/visual2")}>
             返回视觉作品
           </Link>
         </section>

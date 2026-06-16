@@ -8,21 +8,21 @@ import styles from "./selfly0.module.css";
 const focusSlides = [
   {
     id: "empty",
-    src: assetPath("/images/selfly0/today-empty.png"),
+    src: assetPath("/images/selfly0/today-empty.webp"),
     alt: "Selfly Today 空态：三个待添加任务槽位",
     phase: "空态",
     caption: "3 个槽位，克制入口",
   },
   {
     id: "active",
-    src: assetPath("/images/selfly0/today-active.png"),
+    src: assetPath("/images/selfly0/today-active.webp"),
     alt: "Selfly Today 进行中：Top 3 展示三项聚焦任务，一项已完成",
     phase: "进行中",
     caption: "每日只盯少数几件",
   },
   {
     id: "done",
-    src: assetPath("/images/selfly0/today-done.png"),
+    src: assetPath("/images/selfly0/today-done.webp"),
     alt: "Selfly Today 已完成：Top 3 全部完成并显示祝贺反馈",
     phase: "已完成",
     caption: "完成有反馈",
@@ -32,21 +32,21 @@ const focusSlides = [
 const flowSlides = [
   {
     id: "today",
-    src: assetPath("/images/selfly0/today-rhythm-today-annotated-zh.png"),
+    src: assetPath("/images/selfly0/today-rhythm-today-annotated-zh.webp"),
     alt: "Selfly 今日重要 Top 3：标注明日草稿和其他待办分流入口",
     phase: "今日聚焦",
     caption: "今天只处理重点",
   },
   {
     id: "tomorrow",
-    src: assetPath("/images/selfly0/today-rhythm-tomorrow-zh.png"),
+    src: assetPath("/images/selfly0/today-rhythm-tomorrow-zh.webp"),
     alt: "Selfly 明日重要 Top 3：提前写好明日草稿",
     phase: "明日草稿",
     caption: "跨日后进入 Today",
   },
   {
     id: "backlog",
-    src: assetPath("/images/selfly0/today-rhythm-backlog-zh.png"),
+    src: assetPath("/images/selfly0/today-rhythm-backlog-zh.webp"),
     alt: "Selfly 其他待办：Backlog 保留暂不处理的事项",
     phase: "其他待办",
     caption: "暂不处理但保留",

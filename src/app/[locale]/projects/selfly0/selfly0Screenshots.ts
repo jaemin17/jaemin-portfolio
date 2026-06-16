@@ -9,37 +9,37 @@ import type { Locale } from "@/i18n/config";
 export const selfly0Screenshots = {
   exploreCreate: {
     before: {
-      zh: "/images/selfly0/explore-create-before-zh.png",
+      zh: "/images/selfly0/explore-create-before-zh.webp",
       en: null,
-      legacy: "/images/selfly0/explore-create-before.png",
+      legacy: "/images/selfly0/explore-create-before.webp",
     },
     after: {
-      zh: "/images/selfly0/explore-create-after-zh.png",
-      en: "/images/selfly0/explore-create-after-en.png",
-      legacy: "/images/selfly0/explore-modules-after.png",
+      zh: "/images/selfly0/explore-create-after-zh.webp",
+      en: "/images/selfly0/explore-create-after-en.webp",
+      legacy: "/images/selfly0/explore-modules-after.webp",
     },
   },
   exploreModules: {
     before: {
-      zh: "/images/selfly0/explore-modules-before-zh.png",
+      zh: "/images/selfly0/explore-modules-before-zh.webp",
       en: null,
-      legacy: "/images/selfly0/positioning-phone-1.png",
+      legacy: "/images/selfly0/positioning-phone-1.webp",
     },
     after: {
-      zh: "/images/selfly0/explore-modules-after-zh.png",
-      en: "/images/selfly0/explore-modules-after-en.png",
-      legacy: "/images/selfly0/explore-modules-after.png",
+      zh: "/images/selfly0/explore-modules-after-zh.webp",
+      en: "/images/selfly0/explore-modules-after-en.webp",
+      legacy: "/images/selfly0/explore-modules-after.webp",
     },
   },
   reviewSettings: {
-    module: { zh: "/images/selfly0/review-settings-module-zh.png", en: null },
-    category: { zh: "/images/selfly0/review-settings-category-zh.png", en: null },
+    module: { zh: "/images/selfly0/review-settings-module-zh.webp", en: null },
+    category: { zh: "/images/selfly0/review-settings-category-zh.webp", en: null },
   },
   exploreTemplatesTabs: {
-    list: { zh: null, en: "/images/selfly0/explore-templates-list-en.png", legacy: "/images/selfly0/explore-templates-list.png" },
-    plan: { zh: null, en: "/images/selfly0/explore-templates-plan-en.png", legacy: "/images/selfly0/explore-templates-plan.png" },
-    journal: { zh: null, en: "/images/selfly0/explore-templates-journal-en.png", legacy: "/images/selfly0/explore-templates-journal.png" },
-    board: { zh: null, en: "/images/selfly0/explore-templates-board-en.png", legacy: "/images/selfly0/explore-templates-board.png" },
+    list: { zh: null, en: "/images/selfly0/explore-templates-list-en.webp", legacy: "/images/selfly0/explore-templates-list.webp" },
+    plan: { zh: null, en: "/images/selfly0/explore-templates-plan-en.webp", legacy: "/images/selfly0/explore-templates-plan.webp" },
+    journal: { zh: null, en: "/images/selfly0/explore-templates-journal-en.webp", legacy: "/images/selfly0/explore-templates-journal.webp" },
+    board: { zh: null, en: "/images/selfly0/explore-templates-board-en.webp", legacy: "/images/selfly0/explore-templates-board.webp" },
   },
 } as const;
 

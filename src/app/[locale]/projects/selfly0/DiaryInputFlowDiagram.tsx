@@ -1,6 +1,7 @@
 import { assetPath } from "@/i18n/assets";
 import Image from "next/image";
 import type { ReactNode } from "react";
+import { LazyAutoVideo } from "@/components/LazyAutoVideo";
 import styles from "./selfly0.module.css";
 
 type DiaryInputFlowDiagramProps = {
@@ -13,14 +14,14 @@ type DiaryInputFlowDiagramProps = {
 const steps = [
   {
     id: 1,
-    src: assetPath("/images/selfly0/diary-input-flow-step-2.png"),
+    src: assetPath("/images/selfly0/diary-input-flow-step-2.webp"),
     alt: "步骤 1：半屏 Sheet 中选择表情",
     title: "选表情",
     caption: "分类 Sheet",
   },
   {
     id: 2,
-    src: assetPath("/images/selfly0/diary-input-flow-step-3.png"),
+    src: assetPath("/images/selfly0/diary-input-flow-step-3.webp"),
     alt: "步骤 2：Sheet 关闭后需再次点击输入框，键盘未展开",
     title: "需再次点击输入",
     caption: "改造前断点",
@@ -28,7 +29,7 @@ const steps = [
   },
   {
     id: 3,
-    src: assetPath("/images/selfly0/diary-input-flow-step-4.png"),
+    src: assetPath("/images/selfly0/diary-input-flow-step-4.webp"),
     alt: "步骤 3：键盘展开，可直接输入文字并确认发送",
     title: "输入发送",
     caption: "键盘展开",
@@ -194,14 +195,9 @@ export function DiaryInputFlowDiagram({ demoVideo }: DiaryInputFlowDiagramProps 
                   demo: (
                     <div className={styles.diaryFlowPhone}>
                       <span className={styles.positioningDynamicIsland} aria-hidden="true" />
-                      <video
-                        className={styles.diaryFlowPhoneVideo}
+                      <LazyAutoVideo
                         src={demoVideo.src}
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                        preload="auto"
+                        className={styles.diaryFlowPhoneVideo}
                         aria-label={demoVideo.ariaLabel}
                       />
                     </div>

@@ -208,7 +208,7 @@ export default async function ModelEditorPage({ params }: Props) {
 
         {/* Contact */}
         <div className={styles.contact}>
-          <h3>Curious for more details?</h3>
+          <h3>想了解更多细节？</h3>
           <p>Reach out and let&apos;s chat! Contact me at</p>
           <a href="mailto:lijaemin1993@gmail.com">lijaemin1993@gmail.com</a>
         </div>
