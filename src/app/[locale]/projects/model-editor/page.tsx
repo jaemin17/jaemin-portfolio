@@ -339,7 +339,7 @@ export default async function ModelEditorPage({ params }: Props) {
                   <ul>
                     <li><strong>放大点击目标</strong>：按钮和控件保持足够尺寸，降低点击门槛</li>
                     <li><strong>强化选中状态</strong>：当前工具和模块有明确反馈，减少状态迷失</li>
-                    <li><strong>使用线性图标</strong>：降低视觉重量，减少工具区的界面占用</li>
+                    <li><strong>使用线性图标</strong>：降低视觉重量，低密度展示</li>
                     <li><strong>hover 补充文字</strong>：默认轻量展示，悬停时说明具体功能</li>
                     <li><strong>统一轻量按钮和控件样式</strong>：用浅色与柔和投影表达可操作，不干扰模型预览</li>
                   </ul>
