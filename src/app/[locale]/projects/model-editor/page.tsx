@@ -376,7 +376,7 @@ export default async function ModelEditorPage({ params }: Props) {
                     ),
                   },
                   {
-                    label: "线性图标",
+                    label: "轻量展示",
                     content: (
                       <div style={{ width: "100%", height: "100%", background: "#000", display: "flex", alignItems: "center", justifyContent: "center", padding: "1px" }}>
                         {/* eslint-disable-next-line @next/next/no-img-element */}
