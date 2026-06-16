@@ -24,7 +24,7 @@ const visualProjects = [
     body: "VR/AR 桌面设备体验游戏的 UI 视觉设计。",
     tags: ["VR/AR", "Game", "Visual"],
     path: "/test/visual2/cosmic-blaze",
-    image: "/images/visual/cosmic-blaze/hero.webp",
+    image: "/images/visual/cosmic-blaze/hero.png",
   },
 ];
 
