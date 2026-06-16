@@ -123,7 +123,7 @@ const about2CopyZh = {
   sectionSuperpower: "我擅长",
   sectionExperience: "工作经历",
   experienceSummary:
-    "我曾为中国移动、海尔、德赛西威、通用电气家电等品牌设计产品，也主导过 VR 教育平台与软件设计。",
+    "我曾为中国移动、海尔、德赛西威、美国通用家电 GE Appliance 等品牌设计产品，也主导过 VR 教育平台与软件设计。",
   footerTitle: "很高兴认识你 :) ✰. ",
   footerEmailLabel: "→ 邮件",
 } as const;
