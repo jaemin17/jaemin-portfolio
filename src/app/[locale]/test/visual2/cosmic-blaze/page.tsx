@@ -40,7 +40,7 @@ export default async function CosmicBlazeVisualPage({ params }: CosmicBlazePageP
             </div>
             <div>
               <h2>Timeline</h2>
-              <p>Mar 2023, 1 week</p>
+              <p>2025年</p>
             </div>
             <div>
               <h2>Skills</h2>

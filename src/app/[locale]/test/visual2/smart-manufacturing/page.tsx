@@ -41,7 +41,7 @@ export default async function SmartManufacturingVisualPage({ params }: SmartManu
             </div>
             <div>
               <h2>Timeline</h2>
-              <p>VR education project</p>
+              <p>2025年</p>
             </div>
             <div>
               <h2>Skills</h2>
