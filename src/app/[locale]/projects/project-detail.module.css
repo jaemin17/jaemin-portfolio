@@ -317,6 +317,12 @@
   opacity: 0.7;
 }
 
+.contact :global(.buttonSticker) {
+  display: block;
+  width: fit-content;
+  margin: 8px auto 0;
+}
+
 /* ─── Project Hero (like selfly0 featuredHero) ─────────── */
 .projectHero {
   padding: 72px 30px 0;

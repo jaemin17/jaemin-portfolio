@@ -25,12 +25,20 @@ export default async function About2Page({ params }: About2PageProps) {
             <div className={styles.container}>
               <div className={styles.introGrid}>
                 <div className={styles.introText}>
-                  <p className={styles.label}>{about2Copy.label}</p>
                   <h2 className={styles.heroTitle}>{about2Copy.heroTitle}</h2>
-                  <p className={styles.text}>
-                    {about2Copy.introBio}
-                    <br />
-                    <br />
+                  {locale === "zh" ? (
+                    <>
+                      <p className={styles.text}>我是一个喜欢<span className={styles.highlight}>从真实问题出发</span>做产品的 UI/UX 设计师。</p>
+                      <p className={styles.text}>我喜欢<span className={styles.highlight}>先把东西做出来</span>，<span className={styles.highlight}>在真实体验中寻找答案</span>。我喜欢尝试不同的解决方案。每次设计对我来说，都是一次重新理解用户和产品的过程。</p>
+                      <p className={styles.text}>我希望做出的产品<span className={styles.highlight}>让人感到自然和舒服</span>。我喜欢和别人讨论想法，在交流中发现新的可能。</p>
+                      <p className={styles.text}>在日常生活中，我喜欢<span className={styles.highlight}>亲手制作喜欢的东西、探索不同材质</span>，把脑海中的想法一点点变成真实的作品。</p>
+                    </>
+                  ) : (
+                    about2Copy.introBio.split("\n\n").map((para, i) => (
+                      <p key={i} className={styles.text}>{para}</p>
+                    ))
+                  )}
+                  <p className={`${styles.text} ${styles.textCta}`}>
                     {about2Copy.introCtaPrefix}
                     <br />
                     <Link className={styles.pdfLink} href={about2PdfUrl} target="_blank" rel="noreferrer">

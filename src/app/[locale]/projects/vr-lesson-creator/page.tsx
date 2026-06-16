@@ -237,7 +237,7 @@ const copy: Record<Locale, PageCopy> = {
         alt: "Model editing optimization",
       },
     ],
-    contactTitle: "Curious for more details?",
+    contactTitle: "想了解更多细节？",
     contactBody: "Reach out and let's chat! Contact me at",
   },
   zh: {
