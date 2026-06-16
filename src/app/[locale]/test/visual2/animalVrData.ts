@@ -2,7 +2,7 @@ export const animalVrShots = [
   {
     title: "猛犬威利斯",
     subtitle: "首页展示",
-    src: "/images/visual/animal-vr/hero.webp",
+    src: "/images/visual/animal-vr/hero.png",
   },
   {
     title: "犬体结构",
@@ -30,12 +30,12 @@ export const animalVrShots = [
   {
     title: "耳朵的结构",
     subtitle: "首页展示",
-    src: "/images/visual/animal-vr/ear-home.webp",
+    src: "/images/visual/animal-vr/ear-home.png",
   },
   {
     title: "耳蜗结构",
     subtitle: "结构说明",
-    src: "/images/visual/animal-vr/ear-detail-1.webp",
+    src: "/images/visual/animal-vr/ear-detail-1.png",
   },
   {
     title: "狗解剖",
@@ -49,25 +49,25 @@ export const animalVrShots = [
   {
     title: "猪解剖",
     subtitle: "交互状态",
-    src: "/images/visual/animal-vr/pig-scene-3.webp",
+    src: "/images/visual/animal-vr/pig-scene-3.png",
   },
   {
     title: "猪解剖",
     subtitle: "结构教学 / 场景概览",
-    src: "/images/visual/animal-vr/pig-scene-2.webp",
+    src: "/images/visual/animal-vr/pig-scene-2.png",
     carousel: [
-      { type: "image", src: "/images/visual/animal-vr/pig-scene-2.webp" },
-      { type: "image", src: "/images/visual/animal-vr/pig-scene-1.webp" },
+      { type: "image", src: "/images/visual/animal-vr/pig-scene-2.png" },
+      { type: "image", src: "/images/visual/animal-vr/pig-scene-1.png" },
     ],
   },
   {
     title: "猪解剖",
     subtitle: "课程列表 / 引导弹窗",
-    src: "/images/visual/animal-vr/pig-course-list.webp",
+    src: "/images/visual/animal-vr/pig-course-list.png",
     carousel: [
-      { type: "image", src: "/images/visual/animal-vr/pig-course-list.webp" },
-      { type: "image", src: "/images/visual/animal-vr/pig-guide-1.webp" },
-      { type: "image", src: "/images/visual/animal-vr/pig-guide-2.webp" },
+      { type: "image", src: "/images/visual/animal-vr/pig-course-list.png" },
+      { type: "image", src: "/images/visual/animal-vr/pig-guide-1.png" },
+      { type: "image", src: "/images/visual/animal-vr/pig-guide-2.png" },
     ],
   },
   {
