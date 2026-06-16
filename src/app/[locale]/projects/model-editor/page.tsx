@@ -381,7 +381,7 @@ export default async function ModelEditorPage({ params }: Props) {
                       <div style={{ width: "100%", height: "100%", background: "#000", display: "flex", alignItems: "center", justifyContent: "center", padding: "1px" }}>
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img
-                          src={assetPath("/images/model-editor/快捷键.png")}
+                          src={assetPath("/images/model-editor/shortcuts-hint.png")}
                           alt="线性图标与快捷键设计"
                           style={{ maxWidth: "100%", maxHeight: "100%", objectFit: "contain", borderRadius: "8px" }}
                         />
