@@ -80,3 +80,18 @@
   letter-spacing: 0.04em;
   text-align: center;
 }
+
+.slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fafafa;
+}
+
+.slideActive {
+  opacity: 1;
+}

@@ -4,11 +4,9 @@ import { useState } from "react";
 import Image from "next/image";
 import styles from "./FinalLayoutCarousel.module.css";
 
-type Slide = {
-  src: string;
-  alt: string;
-  label: string;
-};
+type ImageSlide = { src: string; alt: string; label: string; description?: string };
+type ContentSlide = { content: React.ReactNode; label: string; description?: string };
+type Slide = ImageSlide | ContentSlide;
 
 type Props = {
   slides: Slide[];
@@ -21,17 +19,25 @@ export function FinalLayoutCarousel({ slides, caption }: Props) {
   return (
     <div className={styles.frame}>
       <div className={styles.canvas}>
-        {slides.map((slide, i) => (
-          <Image
-            key={slide.src}
-            src={slide.src}
-            alt={slide.alt}
-            width={1440}
-            height={778}
-            className={`${styles.image} ${i === active ? styles.imageActive : ""}`}
-            priority={i === 0}
-          />
-        ))}
+        {slides.map((slide, i) =>
+          "content" in slide ? (
+            <div
+              key={`content-${i}`}
+              className={`${styles.slide} ${i === active ? styles.slideActive : ""}`}
+            >
+              {slide.content}
+            </div>
+          ) : (
+            <Image
+              key={slide.src}
+              src={slide.src}
+              alt={slide.alt}
+              width={1440}
+              height={778}
+              className={`${styles.image} ${i === active ? styles.imageActive : ""}`}
+            />
+          )
+        )}
       </div>
       <div className={styles.tabs}>
         {slides.map((slide, i) => (
@@ -45,7 +51,9 @@ export function FinalLayoutCarousel({ slides, caption }: Props) {
           </button>
         ))}
       </div>
-      {caption && <p className={styles.caption}>{caption}</p>}
+      {(slides[active].description ?? caption) && (
+        <p className={styles.caption}>{slides[active].description ?? caption}</p>
+      )}
     </div>
   );
 }

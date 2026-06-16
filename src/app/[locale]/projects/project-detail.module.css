@@ -243,11 +243,11 @@
 }
 
 .conceptHeadline {
-  font-size: 2.2rem;
+  font-size: 1.35rem;
   font-weight: 500;
   color: #1a1a1a;
   margin-bottom: 16px;
-  line-height: 1.3;
+  line-height: 1.4;
 }
 .conceptHeadlineEmphasis {
   font-style: italic;
@@ -263,10 +263,19 @@
 }
 /* Contact */
 .contact {
-  margin: 140px auto 0;
+  margin: 100px auto 0;
   padding: 0 24px 200px;
   text-align: center;
   box-sizing: border-box;
+}
+.contactDivider {
+  margin: 0 calc(50% - 50vw) 64px;
+  padding: 0;
+  border: 0;
+  border-top: 1px dashed rgba(17, 18, 23, 0.16);
+  height: 0;
+  width: 100vw;
+  max-width: 100vw;
 }
 
 .contact h2 {
@@ -417,15 +426,16 @@
   font-style: italic;
 }
 .positioningBody {
-  line-height: 1.85;
+  line-height: 1.8;
   color: #444;
-  font-size: 17px;
+  font-size: 16px;
 }
 .positioningBody p:first-child {
   margin-top: 0;
 }
 .positioningBody p {
   margin-bottom: 28px;
+  line-height: 1.75;
 }
 .positioningBody .roleLabel {
   margin-top: 8px;
@@ -538,9 +548,9 @@
   margin: 0;
 }
 .protoIntroBody {
-  font-size: 17px;
+  font-size: 16px;
   color: #555;
-  line-height: 1.85;
+  line-height: 1.8;
   margin: 0;
 }
 .protoProblems {
@@ -594,9 +604,9 @@
   margin: 0 0 10px;
 }
 .protoAreas p {
-  font-size: 17px;
+  font-size: 16px;
   color: #555;
-  line-height: 1.85;
+  line-height: 1.75;
   margin: 0 0 8px;
 }
 .protoAreas p + p {
@@ -877,6 +887,44 @@
   font-weight: 400;
   margin: 0;
   max-width: 760px;
+}
+
+/* ─── Closing Note ─────────────────────────────────────── */
+.closingNote {
+  background: #000;
+  color: #f7f7f7;
+  margin: 0;
+}
+.closingNoteInner {
+  max-width: 1200px;
+  min-height: 280px;
+  margin: 0 auto;
+  padding: 0 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.closingNoteCopy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+.closingNoteIcon {
+  font-size: 96px;
+  line-height: 1;
+}
+.closingNoteText {
+  font-size: clamp(22px, 2.2vw, 32px);
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.55;
+  font-weight: 400;
+  margin: 0;
+  text-align: center;
+}
+.closingNoteText strong {
+  color: #fff;
+  font-weight: 500;
 }
 
 /* ─── Narrative Section ────────────────────────────────── */
@@ -1272,23 +1320,6 @@
   .positioningSection {
     padding: 0 20px;
     margin: 32px auto 40px;
-  }
-
-  .positioningGrid {
-    gap: 28px;
-  }
-
-  .positioningHeading {
-    font-size: 22px;
-    padding-top: 0;
-  }
-
-  .positioningLabel {
-    font-size: 14px;
-  }
-
-  .positioningBody {
-    font-size: 0.9rem;
   }
 
   .directionCards {

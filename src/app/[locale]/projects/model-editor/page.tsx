@@ -1,9 +1,11 @@
 import Image from "next/image";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { SiteHeader } from "@/components/SiteHeader";
 import { FinalLayoutCarousel } from "@/components/FinalLayoutCarousel";
 import { assetPath } from "@/i18n/assets";
 import { isLocale, type Locale } from "@/i18n/config";
+import { localePath } from "@/i18n/paths";
 import styles from "../project-detail.module.css";
 
 type Props = {
@@ -227,14 +229,20 @@ export default async function ModelEditorPage({ params }: Props) {
               <FinalLayoutCarousel
                 slides={[
                   {
+                    label: "空间对比",
+                    content: (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img
+                        src={assetPath("/images/model-editor/layout-comparison.svg")}
+                        alt="布局对比示意图"
+                        style={{ width: "100%", height: "100%", objectFit: "contain" }}
+                      />
+                    ),
+                  },
+                  {
                     src: assetPath("/images/model-editor/3D教学工坊-模型编辑器 1.png"),
                     alt: "3D 教学工坊模型编辑器界面 1",
                     label: "最大化预览",
-                  },
-                  {
-                    src: assetPath("/images/model-editor/3D教学工坊-模型编辑器 2.png"),
-                    alt: "3D 教学工坊模型编辑器界面 2",
-                    label: "全局编辑面板",
                   },
                   {
                     src: assetPath("/images/model-editor/3D教学工坊-模型编辑器3.png"),
@@ -339,47 +347,36 @@ export default async function ModelEditorPage({ params }: Props) {
               </div>
             </div>
             <div className={styles.controlExploration}>
-              <div className={styles.controlExplorationHeader}>
-                <span>测试稿对比</span>
-                <p>
-                  在工具数量较多的情况下，我对不同按钮重量与识别方式进行比较，最终选择更轻量、点击目标更明确的控件样式。
-                </p>
-              </div>
-              <div className={styles.controlExplorationGrid}>
-                <div className={styles.controlExplorationCard}>
-                  <div className={`${styles.controlExplorationPlaceholder} ${styles.controlExplorationPlaceholderDark}`}>
-                    <span>黑色版本占位</span>
-                  </div>
-                  <h4>黑色高对比版本</h4>
-                  <p>视觉聚焦更强，但工具区存在感偏高，容易抢走模型预览的注意力。</p>
-                </div>
-                <div className={styles.controlExplorationCard}>
-                  <div className={styles.controlExplorationPlaceholder}>
-                    <span>小按钮版本占位</span>
-                  </div>
-                  <h4>小按钮版本</h4>
-                  <p>界面更轻，但点击目标和选中反馈偏弱，教师操作时识别成本更高。</p>
-                </div>
-                <div className={styles.controlExplorationCard}>
-                  <div className={styles.controlExplorationPlaceholder}>
-                    <span>最终版本占位</span>
-                  </div>
-                  <h4>最终轻量版本</h4>
-                  <p>保留足够点击面积，用线性图标、hover 提示和轻量控件平衡易用性与界面重量。</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* ─── Design Goals ────────────────────────────────── */}
-        <div className={styles.divider}>
-          <div className={styles.dividerInner}>
-            <div className={styles.dividerTitle}>Design Outcome</div>
-            <div className={styles.dividerGoals}>
-              <p>围绕模型的实时反馈</p>
-              <p>按教学任务组织专业能力</p>
-              <p>用上下文降低参数理解成本</p>
+              <FinalLayoutCarousel
+                slides={[
+                  {
+                    label: "放大点击目标",
+                    content: (
+                      <div style={{ width: "100%", height: "100%", background: "#16181c", display: "flex", alignItems: "center", justifyContent: "center", padding: "1px" }}>
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                          src={assetPath("/images/model-editor/放大按钮.png")}
+                          alt="放大点击目标控件样式"
+                          style={{ maxWidth: "100%", maxHeight: "100%", objectFit: "contain" }}
+                        />
+                      </div>
+                    ),
+                  },
+                  {
+                    label: "使用轻量的配色",
+                    content: (
+                      <div style={{ width: "100%", height: "100%", background: "#111", display: "flex", alignItems: "center", justifyContent: "center", padding: "1px" }}>
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                          src={assetPath("/images/model-editor/黑色和白色对比.png")}
+                          alt="黑色与白色版本对比"
+                          style={{ maxWidth: "100%", maxHeight: "100%", objectFit: "contain" }}
+                        />
+                      </div>
+                    ),
+                  },
+                ]}
+              />
             </div>
           </div>
         </div>
@@ -494,43 +491,17 @@ export default async function ModelEditorPage({ params }: Props) {
           </div>
         </div>
 
-        {/* ─── Reflection ─────────────────────────────────── */}
-        <div className={styles.narrativeSection}>
-          <div className={styles.narrativeInner}>
-            <div className={styles.narrativeGrid}>
-              <h3 className={styles.narrativeHeadline}>
-                <span className={styles.narrativeHeadlineLight}>复杂编辑器的重点，</span><br />
-                <span className={styles.narrativeHeadlineDark}>不是减少功能</span>
-              </h3>
-              <div className={styles.narrativeBody}>
-                <p>
-                  这个项目让我更明确地意识到，复杂工具的体验质量不取决于功能是否足够多，
-                  而取决于用户能否稳定理解<strong className={styles.positioningEmphasis}>当前对象、可用操作和反馈结果之间的关系</strong>。
-                </p>
-                <p>
-                  对非专业用户来说，最重要的不是一次性看到所有能力，而是知道<strong className={styles.positioningEmphasis}>「我现在正在编辑什么、这个对象能做什么、调整后会发生什么」</strong>。
-                  最终方案通过区域职责分离和上下文编辑，把专业 3D 工具转化为<strong className={styles.positioningEmphasis}>更接近教学任务的操作流程</strong>。
-                </p>
-                <div className={styles.narrativeDesignPoints}>
-                  <h4>项目反思</h4>
-                  <ul>
-                    <li><strong>复杂度不能消失</strong>：但可以通过清晰归属被用户理解</li>
-                    <li><strong>功能不能平均展示</strong>：需要围绕对象和任务渐进出现</li>
-                    <li><strong>模型是反馈中心</strong>：所有编辑路径都应尽快回到模型本身</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
         {/* ─── Contact ─────────────────────────────────────── */}
         <div className={styles.contact}>
+          <div className={styles.contactDivider} />
           <h2>想了解更多细节？</h2>
           <p>欢迎联系我聊聊这个项目。</p>
           <a href="mailto:lijaemin1993@gmail.com" className={styles.contactLink}>
             lijaemin1993@gmail.com
           </a>
+          <Link className="buttonSticker buttonStickerBlue" href={localePath(locale, "/test/tools4")}>
+            其他作品
+          </Link>
         </div>
 
       </main>
