@@ -324,8 +324,8 @@ export default async function ModelEditorPage({ params }: Props) {
             <p className={styles.positioningLabel}>工具操作轻量化</p>
             <div className={styles.narrativeGrid}>
               <h3 className={styles.narrativeHeadline}>
-                <span className={styles.narrativeHeadlineLight}>从「密集工具控件」</span><br />
-                <span className={styles.narrativeHeadlineDark}>到「轻量可识别操作」</span>
+                <span className={styles.narrativeHeadlineLight}>从「专业工具范式」</span><br />
+                <span className={styles.narrativeHeadlineDark}>切换到「高频轻量可识别」</span>
               </h3>
               <div className={styles.narrativeBody}>
                 <p>
