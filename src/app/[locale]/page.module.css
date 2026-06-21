@@ -1628,13 +1628,14 @@
   }
 
   .middleZone {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
     gap: 12px;
   }
 
   .hero {
+    grid-column: 1 / -1;
     order: 1;
     width: 100%;
     max-width: 100%;
@@ -1648,30 +1649,12 @@
     display: contents;
   }
 
-  .middleScatter .scatterMe {
-    order: 2;
-    margin-top: 20px;
-  }
-
-  .middleScatter .scatterCat {
-    order: 3;
-  }
-
-  .middleScatter .scatterHangzhou {
-    order: 4;
-  }
-
-  .sideKeepsakes .sideAboutEntry {
-    order: 5;
-  }
-
-  .sideKeepsakes .sideLifeEntry {
-    order: 6;
-  }
-
-  .sideKeepsakes .sideContactEntry {
-    order: 7;
-  }
+  .middleScatter .scatterHangzhou { order: 2; }
+  .sideKeepsakes .sideLifeEntry   { order: 3; }
+  .sideKeepsakes .sideAboutEntry  { order: 4; }
+  .middleScatter .scatterCat      { order: 5; }
+  .sideKeepsakes .sideContactEntry { order: 6; }
+  .middleScatter .scatterMe       { order: 7; margin-top: 0; }
 
   .middleScatter .scatterNote,
   .middleScatter .scatterNote.scatterCat,
@@ -1695,7 +1678,7 @@
   }
 
   .middleScatter .todayStamp.scatterMe {
-    padding-top: 0;
+    padding-top: 34px;
   }
 
   .middleScatter .scatterNote .infoNote {
@@ -1989,12 +1972,18 @@
     padding: 12px;
   }
 
-  .middleScatter .scatterNote .infoTitle {
+  .middleScatter .scatterNote .infoTitle,
+  .sideKeepsakes .sideAboutEntry .infoTitle,
+  .sideKeepsakes .sideLifeEntry .infoTitle,
+  .sideKeepsakes .sideContactEntry .infoTitle {
     margin-top: 8px;
     font-size: 15px;
   }
 
-  .middleScatter .scatterNote .infoBody {
+  .middleScatter .scatterNote .infoBody,
+  .sideKeepsakes .sideAboutEntry .infoBody,
+  .sideKeepsakes .sideLifeEntry .infoBody,
+  .sideKeepsakes .sideContactEntry .infoBody {
     margin-top: 6px;
     font-size: 11px;
     line-height: 1.45;
@@ -2044,7 +2033,7 @@
     width: 100%;
     flex: 1 1 100%;
     margin: 0;
-    padding-top: 0;
+    padding: 0 14px;
   }
 
   .todayNote {
