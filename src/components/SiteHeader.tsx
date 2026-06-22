@@ -21,7 +21,7 @@ export function SiteHeader({ locale, surface = "default", active }: SiteHeaderPr
       <div className={styles.inner}>
         <div className={styles.menuLeft} aria-label="menu bar">
           <Link className={styles.brand} href={homeHref}>
-            <span className={styles.brandText}>Jiamin’s Board</span>
+            <span className={styles.brandText}>Jiamin</span>
           </Link>
         </div>
 

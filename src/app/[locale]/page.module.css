@@ -1713,9 +1713,19 @@
     margin-bottom: 0;
   }
 
+  .hero .heroTag {
+    margin-top: 8px;
+    margin-bottom: 0px;
+  }
+
   .hero .title {
-    margin-top: 32px;
-    margin-bottom: 8px;
+    margin-top: 4px;
+    margin-bottom: 0px;
+  }
+
+  .hero .stickerSubWrap {
+    margin-top: -14px;
+    margin-bottom: 4px;
   }
 
   .title > span {
