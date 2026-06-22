@@ -1622,6 +1622,10 @@
     padding-bottom: 70px;
   }
 
+  .workTitle {
+    font-size: 18px;
+  }
+
   .wallBoard {
     padding-bottom: 24px;
   }
@@ -1851,6 +1855,10 @@
 @media (max-width: 560px) {
   .main {
     padding: 20px 20px 70px;
+  }
+
+  .workTitle {
+    font-size: 20px;
   }
 
   .middleZone {
