@@ -1,6 +1,9 @@
 "use client";
 import { useState, useEffect, type ReactNode } from "react";
+import { usePathname } from "next/navigation";
 import styles from "./gate.module.css";
+
+const OPEN_PATHS = ["/test/tools4", "/test/visual2"];
 
 const HASH = "5e643ab1175fdd73bea8d07c38b7c70f95b4a9f8cf3e9b96eaaa7d74acfffc8c";
 const SESSION_KEY = "test_unlocked";
@@ -13,10 +16,14 @@ async function sha256(text: string): Promise<string> {
 }
 
 export function TestPasswordGate({ children }: { children: ReactNode }) {
+  const pathname = usePathname();
   const [unlocked, setUnlocked] = useState(false);
   const [ready, setReady] = useState(false);
   const [input, setInput] = useState("");
   const [error, setError] = useState(false);
+
+  const normalizedPath = pathname.replace(/\/$/, "");
+  const isOpen = OPEN_PATHS.some((p) => normalizedPath.endsWith(p));
 
   useEffect(() => {
     if (sessionStorage.getItem(SESSION_KEY) === "1") setUnlocked(true);
@@ -35,6 +42,7 @@ export function TestPasswordGate({ children }: { children: ReactNode }) {
     }
   }
 
+  if (isOpen) return <>{children}</>;
   if (!ready) return null;
   if (unlocked) return <>{children}</>;
 
