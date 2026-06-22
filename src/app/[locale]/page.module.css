@@ -1028,7 +1028,7 @@
   font-size: clamp(17px, 1.7vw, 22px);
   line-height: 1.12;
   letter-spacing: -0.02em;
-  font-weight: 850;
+  font-weight: 700;
 }
 
 .workMeta {
@@ -1373,7 +1373,7 @@
   font-size: 18px;
   line-height: 1.14;
   letter-spacing: -0.02em;
-  font-weight: 850;
+  font-weight: 700;
 }
 
 .infoBody {
