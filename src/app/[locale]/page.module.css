@@ -83,8 +83,12 @@
   z-index: 1;
   display: flow-root;
   isolation: isolate;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
   padding-top: 0;
   padding-bottom: 76px;
+  padding-left: clamp(12px, 1.5vw, 24px);
+  padding-right: clamp(12px, 1.5vw, 24px);
   background-color: var(--bg);
   background-image:
     linear-gradient(rgba(17, 18, 23, 0.055) 1px, transparent 1px),
@@ -1862,6 +1866,12 @@
 
   .workList {
     margin-top: 44px;
+    gap: 24px;
+  }
+
+  .projectWall {
+    padding-left: 8px;
+    padding-right: 8px;
   }
 
   .sideKeepsakes {
@@ -1882,6 +1892,10 @@
 
   .wallBoard {
     padding-bottom: 16px;
+    margin-top: -20px;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
   .bottomKeepsakes {
