@@ -1628,6 +1628,8 @@
 
   .wallBoard {
     padding-bottom: 24px;
+    padding-left: 40px;
+    padding-right: 40px;
   }
 
   .wall {
@@ -1722,8 +1724,8 @@
   }
 
   .hero .heroTag {
-    margin-top: 8px;
-    margin-bottom: 0px;
+    margin-top: 20px;
+    margin-bottom: 10px;
   }
 
   .hero .title {
@@ -1732,8 +1734,8 @@
   }
 
   .hero .stickerSubWrap {
-    margin-top: -14px;
-    margin-bottom: 4px;
+    margin-top: 6px;
+    margin-bottom: 16px;
   }
 
   .title > span {
@@ -1855,6 +1857,16 @@
 @media (max-width: 560px) {
   .main {
     padding: 20px 20px 70px;
+  }
+
+  .hero .heroTag {
+    margin-top: 8px;
+    margin-bottom: 0px;
+  }
+
+  .hero .stickerSubWrap {
+    margin-top: -14px;
+    margin-bottom: 4px;
   }
 
   .workTitle {
