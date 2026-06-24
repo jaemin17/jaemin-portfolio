@@ -4,6 +4,57 @@ import { assetPath } from "@/i18n/assets";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
+type HoverSwapImageProps = {
+  src: string;
+  hoverSrc: string;
+  width: number;
+  height: number;
+  alt: string;
+};
+
+export function HoverSwapImage({ src, hoverSrc, width, height, alt }: HoverSwapImageProps) {
+  const [hovered, setHovered] = useState(false);
+
+  return (
+    <div
+      style={{ position: "relative", overflow: "hidden", aspectRatio: `${width}/${height}` }}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+    >
+      <Image
+        src={assetPath(src)}
+        width={width}
+        height={height}
+        alt={alt}
+        loading="eager"
+        style={{
+          position: "absolute",
+          inset: 0,
+          width: "100%",
+          height: "auto",
+          opacity: hovered ? 0 : 1,
+          transition: "opacity 0.4s ease",
+        }}
+      />
+      <Image
+        src={assetPath(hoverSrc)}
+        width={width}
+        height={height}
+        alt={`${alt} alternate`}
+        loading="eager"
+        style={{
+          position: "absolute",
+          inset: 0,
+          width: "100%",
+          height: "auto",
+          opacity: hovered ? 1 : 0,
+          transition: "opacity 0.4s ease",
+        }}
+      />
+    </div>
+  );
+}
+
 type CarouselItem = { type: "image"; src: string } | { type: "video"; src: string };
 
 type AutoCarouselProps = {
