@@ -4154,6 +4154,11 @@
     gap: 18px;
   }
 
+  .selfly0PositioningGrid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
   .beforeAfterGrid,
   .mergedStrategyGrid {
     grid-template-columns: 1fr;
