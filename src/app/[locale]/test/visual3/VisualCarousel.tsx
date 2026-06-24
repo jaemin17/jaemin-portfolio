@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
 import Link from "next/link";
 import styles from "./visual.module.css";
 
@@ -30,6 +30,8 @@ function getCardClass(index: number, active: number, total: number) {
 export function VisualCarousel({ projects, locale }: Props) {
   const [active, setActive] = useState(0);
   const total = projects.length;
+  const dragStartX = useRef<number | null>(null);
+  const wasDrag = useRef(false);
 
   const next = useCallback(() => {
     setActive((prev) => (prev + 1) % total);
@@ -48,10 +50,36 @@ export function VisualCarousel({ projects, locale }: Props) {
     return () => window.removeEventListener("keydown", handleKey);
   }, [next, prev]);
 
+  const handleMouseDown = useCallback((e: React.MouseEvent) => {
+    dragStartX.current = e.clientX;
+    wasDrag.current = false;
+  }, []);
+
+  const handleMouseUp = useCallback((e: React.MouseEvent) => {
+    if (dragStartX.current === null) return;
+    const delta = e.clientX - dragStartX.current;
+    if (Math.abs(delta) > 50) {
+      wasDrag.current = true;
+      if (delta < 0) next();
+      else prev();
+    }
+    dragStartX.current = null;
+  }, [next, prev]);
+
+  const handleMouseLeave = useCallback(() => {
+    dragStartX.current = null;
+  }, []);
+
   const prefix = locale === "en" ? "/en" : `/${locale}`;
 
   return (
-    <div className={styles.carouselSection}>
+    <div
+      className={styles.carouselSection}
+      onMouseDown={handleMouseDown}
+      onMouseUp={handleMouseUp}
+      onMouseLeave={handleMouseLeave}
+      style={{ cursor: "grab" }}
+    >
       <div className={styles.carouselViewport}>
         <div className={styles.carouselTrack}>
           {projects.map((project, i) => {
@@ -103,7 +131,7 @@ export function VisualCarousel({ projects, locale }: Props) {
               <article
                 key={project.title}
                 className={cardClass}
-                onClick={() => setActive(i)}
+                onClick={() => { if (!wasDrag.current) setActive(i); }}
               >
                 {inner}
               </article>

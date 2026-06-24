@@ -1,7 +1,7 @@
 "use client";
 
 import { assetPath } from "@/i18n/assets";
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 import styles from "./tools4.module.css";
 
@@ -33,6 +33,8 @@ export function Carousel({ projects, locale }: CarouselProps) {
   const [active, setActive] = useState(0);
   const total = projects.length;
   const router = useRouter();
+  const dragStartX = useRef<number | null>(null);
+  const wasDrag = useRef(false);
 
   const next = useCallback(() => {
     setActive((prev) => (prev + 1) % total);
@@ -51,8 +53,34 @@ export function Carousel({ projects, locale }: CarouselProps) {
     return () => window.removeEventListener("keydown", handleKey);
   }, [next, prev]);
 
+  const handleMouseDown = useCallback((e: React.MouseEvent) => {
+    dragStartX.current = e.clientX;
+    wasDrag.current = false;
+  }, []);
+
+  const handleMouseUp = useCallback((e: React.MouseEvent) => {
+    if (dragStartX.current === null) return;
+    const delta = e.clientX - dragStartX.current;
+    if (Math.abs(delta) > 50) {
+      wasDrag.current = true;
+      if (delta < 0) next();
+      else prev();
+    }
+    dragStartX.current = null;
+  }, [next, prev]);
+
+  const handleMouseLeave = useCallback(() => {
+    dragStartX.current = null;
+  }, []);
+
   return (
-    <div className={styles.carouselSection}>
+    <div
+      className={styles.carouselSection}
+      onMouseDown={handleMouseDown}
+      onMouseUp={handleMouseUp}
+      onMouseLeave={handleMouseLeave}
+      style={{ cursor: "grab" }}
+    >
       <nav className={styles.projectNav}>
         {projects.map((project, i) => (
           <button
@@ -71,6 +99,7 @@ export function Carousel({ projects, locale }: CarouselProps) {
               key={project.title}
               className={`${styles.card} ${getCardClass(i, active, total)} ${project.coming ? styles.cardComing : ""}`}
               onClick={() => {
+                if (wasDrag.current) return;
                 if (project.coming) return;
                 if (i === active && project.href) {
                   router.push(`/${locale}${project.href}`);
