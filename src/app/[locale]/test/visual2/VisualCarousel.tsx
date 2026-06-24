@@ -1,8 +1,8 @@
 "use client";
 
 import { assetPath } from "@/i18n/assets";
-import { useState, useCallback, useEffect } from "react";
-import Link from "next/link";
+import { useState, useCallback, useEffect, useRef } from "react";
+import { useRouter } from "next/navigation";
 import styles from "./visual.module.css";
 
 type VisualProject = {
@@ -33,6 +33,9 @@ function getCardClass(index: number, active: number, total: number) {
 export function VisualCarousel({ projects, locale }: Props) {
   const [active, setActive] = useState(0);
   const total = projects.length;
+  const router = useRouter();
+  const dragStartX = useRef<number | null>(null);
+  const wasDrag = useRef(false);
 
   const next = useCallback(() => {
     setActive((prev) => (prev + 1) % total);
@@ -51,10 +54,36 @@ export function VisualCarousel({ projects, locale }: Props) {
     return () => window.removeEventListener("keydown", handleKey);
   }, [next, prev]);
 
+  const handleMouseDown = useCallback((e: React.MouseEvent) => {
+    dragStartX.current = e.clientX;
+    wasDrag.current = false;
+  }, []);
+
+  const handleMouseUp = useCallback((e: React.MouseEvent) => {
+    if (dragStartX.current === null) return;
+    const delta = e.clientX - dragStartX.current;
+    if (Math.abs(delta) > 50) {
+      wasDrag.current = true;
+      if (delta < 0) next();
+      else prev();
+    }
+    dragStartX.current = null;
+  }, [next, prev]);
+
+  const handleMouseLeave = useCallback(() => {
+    dragStartX.current = null;
+  }, []);
+
   const prefix = locale === "en" ? "/en" : `/${locale}`;
 
   return (
-    <div className={styles.carouselSection}>
+    <div
+      className={styles.carouselSection}
+      onMouseDown={handleMouseDown}
+      onMouseUp={handleMouseUp}
+      onMouseLeave={handleMouseLeave}
+      style={{ cursor: "grab" }}
+    >
       <nav className={styles.projectNav}>
         {projects.map((project, i) => (
           <button
@@ -113,25 +142,19 @@ export function VisualCarousel({ projects, locale }: Props) {
               ? ({ "--active-accent": accent } as React.CSSProperties)
               : undefined;
 
-            if (project.path && isActive) {
-              return (
-                <Link
-                  key={project.title}
-                  className={cardClass}
-                  href={`${prefix}${project.path}`}
-                  style={accentStyle}
-                >
-                  {inner}
-                </Link>
-              );
-            }
-
             return (
               <article
                 key={project.title}
                 className={cardClass}
                 style={accentStyle}
-                onClick={() => setActive(i)}
+                onClick={() => {
+                  if (wasDrag.current) return;
+                  if (isActive && project.path) {
+                    router.push(`${prefix}${project.path}`);
+                  } else {
+                    setActive(i);
+                  }
+                }}
               >
                 {inner}
               </article>

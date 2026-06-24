@@ -84,7 +84,7 @@ const homeEntries = [
     tags: ["Selfly", "0→1", "iOS"],
   },
   {
-    path: "/test/tool",
+    path: "/tool",
     title: "工具类产品 UI/UX",
     subtitle: "XR / 3D / 多端协同工具：3D说明书、模型编辑器、Sync Space、VR课件 等。",
     tags: ["XR Tools", "3D", "B2B"],
