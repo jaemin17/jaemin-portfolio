@@ -30,7 +30,7 @@ const visualProjects = [
     accentColor: "#60a5fa",
   },
   {
-    title: "VR游戏",
+    title: "VR桌面游戏",
     body: "VR/AR 桌面设备体验游戏的 UI 视觉设计。",
     tags: ["VR/AR", "Game", "Visual"],
     path: "/test/visual2/cosmic-blaze",
