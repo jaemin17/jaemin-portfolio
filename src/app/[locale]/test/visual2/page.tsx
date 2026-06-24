@@ -14,7 +14,7 @@ const visualProjects = [
     accentColor: "#a855f7",
   },
   {
-    title: "DESAY SV",
+    title: "车载UI",
     body: "车载娱乐与控制系统界面，包含驾驶、音乐、收音机和车辆设置等功能模块。",
     tags: ["Automotive", "HMI", "Visual"],
     path: "/test/visual2/desay-sv",
