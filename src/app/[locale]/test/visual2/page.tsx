@@ -37,6 +37,14 @@ const visualProjects = [
     image: "/images/visual/cosmic-blaze/hero.png",
     accentColor: "#a855f7",
   },
+  {
+    title: "AR Airbnb",
+    body: "AR 增强现实 Airbnb 体验设计，将数字信息融入真实住宿场景。",
+    tags: ["AR", "UX", "Visual"],
+    path: "/test/visual2/ar-airbnb",
+    image: "/images/visual/ar-airbnb/scene-1.png",
+    accentColor: "#facc15",
+  },
 ];
 
 type VisualPageProps = {

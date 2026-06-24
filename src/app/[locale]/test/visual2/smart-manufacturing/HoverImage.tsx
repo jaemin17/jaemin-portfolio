@@ -42,6 +42,7 @@ export function HoverSwapImage({ src, hoverSrc, width, height, alt }: HoverSwapI
         height={height}
         alt={`${alt} alternate`}
         loading="eager"
+        unoptimized={hoverSrc.endsWith(".gif")}
         style={{
           position: "absolute",
           inset: 0,
