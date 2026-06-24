@@ -11,6 +11,7 @@ const visualProjects = [
     tags: ["Animal", "Surgery", "3D"],
     path: "/test/visual2/animal-vr",
     video: "/videos/visual/highmodes.mp4",
+    accentColor: "#60a5fa",
   },
   {
     title: "智能制造 VR",
@@ -18,6 +19,7 @@ const visualProjects = [
     tags: ["Manufacturing", "Industry", "Simulation"],
     path: "/test/visual2/smart-manufacturing",
     video: "/videos/visual/immersive.mp4",
+    accentColor: "#a855f7",
   },
   {
     title: "DESAY SV",
@@ -25,6 +27,7 @@ const visualProjects = [
     tags: ["Automotive", "HMI", "Visual"],
     path: "/test/visual2/desay-sv",
     image: "/images/visual/desay-sv/hero.png",
+    accentColor: "#60a5fa",
   },
   {
     title: "Cosmic Blaze",
@@ -32,6 +35,7 @@ const visualProjects = [
     tags: ["VR/AR", "Game", "Visual"],
     path: "/test/visual2/cosmic-blaze",
     image: "/images/visual/cosmic-blaze/hero.png",
+    accentColor: "#a855f7",
   },
 ];
 

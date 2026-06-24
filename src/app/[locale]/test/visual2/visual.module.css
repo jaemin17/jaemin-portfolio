@@ -166,9 +166,6 @@
   box-shadow: 0 0 0 2px var(--active-accent), 0 16px 48px rgba(0, 0, 0, 0.4);
 }
 
-.card:nth-child(even) {
-  --active-accent: #38bdf8;
-}
 
 .cardPrev {
   z-index: 5;

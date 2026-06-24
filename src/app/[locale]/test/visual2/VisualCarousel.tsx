@@ -12,6 +12,7 @@ type VisualProject = {
   path?: string;
   video?: string;
   image?: string;
+  accentColor?: string;
 };
 
 type Props = {
@@ -70,6 +71,7 @@ export function VisualCarousel({ projects, locale }: Props) {
           {projects.map((project, i) => {
             const isActive = i === active;
             const cardClass = `${styles.card} ${getCardClass(i, active, total)}`;
+            const accent = project.accentColor;
 
             const inner = (
               <>
@@ -107,12 +109,17 @@ export function VisualCarousel({ projects, locale }: Props) {
               </>
             );
 
+            const accentStyle = accent
+              ? ({ "--active-accent": accent } as React.CSSProperties)
+              : undefined;
+
             if (project.path && isActive) {
               return (
                 <Link
                   key={project.title}
                   className={cardClass}
                   href={`${prefix}${project.path}`}
+                  style={accentStyle}
                 >
                   {inner}
                 </Link>
@@ -123,6 +130,7 @@ export function VisualCarousel({ projects, locale }: Props) {
               <article
                 key={project.title}
                 className={cardClass}
+                style={accentStyle}
                 onClick={() => setActive(i)}
               >
                 {inner}
@@ -145,11 +153,12 @@ export function VisualCarousel({ projects, locale }: Props) {
           ←
         </button>
         <div className={styles.dots}>
-          {projects.map((_, i) => (
+          {projects.map((project, i) => (
             <button
               type="button"
               key={i}
               className={`${styles.dot} ${i === active ? styles.dotActive : ""}`}
+              style={i === active && project.accentColor ? { background: project.accentColor } : undefined}
               onClick={(event) => {
                 event.stopPropagation();
                 setActive(i);
