@@ -17,7 +17,7 @@ export default async function Selfly0Page({ params }: Selfly0PageProps) {
   const locale: Locale = localeParam;
 
   return (
-    <div className={`${styles.pagePlain} ${styles.selfly0Page} ${styles.selfly0V2}`} data-page="about2">
+    <div className={`${styles.pagePlain} ${styles.selfly0Page} ${styles.selfly0V2}`} data-page="about">
       <SiteHeader locale={locale} />
       <main className={styles.main}>
         {/* ── Cover Image ── */}

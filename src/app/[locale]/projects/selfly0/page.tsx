@@ -67,7 +67,7 @@ export default async function Selfly0Page({ params }: Selfly0PageProps) {
   const locale: Locale = localeParam;
 
   return (
-    <div className={`${styles.pagePlain} ${styles.selfly0Page}`} data-page="about2">
+    <div className={`${styles.pagePlain} ${styles.selfly0Page}`} data-page="about">
       <SiteHeader locale={locale} />
       <main className={styles.main}>
         <header className={`${styles.featuredHero} ${styles.projectOneHero}`}>

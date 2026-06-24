@@ -19,25 +19,16 @@ export default async function TestPage({ params }: TestPageProps) {
       <main className={styles.main}>
         <section className={styles.section}>
           <div className={styles.grid}>
-            <Link className={styles.card} href={localePath(locale, "/about")}>
-              <span className={styles.cardLabel}>Archive</span>
-              <h3>旧 About 页面</h3>
-              <p>原导航栏 About 版本，当前作为备份入口保留。</p>
+            <Link className={styles.card} href={localePath(locale, "/test/about2-v2")}>
+              <span className={styles.cardLabel}>WIP</span>
+              <h3>About2 改版测试</h3>
+              <p>About 页面的测试副本，用于改版实验。</p>
               <div className={styles.tags}>
-                <span>About backup</span>
-                <span>Archived page</span>
+                <span>About2 v2</span>
+                <span>In progress</span>
               </div>
             </Link>
-            <Link className={styles.card} href={localePath(locale, "/test/visual3")}>
-              <span className={styles.cardLabel}>Archive</span>
-              <h3>视觉3</h3>
-              <p>从导航栏移除的视觉合集版本，当前作为测试备份入口保留。</p>
-              <div className={styles.tags}>
-                <span>Visual backup</span>
-                <span>VR Education</span>
-              </div>
-            </Link>
-            <Link className={styles.card} href={localePath(locale, "/test/tools")}>
+<Link className={styles.card} href={localePath(locale, "/test/tools")}>
               <span className={styles.cardLabel}>Archive</span>
               <h3>工具1</h3>
               <p>从导航栏移除的工具类页面版本，当前作为测试备份入口保留。</p>
@@ -46,16 +37,7 @@ export default async function TestPage({ params }: TestPageProps) {
                 <span>Layout 01</span>
               </div>
             </Link>
-            <Link className={styles.card} href={localePath(locale, "/test/model-editor-backup")}>
-              <span className={styles.cardLabel}>Archive</span>
-              <h3>模型编辑器（备份）</h3>
-              <p>模型编辑器项目详情页的当前版本备份，修改前保留。</p>
-              <div className={styles.tags}>
-                <span>Model Editor backup</span>
-                <span>Project detail</span>
-              </div>
-            </Link>
-            <Link className={styles.card} href={localePath(locale, "/projects/sync-space")}>
+<Link className={styles.card} href={localePath(locale, "/projects/sync-space")}>
               <span className={styles.cardLabel}>WIP</span>
               <h3>Sync Space</h3>
               <p>多端课堂协同与设备管理项目详情页，正在完善中，主页入口暂不开放。</p>

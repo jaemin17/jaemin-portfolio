@@ -8,12 +8,12 @@ import styles from "./SiteHeader.module.css";
 type SiteHeaderProps = {
   locale: Locale;
   surface?: "default" | "white";
-  active?: "home" | "about" | "about2" | "test" | "visual1" | "visual2" | "visual3" | "tools1" | "tools2" | "tools3" | "tools4";
+  active?: "home" | "about" | "test" | "visual1" | "visual2" | "visual3" | "tools1" | "tools2" | "tools3" | "tool";
 };
 
 export function SiteHeader({ locale, surface = "default", active }: SiteHeaderProps) {
   const homeHref = localePath(locale, "/");
-  const about2Href = localePath(locale, "/about2");
+  const aboutHref = localePath(locale, "/about");
   return (
     <header
       className={`${styles.header} ${surface === "white" ? styles.headerWhite : ""}`}
@@ -33,8 +33,8 @@ export function SiteHeader({ locale, surface = "default", active }: SiteHeaderPr
             Home
           </Link>
           <Link
-            className={`${styles.navLink} ${active === "about2" ? styles.navLinkActive : ""}`}
-            href={about2Href}
+            className={`${styles.navLink} ${active === "about" ? styles.navLinkActive : ""}`}
+            href={aboutHref}
           >
             About
           </Link>

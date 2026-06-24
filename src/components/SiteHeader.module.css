@@ -11,7 +11,7 @@
   border-bottom-color: rgba(0, 0, 0, 0.12);
 }
 
-html:has([data-page="about2"]) .header {
+html:has([data-page="about"]) .header {
   background-color: #fffcf8;
 }
 
@@ -19,7 +19,7 @@ html:has([data-page="plain-white"]) .header {
   background-color: #fafbff;
 }
 
-html:has([data-page="tools4"]) .header {
+html:has([data-page="tool"]) .header {
   background-color: #eef1f5;
   border-bottom-color: rgba(26, 29, 36, 0.08);
 }

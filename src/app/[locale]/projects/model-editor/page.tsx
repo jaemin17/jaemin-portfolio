@@ -512,7 +512,7 @@ export default async function ModelEditorPage({ params }: Props) {
           <a href="mailto:lijaemin1993@gmail.com" className={styles.contactLink}>
             lijaemin1993@gmail.com
           </a>
-          <Link className="buttonSticker buttonStickerBlue" href={localePath(locale, "/test/tools4")}>
+          <Link className="buttonSticker buttonStickerBlue" href={localePath(locale, "/test/tool")}>
             其他作品
           </Link>
         </div>

@@ -1,92 +1,139 @@
+import Image from "next/image";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { SiteHeader } from "@/components/SiteHeader";
+import { assetPath } from "@/i18n/assets";
 import { isLocale, type Locale } from "@/i18n/config";
+import { about2Email, about2PdfUrl, getAbout2Copy } from "./content";
 import styles from "./about.module.css";
 
-const noteGroups = [
-  {
-    title: "我关注什么",
-    tone: "yellow",
-    notes: ["减少使用压力", "让流程更自然", "不为设计而设计", "关注长期使用", "尊重用户状态", "让产品有温度"],
-  },
-  {
-    title: "我擅长什么",
-    tone: "green",
-    notes: ["问题定义", "任务流梳理", "信息层级", "内容阅读节奏", "关键交互", "可用性优化"],
-  },
-  {
-    title: "我能交付什么",
-    tone: "blue",
-    notes: ["产品定位", "用户路径", "线框图", "交互原型", "高保真 UI", "组件规范", "开发交付素材"],
-  },
-  {
-    title: "我用什么工具",
-    tone: "purple",
-    notes: ["Figma", "FigJam", "SwiftUI", "Next.js", "AI 辅助设计", "竞品分析", "可用性测试"],
-  },
-  {
-    title: "我如何工作",
-    tone: "orange",
-    notes: ["先验证方向", "快速推进 0→1", "自己动手实现", "持续观察反馈", "反复迭代细节", "打磨到可交付"],
-  },
-];
-
-type AboutPageProps = {
+type About2PageProps = {
   params: Promise<{ locale: string }>;
 };
 
-export default async function AboutPage({ params }: AboutPageProps) {
+export default async function About2Page({ params }: About2PageProps) {
   const { locale: localeParam } = await params;
   if (!isLocale(localeParam)) notFound();
   const locale: Locale = localeParam;
+  const about2Copy = getAbout2Copy(locale);
 
   return (
-    <>
-      <SiteHeader locale={locale} active="about" />
+    <div className={styles.shell} data-page="about">
+      <SiteHeader locale={locale} active="about" surface="white" />
       <main className={styles.main}>
-        <section className={styles.wall} aria-labelledby="about-title">
-          <header className={styles.topBar}>
-            <div className={styles.titleBlock}>
-              <h1 id="about-title" className={styles.title}>
-                我是谁
-              </h1>
-              <p className={styles.intro}>
-                偏产品型的 UX/UI 设计师，也会自己做独立开发项目，擅长把模糊需求拆成清晰任务流、界面结构和可落地的产品体验。
-              </p>
-              <p className={styles.credential}>
-                中国美术学院 · 工业设计本科 · 2011—2015
-              </p>
+          <section className={styles.section} aria-label="About intro">
+            <div className={styles.container}>
+              <div className={styles.introGrid}>
+                <div className={styles.introText}>
+                  <h2 className={styles.heroTitle}>{about2Copy.heroTitle}</h2>
+                  {locale === "zh" ? (
+                    <>
+                      <p className={styles.text}>我是一个喜欢<span className={styles.highlight}>从真实问题出发</span>做产品的 UI/UX 设计师。</p>
+                      <p className={styles.text}>我喜欢<span className={styles.highlight}>先把东西做出来</span>，<span className={styles.highlight}>在真实体验中寻找答案</span>。我喜欢尝试不同的解决方案。每次设计对我来说，都是一次重新理解用户和产品的过程。</p>
+                      <p className={styles.text}>我希望做出的产品<span className={styles.highlight}>让人感到自然和舒服</span>。我喜欢和别人讨论想法，在交流中发现新的可能。</p>
+                      <p className={styles.text}>在日常生活中，我喜欢<span className={styles.highlight}>亲手制作喜欢的东西、探索不同材质</span>，把脑海中的想法一点点变成真实的作品。</p>
+                    </>
+                  ) : (
+                    about2Copy.introBio.split("\n\n").map((para, i) => (
+                      <p key={i} className={styles.text}>{para}</p>
+                    ))
+                  )}
+                  <p className={`${styles.text} ${styles.textCta}`}>
+                    {about2Copy.introCtaPrefix}
+                    <br />
+                    <Link className={styles.pdfLink} href={about2PdfUrl} target="_blank" rel="noreferrer">
+                      {about2Copy.pdfLinkLabel}
+                    </Link>
+                  </p>
+                </div>
+                <Image
+                  className={styles.illustration}
+                  src={assetPath("/images/aboutme.svg")}
+                  alt=""
+                  width={420}
+                  height={420}
+                  priority
+                />
+              </div>
             </div>
-          </header>
 
-          <div className={styles.map} aria-label="关于我的能力地图">
-            {noteGroups.map((group, groupIndex) => (
-              <section
-                key={group.title}
-                className={`${styles.group} ${styles[group.tone]}`}
-                aria-labelledby={`group-${groupIndex}`}
-              >
-                <h2 id={`group-${groupIndex}`} className={styles.groupTitle}>
-                  {group.title}
-                </h2>
-                <div className={styles.noteGrid}>
-                  {group.notes.map((note, noteIndex) => (
-                    <article key={note} className={styles.noteItem}>
-                      <span className={styles.note}>
-                        <span className={styles.noteIndex}>
-                          {String(groupIndex + 1)}
-                          {String(noteIndex + 1).padStart(2, "0")}
-                        </span>
-                        <span className={styles.noteText}>{note}</span>
-                      </span>
+            <div className={styles.divider} />
+
+            <div className={styles.container}>
+              <div className={styles.skillsGrid}>
+                <div className={styles.sectionTitleCol}>
+                  <h3 className={styles.sectionTitle}>{about2Copy.sectionWhatIDo}</h3>
+                </div>
+                <div className={styles.skillsColumns}>
+                  <div className={styles.skillsCol}>
+                    {about2Copy.skillsLeft.map((skill) => (
+                      <p key={skill} className={styles.skillItem}>
+                        {skill}
+                      </p>
+                    ))}
+                  </div>
+                  <div className={styles.skillsCol}>
+                    {about2Copy.skillsRight.map((skill) => (
+                      <p key={skill} className={styles.skillItem}>
+                        {skill}
+                      </p>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className={styles.divider} />
+
+            <div className={styles.container}>
+              <div className={`${styles.skillsGrid} ${styles.skillsGridReversed}`}>
+                <div className={styles.cardStack}>
+                  {about2Copy.superpowers.map((item) => (
+                    <article key={item.title} className={styles.card}>
+                      <div className={styles.cardTitle}>{item.title}</div>
+                      <p className={styles.cardText}>{item.description}</p>
                     </article>
                   ))}
                 </div>
-              </section>
-            ))}
-          </div>
-        </section>
+                <div className={styles.sectionTitleCol}>
+                  <h3 className={styles.sectionTitle}>{about2Copy.sectionSuperpower}</h3>
+                </div>
+              </div>
+            </div>
+
+            <div className={styles.divider} />
+
+            <div className={styles.container}>
+              <div className={`${styles.skillsGrid} ${styles.skillsGridReversed}`}>
+                <div className={styles.cardStack}>
+                  {about2Copy.jobs.map((job) => (
+                    <article key={job.company} className={styles.card}>
+                      <div className={styles.cardTitle}>{job.company}</div>
+                      <p className={styles.cardText}>{job.role} · {job.period}</p>
+                    </article>
+                  ))}
+                </div>
+                <div className={styles.sectionTitleCol}>
+                  <h3 className={styles.sectionTitle}>{about2Copy.sectionExperience}</h3>
+                  <p className={styles.text}>{about2Copy.experienceSummary}</p>
+                </div>
+              </div>
+            </div>
+
+            <div className={styles.divider} />
+          </section>
+
+          <footer className={styles.footer}>
+            <div className={styles.footerInner}>
+              <h1 className={styles.footerTitle}>{about2Copy.footerTitle}</h1>
+              <p className={styles.footerLinkWrap}>
+                <a className={styles.footerLink} href={`mailto:${about2Email}`}>
+                  {about2Copy.footerEmailLabel}
+                </a>
+              </p>
+            </div>
+          </footer>
       </main>
-    </>
+    </div>
   );
 }

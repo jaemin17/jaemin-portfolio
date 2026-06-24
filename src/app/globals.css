@@ -32,7 +32,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-html:has([data-page="about2"]) body {
+html:has([data-page="about"]) body {
   background: #fffcf8;
 }
 
@@ -67,12 +67,12 @@ html:has([data-page="selfly-style"]) body {
   overflow: hidden;
 }
 
-html:has([data-page="tools4"]) {
+html:has([data-page="tool"]) {
   background: #eef1f5;
   overscroll-behavior: none;
 }
 
-html:has([data-page="tools4"]) body {
+html:has([data-page="tool"]) body {
   background: #eef1f5;
 }
 

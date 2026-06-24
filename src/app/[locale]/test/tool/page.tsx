@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import { SiteHeader } from "@/components/SiteHeader";
 import { isLocale, type Locale } from "@/i18n/config";
 import { Carousel } from "./Carousel";
-import styles from "./tools4.module.css";
+import styles from "./tool.module.css";
 
 const projects = [
   {
@@ -44,8 +44,8 @@ export default async function Tools4Page({ params }: Props) {
   const locale: Locale = localeParam;
 
   return (
-    <div className={styles.page} data-page="tools4">
-      <SiteHeader locale={locale} active="tools4" />
+    <div className={styles.page} data-page="tool">
+      <SiteHeader locale={locale} active="tool" />
       <main className={styles.main}>
         <div className={styles.headline}>
           <h1>
