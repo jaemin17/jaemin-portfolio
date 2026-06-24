@@ -23,7 +23,7 @@ export default async function ArAirbnbVisualPage({ params }: PageProps) {
       <SiteHeader locale={locale} surface="white" active="test" />
       <main className={styles.caseStudyPage}>
         <section className={styles.caseIntro}>
-          <h1>AR 增强现实 Airbnb 体验设计</h1>
+          <h1>AR 增强 Airbnb 入住体验</h1>
 
           <figure className={styles.caseHeroImage}>
             <Image
