@@ -77,9 +77,9 @@ export default async function ArAirbnbVisualPage({ params }: PageProps) {
 
         <section className={styles.caseGallery} aria-label="AR 场景截图">
           <div className={styles.caseGalleryInner}>
-            {arAirbnbScenes.map((scene, i) => (
+            {arAirbnbScenes.slice(1).map((scene, i) => (
               <article key={scene.src} className={styles.caseScenario}>
-                <p className={styles.caseScenarioTitle}>Scenario {i + 1} — {scene.subtitle}</p>
+                <p className={styles.caseScenarioTitle}>Scenario {i + 2} — {scene.subtitle}</p>
                 <figure>
                   <div className={styles.caseImageFrame}>
                     <HoverSwapImage
