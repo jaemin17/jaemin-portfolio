@@ -59,7 +59,7 @@ export default async function ArAirbnbVisualPage({ params }: PageProps) {
           <div className={styles.caseGalleryInner}>
             {arAirbnbWireframes.map((shot, i) => (
               <article key={shot.src} className={styles.caseScenario}>
-                <p className={styles.caseScenarioTitle}>Screen {i + 2} — {shot.subtitle}</p>
+                <p className={styles.caseScenarioTitle}>{shot.subtitle}</p>
                 <figure>
                   <div className={styles.caseImageFrame}>
                     <Image
