@@ -20,18 +20,18 @@ const visualProjects = [
     video: "/videos/visual/immersive.mp4",
   },
   {
-    title: "Cosmic Blaze",
-    body: "VR/AR 桌面设备体验游戏的 UI 视觉设计。",
-    tags: ["VR/AR", "Game", "Visual"],
-    path: "/test/visual2/cosmic-blaze",
-    image: "/images/visual/cosmic-blaze/hero.png",
-  },
-  {
     title: "DESAY SV",
     body: "车载娱乐与控制系统界面，包含驾驶、音乐、收音机和车辆设置等功能模块。",
     tags: ["Automotive", "HMI", "Visual"],
     path: "/test/visual2/desay-sv",
     image: "/images/visual/desay-sv/hero.png",
+  },
+  {
+    title: "Cosmic Blaze",
+    body: "VR/AR 桌面设备体验游戏的 UI 视觉设计。",
+    tags: ["VR/AR", "Game", "Visual"],
+    path: "/test/visual2/cosmic-blaze",
+    image: "/images/visual/cosmic-blaze/hero.png",
   },
 ];
 
