@@ -2,8 +2,8 @@ export const arAirbnbWireframes = [
   { subtitle: "设计原则 - Google AR 指南", src: "/images/visual/ar-airbnb/wireframe-2.png", width: 1920, height: 1080 },
   { subtitle: "界面设计 3", src: "/images/visual/ar-airbnb/wireframe-3.png", width: 1920, height: 1080 },
   { subtitle: "界面设计 4", src: "/images/visual/ar-airbnb/wireframe-4.png", width: 1920, height: 1080 },
-  { subtitle: "界面设计 5", src: "/images/visual/ar-airbnb/wireframe-5.png", width: 1920, height: 1080 },
-  { subtitle: "界面设计 6", src: "/images/visual/ar-airbnb/wireframe-6.png", width: 1920, height: 1080 },
+  { subtitle: "输入与探索 - 房东选择输入信息，租客开始探索", src: "/images/visual/ar-airbnb/wireframe-5.png", width: 1920, height: 1080 },
+  { subtitle: "设计理念 - 潘多拉旅行", src: "/images/visual/ar-airbnb/wireframe-6.png", width: 1920, height: 1080 },
 ] as const;
 
 export const arAirbnbScenes = [
