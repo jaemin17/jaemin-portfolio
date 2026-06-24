@@ -44,7 +44,7 @@ export default async function CosmicBlazeVisualPage({ params }: CosmicBlazePageP
             </div>
             <div>
               <h2>Skills</h2>
-              <p>视觉设计</p>
+              <p>字体设计、游戏UI</p>
             </div>
           </div>
         </section>
