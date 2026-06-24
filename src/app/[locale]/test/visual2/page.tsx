@@ -6,14 +6,6 @@ import styles from "./visual.module.css";
 
 const visualProjects = [
   {
-    title: "生物医疗VR",
-    body: "动物模型、解剖训练、手术步骤和课程资源相关的 VR 教育软件界面。",
-    tags: ["Animal", "Surgery", "3D"],
-    path: "/test/visual2/animal-vr",
-    video: "/videos/visual/highmodes.mp4",
-    accentColor: "#60a5fa",
-  },
-  {
     title: "智能制造 VR",
     body: "变速器、工业机器人、注塑模具等工业设备实训画面和教学操作界面。",
     tags: ["Manufacturing", "Industry", "Simulation"],
@@ -27,6 +19,14 @@ const visualProjects = [
     tags: ["Automotive", "HMI", "Visual"],
     path: "/test/visual2/desay-sv",
     image: "/images/visual/desay-sv/hero.png",
+    accentColor: "#60a5fa",
+  },
+  {
+    title: "生物医疗VR",
+    body: "动物模型、解剖训练、手术步骤和课程资源相关的 VR 教育软件界面。",
+    tags: ["Animal", "Surgery", "3D"],
+    path: "/test/visual2/animal-vr",
+    video: "/videos/visual/highmodes.mp4",
     accentColor: "#60a5fa",
   },
   {
