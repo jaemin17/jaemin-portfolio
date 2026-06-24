@@ -8,31 +8,31 @@ export const arAirbnbWireframes = [
 
 export const arAirbnbScenes = [
   {
-    subtitle: "AR 场景 1",
+    subtitle: "Navigation",
     src: "/images/visual/ar-airbnb/scene-1.png",
     hoverSrc: "/images/visual/ar-airbnb/scene-1-hover.png",
     width: 1920, height: 1074,
   },
   {
-    subtitle: "AR 场景 2",
+    subtitle: "Open the Door",
     src: "/images/visual/ar-airbnb/scene-2.png",
     hoverSrc: "/images/visual/ar-airbnb/scene-2-hover.png",
     width: 1920, height: 1074,
   },
   {
-    subtitle: "AR 场景 3",
+    subtitle: "Room Tour",
     src: "/images/visual/ar-airbnb/scene-3.png",
     hoverSrc: "/images/visual/ar-airbnb/scene-3-hover.png",
     width: 1920, height: 1074,
   },
   {
-    subtitle: "AR 场景 4 — 看星星",
+    subtitle: "View Information",
     src: "/images/visual/ar-airbnb/scene-4.png",
     hoverSrc: "/images/visual/ar-airbnb/scene-4-hover.png",
     width: 2510, height: 1060,
   },
   {
-    subtitle: "AR 场景 5 — 浇花",
+    subtitle: "Virtual Interaction",
     src: "/images/visual/ar-airbnb/scene-5.png",
     hoverSrc: "/images/visual/ar-airbnb/scene-5-hover.gif",
     width: 2510, height: 1060,
