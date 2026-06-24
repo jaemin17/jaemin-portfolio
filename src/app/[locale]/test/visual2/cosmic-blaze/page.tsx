@@ -32,7 +32,7 @@ export default async function CosmicBlazeVisualPage({ params }: CosmicBlazePageP
           <div className={styles.caseMetaGrid} aria-label="项目概览">
             <div>
               <h2>Context</h2>
-              <p>VR/AR 桌面设备沉浸式体验游戏</p>
+              <p>VR 桌面设备沉浸式体验游戏</p>
             </div>
             <div>
               <h2>Role</h2>
