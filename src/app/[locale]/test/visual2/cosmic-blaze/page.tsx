@@ -23,7 +23,7 @@ export default async function CosmicBlazeVisualPage({ params }: CosmicBlazePageP
       <SiteHeader locale={locale} surface="white" active="test" />
       <main className={styles.caseStudyPage}>
         <section className={styles.caseIntro}>
-          <h1>Cosmic Blaze</h1>
+          <h1>火力全开 — VR 游戏界面设计</h1>
 
           <figure className={styles.caseHeroImage}>
             <Image src={assetPath(heroShot.src)} width={1920} height={1080} alt="Cosmic Blaze 首页视觉" priority />
