@@ -19,7 +19,7 @@ export default async function About2Page({ params }: About2PageProps) {
 
   return (
     <div className={styles.shell} data-page="about2">
-      <SiteHeader locale={locale} active="about2" surface="white" />
+      <SiteHeader locale={locale} active="about" surface="white" />
       <main className={styles.main}>
           <section className={styles.section} aria-label="About intro">
             <div className={styles.container}>
