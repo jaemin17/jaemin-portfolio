@@ -38,19 +38,19 @@ export default async function ArAirbnbVisualPage({ params }: PageProps) {
           <div className={styles.caseMetaGrid} aria-label="项目概览">
             <div>
               <h2>Context</h2>
-              <p>Innovation competition — AR for vacation rentals</p>
+              <p>创新竞赛 — 将 AR 融入度假租赁体验</p>
             </div>
             <div>
               <h2>Role</h2>
-              <p>UX designer, Product designer</p>
+              <p>UX 设计师，产品设计师</p>
             </div>
             <div>
               <h2>Timeline</h2>
-              <p>Mar 2022, 1 week</p>
+              <p>2022年3月，历时1周</p>
             </div>
             <div>
               <h2>Skills</h2>
-              <p>Product thinking, Prototype, Interaction design, Visual design</p>
+              <p>产品思维，原型设计，交互设计，视觉设计</p>
             </div>
           </div>
         </section>
