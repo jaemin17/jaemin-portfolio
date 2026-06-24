@@ -57,22 +57,13 @@ export default async function DesaySvVisualPage({ params }: PageProps) {
                 <p className={styles.caseScenarioTitle}>Scenario {i + 1} — {shot.subtitle}</p>
                 <figure>
                   <div className={styles.caseImageFrame}>
-                    {"hoverSrc" in shot ? (
-                      <HoverSwapImage
-                        src={shot.src}
-                        hoverSrc={shot.hoverSrc}
-                        width={"width" in shot ? shot.width : 1920}
-                        height={"height" in shot ? shot.height : 720}
-                        alt={`DESAY SV ${shot.subtitle}`}
-                      />
-                    ) : (
-                      <Image
-                        src={assetPath(shot.src)}
-                        width={1920}
-                        height={720}
-                        alt={`DESAY SV ${shot.subtitle}`}
-                      />
-                    )}
+                    <HoverSwapImage
+                      src={shot.src}
+                      hoverSrc={shot.hoverSrc}
+                      width={"width" in shot ? shot.width : 1920}
+                      height={"height" in shot ? shot.height : 720}
+                      alt={`DESAY SV ${shot.subtitle}`}
+                    />
                   </div>
                 </figure>
               </article>
