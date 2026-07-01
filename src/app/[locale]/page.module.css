@@ -1201,7 +1201,7 @@
   top: 64px;
   right: calc(clamp(-42px, -3vw, -26px) + var(--right-cluster-offset));
   z-index: 1;
-  width: clamp(178px, 13vw, 206px);
+  width: clamp(200px, 13vw, 228px);
   transform: rotate(var(--note-rotation));
   animation-delay: 900ms;
 }
@@ -1234,7 +1234,7 @@
   margin-top: 7px;
   font-size: 12px;
   line-height: 1.4;
-  overflow-wrap: anywhere;
+  white-space: nowrap;
 }
 
 .sideKeepsakes .todayStamp {
@@ -1555,7 +1555,7 @@
   .sideKeepsakes .sideContactEntry {
     top: 70px;
     right: calc(clamp(-42px, -3vw, -26px) + var(--right-cluster-offset));
-    width: clamp(178px, 12vw, 206px);
+    width: clamp(200px, 13vw, 228px);
   }
 
   .sideKeepsakes .todayStamp {
