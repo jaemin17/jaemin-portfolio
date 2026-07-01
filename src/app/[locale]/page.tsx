@@ -232,17 +232,6 @@ export default async function Home({ params }: HomePageProps) {
         <CursorSparkles />
         <section className={styles.wall} aria-label="首页信息墙">
           <div className={styles.wallBoard}>
-            <div className={styles.vineFrameClip} aria-hidden="true">
-              <Image
-                className={styles.vineFrame}
-                src={asset("/images/home-vine-frame.png")}
-                alt=""
-                width={2048}
-                height={1152}
-                priority
-                unoptimized
-              />
-            </div>
             <div className={styles.decorations} aria-hidden="true">
               {decorationShapes.map((shape, index) => (
                 <span key={index} className={styles.sparkle}>

@@ -97,25 +97,6 @@
   background-size: 34px 34px;
 }
 
-.vineFrameClip {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  overflow: hidden;
-  pointer-events: none;
-  user-select: none;
-}
-
-.vineFrame {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 100%;
-  height: auto;
-  max-width: none;
-  transform: translateX(-50%);
-}
-
 .middleZone {
   --top-cluster-offset: 64px;
   --polaroid-stack-offset: 60px;
