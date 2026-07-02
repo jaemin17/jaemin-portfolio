@@ -1364,6 +1364,15 @@
   z-index: 1;
 }
 
+.todayTop3PhoneVideo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
 /* Selfly0 — decorative device chrome (status bar, Dynamic Island, home indicator) */
 .selfly0PhoneChrome {
   position: absolute;
