@@ -8,7 +8,6 @@ import Link from "next/link";
 import { localePath } from "@/i18n/paths";
 import styles from "./selfly0.module.css";
 import { TabStructureDiagram } from "./TabStructureDiagram";
-import { ExploreModulesCompare } from "./ExploreModulesCompare";
 import { ExploreRecordContainers } from "./ExploreRecordContainers";
 import { ExploreTemplatesSwitcher } from "./ExploreTemplatesSwitcher";
 import { ReviewRedistribution } from "./ReviewRedistribution";
@@ -259,13 +258,13 @@ export default async function Selfly0Page({ params }: Selfly0PageProps) {
           <TodayTaskCardInteraction />
         </section>
         <ChapterIntro id="explore" icon="🧩" title="Explore：降低开始记录的成本">
-          记录系统不应该让用户先理解功能规则，而应该让用户按内容选择合适的记录方式。
+          通过不同记录容器，承接不同用户、不同内容状态下的自我发现方式。
         </ChapterIntro>
         <section className={`${styles.caseSection} ${styles.selfly0CaseSection}`}>
           <div className={styles.selfly0StructureSection}>
             <h2 className={styles.selfly0PositioningLabel}>模块化记录</h2>
             <div className={styles.caseText}>
-              <h3 className={styles.selfly0StructureHeading}><span className={styles.selfly0PositioningHeadingLight}>从功能入口，收敛为</span><span className={styles.selfly0PositioningHeadingDark}>记录容器</span></h3>
+              <h3 className={styles.selfly0StructureHeading}><span className={styles.selfly0PositioningHeadingLight}>把自我发现方式，抽象成</span><span className={styles.selfly0PositioningHeadingDark}>四种记录容器</span></h3>
               <div className={styles.selfly0Body}>
                 <p>
                   我对原有自我探索功能进行结构重组，把价值观、愿景板、成功日记、优势测试等独立入口，抽象成
@@ -288,9 +287,6 @@ export default async function Selfly0Page({ params }: Selfly0PageProps) {
               </div>
             </div>
           </div>
-        </section>
-        <section className={`${styles.caseSection} ${styles.selfly0CaseSection}`}>
-          <ExploreModulesCompare locale={locale} />
         </section>
         <section className={`${styles.caseSection} ${styles.selfly0CaseSection}`}>
           <ExploreRecordContainers />
