@@ -92,8 +92,8 @@ export function TodayRhythmSystem() {
           description="Top 3 压低首页容量，让用户只盯少数重点。"
         />
         <PhoneImagePanel
-          title="今日聚焦"
-          description="只保留 Today 展示，不再轮播切换状态。"
+          title="安放未来"
+          description="Tomorrow 和 Backlog 承接非今日事项，不挤占今天。"
         />
       </div>
     </figure>
