@@ -294,7 +294,7 @@ export default async function Selfly0Page({ params }: Selfly0PageProps) {
           <div className={styles.selfly0StructureSection}>
             <h2 className={styles.selfly0PositioningLabel}>优化创建体验</h2>
             <div className={styles.caseText}>
-              <h3 className={styles.selfly0StructureHeading}><span className={styles.selfly0PositioningHeadingLight}>从空白配置到</span><span className={styles.selfly0PositioningHeadingDark}>场景模板</span></h3>
+              <h3 className={styles.selfly0StructureHeading}><span className={styles.selfly0PositioningHeadingLight}>用场景启发</span><span className={styles.selfly0PositioningHeadingDark}>自我记录</span></h3>
               <div className={styles.selfly0Body}>
                 <p>
                   我发现高度自定义并不等于容易开始。新用户如果一开始就面对类型、名称、图标和设置，启动成本反而会被提前放大。
