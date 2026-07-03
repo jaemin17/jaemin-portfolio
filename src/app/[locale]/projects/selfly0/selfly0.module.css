@@ -2117,6 +2117,28 @@
   overflow: visible;
 }
 
+.diaryInputPolishLayout .diaryFlowStepCard {
+  width: min(27vw, 190px);
+}
+
+.diaryInputPolishLayout .diaryFlowArrowWrap {
+  width: 40px;
+  padding-top: 92px;
+}
+
+.diaryInputPolishLayout .diaryFlowInlineArrow {
+  width: 36px;
+}
+
+.diaryInputPolishLayout .diaryFlowRowWrap {
+  padding-bottom: 84px;
+}
+
+.diaryInputPolishLayout .diaryFlowSkipArc {
+  width: min(100%, 760px);
+  height: 72px;
+}
+
 .diaryFlowDiagramWithDemo .diaryFlowRow {
   width: fit-content;
   max-width: 100%;
@@ -4516,13 +4538,35 @@
     width: 132px;
   }
 
+  .diaryInputPolishLayout .diaryFlowStepCard {
+    width: 164px;
+  }
+
   .diaryFlowArrowWrap {
     width: 18px;
     padding-top: 56px;
   }
 
+  .diaryInputPolishLayout .diaryFlowArrowWrap {
+    width: 28px;
+    padding-top: 72px;
+  }
+
   .diaryFlowInlineArrow {
     width: 18px;
+  }
+
+  .diaryInputPolishLayout .diaryFlowInlineArrow {
+    width: 26px;
+  }
+
+  .diaryInputPolishLayout .diaryFlowRowWrap {
+    padding-bottom: 72px;
+  }
+
+  .diaryInputPolishLayout .diaryFlowSkipArc {
+    width: 680px;
+    height: 64px;
   }
 
   .productLaunchLayout {

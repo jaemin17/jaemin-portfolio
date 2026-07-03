@@ -98,12 +98,7 @@ export function DiaryEmojiInputPolish() {
       <p className={styles.diaryFlowJumpLabel}>改造后：① 选完表情后自动聚焦 → 直接进入 ③</p>
 
       <div className={styles.diaryInputPolishLayout}>
-        <DiaryInputFlowDiagram
-          demoVideo={{
-            src: assetPath("/videos/selfly0/diary-input-focus.mp4"),
-            ariaLabel: "日记输入：选完表情后自动聚焦文本输入演示",
-          }}
-        />
+        <DiaryInputFlowDiagram />
       </div>
     </figure>
   );
