@@ -16,7 +16,6 @@ import {
   DiaryEmojiInputPolish,
   DiaryEmojiPickerCompare,
 } from "./DiaryEmojiInputShowcase";
-import { AppStoreShowcase } from "./AppStoreShowcase";
 import { AppIconDesignShowcase } from "./AppIconDesignShowcase";
 import { TodayRhythmSystem } from "./TodayRhythmSystem";
 import { TodayTaskCardInteraction } from "./TodayTaskCardInteraction";
@@ -392,7 +391,6 @@ export default async function Selfly0Page({ params }: Selfly0PageProps) {
                   <h4>机制设计</h4>
                   <ul>
                     <li><strong>跨模块重新分发内容</strong></li>
-                    <li>让旧记录自然出现</li>
                     <li>支持自选回顾范围</li>
                     <li>弱化统计与连续性焦虑</li>
                   </ul>
@@ -425,10 +423,9 @@ export default async function Selfly0Page({ params }: Selfly0PageProps) {
                 <div className={styles.designPoints}>
                   <h4>设计决策</h4>
                   <ul>
-                    <li><strong>保留橙 × 紫的品牌色对比</strong></li>
+                    <li><strong>橙 × 紫的品牌色对比</strong></li>
                     <li>小尺寸优先：减少线条与细节</li>
                     <li>双色蝴蝶作为视觉锚点，连接两种主色</li>
-                    <li>最终提供浅色扁平版与暗黑模式版</li>
                   </ul>
                 </div>
               </div>
@@ -502,9 +499,6 @@ export default async function Selfly0Page({ params }: Selfly0PageProps) {
               </div>
             </div>
           </div>
-        </section>
-        <section className={`${styles.caseSection} ${styles.selfly0CaseSection}`}>
-          <AppStoreShowcase />
         </section>
         <section className={`${styles.caseSection} ${styles.selfly0CaseSection}`}>
           <div className={styles.selfly0StructureSection}>
