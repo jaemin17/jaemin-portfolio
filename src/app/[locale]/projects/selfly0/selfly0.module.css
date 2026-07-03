@@ -2871,19 +2871,8 @@
   overflow: hidden;
 }
 
-.iconDesignEvolutionLabel {
-  margin: 22px 0 16px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 3px;
-  font-size: 15px;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  color: #ffbc6e;
-}
-
 .iconDesignEvolutionSection {
+  margin-top: 24px;
   padding-top: 28px;
   border-top: 1px solid rgba(255, 188, 110, 0.22);
 }
