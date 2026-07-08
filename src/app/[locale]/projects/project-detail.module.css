@@ -1328,6 +1328,111 @@
     margin: 32px auto 40px;
   }
 
+  .positioningGrid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .positioningLabel {
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+
+  .positioningHeading,
+  .protoIntroTitle {
+    font-size: 24px;
+    line-height: 1.5;
+    padding-top: 12px;
+    margin-bottom: 4px;
+  }
+
+  .positioningBody {
+    font-size: 15px;
+    color: #777;
+  }
+
+  .positioningBody p {
+    margin-bottom: 20px;
+    line-height: 1.75;
+    color: #777;
+  }
+
+  .positioningBody .roleLabel {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    color: #4a5568;
+    margin-top: 4px;
+    margin-bottom: 8px;
+  }
+
+  .positioningEmphasis {
+    color: #444;
+  }
+
+  .protoIntroRow {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    margin: 8px 0;
+  }
+
+  .protoIntroLabel {
+    margin-top: 32px;
+  }
+
+  .stackedSection .protoIntroLabel {
+    margin-top: 0;
+  }
+
+  .protoIntroBody {
+    font-size: 15px;
+    line-height: 1.75;
+    color: #777;
+  }
+
+  .protoAreas {
+    margin-top: 12px;
+  }
+
+  .protoAreas p {
+    font-size: 15px;
+    line-height: 1.75;
+    color: #777;
+  }
+
+  .protoAreas p + p {
+    margin-top: 20px;
+  }
+
+  .protoProblems {
+    grid-template-columns: 1fr;
+  }
+
+  .contact {
+    margin: 120px auto 0;
+    padding: 0 20px 120px;
+  }
+
+  .contactDivider {
+    margin-bottom: 48px;
+  }
+
+  .contact h2 {
+    font-size: 22px;
+    line-height: 1.4;
+  }
+
+  .contact p {
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  .contactLink {
+    font-size: 22px;
+    line-height: 1.35;
+    margin: 12px auto;
+  }
+
   .directionCards {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
