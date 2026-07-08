@@ -332,8 +332,11 @@
   .positioningPhoneFrame {
     max-width: 160px;
     max-height: 300px;
-    border-radius: 24px;
+    border-radius: 16px 16px 0 0;
     border-width: 4px;
+    border-bottom: none;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
   }
 
   .positioningDynamicIsland {
@@ -349,6 +352,23 @@
 
   .positioningDiagramArrow svg {
     width: 48px;
+  }
+
+  .positioningPhaseCompare {
+    padding: 16px 16px 0;
+  }
+
+  .positioningPhaseCompare .positioningDiagramCol {
+    gap: 4px;
+  }
+
+  .positioningPhaseCompare .positioningPhoneFrame {
+    max-width: 136px;
+    max-height: 210px;
+  }
+
+  .positioningPhaseCompare .positioningDiagramArrow {
+    margin-top: 8px;
   }
 
   .exploreRecordContainers {
@@ -4268,9 +4288,21 @@
     font-size: 24px;
   }
 
+  .featuredHero .subtitle,
+  .projectOneHero .subtitle {
+    font-size: 14px;
+    line-height: 1.55;
+    color: rgba(0, 0, 0, 0.52);
+  }
+
   .featuredHero .meta,
   .featuredHero .tags {
     justify-content: center;
+  }
+
+  .featuredHero .meta {
+    font-size: 11px;
+    gap: 6px;
   }
 
   .evidenceHero .title,

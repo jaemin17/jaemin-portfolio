@@ -129,13 +129,12 @@ export default async function Selfly0Page({ params }: Selfly0PageProps) {
           </div>
         </section>
         <section className={`${styles.caseSection} ${styles.selfly0CaseSection}`}>
-          <div className={styles.positioningDiagram}>
+          <div className={`${styles.positioningDiagram} ${styles.positioningPhaseCompare}`}>
             <div className={styles.positioningDiagramFlow}>
               <div className={styles.positioningDiagramCol}>
                 <span className={styles.positioningDiagramPhase}>前期</span>
                 <span className={styles.positioningDiagramCaption}>固定内容入口</span>
                 <div className={styles.positioningPhoneFrame}>
-                  <span className={styles.positioningDynamicIsland} aria-hidden="true" />
                   <Image
                     src={assetPath("/images/selfly0/positioning-phone-1.webp")}
                     alt="前期：固定内容入口"
@@ -154,7 +153,6 @@ export default async function Selfly0Page({ params }: Selfly0PageProps) {
                 <span className={styles.positioningDiagramPhase}>后期</span>
                 <span className={styles.positioningDiagramCaption}>个人记录空间</span>
                 <div className={styles.positioningPhoneFrame}>
-                  <span className={styles.positioningDynamicIsland} aria-hidden="true" />
                   <Image
                     src={assetPath("/images/selfly0/positioning-phone-3.webp")}
                     alt="后期：个人记录空间"
