@@ -4476,6 +4476,16 @@
     padding-top: 0;
   }
 
+  .selfly0ContactSection h2 {
+    font-size: 22px;
+    line-height: 1.4;
+  }
+
+  .selfly0ContactSection p {
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
   .selfly0ContactLink {
     font-size: 22px;
     line-height: 1.35;
