@@ -4458,21 +4458,43 @@
   }
 
   .todayRhythmSystemFigure {
-    padding: 30px 20px 24px;
+    padding: 24px 16px 20px;
   }
 
   .todayRhythmSystemGrid {
-    grid-template-columns: 1fr;
-    gap: 30px;
-    max-width: 320px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    max-width: none;
+  }
+
+  .todayRhythmSystemPanel {
+    gap: 10px;
   }
 
   .todayRhythmSystemPanelCopy {
     min-height: auto;
+    gap: 4px;
+  }
+
+  .todayRhythmSystemPanelTitle {
+    font-size: 13px;
   }
 
   .todayRhythmSystemPanelDescription {
-    max-width: 280px;
+    max-width: none;
+    font-size: 11px;
+    line-height: 1.4;
+  }
+
+  .todayRhythmSystemFigure .todayTop3PhoneBezel {
+    width: min(100%, 140px);
+    max-width: 140px;
+    padding: 4px;
+    border-radius: 20px;
+  }
+
+  .todayRhythmSystemFigure .todayTop3PhoneFrame {
+    border-radius: 16px;
   }
 
   .todayRhythmSystemTabs {
