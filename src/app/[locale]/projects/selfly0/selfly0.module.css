@@ -2561,6 +2561,10 @@
   overflow: visible;
 }
 
+.diaryFlowSkipLabel {
+  letter-spacing: 0.04em;
+}
+
 .diaryFlowInlineArrowSkipped {
   color: rgba(255, 255, 255, 0.18);
 }
@@ -4517,11 +4521,11 @@
   }
 
   .exploreCreateDiagram {
-    padding: 24px 16px 20px;
+    padding: 24px 16px 0;
   }
 
   .exploreCreateDiagram .positioningDiagramFlow {
-    gap: 12px;
+    gap: 24px;
     align-items: flex-start;
   }
 
@@ -4536,7 +4540,7 @@
   }
 
   .exploreCreateDiagram .positioningPhoneFrame {
-    max-width: 136px;
+    max-width: 108px;
     max-height: 210px;
   }
 
@@ -4577,6 +4581,8 @@
   .diaryEmojiEvidence .positioningPhoneFrame,
   .diaryEmojiEvidence .selfly0PhoneSlotShell {
     max-width: 136px;
+    border-width: 4px;
+    border-radius: 16px;
   }
 
   .todayRhythmAnnotated {
@@ -4792,9 +4798,18 @@
   }
 
   .diaryInputPolishLayout {
-    --diary-flow-phone-size: 100px;
-    --diary-flow-arrow-size: 16px;
-    --diary-flow-demo-gap: 20px;
+    --diary-flow-phone-size: 90px;
+    --diary-flow-arrow-size: 12px;
+    --diary-flow-demo-gap: 12px;
+    --diary-flow-arc-width: calc(var(--diary-flow-phone-size) * 3 + var(--diary-flow-arrow-size) * 2);
+    margin-top: 8px;
+  }
+
+  .selfly0EvidenceCard_diaryPolish .diaryFlowJumpLabel {
+    margin-top: 8px;
+    padding: 0;
+    font-size: 11px;
+    line-height: 1.35;
   }
 
   .diaryInputLayout {
@@ -4816,12 +4831,19 @@
     padding-inline: 4px;
   }
 
+  .diaryInputPolishLayout .diaryFlowRow {
+    justify-content: center;
+    width: 100%;
+    overflow-x: visible;
+    padding-inline: 0;
+  }
+
   .diaryFlowStepCard {
     width: 100px;
   }
 
   .diaryInputPolishLayout .diaryFlowStepCard {
-    width: 100px;
+    width: var(--diary-flow-phone-size);
   }
 
   .diaryFlowArrowWrap {
@@ -4830,8 +4852,9 @@
   }
 
   .diaryInputPolishLayout .diaryFlowArrowWrap {
-    width: 24px;
-    padding-top: 56px;
+    width: var(--diary-flow-arrow-size);
+    padding-top: 44px;
+    margin: 0;
   }
 
   .diaryFlowInlineArrow {
@@ -4839,17 +4862,52 @@
   }
 
   .diaryInputPolishLayout .diaryFlowInlineArrow {
-    width: 22px;
+    width: var(--diary-flow-arrow-size);
+  }
+
+  .diaryInputPolishLayout .diaryFlowStepBadge {
+    width: 18px;
+    height: 18px;
+    left: -4px;
+    font-size: 10px;
+  }
+
+  .diaryInputPolishLayout .diaryFlowStepCopy strong {
+    font-size: 10px;
+  }
+
+  .diaryInputPolishLayout .diaryFlowStepCopy span {
+    font-size: 9px;
+  }
+
+  .diaryInputPolishLayout .diaryFlowStepCardBreakpoint .diaryFlowStepCopy span {
+    font-size: 8px;
+    padding: 2px 4px;
+  }
+
+  .diaryInputPolishLayout .diaryFlowPhone {
+    border-radius: 14px;
   }
 
   .diaryInputPolishLayout .diaryFlowRowWrap {
-    padding-bottom: 56px;
+    padding-bottom: 42px;
   }
 
   .diaryInputPolishLayout .diaryFlowSkipArc {
     width: var(--diary-flow-arc-width);
     max-width: 100%;
-    height: 56px;
+    height: 54px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .diaryInputPolishLayout .diaryFlowSkipLabel {
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    paint-order: stroke fill;
+    stroke: #1a1208;
+    stroke-width: 5px;
   }
 
   .productLaunchLayout {

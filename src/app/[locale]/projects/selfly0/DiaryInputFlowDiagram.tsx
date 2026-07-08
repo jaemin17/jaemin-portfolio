@@ -68,7 +68,7 @@ function SkipOverStepTwoArrow({ fourColumn = false }: { fourColumn?: boolean }) 
   return (
     <svg
       className={styles.diaryFlowSkipArc}
-      viewBox="0 0 900 96"
+      viewBox="0 0 900 104"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
@@ -94,8 +94,9 @@ function SkipOverStepTwoArrow({ fourColumn = false }: { fourColumn?: boolean }) 
         markerEnd="url(#diaryFlowSkipArrowhead)"
       />
       <text
+        className={styles.diaryFlowSkipLabel}
         x={step2X}
-        y="76"
+        y="102"
         textAnchor="middle"
         fill="#FFBC6E"
         fontSize="16"
