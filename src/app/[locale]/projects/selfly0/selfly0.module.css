@@ -4333,22 +4333,23 @@
   }
 
   .selfly0ChapterIntro {
-    margin-top: 48px;
-    margin-bottom: 48px;
+    margin-top: 36px;
+    margin-bottom: 36px;
   }
 
   .selfly0ChapterInner {
-    min-height: 340px;
-    padding: 0 20px;
-    gap: 34px;
+    min-height: 260px;
+    padding: 52px 20px;
+    gap: 0;
   }
 
   .selfly0ChapterCopy {
-    grid-template-columns: 1fr;
-    justify-items: center;
-    gap: 22px;
+    grid-template-columns: 64px minmax(0, 1fr);
+    justify-items: start;
+    align-items: center;
+    gap: 16px;
     width: 100%;
-    text-align: center;
+    text-align: left;
   }
 
   .selfly0ChapterIntro h2 {
@@ -4356,15 +4357,15 @@
   }
 
   .selfly0ChapterIntro p {
-    font-size: 23px;
-    line-height: 1.44;
+    font-size: 18px;
+    line-height: 1.48;
   }
 
   .selfly0ChapterIcon {
     min-width: 0;
     padding-top: 0;
-    font-size: 58px;
-    text-align: center;
+    font-size: 48px;
+    text-align: left;
   }
 
   .selfly0ContactSection {
@@ -4385,23 +4386,60 @@
   }
 
   .tabStructureTrack {
-    grid-template-columns: 1fr;
-    row-gap: 0;
-    justify-items: center;
+    column-gap: 4px;
+  }
+
+  .tabStructureNode {
+    gap: 8px;
+    padding: 0 2px;
   }
 
   .tabStructureConnector {
-    padding: 6px 0 10px;
-    transform: rotate(90deg);
+    padding-top: 24px;
+  }
+
+  .tabStructureFlowArrow {
+    width: 20px;
   }
 
   .tabStructureIconWrap {
-    width: 60px;
-    height: 60px;
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+  }
+
+  .tabStructureIcon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .tabStructureTitle {
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+  }
+
+  .tabStructureTitleSep {
+    display: none;
+  }
+
+  .tabStructureRole {
+    font-size: 11px;
+  }
+
+  .tabStructureName {
+    font-size: 12px;
   }
 
   .tabStructureGoal {
-    max-width: 280px;
+    max-width: none;
+    font-size: 11px;
+    line-height: 1.35;
+  }
+
+  .tabStructureLabel {
+    margin-bottom: 20px;
+    font-size: 12px;
   }
 
   .tabStructureLoopArc {
@@ -4481,7 +4519,7 @@
   }
 
   .tabStructureDiagram {
-    padding: 28px 20px 24px;
+    padding: 24px 16px 20px;
   }
 
   .exploreTemplatesSwitcher {

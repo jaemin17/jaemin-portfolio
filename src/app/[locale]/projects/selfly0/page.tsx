@@ -182,7 +182,7 @@ export default async function Selfly0Page({ params }: Selfly0PageProps) {
           <TabStructureDiagram />
         </section>
         <ChapterIntro id="today" icon="🎯" title="Today：降低任务压力">
-          今日页不是为了收集更多任务，而是帮助用户判断今天真正重要的事。
+          今日不是为了收集更多任务，而是帮助用户判断今天真正重要的事。
         </ChapterIntro>
         <section className={`${styles.caseSection} ${styles.selfly0CaseSection}`}>
           <div className={styles.selfly0StructureSection}>
