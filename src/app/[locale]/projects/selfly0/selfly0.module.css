@@ -2946,7 +2946,6 @@
   width: min(100%, 660px);
   height: auto;
   margin-inline: auto;
-  border-radius: 8px;
   opacity: 1;
 }
 
@@ -4746,7 +4745,7 @@
   }
 
   .iconDesignEvolutionIcon {
-    width: min(24vw, 72px);
+    width: min(20vw, 56px);
   }
 
   .iconDesignExplorationWallImage {
@@ -4770,7 +4769,7 @@
   }
 
   .iconDesignFinalIcon {
-    width: min(28vw, 96px);
+    width: min(22vw, 68px);
     height: auto;
   }
 
@@ -4923,6 +4922,8 @@
   .productLaunchLayout .selfly0PhoneSlotShell {
     width: min(100%, 140px);
     max-width: 140px;
+    border-width: 4px;
+    border-radius: 16px;
   }
 
   .productLaunchSupplementCaption {
