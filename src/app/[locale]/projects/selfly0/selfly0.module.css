@@ -956,6 +956,10 @@
   display: none;
 }
 
+.desktopLineBreak {
+  display: block;
+}
+
 .selfly0PositioningBody {
   line-height: 1.8;
   color: #777;
@@ -4255,6 +4259,10 @@
     display: block;
   }
 
+  .desktopLineBreak {
+    display: none;
+  }
+
   .featuredHero {
     padding-top: 26px;
     text-align: center;
@@ -4333,26 +4341,28 @@
 
   .selfly0Page .caseText {
     grid-template-columns: 1fr;
-    gap: 28px;
+    gap: 36px;
   }
 
   .selfly0PositioningGrid {
     grid-template-columns: 1fr;
-    gap: 28px;
+    gap: 36px;
   }
 
   .selfly0PositioningLabel {
     font-size: 15px;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
+    text-align: center;
   }
 
   .selfly0PositioningHeading,
   .selfly0StructureHeading,
   .caseText .selfly0StructureHeading {
-    font-size: 24px;
-    line-height: 1.5;
-    padding-top: 12px;
-    margin-bottom: 4px;
+    font-size: 28px;
+    line-height: 1.45;
+    padding-top: 4px;
+    margin-bottom: 16px;
+    text-align: center;
   }
 
   .caseText h2,

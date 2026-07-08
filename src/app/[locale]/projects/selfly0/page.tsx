@@ -108,7 +108,7 @@ export default async function Selfly0Page({ params }: Selfly0PageProps) {
           <div className={styles.selfly0PositioningSection}>
             <h2 className={styles.selfly0PositioningLabel}>产品定位</h2>
             <div className={styles.selfly0PositioningGrid}>
-              <h3 className={styles.selfly0PositioningHeading}><span className={styles.selfly0PositioningHeadingLight}>从独立功能集合，</span><br /><span className={styles.selfly0PositioningHeadingDark}>到可持续自我记录系统</span></h3>
+              <h3 className={styles.selfly0PositioningHeading}><span className={styles.selfly0PositioningHeadingLight}>从独立功能集合，</span><br className={styles.desktopLineBreak} aria-hidden="true" /><span className={styles.selfly0PositioningHeadingDark}>到可持续自我记录系统</span></h3>
               <div className={styles.selfly0PositioningBody}>
                 <p className={styles.p}>
                   Selfly 最初是一个帮助用户进行「自我探索」的工具，通过价值观、优势等练习，让人更清晰地认识自己。它来源于我的<strong className={styles.selfly0Emphasis}>个人真实需求</strong>。
@@ -262,7 +262,7 @@ export default async function Selfly0Page({ params }: Selfly0PageProps) {
           <div className={styles.selfly0StructureSection}>
             <h2 className={styles.selfly0PositioningLabel}>模块化记录</h2>
             <div className={styles.caseText}>
-              <h3 className={styles.selfly0StructureHeading}><span className={styles.selfly0PositioningHeadingLight}>把自我发现方式，<br className={styles.mobileLineBreak} aria-hidden="true" />抽象成</span><span className={styles.selfly0PositioningHeadingDark}>四种记录容器</span></h3>
+              <h3 className={styles.selfly0StructureHeading}><span className={styles.selfly0PositioningHeadingLight}>把自我发现方式，<br className={styles.desktopLineBreak} aria-hidden="true" />抽象成</span><span className={styles.selfly0PositioningHeadingDark}>四种记录容器</span></h3>
               <div className={styles.selfly0Body}>
                 <p>
                   我对原有自我探索功能进行结构重组，把价值观、愿景板、成功日记、优势测试等独立入口，抽象成
