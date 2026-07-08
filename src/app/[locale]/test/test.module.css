@@ -962,7 +962,33 @@ a.card:hover {
   }
 
   .caseContact {
-    min-height: 320px;
+    min-height: auto;
+    padding: 80px 20px 120px;
+  }
+
+  .caseContact p {
+    font-size: 22px;
+    line-height: 1.4;
+    color: #1a1b1f;
+  }
+
+  .caseContact span {
+    margin-top: 0;
+    font-size: 15px;
+    line-height: 1.65;
+    color: #171614;
+    opacity: 0.88;
+  }
+
+  .caseContact a[href^="mailto:"] {
+    margin-top: 12px;
+    font-size: 22px;
+    line-height: 1.35;
+    color: #1a1b1f;
+  }
+
+  .caseContact :global(.buttonSticker) {
+    margin-top: 16px;
   }
 
   .visualShowcase {
