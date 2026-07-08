@@ -371,37 +371,6 @@
     margin-top: 8px;
   }
 
-  .exploreRecordContainers {
-    padding: 30px 20px 24px;
-  }
-
-  .exploreRecordContainersHeader {
-    margin-bottom: 22px;
-  }
-
-  .exploreRecordContainersTitle {
-    font-size: 18px;
-  }
-
-  .exploreRecordContainersCards {
-    display: flex;
-    gap: 16px;
-    justify-content: flex-start;
-    overflow-x: auto;
-    padding-bottom: 8px;
-    scroll-snap-type: x mandatory;
-  }
-
-  .exploreRecordContainerCard {
-    flex: 0 0 170px;
-    scroll-snap-align: center;
-    padding-inline: 10px;
-  }
-
-  .exploreRecordContainerPhone {
-    width: 150px;
-  }
-
   .todayTop3Carousel {
     grid-template-columns: 1fr;
     gap: 20px;
@@ -4507,22 +4476,107 @@
   }
 
   .todayTaskSemanticFigure {
-    padding: 30px 20px 24px;
+    padding: 24px 16px 20px;
   }
 
   .todayTaskSemanticFigure .positioningDiagramFlow {
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .todayTaskSemanticFigure .positioningDiagramCol {
+    gap: 6px;
+    min-width: 0;
+  }
+
+  .todayTaskSemanticFigure .positioningDiagramPhase {
+    font-size: 12px;
+  }
+
+  .todayTaskSemanticFigure .positioningDiagramDescription {
+    font-size: 11px;
+    max-width: none;
+    line-height: 1.4;
   }
 
   .todayTaskSemanticFigure .positioningDiagramArrow {
-    margin-top: 0;
-    transform: rotate(90deg);
+    margin-top: 8px;
+    transform: none;
+    padding: 0;
+  }
+
+  .todayTaskSemanticFigure .positioningDiagramArrow svg {
+    width: 32px;
   }
 
   .todayTaskSemanticScreenshotFrame {
-    width: min(70vw, 230px);
+    width: min(100%, 136px);
+    margin-top: 4px;
+    border-width: 3px;
+    border-radius: 18px;
+  }
+
+  .exploreCreateDiagram {
+    padding: 24px 16px 20px;
+  }
+
+  .exploreCreateDiagram .positioningDiagramFlow {
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .exploreCreateDiagram .positioningDiagramCol {
+    gap: 6px;
+    min-width: 0;
+  }
+
+  .exploreCreateDiagram .positioningDiagramPhase,
+  .exploreCreateDiagram .positioningDiagramCaption {
+    font-size: 11px;
+  }
+
+  .exploreCreateDiagram .positioningPhoneFrame {
+    max-width: 136px;
+    max-height: 210px;
+  }
+
+  .diaryEmojiEvidence {
+    padding: 24px 16px 20px;
+  }
+
+  .diaryEmojiEvidence .positioningDiagramFlow {
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .diaryEmojiEvidence .positioningDiagramCol {
+    gap: 6px;
+    min-width: 0;
+  }
+
+  .diaryEmojiEvidence .positioningDiagramPhase,
+  .diaryEmojiEvidence .positioningDiagramCaption {
+    font-size: 11px;
+  }
+
+  .diaryEmojiEvidence .positioningDiagramDescription {
+    font-size: 11px;
+    max-width: none;
+    line-height: 1.4;
+  }
+
+  .diaryEmojiEvidence .positioningDiagramArrow {
+    margin-top: 8px;
+    transform: none;
+  }
+
+  .diaryEmojiEvidence .positioningDiagramArrow svg {
+    width: 32px;
+  }
+
+  .diaryEmojiEvidence .positioningPhoneFrame,
+  .diaryEmojiEvidence .selfly0PhoneSlotShell {
+    max-width: 136px;
   }
 
   .todayRhythmAnnotated {
@@ -4538,6 +4592,99 @@
     grid-template-columns: 1fr;
     gap: 20px;
     max-width: none;
+  }
+
+  .exploreRecordContainers {
+    padding: 24px 16px 20px;
+  }
+
+  .exploreRecordContainersHeader {
+    margin-bottom: 18px;
+  }
+
+  .exploreRecordContainersTitle {
+    font-size: 16px;
+  }
+
+  .exploreRecordContainersCards {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 6px;
+    align-items: stretch;
+    overflow-x: visible;
+    padding-bottom: 0;
+    scroll-snap-type: none;
+  }
+
+  .exploreRecordContainerCard {
+    display: grid;
+    grid-template-rows: auto auto auto 1fr;
+    align-items: stretch;
+    padding-inline: 1px;
+    gap: 4px;
+  }
+
+  .exploreRecordContainerSource {
+    height: 48px;
+    overflow: hidden;
+    justify-content: flex-start;
+  }
+
+  .exploreRecordContainerAbstraction {
+    height: 36px;
+    justify-content: center;
+  }
+
+  .exploreRecordContainerCopy {
+    height: 28px;
+    justify-content: flex-start;
+  }
+
+  .exploreRecordContainerPhone {
+    align-self: end;
+    justify-self: center;
+    width: min(100%, 76px);
+    margin-top: 0;
+    border-radius: 8px;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.32);
+  }
+
+  .exploreRecordContainerImage {
+    border-radius: 8px;
+  }
+
+  .exploreRecordContainersSourceTag {
+    font-size: 9px;
+    padding: 3px 4px;
+  }
+
+  .exploreRecordContainersPrinciple {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 32px;
+    padding: 3px 4px;
+    font-size: 8.5px;
+    line-height: 1.2;
+    text-align: center;
+    overflow: hidden;
+    white-space: normal;
+  }
+
+  .exploreRecordContainerSectionLabel {
+    font-size: 10px;
+  }
+
+  .exploreRecordContainerName {
+    font-size: 11px;
+  }
+
+  .exploreRecordContainersTagStack {
+    height: 48px;
+    min-height: 0;
+    gap: 4px;
+    overflow: hidden;
   }
 
   .tabStructureDiagram {
@@ -4571,64 +4718,47 @@
   }
 
   .iconDesignEvolutionBoard {
-    grid-template-columns: 1fr;
-    grid-template-rows: none;
+    grid-template-columns: minmax(0, 0.65fr) auto minmax(0, 1.5fr) auto minmax(0, 0.65fr);
     row-gap: 10px;
-    column-gap: 0;
+    column-gap: 6px;
   }
-
-  /* Reorder mobile: interleave images with their labels, hide empty fillers */
-  /* DOM order: img01(1) →(2) img02(3) →(4) img03(5) note01(6) _(7) note02(8) _(9) note03(10) */
-  .iconDesignEvolutionBoard > *:nth-child(1) { order: 1; }   /* img01 */
-  .iconDesignEvolutionBoard > *:nth-child(2) { order: 3; justify-self: center; transform: rotate(90deg); } /* → */
-  .iconDesignEvolutionBoard > *:nth-child(3) { order: 5; }   /* img02 */
-  .iconDesignEvolutionBoard > *:nth-child(4) { order: 7; justify-self: center; transform: rotate(90deg); } /* → */
-  .iconDesignEvolutionBoard > *:nth-child(5) { order: 9; }   /* img03 */
-  .iconDesignEvolutionBoard > *:nth-child(6) { order: 2; }   /* note01 */
-  .iconDesignEvolutionBoard > *:nth-child(7) { display: none; }  /* empty filler */
-  .iconDesignEvolutionBoard > *:nth-child(8) { order: 6; }   /* note02 */
-  .iconDesignEvolutionBoard > *:nth-child(9) { display: none; }  /* empty filler */
-  .iconDesignEvolutionBoard > *:nth-child(10) { order: 10; } /* note03 */
 
   .iconDesignEvolutionNote {
     padding-top: 0;
+    gap: 6px;
   }
 
-  .iconDesignExplorationWallImage {
-    width: min(100%, 220px);
+  .iconDesignEvolutionArrow {
+    font-size: 14px;
   }
 
   .iconDesignEvolutionIcon {
-    width: min(24vw, 88px);
+    width: min(24vw, 72px);
   }
 
-  .iconDesignPhase {
-    grid-template-columns: 1fr;
-    gap: 16px;
+  .iconDesignExplorationWallImage {
+    width: 100%;
+    max-width: none;
+  }
+
+  .iconDesignEvolutionStepNumber {
+    font-size: 12px;
+  }
+
+  .iconDesignEvolutionIndex {
+    font-size: 11px;
   }
 
   .iconDesignFinalDual {
-    grid-template-columns: 1fr;
-    gap: 16px;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 12px;
+    padding: 16px 8px;
   }
 
-  .iconDesignFinalPanel {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .iconDesignFinalCompare {
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .iconDesignFinalArrow svg {
-    transform: rotate(90deg);
-    width: 48px;
-  }
-
-  .iconDesignLegend {
-    grid-template-columns: 1fr;
+  .iconDesignFinalIcon {
+    width: min(28vw, 96px);
+    height: auto;
   }
 
   .selfly0PhoneSlotShell {
@@ -4636,29 +4766,38 @@
   }
 
   .reviewRedistributionLayout {
-    --review-phone-size: min(72vw, 260px);
-    grid-template-columns: 1fr;
-    gap: 18px;
+    --review-phone-size: 140px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
     max-width: none;
   }
 
+  .reviewRedistributionLayout .reviewSettingsPhoneShell,
+  .reviewRedistributionLayout .selfly0PhoneSlotShell {
+    width: min(100%, 140px);
+    max-width: 140px;
+    border-width: 4px;
+    border-radius: 20px;
+  }
+
   .reviewRedistributionDemo {
-    order: -1;
+    order: 0;
   }
 
   .diaryInputPolishLayout {
-    --diary-flow-phone-size: 132px;
-    --diary-flow-arrow-size: 18px;
+    --diary-flow-phone-size: 100px;
+    --diary-flow-arrow-size: 16px;
+    --diary-flow-demo-gap: 20px;
   }
 
   .diaryInputLayout {
-    grid-template-columns: 1fr;
-    gap: 18px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
     max-width: none;
   }
 
   .diaryInputDemo {
-    order: -1;
+    order: 0;
   }
 
   .diaryInputFlowSteps {
@@ -4671,48 +4810,58 @@
   }
 
   .diaryFlowStepCard {
-    width: 132px;
+    width: 100px;
   }
 
   .diaryInputPolishLayout .diaryFlowStepCard {
-    width: 164px;
+    width: 100px;
   }
 
   .diaryFlowArrowWrap {
-    width: 18px;
-    padding-top: 56px;
+    width: 16px;
+    padding-top: 48px;
   }
 
   .diaryInputPolishLayout .diaryFlowArrowWrap {
-    width: 28px;
-    padding-top: 72px;
+    width: 24px;
+    padding-top: 56px;
   }
 
   .diaryFlowInlineArrow {
-    width: 18px;
+    width: 16px;
   }
 
   .diaryInputPolishLayout .diaryFlowInlineArrow {
-    width: 26px;
+    width: 22px;
   }
 
   .diaryInputPolishLayout .diaryFlowRowWrap {
-    padding-bottom: 72px;
+    padding-bottom: 56px;
   }
 
   .diaryInputPolishLayout .diaryFlowSkipArc {
-    width: 680px;
-    height: 64px;
+    width: var(--diary-flow-arc-width);
+    max-width: 100%;
+    height: 56px;
   }
 
   .productLaunchLayout {
-    grid-template-columns: 1fr;
-    gap: 18px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
     max-width: none;
   }
 
   .productLaunchDemo {
-    order: -1;
+    order: 0;
+  }
+
+  .productLaunchLayout .selfly0PhoneSlotShell {
+    width: min(100%, 140px);
+    max-width: 140px;
+  }
+
+  .productLaunchSupplementCaption {
+    font-size: 10px;
   }
 
   .productLaunchGrid {
