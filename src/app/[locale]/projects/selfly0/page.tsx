@@ -70,7 +70,8 @@ export default async function Selfly0Page({ params }: Selfly0PageProps) {
       <main className={styles.main}>
         <header className={`${styles.featuredHero} ${styles.projectOneHero}`}>
           <h1 className={styles.title}>
-            <span className={styles.titleEn}>Selfly</span>：
+            <span className={styles.titleEn}>Selfly</span>
+            <span className={styles.titleSep}>：</span>
             <span className={styles.titleZh}>
               让记录不再变成
               <span className={styles.strikeWord}>压力</span>
@@ -261,7 +262,7 @@ export default async function Selfly0Page({ params }: Selfly0PageProps) {
           <div className={styles.selfly0StructureSection}>
             <h2 className={styles.selfly0PositioningLabel}>模块化记录</h2>
             <div className={styles.caseText}>
-              <h3 className={styles.selfly0StructureHeading}><span className={styles.selfly0PositioningHeadingLight}>把自我发现方式，抽象成</span><span className={styles.selfly0PositioningHeadingDark}>四种记录容器</span></h3>
+              <h3 className={styles.selfly0StructureHeading}><span className={styles.selfly0PositioningHeadingLight}>把自我发现方式，<br className={styles.mobileLineBreak} aria-hidden="true" />抽象成</span><span className={styles.selfly0PositioningHeadingDark}>四种记录容器</span></h3>
               <div className={styles.selfly0Body}>
                 <p>
                   我对原有自我探索功能进行结构重组，把价值观、愿景板、成功日记、优势测试等独立入口，抽象成

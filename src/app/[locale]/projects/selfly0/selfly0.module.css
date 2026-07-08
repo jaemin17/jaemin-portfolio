@@ -952,6 +952,10 @@
   font-style: italic;
 }
 
+.mobileLineBreak {
+  display: none;
+}
+
 .selfly0PositioningBody {
   line-height: 1.8;
   color: #777;
@@ -4247,6 +4251,10 @@
 }
 
 @media (max-width: 760px) {
+  .mobileLineBreak {
+    display: block;
+  }
+
   .featuredHero {
     padding-top: 26px;
     text-align: center;
@@ -4256,15 +4264,49 @@
     font-size: 28px;
   }
 
-  .featuredHero .titleZh {
-    font-size: 24px;
+  .projectOneHero .title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 22px;
+  }
+
+  .projectOneHero .titleSep,
+  .projectOneHero .titleEn {
+    display: none;
+  }
+
+  .featuredHero .titleZh,
+  .projectOneHero .titleZh {
+    font-size: 26px;
+    line-height: 1.35;
+    max-width: 12em;
   }
 
   .featuredHero .subtitle,
   .projectOneHero .subtitle {
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.55;
     color: rgba(0, 0, 0, 0.52);
+    padding-inline: 12px;
+  }
+
+  .projectOneHero .subtitle::before {
+    content: "Selfly: ";
+  }
+
+  .projectOneHero .headerCta {
+    margin-top: 32px;
+    gap: 12px;
+  }
+
+  .projectOneHero .meta {
+    margin-top: 0;
+  }
+
+  .projectOneHero .headerCta .buttonSticker {
+    margin-top: 16px;
   }
 
   .featuredHero .meta,
@@ -4291,12 +4333,94 @@
 
   .selfly0Page .caseText {
     grid-template-columns: 1fr;
-    gap: 18px;
+    gap: 28px;
   }
 
   .selfly0PositioningGrid {
     grid-template-columns: 1fr;
-    gap: 18px;
+    gap: 28px;
+  }
+
+  .selfly0PositioningLabel {
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+
+  .selfly0PositioningHeading,
+  .selfly0StructureHeading,
+  .caseText .selfly0StructureHeading {
+    font-size: 24px;
+    line-height: 1.5;
+    padding-top: 12px;
+    margin-bottom: 4px;
+  }
+
+  .caseText h2,
+  .caseReflection h2 {
+    font-size: 14px;
+  }
+
+  .caseText h3 {
+    font-size: 22px;
+    margin-bottom: 12px;
+  }
+
+  .caseText p,
+  .caseReflection p,
+  .selfly0Body p,
+  .selfly0PositioningBody .p {
+    font-size: 15px;
+    line-height: 1.75;
+    color: #777;
+    opacity: 1;
+  }
+
+  .selfly0PositioningBody {
+    color: #777;
+  }
+
+  .selfly0PositioningBody p {
+    margin-bottom: 20px;
+  }
+
+  .selfly0PositioningBody .selfly0Emphasis,
+  .selfly0Body .selfly0Emphasis {
+    color: #444;
+  }
+
+  .selfly0SectionHeadline {
+    font-size: 22px !important;
+    line-height: 1.4 !important;
+  }
+
+  .selfly0SectionLabel {
+    font-size: 12px !important;
+  }
+
+  .designPoints {
+    margin-top: 28px;
+  }
+
+  .designPoints h4 {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+
+  .selfly0Body .designPoints ul {
+    font-size: 14px;
+    line-height: 1.65;
+    color: #333;
+    font-weight: 600;
+  }
+
+  .selfly0Body .designPoints strong {
+    color: #171614;
+  }
+
+  .caseText > ul {
+    font-size: 14px;
+    line-height: 1.65;
+    color: #888;
   }
 
   .beforeAfterGrid,
@@ -4721,12 +4845,16 @@
   }
 
   .iconDesignShowcase {
-    padding: 24px 16px 18px;
+    padding: 16px 16px 18px;
   }
 
   .iconDesignEvolutionSection {
-    margin-top: 20px;
-    padding-top: 16px;
+    margin-top: 12px;
+    padding-top: 12px;
+  }
+
+  .iconDesignFinalPicker {
+    margin-bottom: 8px;
   }
 
   .iconDesignEvolutionBoard {
@@ -4765,7 +4893,7 @@
     display: flex;
     justify-content: space-evenly;
     gap: 12px;
-    padding: 16px 8px;
+    padding: 12px 8px 8px;
   }
 
   .iconDesignFinalIcon {
