@@ -19,16 +19,7 @@ export default async function TestPage({ params }: TestPageProps) {
       <main className={styles.main}>
         <section className={styles.section}>
           <div className={styles.grid}>
-            <Link className={styles.card} href={localePath(locale, "/test/about2-v2")}>
-              <span className={styles.cardLabel}>WIP</span>
-              <h3>About2 改版测试</h3>
-              <p>About 页面的测试副本，用于改版实验。</p>
-              <div className={styles.tags}>
-                <span>About2 v2</span>
-                <span>In progress</span>
-              </div>
-            </Link>
-<Link className={styles.card} href={localePath(locale, "/test/tools")}>
+            <Link className={styles.card} href={localePath(locale, "/test/tools")}>
               <span className={styles.cardLabel}>Archive</span>
               <h3>工具1</h3>
               <p>从导航栏移除的工具类页面版本，当前作为测试备份入口保留。</p>
@@ -37,7 +28,7 @@ export default async function TestPage({ params }: TestPageProps) {
                 <span>Layout 01</span>
               </div>
             </Link>
-<Link className={styles.card} href={localePath(locale, "/projects/sync-space")}>
+            <Link className={styles.card} href={localePath(locale, "/projects/sync-space")}>
               <span className={styles.cardLabel}>WIP</span>
               <h3>Sync Space</h3>
               <p>多端课堂协同与设备管理项目详情页，正在完善中，主页入口暂不开放。</p>
