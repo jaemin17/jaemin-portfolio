@@ -1707,6 +1707,17 @@
     line-height: 1.5;
   }
 
+  .middleScatter .scatterNote,
+  .middleScatter .scatterNote.scatterCat,
+  .middleScatter .scatterNote.scatterHangzhou,
+  .middleScatter .scatterMe,
+  .middleScatter .todayStamp,
+  .sideKeepsakes .sideAboutEntry,
+  .sideKeepsakes .sideLifeEntry,
+  .sideKeepsakes .sideContactEntry {
+    display: none;
+  }
+
   .hoverPolaroid {
     display: none;
   }
@@ -1716,6 +1727,7 @@
     width: 100%;
     transform: none;
     margin-top: 12px;
+    margin-bottom: 24px;
   }
 
   .workList {
@@ -1755,7 +1767,7 @@
     gap: 18px;
     min-height: 0;
     margin-top: 0;
-    padding-top: 20px;
+    padding-top: 32px;
   }
 
   .polaroidPair {
@@ -1887,6 +1899,7 @@
   .workList {
     margin-top: 44px;
     gap: 24px;
+    margin-bottom: 12px;
   }
 
   .projectWall {
@@ -1921,6 +1934,7 @@
   .bottomKeepsakes {
     gap: 12px;
     margin-top: 0;
+    padding-top: 40px;
   }
 
   .heroCopyItem,
