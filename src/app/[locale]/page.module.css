@@ -2037,6 +2037,11 @@
     line-height: 1.45;
   }
 
+  .sideKeepsakes .sideContactEntry .infoBody {
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
   .polaroidPair {
     top: auto;
     left: auto;
