@@ -4313,8 +4313,8 @@
     margin-top: 0;
   }
 
-  .projectOneHero .headerCta .buttonSticker {
-    margin-top: 16px;
+  .projectOneHero .headerCta :global(.buttonSticker) {
+    margin-top: 40px;
   }
 
   .featuredHero .meta,
