@@ -260,6 +260,7 @@
   .introText {
     width: 80%;
     margin: 0 auto;
+    padding-left: 0;
   }
 
   .illustration {
@@ -293,6 +294,7 @@
 
   .sectionTitleCol {
     padding-right: 0;
+    padding-left: 0;
   }
 
   .skillsColumns {
@@ -311,14 +313,22 @@
   .container,
   .footerInner {
     padding: 0 30px;
-    text-align: center;
+    text-align: left;
+  }
+
+  .introGrid,
+  .skillsGrid,
+  .skillsGridReversed {
+    text-align: left;
   }
 
   .introText,
   .skillsGrid,
   .skillsGridReversed {
-    width: 70%;
-    max-width: 470px;
+    width: 100%;
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .heroTitle,
